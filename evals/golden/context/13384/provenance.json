@@ -1,0 +1,6 @@
+{
+  "issue": 13384,
+  "commit": "61c204a0355c89946cb0f3202820c5a0ec85e13d",
+  "cutoff": "2025-04-19T15:36:41Z",
+  "source": "https://github.com/pytest-dev/pytest/tree/61c204a0355c89946cb0f3202820c5a0ec85e13d"
+}

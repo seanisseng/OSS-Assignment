@@ -1,0 +1,6 @@
+{
+  "expectations_hash": "6a0d88d94f8fafcf65ed7c04b146194e736bba0adcd75ef5d4c18311571164c2",
+  "review_approved": false,
+  "evaluation_started": false,
+  "warning": "Authoring assistant has seen expectations. Use fresh Copilot runs for held-out evaluation."
+}

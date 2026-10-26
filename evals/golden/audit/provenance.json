@@ -1,0 +1,8 @@
+{
+  "query": "repo:pytest-dev/pytest is:issue label:\"type: bug\" created:<2026-10-01",
+  "collected_at": "2026-10-26T18:15:46.012572+00:00",
+  "denominator": 50,
+  "comment_page_limit": 100,
+  "events_page_limit": 100,
+  "warning": "updated_at includes other activity; reconstructability requires timeline review."
+}

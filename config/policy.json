@@ -1,0 +1,10 @@
+{
+  "repository": "seanisseng/OSS-Assignment",
+  "allowed_issues": [],
+  "case_targets": {},
+  "enabled": false,
+  "owner": "seanisseng",
+  "max_attempts": 40,
+  "max_publications_per_utc_day": 5,
+  "budget_verified": false
+}

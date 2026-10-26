@@ -1,0 +1,214 @@
+{
+  "status": "awaiting student review; no model execution authorized",
+  "author": "AI-assisted draft by Codex; not independently human-authored",
+  "expectations": [
+    {
+      "case_id": "pytest-15052",
+      "split": "development",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Concrete output and one-line expected correction.",
+      "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016",
+      "context_hashes": {
+        "pyproject.toml": "707adf275d468ef6d4d5ac6fe9aef99cfeed730d14118f83914557776c5f3e9b",
+        "src/_pytest/fixtures.py": "569ce232fed4645e27cf49d5e068eda20853cb276558966ffd70ac8542c83f31",
+        "src/_pytest/python.py": "73a4e498fb49a7edfebdfeb49f01884d959b18bc6ba588dd7d3b6ddb340e180c"
+      }
+    },
+    {
+      "case_id": "pytest-15051",
+      "split": "development",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Exact command, traceback, failing attribute and item type.",
+      "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+      "context_hashes": {
+        "pyproject.toml": "707adf275d468ef6d4d5ac6fe9aef99cfeed730d14118f83914557776c5f3e9b",
+        "src/_pytest/fixtures.py": "569ce232fed4645e27cf49d5e068eda20853cb276558966ffd70ac8542c83f31",
+        "src/_pytest/python.py": "73a4e498fb49a7edfebdfeb49f01884d959b18bc6ba588dd7d3b6ddb340e180c"
+      }
+    },
+    {
+      "case_id": "pytest-13403",
+      "split": "development",
+      "decision": "human_review",
+      "acceptable_missing": [],
+      "rationale": "Body delegates meaning to a linked discussion not supplied here.",
+      "input_hash": "f0d4709ba7478fe125e99be069e32030b7e7300e1fea57fe73ff47b6f5ca0aaa",
+      "context_hashes": {
+        "pyproject.toml": "663a7ff3da79f11c9cae9fce6cb580c0d0e1b7ae06ab7c1a0281a0af529299fe",
+        "src/_pytest/assertion/rewrite.py": "570342636449f4c6326c0d84e32d9535cc3886728a5c24cca2a8d5e6c8d3857e",
+        "src/_pytest/fixtures.py": "9d727ebcabe9f0153106e4015cae86a563bfddf6f8096602f51f1734270684d3",
+        "src/_pytest/python.py": "664772d05b6271e5936767c6eb204294d9a7ebed607689fb767bf39979483769"
+      }
+    },
+    {
+      "case_id": "pytest-13986",
+      "split": "development",
+      "decision": "human_review",
+      "acceptable_missing": [],
+      "rationale": "Summary semantics and feature-design choice need maintainer judgement.",
+      "input_hash": "729f1b6012c2d76b2ede0f95c39aac49ed818d0d70c3fcc7cad54d9ed03f0b31",
+      "context_hashes": {
+        "pyproject.toml": "37149a0596f7f24e8a29305f68fd42876b236e0999df05825a5ba2148ca92678",
+        "src/_pytest/fixtures.py": "0b2f62f87852c2e45fd21c5e690ea496df8fc3657bb200db0388f01747e70c15",
+        "src/_pytest/python.py": "271acfb266f160fcc8ff47c2afd1de996442b81da15102ded0b3372f5e1e6f38",
+        "src/_pytest/subtests.py": "bf633fe678b55dab13d449f0990d1342a6bd56765f5ec6663dc29423f465474c"
+      }
+    },
+    {
+      "case_id": "pytest-13716",
+      "split": "development",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Title and body specify exact CLI syntax and desired usage error.",
+      "input_hash": "905651d5e544e15753b2e8daaebc335c76c5a331079ea85cb274f7fc6eaecb61",
+      "context_hashes": {
+        "pyproject.toml": "9d07f1df6852a0aa7a319076b95b6e7a769c5910fef61b44fee1e29905be79bc",
+        "src/_pytest/fixtures.py": "b576643d09bcea5d2c3369e43df783ea483c5cf53d11a6b026f46a1adfac138d",
+        "src/_pytest/main.py": "0e187dab85cbb5fc0687e93dc0c6bc4f26265cbd62b12a837ca6e00c6374c43b",
+        "src/_pytest/python.py": "621b31306a3ae02251d99c16e009b2c25d7845aa907a381a2fedce2122c44fd0"
+      }
+    },
+    {
+      "case_id": "pytest-15005",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Complete Decimal reproducer, expected/actual and versions.",
+      "input_hash": "d6d7ea28336633ac6502e78ff6038d6f22a470679a756ff044f6d1663bd8fbee",
+      "context_hashes": {
+        "pyproject.toml": "9410f264c9e1cd39b8929666a1ba06baf9e7f85b29fcfaa7f0a2e41b5738fe9d",
+        "src/_pytest/approx.py": "9966c22fc43aaadc8e38f7713e74a2e7dcc704e7c4c329f4de6f838dabd2b0d9",
+        "src/_pytest/fixtures.py": "569ce232fed4645e27cf49d5e068eda20853cb276558966ffd70ac8542c83f31",
+        "src/_pytest/python.py": "73a4e498fb49a7edfebdfeb49f01884d959b18bc6ba588dd7d3b6ddb340e180c"
+      }
+    },
+    {
+      "case_id": "pytest-14775",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Minimal class fixture, command, commit and tracebacks.",
+      "input_hash": "9b17bef737ca9e0d76583fac9740bab3053f6a83dd1072f6e62e3708542d9725",
+      "context_hashes": {
+        "pyproject.toml": "3a138199805c69ace1aaa0f765e05f7b900323e5b7fd04f67f392f6cde929123",
+        "src/_pytest/fixtures.py": "6d483a2efa5eacb033550517d9d13814792ee6a1c3bc6634abd03135724e4bb6",
+        "src/_pytest/python.py": "1c5b9150349259b2f2bce998bfa6edbe7c120194e2ff7f0cc803cd310d9995ae"
+      }
+    },
+    {
+      "case_id": "pytest-14533",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Minimal test and bisected regression with command and output.",
+      "input_hash": "d8fd91ca617d2b28892cb5841bf491c80bd8e65f6abe5d40e263de2a455230d8",
+      "context_hashes": {
+        "pyproject.toml": "14396fdf7b0825399116d7e98423029b24c67ca869285998663680f77ca5e965",
+        "src/_pytest/fixtures.py": "5cf52f3d498fef9b6ff6fcaa0655f002ed9d40e64c96c1565986458f0ae02fe8",
+        "src/_pytest/python.py": "2af3db4200e32cf194828ac0bde338763b52a525aed2ed20a462d7eea72f58a6"
+      }
+    },
+    {
+      "case_id": "pytest-14456",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Pinned source line and concrete incorrect literal are investigable.",
+      "input_hash": "3606a9621e9e628cf5958896c26ead2f1eb2c29c0ca159e3a57c55f05308e38b",
+      "context_hashes": {
+        "pyproject.toml": "8a340e2f3dde1ab45dd125d24094b7d16c669f0c369a1dd03409bf0ba962977c",
+        "src/_pytest/fixtures.py": "c34fbc1e6c795215d05a63b7734d9254634d50721332b8057b21c93521704ccb",
+        "src/_pytest/python.py": "f07e64276391d0fac5b70dd898ccbb2a1d219aaa1b5026d393d1d33c1e8b99ec",
+        "src/_pytest/python_api.py": "c412b5e682210cd1f24ad3cf5e4b74d169b58e43803390b2fc4f9eded3b7370e"
+      }
+    },
+    {
+      "case_id": "pytest-14329",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Inheritance example, assertion output, expected result and version.",
+      "input_hash": "1ec5cb2d4baef8399b55c5c6df49157689e70208d00c385ddc891779843d3644",
+      "context_hashes": {
+        "pyproject.toml": "4e49f42b684aca9a791f2b8d1b6facf3b30c1febd375454df0bf1513d27f733b",
+        "src/_pytest/fixtures.py": "bf392bac56148c2d0a395e5ce0c5bc03886614e8fba71d722a9a98447bf3cc56",
+        "src/_pytest/nodes.py": "3a83bf4918c0f440c57faa3e6b273e08872aca92598ae78cca16d769071b45c5",
+        "src/_pytest/python.py": "a36c32abb92ae536006529ea571d0679828bcd30f109ce0283401d774dba0737"
+      }
+    },
+    {
+      "case_id": "pytest-14324",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Minimal ExceptionGroup case, output, expectation and versions.",
+      "input_hash": "d204fc6e829e35d01e0d970277ab37aa462d176f08100837ba0f28f35a486192",
+      "context_hashes": {
+        "pyproject.toml": "4e49f42b684aca9a791f2b8d1b6facf3b30c1febd375454df0bf1513d27f733b",
+        "src/_pytest/fixtures.py": "bf392bac56148c2d0a395e5ce0c5bc03886614e8fba71d722a9a98447bf3cc56",
+        "src/_pytest/python.py": "a36c32abb92ae536006529ea571d0679828bcd30f109ce0283401d774dba0737",
+        "src/_pytest/raises.py": "e1f6e0570faa2c5c39da03d575489393dfbea58f84cdf3f10e04251af9def4cc"
+      }
+    },
+    {
+      "case_id": "pytest-13849",
+      "split": "held-out",
+      "decision": "sufficient",
+      "acceptable_missing": [],
+      "rationale": "Empty configuration filename and expected equivalence are enough.",
+      "input_hash": "8b6a54f9a4ecab0ab71c8974a0a8b74b1f29c9cc6cd59d546a9ee08077da06fb",
+      "context_hashes": {
+        "pyproject.toml": "5385ed5b229e5505a16b239cf0473557d030b1703e83c3f806074b4ab340156a",
+        "src/_pytest/config/findpaths.py": "73425a6241afce6aea44d7a8709aed7df147bfa41fa04c04f82ab8c614f96dae",
+        "src/_pytest/fixtures.py": "d585e3e5af30ac75c36e2a436a697b3a3c3563b331947ab8cf41c8ea8131dc07",
+        "src/_pytest/python.py": "f983ddbdf195407ba42d8dfa0482c4f0b4e25c06af1ceaf2ec0852d47db9cddb"
+      }
+    },
+    {
+      "case_id": "pytest-13634",
+      "split": "held-out",
+      "decision": "needs_information",
+      "acceptable_missing": [
+        "reproducer"
+      ],
+      "rationale": "Private suite cannot be reproduced; a minimal triggering layout is essential.",
+      "input_hash": "4316932f619121ce2a37fb9b9d995bc21ddad7b7bb1f261e8986e4e16f5cdf9b",
+      "context_hashes": {
+        "pyproject.toml": "91a47cc4d280343981aeeb8fb3582e48e1a67a1506021f848d005e535a158388",
+        "src/_pytest/config/__init__.py": "f63bfbcb9ec3182f5032a0ce0f140d5b5ababcf85ace811be071738d29dfbe62",
+        "src/_pytest/fixtures.py": "b576643d09bcea5d2c3369e43df783ea483c5cf53d11a6b026f46a1adfac138d",
+        "src/_pytest/python.py": "621b31306a3ae02251d99c16e009b2c25d7845aa907a381a2fedce2122c44fd0"
+      }
+    },
+    {
+      "case_id": "pytest-14389",
+      "split": "held-out",
+      "decision": "human_review",
+      "acceptable_missing": [],
+      "rationale": "Feature request about exception chaining semantics needs human scope decision.",
+      "input_hash": "eea9f2fd46f1d571f00fe1d99bafaed1d727600033d62a8fba95f1d51ca86bdd",
+      "context_hashes": {
+        "pyproject.toml": "8a340e2f3dde1ab45dd125d24094b7d16c669f0c369a1dd03409bf0ba962977c",
+        "src/_pytest/fixtures.py": "99e8569ca5017e6354b96d7ce23d9fc870aeacaefcf43fbc5b87e262d19ae90c",
+        "src/_pytest/python.py": "f07e64276391d0fac5b70dd898ccbb2a1d219aaa1b5026d393d1d33c1e8b99ec",
+        "src/_pytest/raises.py": "2274af286f0f922af7cbec37fbc8a798acb82c6324f54e37d0e5a12ba944a789"
+      }
+    },
+    {
+      "case_id": "pytest-13902",
+      "split": "held-out",
+      "decision": "human_review",
+      "acceptable_missing": [],
+      "rationale": "Documentation styling and character-design request is outside bug clarification scope.",
+      "input_hash": "8f925635bbe7d3dd6125b74d6bec89fa21cb7112b6e9fc213b7aa9eee1a24703",
+      "context_hashes": {
+        "doc/en/how-to/subtests.rst": "e430f4d4935fe8f78820e52f61a3a50d106ebd02ad74e91ab752eda883e0a82a",
+        "pyproject.toml": "57a9e779300a70985e9938335729041c6fca6d11e28e6def89ff5585bea5c029",
+        "src/_pytest/fixtures.py": "398e50d830029e998df9cd5282f795f894448c4e0a5bc41db9ae2bfac2ea8fb1",
+        "src/_pytest/python.py": "271acfb266f160fcc8ff47c2afd1de996442b81da15102ded0b3372f5e1e6f38"
+      }
+    }
+  ]
+}

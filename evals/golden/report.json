@@ -1,0 +1,227 @@
+{
+  "rows": [
+    {
+      "case_id": "pytest-15052",
+      "split": "development",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-15051",
+      "split": "development",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13403",
+      "split": "development",
+      "expected": "human_review",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "versions",
+          "expected_actual"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13986",
+      "split": "development",
+      "expected": "human_review",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13716",
+      "split": "development",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-15005",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14775",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14533",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14456",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14329",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14324",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13849",
+      "split": "held-out",
+      "expected": "sufficient",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13634",
+      "split": "held-out",
+      "expected": "needs_information",
+      "baseline": {
+        "decision": "sufficient",
+        "missing": []
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-14389",
+      "split": "held-out",
+      "expected": "human_review",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "pytest-13902",
+      "split": "held-out",
+      "expected": "human_review",
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    }
+  ],
+  "metrics": {
+    "held_out_attempted": 0,
+    "held_out_total": 10,
+    "decision_matches": 0,
+    "decision_accuracy": null,
+    "unnecessary_comments": 0,
+    "no_action_attempted": 0,
+    "unnecessary_comment_rate": null,
+    "category_precision": null,
+    "category_recall": null,
+    "category_counts": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0
+    },
+    "abstentions": 0,
+    "baseline_matches": 5,
+    "human_relevance_redundancy": "pending student assessment",
+    "runtime_usage": "no inference run"
+  }
+}
