@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+.aws/
+.local/
+.tools/
+.venv/
+__pycache__/
+.coverage
+htmlcov/
+*.pyc
+*.log
+!.gitkeep
