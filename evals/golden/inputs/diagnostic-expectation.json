@@ -1,0 +1,9 @@
+{
+  "case_id": "diagnostic-expectation",
+  "synthetic": true,
+  "title": "Synthetic clarification diagnostic",
+  "body": "On pytest 8.3.4, this test passes: def test_total(): assert 1 + 1 == 2. This is broken.",
+  "context": {
+    "issue": "On pytest 8.3.4, this test passes: def test_total(): assert 1 + 1 == 2. This is broken."
+  }
+}

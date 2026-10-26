@@ -5,7 +5,7 @@ from pathlib import Path
 import re
 import sys
 
-from scripts.contract import digest, validate
+from scripts.contract import CATEGORIES, digest, validate
 
 
 def verify(submission=False):
@@ -30,9 +30,17 @@ def verify(submission=False):
     freeze = json.loads((root / 'freeze.json').read_text())
     if digest(expectations) != freeze['expectations_hash']:
         errors.append('Expectation freeze changed')
-    if len(expectations) != 15 or sum(x['split'] == 'held-out' for x in expectations) != 10:
+    if sum(not x.get('synthetic', False) for x in expectations) != 15 or sum(x['split'] == 'held-out' for x in expectations) != 10:
         errors.append('Incorrect real case split')
     for item in expectations:
+        decisions = item.get('acceptable_decisions', [item['decision']])
+        if item['decision'] not in decisions or not set(decisions) <= {'sufficient', 'needs_information', 'human_review'}:
+            errors.append('Invalid decision alternatives: ' + item['case_id'])
+        bundles = item.get('acceptable_missing_sets', [item['acceptable_missing']])
+        if not bundles or any(not set(bundle) <= CATEGORIES for bundle in bundles):
+            errors.append('Invalid category alternatives: ' + item['case_id'])
+        if set().union(*(set(bundle) for bundle in bundles)) != set(item['acceptable_missing']):
+            errors.append('Category union/bundles mismatch: ' + item['case_id'])
         case = json.loads((root / f"inputs/{item['case_id']}.json").read_text(encoding='utf-8'))
         if digest(case) != item['input_hash']:
             errors.append('Input hash changed: ' + item['case_id'])

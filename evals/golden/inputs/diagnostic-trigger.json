@@ -1,0 +1,9 @@
+{
+  "case_id": "diagnostic-trigger",
+  "synthetic": true,
+  "title": "Synthetic clarification diagnostic",
+  "body": "pytest 8.3.4 on Python 3.12 reports: fixture 'account' not found. I cannot work out why.",
+  "context": {
+    "issue": "pytest 8.3.4 on Python 3.12 reports: fixture 'account' not found. I cannot work out why."
+  }
+}

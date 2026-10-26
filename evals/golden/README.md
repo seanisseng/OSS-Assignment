@@ -6,9 +6,12 @@ via `audit/edit-provenance.json`. No later responses enter their context maps.
 the report creation cutoff; `provenance.json` identifies the revision and URL.
 The subset is data for inspection, not code to execute.
 
-`expectations.json` was authored with AI assistance before model execution.
-There are five development cases, ten held-out cases (nine no-action), and four
-synthetic injection cases in `adversarial/`. Student review has been requested.
+`expectations.json` was authored with AI assistance before model execution and
+revised after user-supplied AI critique; see `REVIEW-REVISION.md`. There are five
+real development and ten real held-out cases (nine no-action), plus two synthetic
+development diagnostics, one supplemental synthetic held-out diagnostic and four
+synthetic injection cases in `adversarial/`. Operator signoff remains pending;
+the AI critique is not independent human ground truth.
 `freeze.json` records expectation hash and pending approval/execution status.
 Do not change frozen expectations after looking at held-out model outputs.
 
@@ -46,6 +49,9 @@ Currently these folders contain only status README files. No model transcript
 or actual output has been invented. The dashboard and report show “not run”.
 The baseline is intentionally a simple presence checklist (fenced code,
 pytest version/commit and behaviour keywords); it is not the proposed agent.
+Primary and alternative-accepted decision matches are reported separately.
+Category precision/recall use the best-F1 predeclared acceptable bundle, with
+chosen references saved per case; synthetic diagnostics are counted separately.
 Precision/recall are micro-averaged over missing categories; zero denominators
 are null. Validation failures count as incorrect attempted decisions, and absent
 runs are reported separately. Semantic assessments require human judgement.

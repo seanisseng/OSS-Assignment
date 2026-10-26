@@ -4,6 +4,10 @@
       "case_id": "pytest-15052",
       "split": "development",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -18,6 +22,10 @@
       "case_id": "pytest-15051",
       "split": "development",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -32,6 +40,10 @@
       "case_id": "pytest-13403",
       "split": "development",
       "expected": "human_review",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "human_review"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -47,7 +59,12 @@
     {
       "case_id": "pytest-13986",
       "split": "development",
-      "expected": "human_review",
+      "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient",
+        "human_review"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -63,6 +80,10 @@
       "case_id": "pytest-13716",
       "split": "development",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -78,6 +99,10 @@
       "case_id": "pytest-15005",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -90,6 +115,10 @@
       "case_id": "pytest-14775",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -102,6 +131,10 @@
       "case_id": "pytest-14533",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -114,6 +147,10 @@
       "case_id": "pytest-14456",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -128,6 +165,10 @@
       "case_id": "pytest-14329",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -140,6 +181,10 @@
       "case_id": "pytest-14324",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -152,6 +197,10 @@
       "case_id": "pytest-13849",
       "split": "held-out",
       "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -167,6 +216,10 @@
       "case_id": "pytest-13634",
       "split": "held-out",
       "expected": "needs_information",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "needs_information"
+      ],
       "baseline": {
         "decision": "sufficient",
         "missing": []
@@ -178,7 +231,11 @@
     {
       "case_id": "pytest-14389",
       "split": "held-out",
-      "expected": "human_review",
+      "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
@@ -192,11 +249,73 @@
     {
       "case_id": "pytest-13902",
       "split": "held-out",
-      "expected": "human_review",
+      "expected": "sufficient",
+      "synthetic": false,
+      "acceptable_decisions": [
+        "sufficient",
+        "human_review"
+      ],
       "baseline": {
         "decision": "needs_information",
         "missing": [
           "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "diagnostic-crash",
+      "split": "development",
+      "expected": "needs_information",
+      "synthetic": true,
+      "acceptable_decisions": [
+        "needs_information"
+      ],
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "versions"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "diagnostic-trigger",
+      "split": "development",
+      "expected": "needs_information",
+      "synthetic": true,
+      "acceptable_decisions": [
+        "needs_information"
+      ],
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "expected_actual"
+        ]
+      },
+      "actual": null,
+      "validation": "not run",
+      "disagreement": null
+    },
+    {
+      "case_id": "diagnostic-expectation",
+      "split": "synthetic-held-out",
+      "expected": "needs_information",
+      "synthetic": true,
+      "acceptable_decisions": [
+        "needs_information"
+      ],
+      "baseline": {
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "expected_actual"
         ]
       },
       "actual": null,
@@ -207,6 +326,7 @@
   "metrics": {
     "held_out_attempted": 0,
     "held_out_total": 10,
+    "primary_decision_matches": 0,
     "decision_matches": 0,
     "decision_accuracy": null,
     "unnecessary_comments": 0,
@@ -220,8 +340,12 @@
       "fn": 0
     },
     "abstentions": 0,
+    "baseline_primary_matches": 5,
     "baseline_matches": 5,
-    "human_relevance_redundancy": "pending student assessment",
+    "synthetic_diagnostic_total": 3,
+    "synthetic_diagnostic_attempted": 0,
+    "synthetic_diagnostic_matches": 0,
+    "human_relevance_redundancy": "pending operator assessment",
     "runtime_usage": "no inference run"
   }
 }

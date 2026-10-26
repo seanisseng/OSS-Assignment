@@ -1,0 +1,9 @@
+{
+  "case_id": "diagnostic-crash",
+  "synthetic": true,
+  "title": "Synthetic clarification diagnostic",
+  "body": "pytest crashes when I run my tests.",
+  "context": {
+    "issue": "pytest crashes when I run my tests."
+  }
+}

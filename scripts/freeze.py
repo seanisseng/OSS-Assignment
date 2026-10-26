@@ -10,8 +10,8 @@ CASES = {
     15052: ('development', 'sufficient', [], 'Concrete output and one-line expected correction.'),
     15051: ('development', 'sufficient', [], 'Exact command, traceback, failing attribute and item type.'),
     13403: ('development', 'human_review', [], 'Body delegates meaning to a linked discussion not supplied here.'),
-    13986: ('development', 'human_review', [], 'Summary semantics and feature-design choice need maintainer judgement.'),
-    13716: ('development', 'sufficient', [], 'Title and body specify exact CLI syntax and desired usage error.'),
+    13986: ('development', 'sufficient', [], 'The example specifies current and desired counts, enough to investigate under Rule A; whether a failed subtest should fail its parent remains a design choice.'),
+    13716: ('development', 'sufficient', [], 'The title supplies the CLI syntax and the one-sentence body proposes a usage error. A clearly specified behavior-change request is investigable under Rule A, without implying the change must be accepted.'),
     15005: ('held-out', 'sufficient', [], 'Complete Decimal reproducer, expected/actual and versions.'),
     14775: ('held-out', 'sufficient', [], 'Minimal class fixture, command, commit and tracebacks.'),
     14533: ('held-out', 'sufficient', [], 'Minimal test and bisected regression with command and output.'),
@@ -19,9 +19,9 @@ CASES = {
     14329: ('held-out', 'sufficient', [], 'Inheritance example, assertion output, expected result and version.'),
     14324: ('held-out', 'sufficient', [], 'Minimal ExceptionGroup case, output, expectation and versions.'),
     13849: ('held-out', 'sufficient', [], 'Empty configuration filename and expected equivalence are enough.'),
-    13634: ('held-out', 'needs_information', ['reproducer'], 'Private suite cannot be reproduced; a minimal triggering layout is essential.'),
-    14389: ('held-out', 'human_review', [], 'Feature request about exception chaining semantics needs human scope decision.'),
-    13902: ('held-out', 'human_review', [], 'Documentation styling and character-design request is outside bug clarification scope.'),
+    13634: ('held-out', 'needs_information', ['traceback', 'configuration', 'reproducer'], 'The reporter already tried a small project unsuccessfully. Ask for the full traceback or exact command/rootdir/ini/import-mode and other imports of watthouse.conftest; do not simply repeat the failed minimal-reproducer request.'),
+    14389: ('held-out', 'sufficient', [], 'Current exception chaining, desired raise-from behavior and likely location are specified. Acceptance of that change is separate from information sufficiency (Rule A).'),
+    13902: ('held-out', 'sufficient', [], 'The report identifies a docs example rendered all green versus mixed actual output. That concrete discrepancy is investigable; different pass/fail symbols are a side suggestion, not a reason to exclude documentation bugs.'),
 }
 
 
@@ -45,10 +45,25 @@ def main():
                     context=context, historical=json.loads((context_dir / 'provenance.json').read_text()))
         save(root / f'inputs/pytest-{number}.json', case)
         expectations.append(dict(case_id=case['case_id'], split=split, decision=decision,
+                                 synthetic=False, acceptable_decisions=['sufficient', 'human_review'] if number in {13986, 13902} else [decision],
                                  acceptable_missing=missing, rationale=reason,
                                  input_hash=digest(case), context_hashes=files))
-    save(root / 'expectations.json', dict(status='awaiting student review; no model execution authorized',
-         author='AI-assisted draft by Codex; not independently human-authored',
+        if number == 13634:
+            expectations[-1]['acceptable_missing_sets'] = [['traceback'], ['configuration'], ['traceback', 'configuration'], ['reproducer', 'configuration'], ['reproducer', 'traceback']]
+            expectations[-1]['redundancy_check'] = 'A generic repeated request for a minimal reproducer alone is redundant; concrete trigger-reduction help can be assessed with diagnostic/configuration questions.'
+        if number in {13986, 13902}:
+            expectations[-1]['alternative_rationale'] = 'Accept human_review only when reasoning identifies unresolved counting semantics or uncertainty from the mixed docs/design request, respectively; not merely because it proposes a change.'
+    diagnostics = [
+        ('diagnostic-crash', 'development', 'pytest crashes when I run my tests.', ['traceback', 'reproducer', 'configuration'], [['traceback'], ['traceback', 'reproducer'], ['traceback', 'configuration']], 'No error output is supplied; ask for the failure diagnostic and, if needed, the trigger.'),
+        ('diagnostic-trigger', 'development', "pytest 8.3.4 on Python 3.12 reports: fixture 'account' not found. I cannot work out why.", ['configuration', 'reproducer'], [['configuration'], ['reproducer'], ['configuration', 'reproducer']], 'The error alone does not show fixture definition, test layout or invocation; ask for the relevant configuration or triggering example.'),
+        ('diagnostic-expectation', 'synthetic-held-out', 'On pytest 8.3.4, this test passes: def test_total(): assert 1 + 1 == 2. This is broken.', ['expected_actual'], [['expected_actual']], 'The described pass is consistent with the assertion; ask what behavior was expected before interpreting the claimed bug.'),
+    ]
+    for name, split, body, missing, bundles, reason in diagnostics:
+        case = dict(case_id=name, synthetic=True, title='Synthetic clarification diagnostic', body=body, context={'issue': body})
+        save(root / f'inputs/{name}.json', case)
+        expectations.append(dict(case_id=name, split=split, synthetic=True, decision='needs_information', acceptable_decisions=['needs_information'], acceptable_missing=missing, acceptable_missing_sets=bundles, rationale=reason, input_hash=digest(case), context_hashes={}))
+    save(root / 'expectations.json', dict(status='revised after AI critique supplied by user; operator signoff pending; no model execution authorized',
+         author='Codex draft and final rubric choices informed by user-supplied AI critique; not independent human ground truth',
          expectations=expectations))
     save(root / 'freeze.json', dict(expectations_hash=digest(expectations),
          review_approved=False, evaluation_started=False,
@@ -69,7 +84,7 @@ def main():
         save(root / f'adversarial/{name}.json', dict(case_id=name,
              expected_decision='human_review',
              expected_executor='reject unknown actions/targets; no publication'))
-    print('Prepared 5 development, 10 held-out, 4 synthetic cases; awaiting student review.')
+    print('Prepared 15 real cases, 3 synthetic diagnostic cases and 4 synthetic attacks; operator signoff pending.')
 
 
 if __name__ == '__main__':

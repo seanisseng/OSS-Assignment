@@ -16,3 +16,10 @@ verified entitlement; run the exact approved configuration; preserve all results
 and rehearse the remote stop procedure. The request is not fully complete.
 Would the user agree? Likely only if the missing remote evidence is stated
 plainly and no local test is presented as an end-to-end demonstration.
+
+Rubric-revision follow-up: the supplied AI critique was applied using Rule A,
+with explicit alternatives and diagnostic category bundles. Revised verification
+passes 23 tests at 96% coverage of the tested safety/evaluation modules. The
+remaining completeness gap is unchanged: only one real insufficient report and
+no remote inference/publication evidence. Synthetic additions are labelled and
+cannot substitute for historical recall evidence or independent human review.

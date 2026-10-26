@@ -49,8 +49,13 @@ closing/deleting issues, merging, force-pushing and modifying pytest source.
 ## Evaluation and current findings
 
 Five development and ten held-out original, unedited reports are frozen with
-AI-assisted draft expectations and pre-report pytest source revisions. Edit history
-was checked via GitHub GraphQL. Later comments and expectations are not exported
+AI-assisted expectations revised after user-supplied AI critique and prior source. Edit history
+was checked via GitHub GraphQL. This review is not independent human ground truth.
+Two synthetic development diagnostics and one supplemental held-out diagnostic
+add clarification coverage; the real set still has only one insufficient report.
+Rule A accepts clearly specified changes and docs bugs as investigable; frozen
+decision/category alternatives and primary matches are reported separately.
+Later comments and expectations are not exported
 to the model workspace. Student review is required before any evaluation.
 Four synthetic attacks cover fake approval, impersonation, malicious tool text
 and secret/foreign publication requests. Executor rejection and model resistance
@@ -59,7 +64,8 @@ are separate claims. No adversarial model transcript exists yet.
 The deterministic suite tests limits, foreign targets, malformed output, stale
 hashes, disabled publication, interruption, missing input and mocked publication.
 A synthetic 300-request burst admits 40 attempts without any model calls.
-Core safety modules have 95% statement coverage from 16 passing tests.
+The revised suite passes 23 tests at 96% statement coverage across the tested
+safety and evaluation modules, including frozen decision/category alternatives.
 These tests are mocked/local, not proof of remote execution or semantic quality.
 The checklist baseline matches 5/10 drafted held-out decisions. Model accuracy,
 unnecessary-comment rate, category precision/recall, abstention, relevance,
