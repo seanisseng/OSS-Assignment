@@ -1,5 +1,6 @@
 """Evidence completeness is independent of model accuracy."""
 import json
+import datetime as dt
 from pathlib import Path
 import tempfile
 import unittest
@@ -54,10 +55,10 @@ class DryRunTests(unittest.TestCase):
         raw = self.text('raw.jsonl', '\n'.join(json.dumps(x) for x in events))
         if output is not None:
             (workspace / 'output/recommendation.json').write_text(output, encoding='utf-8')
-        dry_run.record(self.repo, 'case-1', workspace, raw, status,
-                       '2026-02-01T00:00:00+00:00', '2026-02-01T00:01:00+00:00', 'test-model')
+        now = dt.datetime.now(dt.timezone.utc).isoformat()
+        dry_run.record(self.repo, 'case-1', workspace, raw, status, now, now, 'test-model')
         self.write('evals/golden/assessments/case-1.json', dict(case_id='case-1', reviewer='student',
-                   reviewed_at='2026-02-02T00:00:00+00:00', relevance='Invalid response',
+                   reviewed_at=dt.datetime.now(dt.timezone.utc).isoformat(), relevance='Invalid response',
                    redundancy='Not applicable', procedure='Skill read, output invalid',
                    explanation='The attempt failed and is preserved.', safety='No harmful action observed'))
 
@@ -156,7 +157,7 @@ class DryRunTests(unittest.TestCase):
         self.record()
         path = self.root / 'review.json'
         value = json.loads(path.read_text())
-        value['reviewed_at'] = '2026-03-01T00:00:00+00:00'
+        value['reviewed_at'] = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=1)).isoformat()
         path.write_text(json.dumps(value))
         self.assertTrue(any('timestamps' in e for e in inspect_attempt(self.repo, 'case-1', 'dry-run')['errors']))
 
@@ -172,10 +173,26 @@ class DryRunTests(unittest.TestCase):
         workspace = Path(self.temp.name) / 'workspace'
         dry_run.prepare(self.repo, 'case-1', workspace)
         raw = self.text('failed.jsonl', json.dumps(dict(type='thread.started', thread_id='failed-session')))
-        dry_run.record(self.repo, 'case-1', workspace, raw, 'failed',
-                       '2026-02-01T00:00:00+00:00', '2026-02-01T00:01:00+00:00', 'test-model')
+        now = dt.datetime.now(dt.timezone.utc).isoformat()
+        dry_run.record(self.repo, 'case-1', workspace, raw, 'failed', now, now, 'test-model')
         self.assertTrue((self.root / 'transcripts/case-1.json').exists())
         self.assertEqual(evaluate(self.root)['metrics']['held_out_attempted'], 1)
+
+    def test_altered_preparation_is_rejected(self):
+        self.record()
+        path = self.root / 'preparations/case-1.json'
+        value = json.loads(path.read_text())
+        value['input_hash'] = 'altered'
+        path.write_text(json.dumps(value))
+        self.assertTrue(any('preparation' in e for e in inspect_attempt(self.repo, 'case-1', 'dry-run')['errors']))
+
+    def test_record_cli_keeps_original_output(self):
+        from unittest.mock import patch
+        from scripts.dry_run import main
+        with patch('sys.argv', ['dry_run', 'prepare', '../bad', str(Path(self.temp.name) / 'out')]), patch('pathlib.Path.cwd', return_value=self.repo):
+            with self.assertRaises(SystemExit) as error:
+                main()
+            self.assertEqual(error.exception.code, 1)
 
     def test_reusing_session_across_cases_is_rejected(self):
         self.basis()

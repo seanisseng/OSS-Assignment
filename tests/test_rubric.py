@@ -39,7 +39,9 @@ class RubricTests(unittest.TestCase):
         self.assertEqual(result['best'], dict(tp=2, fp=0, fn=0))
         self.assertEqual(result['primary'], dict(tp=1, fp=1, fn=1))
         self.assertTrue(result['bundle_match'])
-        self.assertFalse(category_scores(item, specific | dict(missing=['reproduction_detail']))['bundle_match'])
+        alone = category_scores(item, specific | dict(missing=['reproduction_detail']))
+        self.assertFalse(alone['bundle_match'])
+        self.assertEqual(alone['best']['fp'], 1)
         outside = category_scores(item, specific | dict(missing=['traceback', 'versions']))
         self.assertEqual(outside['best']['fp'], 1)
 
