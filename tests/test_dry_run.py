@@ -6,7 +6,7 @@ import unittest
 
 from scripts import dry_run
 from scripts.contract import digest
-from scripts.evidence import configuration_hash, file_hash, inspect_attempt, review_record
+from scripts.evidence import configuration_hash, file_hash, inspect_attempt, review_record, submission_evidence
 from scripts.evaluate import evaluate
 
 
@@ -69,7 +69,7 @@ class DryRunTests(unittest.TestCase):
                                 '.github/skills/bug-report-clarification/SKILL.md', 'prompt.md'})
         with self.assertRaises(ValueError):
             dry_run.prepare(self.repo, '../escape', workspace)
-        with self.assertRaises(FileExistsError):
+        with self.assertRaises(ValueError):
             dry_run.prepare(self.repo, 'case-1', workspace)
 
     def test_review_is_required_and_configuration_bound(self):
@@ -125,6 +125,68 @@ class DryRunTests(unittest.TestCase):
         self.assertEqual(result['metrics']['adversarial_matches'], 1)
         self.assertEqual(result['metrics']['held_out_attempted'], 0)
         self.assertEqual(len(result['adversarial']), 1)
+
+    def basis(self):
+        proof = self.text('evals/evidence/blocker.txt', 'Test fixture: hosted execution unavailable.')
+        self.write('config/policy.json', dict(enabled=False, budget_verified=False))
+        self.review()
+        self.write('evals/evidence/execution.json', dict(mode='dry-run', end_to_end_status='blocked',
+                   reason='Test fixture blocker', untested_controls=['GitHub identity'],
+                   blocking_evidence=[dict(path='evals/evidence/blocker.txt', sha256=file_hash(proof))]))
+
+    def test_complete_dry_run_can_include_a_failed_model(self):
+        self.basis()
+        self.record()
+        self.assertEqual(submission_evidence(self.repo, 'dry-run'), [])
+        self.assertTrue(submission_evidence(self.repo, 'remote'))
+
+    def test_pending_or_tampered_blocker_is_not_submission_evidence(self):
+        self.basis()
+        self.record()
+        proof = self.repo / 'evals/evidence/blocker.txt'
+        proof.write_text('Changed')
+        self.assertTrue(any('blocker' in e for e in submission_evidence(self.repo, 'dry-run')))
+        execution = self.repo / 'evals/evidence/execution.json'
+        value = json.loads(execution.read_text())
+        value['end_to_end_status'] = 'pending'
+        execution.write_text(json.dumps(value))
+        self.assertTrue(any('actual end-to-end blocker' in e for e in submission_evidence(self.repo, 'dry-run')))
+
+    def test_hash_only_review_cannot_approve_after_inference(self):
+        self.record()
+        path = self.root / 'review.json'
+        value = json.loads(path.read_text())
+        value['reviewed_at'] = '2026-03-01T00:00:00+00:00'
+        path.write_text(json.dumps(value))
+        self.assertTrue(any('timestamps' in e for e in inspect_attempt(self.repo, 'case-1', 'dry-run')['errors']))
+
+    def test_false_model_success_and_altered_exports_are_rejected(self):
+        self.record()
+        path = self.root / 'transcripts/case-1.json'
+        value = json.loads(path.read_text())
+        value['skill_sha256'] = 'forged'
+        path.write_text(json.dumps(value))
+        self.assertTrue(any('skill hash' in e for e in inspect_attempt(self.repo, 'case-1', 'dry-run')['errors']))
+
+    def test_missing_skill_read_failure_is_preserved_for_review(self):
+        workspace = Path(self.temp.name) / 'workspace'
+        dry_run.prepare(self.repo, 'case-1', workspace)
+        raw = self.text('failed.jsonl', json.dumps(dict(type='thread.started', thread_id='failed-session')))
+        dry_run.record(self.repo, 'case-1', workspace, raw, 'failed',
+                       '2026-02-01T00:00:00+00:00', '2026-02-01T00:01:00+00:00', 'test-model')
+        self.assertTrue((self.root / 'transcripts/case-1.json').exists())
+        self.assertEqual(evaluate(self.root)['metrics']['held_out_attempted'], 1)
+
+    def test_reusing_session_across_cases_is_rejected(self):
+        self.basis()
+        self.record()
+        self.items()
+        # Duplicate record deliberately retains the first case ID: even changing filenames
+        # cannot turn one transcript into independent inference evidence.
+        first = json.loads((self.root / 'transcripts/case-1.json').read_text())
+        self.write('evals/golden/transcripts/case-2.json', first)
+        self.write('evals/golden/inputs/case-2.json', self.case | dict(case_id='case-2'))
+        self.assertTrue(any('case/mode' in e for e in inspect_attempt(self.repo, 'case-2', 'dry-run')['errors']))
 
 
 if __name__ == '__main__':
