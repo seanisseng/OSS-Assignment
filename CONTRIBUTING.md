@@ -20,3 +20,8 @@ Do not insert credentials into files or use a personal token for publication.
 
 See `evals/golden/README.md` for the review and execution gates, and
 `docs/OPERATIONS.md` for budget, stop and recovery instructions.
+
+Dry-run evaluation follows `docs/DRY-RUN.md`. Never fabricate a human approval,
+assessment, transcript or end-to-end blocker. A complete failed model run is valid
+experiment evidence; changing its output to pass validation is not. Conditional
+review is not final approval. Keep live operation disabled for the dry-run route.

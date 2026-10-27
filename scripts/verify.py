@@ -1,14 +1,15 @@
 """Offline repository/evidence checks, with a separate strict submission gate."""
 import ast
+import argparse
 import json
 from pathlib import Path
 import re
-import sys
 
-from scripts.contract import CATEGORIES, digest, validate
+from scripts.contract import CATEGORIES, digest
+from scripts.evidence import submission_evidence
 
 
-def verify(submission=False):
+def verify(submission=False, mode='remote'):
     errors = []
     required = ['AGENTS.md', 'CONTRIBUTING.md', 'DESIGN.md',
                 '.claude/skills/bug-report-clarification/SKILL.md',
@@ -32,6 +33,8 @@ def verify(submission=False):
         errors.append('Expectation freeze changed')
     if sum(not x.get('synthetic', False) for x in expectations) != 15 or sum(x['split'] == 'held-out' for x in expectations) != 10:
         errors.append('Incorrect real case split')
+    if sum(x.get('synthetic', False) for x in expectations) != 3 or len(list((root / 'adversarial').glob('*.json'))) != 4:
+        errors.append('Incorrect diagnostic/adversarial case count')
     for item in expectations:
         decisions = item.get('acceptable_decisions', [item['decision']])
         if item['decision'] not in decisions or not set(decisions) <= {'sufficient', 'needs_information', 'human_review'}:
@@ -41,6 +44,15 @@ def verify(submission=False):
             errors.append('Invalid category alternatives: ' + item['case_id'])
         if set().union(*(set(bundle) for bundle in bundles)) != set(item['acceptable_missing']):
             errors.append('Category union/bundles mismatch: ' + item['case_id'])
+        primary = item.get('primary_missing')
+        if primary is not None and set(primary) not in [set(bundle) for bundle in bundles]:
+            errors.append('Primary category bundle is not allowed: ' + item['case_id'])
+        for checks in [*item.get('alternative_checks', {}).values(), *item.get('category_checks', {}).values()]:
+            for check in checks:
+                if not check.get('name') or not check.get('patterns'):
+                    errors.append('Empty mechanical checklist: ' + item['case_id'])
+                for pattern in check.get('patterns', []):
+                    re.compile(pattern, re.I | re.S)
         case = json.loads((root / f"inputs/{item['case_id']}.json").read_text(encoding='utf-8'))
         if digest(case) != item['input_hash']:
             errors.append('Input hash changed: ' + item['case_id'])
@@ -56,27 +68,15 @@ def verify(submission=False):
         if secret.search(path.read_text(encoding='utf-8')):
             errors.append('Possible secret: ' + str(path))
     if submission:
-        if not freeze['review_approved']:
-            errors.append('Student expectation review not recorded')
-        case_ids = [x['case_id'] for x in expectations] + [p.stem for p in (root / 'adversarial').glob('*.json')]
-        for case_id in case_ids:
-            actual = root / f'actual/{case_id}.json'
-            transcript = root / f'transcripts/{case_id}.json'
-            if not actual.exists() or not transcript.exists():
-                errors.append('Missing actual output/transcript: ' + case_id)
-                continue
-            case = json.loads((root / f'inputs/{case_id}.json').read_text(encoding='utf-8'))
-            try:
-                validate(case, json.loads(actual.read_text(encoding='utf-8')))
-            except ValueError:
-                errors.append('Invalid actual result: ' + case_id)
-        for name in ['remote-smoke.json', 'skill-loading.json', 'publication.json', 'phone-stop.json']:
-            if not Path('evals/evidence', name).exists():
-                errors.append('Required remote evidence absent: ' + name)
+        errors.extend(submission_evidence(Path.cwd(), mode))
     return errors
 
 
 if __name__ == '__main__':
-    errors = verify('--submission' in sys.argv)
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--submission', action='store_true')
+    parser.add_argument('--mode', choices=['dry-run', 'remote'], default='remote')
+    args = parser.parse_args()
+    errors = verify(args.submission, args.mode)
     print('\n'.join(errors) if errors else 'Local repository verification passed.')
     raise SystemExit(bool(errors))

@@ -2,7 +2,7 @@
 import hashlib
 import json
 
-CATEGORIES = {'reproducer', 'expected_actual', 'versions', 'traceback', 'configuration'}
+CATEGORIES = {'reproducer', 'reproduction_detail', 'expected_actual', 'versions', 'traceback', 'configuration'}
 FIELDS = {'case_id', 'input_hash', 'decision', 'missing', 'evidence', 'reasoning',
           'questions', 'comment'}
 REPOSITORY = 'seanisseng/OSS-Assignment'

@@ -3,6 +3,11 @@
 Current state: local implementation only. No inference or publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
+For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation
+steps below. Student review is conditions open, not approval. Both live policy
+flags remain false. A dry run does not require a bot comment or phone rehearsal;
+it must document those controls as remotely untested and explain a real blocker.
+
 1. Review `evals/golden/audit/RUBRIC.md` and `expectations.json`. Record the
    student's approval and the expectation hash in `review.json` before inference.
 2. Obtain explicit approval for the exact local commit to push. The supplied

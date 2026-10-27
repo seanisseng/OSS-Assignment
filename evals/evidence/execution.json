@@ -1,0 +1,21 @@
+{
+  "mode": "dry-run",
+  "end_to_end_status": "pending",
+  "reason": "Dry-run route selected. Copilot entitlement and hosted execution access have not been established; this is not yet evidence that end-to-end execution is impossible.",
+  "blocking_evidence": [],
+  "untested_controls": [
+    "Hosted model entitlement and reported identity",
+    "GitHub Actions bot identity and token permissions",
+    "Protected environment approval",
+    "Hosted firewall and safeoutputs MCP enforcement",
+    "Remote artifact staging and retention",
+    "Live publication, duplicate handling and variable reads",
+    "Phone-only cancellation of active and queued workflows"
+  ],
+  "local_observations": {
+    "codex_cli_version": "0.164.0",
+    "codex_login_status": "Logged in using ChatGPT",
+    "gh_cli_in_current_shell": "Not found by Get-Command",
+    "inference_performed": false
+  }
+}

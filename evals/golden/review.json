@@ -1,0 +1,40 @@
+{
+  "approved": false,
+  "status": "AI-assisted pre-inference review, conditions open",
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-27T10:08:35.859002+00:00",
+  "expectations_hash": "b3db5402e0bf2d27baa02c4b1fc95029de79f8ae6c9dfea01dfd2b04bf291209",
+  "configuration_hash": "743deaaede56c5584e99d4304eb03c06cf503a13c6095112c4722861d473de0c",
+  "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+  "rule_a": "Conditionally accepted by user",
+  "conditionally_accepted_cases": [
+    "pytest-14389",
+    "pytest-13716",
+    "pytest-13986",
+    "pytest-13403"
+  ],
+  "conditions_implemented_for_inspection": [
+    "pytest-13902",
+    "pytest-13634"
+  ],
+  "pending_cases": [
+    "pytest-15052",
+    "pytest-15051",
+    "pytest-15005",
+    "pytest-14775",
+    "pytest-14533",
+    "pytest-14456",
+    "pytest-14329",
+    "pytest-14324",
+    "pytest-13849",
+    "diagnostic-crash",
+    "diagnostic-trigger",
+    "diagnostic-expectation"
+  ],
+  "pending_items": [
+    "Student inspection of implemented conditions",
+    "Review of all four adversarial expectations",
+    "Explicit complete signoff before inference"
+  ],
+  "source": "User requested this status explicitly and supplied scoring changes; no inference approval given"
+}

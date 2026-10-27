@@ -86,7 +86,8 @@ class ScoringTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 main()
             report = json.loads((root / 'report.json').read_text())
-            self.assertIsNone(report['metrics']['decision_accuracy'])
+            self.assertEqual(report['metrics']['real_not_run'], 2)
+            self.assertIsNone(report['metrics']['per_class']['needs_information']['recall'])
             review = (root / 'review.html').read_text(encoding='utf-8')
             self.assertIn('&lt;script&gt;', review)
             self.assertNotIn('<script>', review)

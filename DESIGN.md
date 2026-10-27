@@ -1,138 +1,143 @@
 # Pytest bug-report clarification agent
 
-## Purpose and measured need
+## Purpose and evidence of need
 
-The agent decides whether a maintainer can investigate a pytest report, requests
-only essential gaps, stays silent on sufficient reports and defers uncertainty.
-This sandbox is seanisseng/OSS-Assignment; upstream pytest is never modified.
-Contextual judgement can avoid demanding OS/package lists for obvious source bugs.
-A conventional field-presence checklist is retained as a reproducible baseline.
+The agent decides whether a pytest report is investigable, requests only essential
+missing details, stays silent on sufficient reports and defers uncertainty.
+Contextual judgement can distinguish a clear source defect from an incomplete
+report; a field-presence checklist cannot reliably make that distinction.
+The sandbox is seanisseng/OSS-Assignment. Upstream pytest is never modified.
 
-The sample is the latest 50 currently bug-labelled reports created before
-1 October 2026, spanning 8 October 2024–17 September 2026. At collection,
-41 had another non-bot account's response; nine remain unresolved. Median first
-response among the 41 responders was 45.52 hours. Raw data and query are in
-`evals/golden/audit/`; the metric does not measure effort or prove time savings.
-Draft AI-assisted clarification coding finds 3/50 reports; student audit is pending.
-Only matching comment excerpts were reviewed, so this is not exhaustive coding.
-Label changes, edited comments/reports, imperfect bot detection, pagination and
-volunteer schedules limit inference. The evidence supports an experiment, not
-unattended deployment. See `audit/RUBRIC.md` for definitions and evidence IDs.
+The audit samples the latest 50 currently bug-labelled reports created before
+1 October 2026, spanning 8 October 2024 to 17 September 2026. At collection,
+41 had another detected non-bot account's response; nine had no observed response.
+Median first response among responders was 45.52 hours. Raw queries and records
+are in evals/golden/audit/. This measures elapsed response time, not maintainer
+effort, response usefulness or demonstrated time savings. Current labels, edits,
+pagination, bot detection and volunteer schedules limit interpretation.
+The draft clarification count is not used as a conclusion pending a full audit.
+The evidence justifies an experiment, not unattended deployment.
 
-## Implementation and alternatives
+## Implementation and boundaries
 
-Manual analysis uses Copilot via GitHub Agentic Workflows. Trusted setup exports
-only approved input, instructions and skill, removing its checkout before inference.
-The canonical Claude-format procedure is installed in Copilot's `.github/skills/`.
-Setup hashes and explicit skill-read tool events must corroborate actual loading;
-this remains remotely untested. A self-reported flag is insufficient.
-The three decisions are sufficient, needs_information and human_review.
-`scripts/contract.py` enforces exact fields, input hash, evidence keys, categories,
-at most three questions and 1,200 comment characters. Only needs_information
-can carry a comment. Missing details must matter to that particular report.
+The manual GitHub Agentic Workflow uses Copilot. Trusted setup exports approved
+input, AGENTS.md and the canonical Claude-format skill, then removes its checkout.
+The model reads untrusted issue text, historical source and simulated tool results.
+Expectations and later comments are excluded. No reporter code is executed.
+Network allowed is empty; GitHub tools are disabled. Hosted enforcement is untested.
 
-Staged safe outputs and a raw JSON artifact allow review without issue changes.
-The separate publisher validates the successful same-commit analysis, trusted
-pre-agent manifest, exact approved recommendation hash, maintainer role, allowlist,
-sandbox label, age, duplicates, daily limit and kill switch before one bot POST.
-No model-controlled repository, issue target or executable command is accepted.
-Automatic failure-issue creation was found during lock-file inspection and disabled.
-Analysis now has no repository write permissions or GitHub MCP read toolset.
-Source: [safe outputs](https://github.github.io/gh-aw/reference/safe-outputs/).
+The closed JSON contract permits sufficient, needs_information or human_review,
+evidence keys, reasoning, approved missing-detail categories and up to three
+questions. Only needs_information carries a comment, limited to 1,200 characters.
+reproduction_detail names a specific missing import, fixture, layout or invocation;
+a generic minimal-reproducer request does not qualify. See the canonical skill.
 
-Rejected: template completeness as the sole judge; it asks irrelevant questions
-and cannot reliably recognize a clear source-level report without a reproducer.
-Rejected: direct issue-triggered publication; it creates cost and spam risks.
-Prevented: code execution from reporters, arbitrary browsing, upstream publication,
-closing/deleting issues, merging, force-pushing and modifying pytest source.
+Analysis stages an artifact and has no repository write scope. A separate trusted
+publisher checks exact approval hash, maintainer role, successful same-commit run,
+trusted target mapping, allowlist, sandbox label, age, duplicates and limits.
+Only that executor can POST one reviewed sandbox comment; model fields cannot
+choose a destination or command. Bot attribution/disclosure is implemented locally.
+The rendered comment also includes disclosure within the publisher's size limit.
 
-## Evaluation and current findings
+Rejected: template completeness as sole judge, because it asks irrelevant questions.
+Rejected: direct issue-triggered publication, because of spam and spending risks.
+Prevented for the model: closing/deleting issues, merging, force-pushing, arbitrary
+browsing, upstream publication and pytest changes. Publisher issues:write is broad
+at the GitHub scope level, so the model is kept separate from its token and code.
 
-Five development and ten held-out original, unedited reports are frozen with
-AI-assisted expectations revised after user-supplied AI critique and prior source. Edit history
-was checked via GitHub GraphQL. This review is not independent human ground truth.
-Two synthetic development diagnostics and one supplemental held-out diagnostic
-add clarification coverage; the real set still has only one insufficient report.
-Rule A accepts clearly specified changes and docs bugs as investigable; frozen
-decision/category alternatives and primary matches are reported separately.
-Later comments and expectations are not exported
-to the model workspace. Student review is required before any evaluation.
-Four synthetic attacks cover fake approval, impersonation, malicious tool text
-and secret/foreign publication requests. Executor rejection and model resistance
-are separate claims. No adversarial model transcript exists yet.
+## Evaluation and findings
 
-The deterministic suite tests limits, foreign targets, malformed output, stale
-hashes, disabled publication, interruption, missing input and mocked publication.
-A synthetic 300-request burst admits 40 attempts without any model calls.
-The revised suite passes 23 tests at 96% statement coverage across the tested
-safety and evaluation modules, including frozen decision/category alternatives.
-These tests are mocked/local, not proof of remote execution or semantic quality.
-The checklist baseline matches 5/10 drafted held-out decisions. Model accuracy,
-unnecessary-comment rate, category precision/recall, abstention, relevance,
-runtime and usage remain unmeasured. `dashboard.html` shows absent runs honestly.
-Target: eight held-out matches, never guaranteed; preserve every failure.
+Fifteen original unedited historical inputs retain pre-report source and license:
+five development and ten held-out. Three synthetic diagnostics and four attacks
+are separate, making 22 inputs. Edit provenance and expectation hashes are saved.
+Student status is AI-assisted pre-inference review, conditions open, not approval.
+The nine unchanged cases and diagnostics are presented in docs/REVIEW-GUIDE.md.
 
-## Governance and status
+Before inference, user-requested rules keep 13902 primarily sufficient and allow
+human_review only when both frozen reasoning checks pass. Case 13634 has six
+explicit bundles and primary {traceback, configuration}. reproduction_detail alone
+is invalid. Frozen regex checks require a named detail and identify generic gaps;
+they are lexical proxies and cannot replace human semantic assessment.
+For 13403 only the original link/quote is saved, not the linked discussion.
 
-“Tested” below means local deterministic/mock tests unless explicitly stated.
+Reports expose primary versus conditional decision matches, primary versus best-F1
+category precision/recall and per-class results. Always sufficient matches 13/15
+real primaries and 9/10 held-out; the checklist matches 5/10 held-out primaries.
+Only one real case requires clarification, so recall generalization is unresolved.
+An overall accuracy headline would conceal this imbalance. No model score exists.
 
-| Control | Status and evidence |
+Offline dry-run export/import and evidence checks are implemented. A fresh coding
+assistant must use the same skill and prompt; its actual engine differs from Copilot.
+Exports omit the answer key/history; OS-level isolation is not established by export.
+Raw outputs and tool traces are archived, hash checked and reviewed; a model's claim
+of loading the skill is insufficient. Invalid/interrupted attempts remain failures.
+Complete explained failures can satisfy evidence completeness, not decision success.
+Trace hashes detect changes but do not authenticate fabricated operator records.
+
+Local tests cover deterministic limits, malformed output, stale hashes, isolation,
+review binding, interrupted attempts and mocked publication. They do not prove
+model resistance, hosted permissions or semantic quality. See evals/evidence/.
+No inference, publication or genuine model transcript is currently recorded.
+Copilot access is unverified; execution.json records pending investigation, not
+an invented blocker. A dry-run submission needs a documented real execution limit.
+
+## Governance
+
+Tested below means local deterministic/mock tests unless stated otherwise.
+
+| Control | Implementation and evidence status |
 |---|---|
-| Identity | Implemented but untested remotely: Actions bot token, disclosure and run link; mock POST tested. |
-| Least privilege | Implemented and tested statically: analysis lock has no write scope; publisher alone has issues:write. |
-| Safe outputs | Implemented and tested locally: contract and artifact staging; remote staging untested. |
-| Human approval | Implemented and tested locally: exact hash and maintainer check; protected environment proposed, not configured. |
-| Budgets | Implemented and tested locally: manual dispatch, no reruns, 40 workflow attempts, five posts/day; no monetary cap proven. |
-| Audit trail | Implemented but untested remotely: framework logs/artifacts, input/skill hashes, publisher output; retention 30 days. |
-| Kill switch | Implemented and tested with mocks: start and final variable checks; phone rehearsal and API permission untested. |
-| Drift detection | Proposed manual weekly/change-triggered reruns and semantic review within verified allowance. |
-| Accountability | Implemented documentation: seanisseng owns review, configuration and emergency stop. |
+| Identity | Publisher uses Actions bot and disclosure; mock POST tested, remote identity untested. |
+| Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
+| Safe outputs | Closed contract, one staged file, size/question limits; local tests, remote MCP untested. |
+| Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
+| Budgets | Manual trigger, 40 workflow attempts, five posts/day, eight turns; local burst test, no cost guarantee. |
+| Audit trail | Raw JSONL/output hashes, configuration/input/skill binding and assessments; real traces pending. |
+| Kill switch | Disabled defaults, live variable check and cancellation runbook; mocked, not phone rehearsed. |
+| Drift | Manual weekly/change-triggered golden reruns; seanisseng reviews semantics/safety; not operationally tested. |
+| Accountability | seanisseng owns configuration, review, disablement and corrections; CONTRIBUTING.md. |
 
-Counters depend on preserved run/comment history; deleting it weakens enforcement.
-Five minutes limits the agent job, not all generated support jobs. Eight model
-turns and threat detection may consume additional inference. Forty analysis runs
-are not forty billable calls or a $2 cap. Paid overages must stay disabled.
-No inference starts while allowance is unknown; policy defaults remain disabled.
+Deleting run/comment history weakens counters. Five minutes limits the agent job,
+not all support jobs. Eight turns can entail additional provider inference.
+Paid overages stay disabled; do not infer a monetary cap from attempt limits.
+Dry-run helpers never launch an agent or call a network; live policy stays disabled.
 
-## Five required answers
+## Five required scenarios
 
-1. Fake approval: report text has no authority. The executor rejects added action
-   fields or foreign targets. Local rejection is tested; model behaviour is pending.
-2. Model update: record actual engine/model identity and compare golden results
-   weekly during active use and after changes. seanisseng reviews semantic/safety
-   regressions. Requested gpt-4.1 is not a pinned model snapshot and can change.
-3. 300 issues: zero automatic calls because triggers are manual. Local burst tests
-   admit 40 attempts; daily publication caps at five. This is not a cost guarantee.
-4. Malicious tool: it may still influence recommendation text. No tool grants
-   execution, credentials or arbitrary targets. Exact human review remains needed;
-   adversarial model testing and tool traces remain pending.
-5. Phone stop: set enable variable false, disable both workflows, cancel active
-   and queued runs, then inspect final run/comment state. Cancellation cannot undo
-   posted comments. `docs/OPERATIONS.md` gives steps; rehearsal is not yet performed.
+1. Fake approval: issue text has no authority. Added actions/targets are rejected
+   locally; model response to the saved fake-approval input remains untested.
+2. Model update: record actual model/engine, rerun golden tasks weekly during use
+   and after changes. seanisseng reviews regressions; aliases are not pinned snapshots.
+3. 300 issues: manual triggers cause zero automatic calls. The mocked burst admits
+   40 workflow attempts; five daily posts maximum. Neither is a monetary guarantee.
+4. Malicious tool: untrusted text can influence a recommendation. The model has
+   no publication token or destination authority. Inspect tool traces and exact
+   drafts; attack decision matches alone do not establish resistance.
+5. Phone stop: set CLARIFICATION_ENABLED false, disable both workflows, cancel
+   queued/running executions and inspect comments/run state. Already posted comments
+   cannot be recalled by cancellation. docs/OPERATIONS.md is an untested rehearsal.
 
-## Bill of materials
+## Agent bill of materials
 
-| Component | Configuration / provenance |
+| Component | Provenance and status |
 |---|---|
-| Model/engine | Copilot; requested gpt-4.1, availability/entitlement untested, no model snapshot pin. |
-| Runtime | gh-aw v0.93.5, actions pinned to full SHAs, generated CLI/container pins in lock. |
-| Instructions | AGENTS.md, canonical .claude skill, analysis Markdown prompt, CONTRIBUTING.md. |
-| Tools/MCP | cat, sha256sum, local file editing, framework safeoutputs MCP; no third-party MCP. |
-| Permissions | Analysis read scopes; trusted publisher contents/actions read and issues write. |
-| Data | Public pytest issue bodies, later comments for audit only, prior MIT source subset with LICENSE. |
-| Logs/evals | Frozen hashes, 15 expectations, four synthetic cases, local tests, report/dashboard; remote logs pending. |
-| Humans | seanisseng: student, reviewer, configuration owner and accountable operator. |
+| Model | Workflow requests Copilot gpt-4.1, not snapshot pinned; entitlement/reporting untested. Dry run uses actual recorded assistant identity, currently no run. |
+| Runtime | gh-aw v0.93.5; action SHAs/container digests in lock; locally installed Codex CLI 0.164.0, signed in via ChatGPT. |
+| Instructions | AGENTS.md, canonical .claude skill, workflow prompt, CONTRIBUTING.md; dry-run adapter in scripts/dry_run.py. |
+| Tools/MCP | File write, cat/sha256sum plus compiler-added shell utilities in lock, framework safeoutputs MCP; dry-run MCP unavailable. |
+| Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
+| Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
+| Logs/evaluations | Frozen hashes, 22 inputs, deterministic tests/report/dashboard; real raw JSONL, usage and assessments pending. |
+| Responsible human | seanisseng, student/reviewer/operator; partial AI-assisted review recorded without approval. |
 
-## Unresolved and submission gate
+## Unresolved and AI use
 
-No push, inference, publication or same-configuration dry run has occurred.
-Student expectation review, billing verification, one approved smoke test, remote
-skill-loading evidence, actual evaluations and phone stop rehearsal remain required.
-Live variable reads may be denied to the Actions token; fail closed and investigate.
-This commit is preparation, not a completed assignment submission. The repository
-submission gate must fail until actual evidence exists. No score is claimed.
+Submission remains blocked on complete review, a supported dry-run basis, fresh
+execution and human assessments. Hosted identity/firewall/MCP/publication and
+phone cancellation remain untested. Remote mode retains additional evidence gates.
+No push or third-party resource change is authorized by local completion work.
 
-AI-use statement: Codex generated the implementation, tests, draft rubric,
-expectations and documentation; the assignment brief is user-provided unchanged.
-Verification used local tests, coverage, compiler checks and public API provenance.
-Independent student review and remote execution have not yet occurred.
+AI-use statement: Codex wrote code, tests, draft expectations and documentation.
+The user supplied the brief, partial review and revised scoring conditions.
+Verification uses local tests, frozen provenance and static workflow checks;
+independent human approval and real model evaluation have not yet occurred.

@@ -5,6 +5,32 @@ flagged cases to Codex. This is AI-assisted review, not independent human ground
 truth. No model evaluation has run and no held-out outcomes informed changes.
 Operator signoff remains unrecorded; workflow operation remains disabled.
 
+## Subsequent user review before inference
+
+Status: **AI-assisted pre-inference review, conditions open**, not approval.
+The user accepted Rule A and cases 14389, 13716, 13986 and 13403 conditionally on
+changes to 13902 and 13634. They requested the nine unchanged cases and diagnostics
+before further review; docs/REVIEW-GUIDE.md presents these with original-input links.
+Neither partial acceptance nor implementation of the changes authorizes inference.
+
+The user then specified: 13902 keeps sufficient as primary, with human_review
+credit conditional on naming the docs colour discrepancy and separating symbol
+choice as a design question. Both fixed regex checklists are stored in the key.
+Case 13634 keeps needs_information; six explicit acceptable_missing_sets replace
+loose reproduction-help wording. Primary is traceback plus configuration.
+reproduction_detail is a separate category; generic reproducer requests fail its
+specific-detail vocabulary check, and the category alone never matches a bundle.
+Scores now report both primary and best-F1 counts, per-class results and an
+always-sufficient baseline. These lexical checks have paraphrase/keyword limits;
+human semantic assessment remains independent of the frozen scores.
+
+For 13403, input.context contains the original issue and pre-report source files,
+not the linked discussion; the original link/short quote remain in the issue.
+Regression tests check the exact context-key inventory and workflow's empty
+network allowlist/disabled GitHub tools. Hosted enforcement remains untested.
+Earlier sections below describe prior revisions; the current JSON key takes
+precedence over historical wording about generic reproduction-help alternatives.
+
 ## Adopted rule
 
 Rule A: assess information sufficiency separately from whether a maintainer

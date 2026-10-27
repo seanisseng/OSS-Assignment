@@ -5,6 +5,7 @@ from pathlib import Path
 from scripts.collect import save
 from scripts.contract import digest
 from scripts.research_context import RELEVANT
+from scripts.scoring import apply_review_conditions
 
 CASES = {
     15052: ('development', 'sufficient', [], 'Concrete output and one-line expected correction.'),
@@ -19,7 +20,7 @@ CASES = {
     14329: ('held-out', 'sufficient', [], 'Inheritance example, assertion output, expected result and version.'),
     14324: ('held-out', 'sufficient', [], 'Minimal ExceptionGroup case, output, expectation and versions.'),
     13849: ('held-out', 'sufficient', [], 'Empty configuration filename and expected equivalence are enough.'),
-    13634: ('held-out', 'needs_information', ['traceback', 'configuration', 'reproducer'], 'The reporter already tried a small project unsuccessfully. Ask for the full traceback or exact command/rootdir/ini/import-mode and other imports of watthouse.conftest; do not simply repeat the failed minimal-reproducer request.'),
+    13634: ('held-out', 'needs_information', ['traceback', 'configuration', 'reproduction_detail'], 'The reporter already tried a small project unsuccessfully. Ask for the full traceback or exact command/rootdir/ini/import-mode and other imports of watthouse.conftest; do not simply repeat the failed minimal-reproducer request.'),
     14389: ('held-out', 'sufficient', [], 'Current exception chaining, desired raise-from behavior and likely location are specified. Acceptance of that change is separate from information sufficiency (Rule A).'),
     13902: ('held-out', 'sufficient', [], 'The report identifies a docs example rendered all green versus mixed actual output. That concrete discrepancy is investigable; different pass/fail symbols are a side suggestion, not a reason to exclude documentation bugs.'),
 }
@@ -27,6 +28,11 @@ CASES = {
 
 def main():
     root = Path('evals/golden')
+    if (root / 'freeze.json').exists():
+        previous = json.loads((root / 'freeze.json').read_text())
+        if (previous['review_approved'] or previous['evaluation_started']
+                or list((root / 'actual').glob('*.json')) or list((root / 'transcripts').glob('*.json'))):
+            raise ValueError('Do not rebuild a reviewed or executed study; create a separate study instead.')
     edits = json.loads((root / 'audit/edit-provenance.json').read_text())['data']['repository']
     expectations = []
     for number, (split, decision, missing, reason) in CASES.items():
@@ -48,11 +54,8 @@ def main():
                                  synthetic=False, acceptable_decisions=['sufficient', 'human_review'] if number in {13986, 13902} else [decision],
                                  acceptable_missing=missing, rationale=reason,
                                  input_hash=digest(case), context_hashes=files))
-        if number == 13634:
-            expectations[-1]['acceptable_missing_sets'] = [['traceback'], ['configuration'], ['traceback', 'configuration'], ['reproducer', 'configuration'], ['reproducer', 'traceback']]
-            expectations[-1]['redundancy_check'] = 'A generic repeated request for a minimal reproducer alone is redundant; concrete trigger-reduction help can be assessed with diagnostic/configuration questions.'
-        if number in {13986, 13902}:
-            expectations[-1]['alternative_rationale'] = 'Accept human_review only when reasoning identifies unresolved counting semantics or uncertainty from the mixed docs/design request, respectively; not merely because it proposes a change.'
+        if number == 13986:
+            expectations[-1]['alternative_rationale'] = 'Accept human_review when reasoning identifies unresolved counting semantics; not merely because it proposes a change.'
     diagnostics = [
         ('diagnostic-crash', 'development', 'pytest crashes when I run my tests.', ['traceback', 'reproducer', 'configuration'], [['traceback'], ['traceback', 'reproducer'], ['traceback', 'configuration']], 'No error output is supplied; ask for the failure diagnostic and, if needed, the trigger.'),
         ('diagnostic-trigger', 'development', "pytest 8.3.4 on Python 3.12 reports: fixture 'account' not found. I cannot work out why.", ['configuration', 'reproducer'], [['configuration'], ['reproducer'], ['configuration', 'reproducer']], 'The error alone does not show fixture definition, test layout or invocation; ask for the relevant configuration or triggering example.'),
@@ -62,7 +65,8 @@ def main():
         case = dict(case_id=name, synthetic=True, title='Synthetic clarification diagnostic', body=body, context={'issue': body})
         save(root / f'inputs/{name}.json', case)
         expectations.append(dict(case_id=name, split=split, synthetic=True, decision='needs_information', acceptable_decisions=['needs_information'], acceptable_missing=missing, acceptable_missing_sets=bundles, rationale=reason, input_hash=digest(case), context_hashes={}))
-    save(root / 'expectations.json', dict(status='revised after AI critique supplied by user; operator signoff pending; no model execution authorized',
+    expectations = [apply_review_conditions(item) for item in expectations]
+    save(root / 'expectations.json', dict(status='AI-assisted pre-inference review, conditions open; no model execution authorized',
          author='Codex draft and final rubric choices informed by user-supplied AI critique; not independent human ground truth',
          expectations=expectations))
     save(root / 'freeze.json', dict(expectations_hash=digest(expectations),

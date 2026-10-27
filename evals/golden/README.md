@@ -1,61 +1,52 @@
 # Reproduction and evidence status
 
-Inputs are original public pytest reports with zero recorded body edits, checked
-via `audit/edit-provenance.json`. No later responses enter their context maps.
-`context/NUMBER/` preserves source files and MIT license at a commit no later than
-the report creation cutoff; `provenance.json` identifies the revision and URL.
-The subset is data for inspection, not code to execute.
+The historical inputs are original public pytest reports with zero recorded body
+edits, checked via audit/edit-provenance.json. context/NUMBER/ preserves source and
+MIT license at a revision no later than each report; provenance.json records it.
+Later comments and edit history are evaluation-only and never exported to the model.
 
-`expectations.json` was authored with AI assistance before model execution and
-revised after user-supplied AI critique; see `REVIEW-REVISION.md`. There are five
-real development and ten real held-out cases (nine no-action), plus two synthetic
-development diagnostics, one supplemental synthetic held-out diagnostic and four
-synthetic injection cases in `adversarial/`. Operator signoff remains pending;
-the AI critique is not independent human ground truth.
-`freeze.json` records expectation hash and pending approval/execution status.
-Do not change frozen expectations after looking at held-out model outputs.
+The key contains five real development and ten real held-out cases, three separate
+synthetic diagnostics and four separately scored attacks: 22 inputs in total.
+Only one real case needs clarification. Synthetic diagnostics do not improve the
+real sample's coverage or count toward historical denominators.
 
-Run from the repository root:
+Current review is **AI-assisted pre-inference review, conditions open**, not approval.
+The user conditionally accepted Rule A and four named expectations and specified
+mechanical 13902/13634 checks. Nine unchanged cases and diagnostics remain open.
+See [the review guide](../../docs/REVIEW-GUIDE.md), review.json and REVIEW-REVISION.md.
+No inference or publication has run. No model result or human assessment is invented.
 
 ```text
 python -m unittest discover -s tests -v
 python -m scripts.evaluate
 python -m scripts.verify
-python -m scripts.verify --submission
+python -m scripts.verify --submission --mode dry-run
 ```
 
-The final command intentionally fails while required evidence is absent.
-On this Windows sandbox integration tests require escalation because Python's
-temporary-directory ACLs deny sandbox access. They pass outside the sandbox.
-No third-party runtime Python dependencies are needed; coverage is optional.
+The strict command must fail until complete review and execution evidence exist.
+Default submission mode is remote; it also requires populated remote evidence.
+Windows tests need an unrestricted shell because sandbox temporary-directory ACLs
+deny access. Runtime code needs only Python 3.12 standard-library modules.
 
-Read `docs/OPERATIONS.md` before enabling anything. Collectors make read-only
-GitHub requests, use existing Git credentials in memory and never print/save
-them. `python -m scripts.collect` refreshes the sample; do not use it to mutate
-frozen evidence without creating a separately versioned study.
-`python -m scripts.research_context` checks edit histories and preserves prior
-source. `python -m scripts.freeze` rebuilds draft expectations; do not rerun after
-student approval or substantive model execution. Both operations change hashes.
+Follow [the dry-run guide](../../docs/DRY-RUN.md). Helpers export one case outside
+the repository and import exact output and real Codex JSONL events. The adapter
+does not enforce all hosted controls; document every untested control and the actual
+end-to-end blocker. Unknown entitlement alone is not evidence of impossibility.
 
-For each executed case retain:
+Each attempt retains actual/CASE_ID.json when output exists, transcripts/CASE_ID.json,
+transcripts/raw/CASE_ID.jsonl, trusted preparations/CASE_ID.json and a student-written
+assessments/CASE_ID.json. No output on an interruption is recorded as a failure,
+not a no-action result. Never repair invalid JSON or overwrite an earlier attempt.
+Completed runs need actual skill-read events and matching content, not self-report.
 
-- `actual/CASE_ID.json`: exact model JSON, no manual repair.
-- `transcripts/CASE_ID.json`: real transcript/tool calls, run URL, timestamps,
-  reported engine/model, usage where available, config hash and skill-read evidence.
-- `assessments/CASE_ID.json`: student relevance/redundancy assessment and any
-  disagreement explanation. Never silently omit failed or interrupted runs.
+Reporting separates primary and conditional decision matches, per-class results,
+and primary/best-F1 missing-category counts. The primary 13634 bundle is traceback
+and configuration. Acceptable bundles and regex checks are frozen in expectations.
+The always-sufficient baseline matches 13/15 real primaries (9/10 held-out), while
+the checklist matches 5/10 held-out. Report these class-imbalance limits honestly.
+Attack decisions are separate; tool behavior and safety need human assessment.
 
-Currently these folders contain only status README files. No model transcript
-or actual output has been invented. The dashboard and report show “not run”.
-The baseline is intentionally a simple presence checklist (fenced code,
-pytest version/commit and behaviour keywords); it is not the proposed agent.
-Primary and alternative-accepted decision matches are reported separately.
-Category precision/recall use the best-F1 predeclared acceptable bundle, with
-chosen references saved per case; synthetic diagnostics are counted separately.
-Precision/recall are micro-averaged over missing categories; zero denominators
-are null. Validation failures count as incorrect attempted decisions, and absent
-runs are reported separately. Semantic assessments require human judgement.
-
-Before publication copy actual setup hash and tool-trace evidence into the run
-record. File existence or an agent assertion that it loaded the skill is not proof.
-Archive expiring GitHub artifacts locally; leave secrets out of transcripts.
+Do not rerun collectors or scripts.freeze to improve scores. Freeze refuses to
+overwrite an approved or executed study. Changes after held-out inference require
+a separately versioned study. Preserve original raw inputs and every failure.
+Archive remote artifacts before expiry and never save credentials in evidence.

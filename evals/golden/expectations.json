@@ -1,5 +1,5 @@
 {
-  "status": "revised after AI critique supplied by user; operator signoff pending; no model execution authorized",
+  "status": "AI-assisted pre-inference review, conditions open; no model execution authorized",
   "author": "Codex draft and final rubric choices informed by user-supplied AI critique; not independent human ground truth",
   "expectations": [
     {
@@ -227,7 +227,7 @@
       "acceptable_missing": [
         "traceback",
         "configuration",
-        "reproducer"
+        "reproduction_detail"
       ],
       "rationale": "The reporter already tried a small project unsuccessfully. Ask for the full traceback or exact command/rootdir/ini/import-mode and other imports of watthouse.conftest; do not simply repeat the failed minimal-reproducer request.",
       "input_hash": "4316932f619121ce2a37fb9b9d995bc21ddad7b7bb1f261e8986e4e16f5cdf9b",
@@ -249,15 +249,40 @@
           "configuration"
         ],
         [
-          "reproducer",
-          "configuration"
+          "traceback",
+          "reproduction_detail"
         ],
         [
-          "reproducer",
-          "traceback"
+          "configuration",
+          "reproduction_detail"
+        ],
+        [
+          "traceback",
+          "configuration",
+          "reproduction_detail"
         ]
       ],
-      "redundancy_check": "A generic repeated request for a minimal reproducer alone is redundant; concrete trigger-reduction help can be assessed with diagnostic/configuration questions."
+      "redundancy_check": "reproduction_detail alone is not a valid bundle. A generic minimal reproducer request without a named specific detail fails the frozen question-text check. Unknown/irrelevant categories and failed detail checks count as false positives.",
+      "primary_missing": [
+        "traceback",
+        "configuration"
+      ],
+      "category_checks": {
+        "reproduction_detail": [
+          {
+            "name": "Question names a specific missing import, fixture, layout or invocation detail",
+            "patterns": [
+              "\\b(?:imports?|importing|fixtures?|directory|layout|invocation|command|rootdir|conftest(?:\\.py)?|watthouse(?:\\.conftest)?|pythonpath|sys\\.path)\\b"
+            ]
+          }
+        ]
+      },
+      "category_requires_any": {
+        "reproduction_detail": [
+          "traceback",
+          "configuration"
+        ]
+      }
     },
     {
       "case_id": "pytest-14389",
@@ -295,7 +320,26 @@
         "src/_pytest/fixtures.py": "398e50d830029e998df9cd5282f795f894448c4e0a5bc41db9ae2bfac2ea8fb1",
         "src/_pytest/python.py": "271acfb266f160fcc8ff47c2afd1de996442b81da15102ded0b3372f5e1e6f38"
       },
-      "alternative_rationale": "Accept human_review only when reasoning identifies unresolved counting semantics or uncertainty from the mixed docs/design request, respectively; not merely because it proposes a change."
+      "alternative_rationale": "human_review earns alternative credit only if both frozen reasoning checks pass. Primary remains sufficient. Regex checks are lexical proxies, not proof of semantic correctness; report human assessment separately.",
+      "alternative_checks": {
+        "human_review": [
+          {
+            "name": "Names the documentation colour discrepancy",
+            "patterns": [
+              "\\bdoc(?:s|umentation)?\\b",
+              "\\bcolou?rs?\\b",
+              "\\b(?:discrepanc\\w*|mismatch\\w*|incorrect|different|green|mixed)\\b"
+            ]
+          },
+          {
+            "name": "Separates symbol choice as a design question",
+            "patterns": [
+              "\\b(?:symbols?|glyphs?)\\b",
+              "\\bseparate\\b[^.!?\\n]*\\bdesign\\b|\\bdesign\\b[^.!?\\n]*\\bseparate\\b"
+            ]
+          }
+        ]
+      }
     },
     {
       "case_id": "diagnostic-crash",
