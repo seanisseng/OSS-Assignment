@@ -194,6 +194,15 @@ class DryRunTests(unittest.TestCase):
                 main()
             self.assertEqual(error.exception.code, 1)
 
+    def test_failure_before_session_start_is_archived_without_invented_events(self):
+        workspace = Path(self.temp.name) / 'workspace'
+        dry_run.prepare(self.repo, 'case-1', workspace)
+        raw = self.text('startup.txt', 'Authentication failed before inference.')
+        now = dt.datetime.now(dt.timezone.utc).isoformat()
+        value = dry_run.record(self.repo, 'case-1', workspace, raw, 'failed', now, now, 'test-model')
+        self.assertIsNone(value['session_id'])
+        self.assertEqual((self.root / 'transcripts/raw/case-1.jsonl').read_bytes(), raw.read_bytes())
+
     def test_reusing_session_across_cases_is_rejected(self):
         self.basis()
         self.record()
