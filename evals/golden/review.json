@@ -4,7 +4,7 @@
   "reviewer": "seanisseng",
   "reviewed_at": "2026-10-29T13:08:17+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "5d3d8db5218a9fdad42798eaeb22b2b4c0be6e0600abf859515b5626b058fa32",
+  "configuration_hash": "b418d6dd4c807666f85e395edeb99a3840b6481d6663f228287e5c6ca44de529",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],
@@ -49,5 +49,6 @@
       "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
       "source": "User explicitly stated \"ok I signoff\" after accepting all case expectations, revised conditions and attacks, discussing implied invocations in 15051/14775 and maintainer judgement in 14329. Signoff includes the described invocation-wording corrections without changing decisions. No spending, publication, push or live enablement is authorized."
     }
-  ]
+  ],
+  "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change."
 }

@@ -3,7 +3,7 @@
   "case_id": "pytest-15051",
   "workflow": ".github/workflows/smoke.lock.yml",
   "model_requested": "auto",
-  "proposed_configuration_hash": "5d3d8db5218a9fdad42798eaeb22b2b4c0be6e0600abf859515b5626b058fa32",
+  "proposed_configuration_hash": "b418d6dd4c807666f85e395edeb99a3840b6481d6663f228287e5c6ca44de529",
   "original_review_configuration_hash": "965cd958c67624dd7abd6008ebdc1c3549f2c52f6f9451c84ef296f59fb8985e",
   "approval_for_configuration_update": "approved",
   "account_observations": {
@@ -36,5 +36,6 @@
   "remote_mutations_performed": false,
   "historical_inputs_changed": false,
   "notes": "User approved the proposed smoke configuration, push to main and one dispatch. No model result exists yet. Prior configuration approval is retained in review.json approval_history.",
-  "approved_at": "2026-10-29T13:08:17+08:00"
+  "approved_at": "2026-10-29T13:08:17+08:00",
+  "approved_working_tree_hash_before_line_ending_normalization": "5d3d8db5218a9fdad42798eaeb22b2b4c0be6e0600abf859515b5626b058fa32"
 }
