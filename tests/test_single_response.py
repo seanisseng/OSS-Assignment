@@ -12,7 +12,7 @@ from unittest.mock import patch
 
 from scripts import single_response
 from scripts.single_response import build_packet, PACKET_BYTES, validate_response
-from scripts.contract import digest
+from scripts.contract import CATEGORIES, FIELDS, digest
 from scripts.evidence import configuration_hash
 
 
@@ -69,6 +69,7 @@ class SingleResponseTests(unittest.TestCase):
         self.assertEqual(validate_response(self.case, packet, json.dumps(result)), result)
         for raw in ['not json', json.dumps(result | {'command': 'execute'}),
                     json.dumps(result | {'input_hash': 'wrong'}),
+                    json.dumps(result | {'evidence': {'issue': self.case['body']}}),
                     json.dumps(result | {'evidence': ['not-supplied.py']})]:
             with self.subTest(raw=raw[:60]), self.assertRaises(ValueError):
                 validate_response(self.case, packet, raw)
@@ -146,7 +147,7 @@ class SingleResponseTests(unittest.TestCase):
                        'RUNNER_TEMP':str(root / 'runner')}
                 with patch.dict(os.environ,env), patch.object(single_response,'review_record',
                         return_value={'configuration_hash':'approved'}), patch.object(
-                        single_response,'api',return_value={'total_count':2}) as api:
+                        single_response,'api',return_value={'total_count':3}) as api:
                     single_response.prepare()
                     api.assert_called_once()
                     for key, value in [('SINGLE_RESPONSE_ENABLED','false'),
@@ -154,11 +155,11 @@ class SingleResponseTests(unittest.TestCase):
                                        ('GITHUB_REPOSITORY','pytest-dev/pytest')]:
                         with patch.dict(os.environ,{key:value}), self.assertRaises(ValueError):
                             single_response.prepare()
-                    for count in [0,1,3,True,'2']:
+                    for count in [0,1,2,4,True,'3']:
                         api.return_value={'total_count':count}
                         with self.assertRaises(ValueError):
                             single_response.prepare()
-                    api.return_value={'total_count':2}
+                    api.return_value={'total_count':3}
                     swapped = case | {'case_id':'a-different-case'}
                     with patch.object(single_response,'load',side_effect=[swapped,
                             {'expectations':[{'case_id':swapped['case_id'],
@@ -182,6 +183,15 @@ class SingleResponseTests(unittest.TestCase):
                 proc = subprocess.run(['node','-e',code,str(harness),str(step_start),'ignored-cli-arguments'],
                     env=child_env,capture_output=True,text=True,encoding='utf-8')
                 self.assertEqual(proc.returncode,0,proc.stderr)
+                request=json.loads((root / 'output/request.json').read_text(encoding='utf-8'))
+                schema=json.loads(request['messages'][0]['content'].split(
+                    'Output contract (JSON Schema):\n',1)[1])
+                self.assertEqual(set(schema['properties']),FIELDS)
+                self.assertEqual(set(schema['required']),FIELDS)
+                self.assertEqual(set(schema['properties']['missing']['items']['enum']),CATEGORIES)
+                self.assertEqual(schema['properties']['evidence']['items']['enum'],
+                                 ['issue','pkg/example.py'])
+                self.assertFalse((root / 'safeoutputs/outputs.jsonl').exists())
                 archive=root / 'raw-artifact.zip'
                 with zipfile.ZipFile(archive,'w') as bundle:
                     for file in (root / 'output').iterdir():
