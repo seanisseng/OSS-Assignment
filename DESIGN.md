@@ -93,7 +93,7 @@ Tested below means local deterministic/mock tests unless stated otherwise.
 |---|---|
 | Identity | Replacement produces workflow artifacts, no comments; legacy publisher uses Actions bot/disclosure. Mock POST tested, remote attribution untested. |
 | Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
-| Safe outputs | Raw response/receipt captured even on refusal; clean Python validates JSON. Fixed no-op, no model tools or AI detector; publisher rejects this workflow. |
+| Safe outputs | Raw response/receipt captured even on refusal; explicit JSON contract, clean Python validation. No action intents, model tools or AI detector; publisher rejects this workflow. |
 | Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
 | Budgets | One caller POST, five proxy credits; at most 540s minus startup inside a ten-minute step. Declared daily fifteen bypassed for manual runs; bounded I/O. |
 | Audit trail | GitHub run traces, raw output hashes and input/skill binding; case evaluations and assessments pending. |
@@ -131,15 +131,15 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 | Tools/MCP | Replacement offers no tools; generated CLI shell/write/all-paths flags are unused argv. Trusted harness calls only the fixed AWF gateway. |
 | Permissions | Replacement contents/actions read; legacy analysis also issues read. Publisher alone has issues write and rejects replacement artifacts. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs; five hosted failures. Latest token log empty; previous proxy estimate 17.19639, billing unconfirmed; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs; six hosted failures. Latest: one response, 2,706 reported tokens; marker/contract errors, billing unconfirmed; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents five failed attempts.
-The replacement stopped after one request, rejected for tool_choice without tools.
-The [audit](docs/SINGLE-RESPONSE-AUDIT.md) records the local fix and source checks;
-renewed approval and successful hosted validation remain pending. Actual model,
+The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents six failed attempts.
+The latest returned one recommendation, then failed a protected marker write.
+The [audit](docs/SINGLE-RESPONSE-AUDIT.md#second-smoke-response-capture-and-output-contract) records marker removal and explicit JSON schema;
+renewed approval and successful hosted validation remain pending. Decision quality,
 semantic skill compliance and excerpt completeness remain evaluation questions.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.

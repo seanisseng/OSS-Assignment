@@ -51,7 +51,6 @@ pre-agent-steps:
       PYTHONPATH: .trusted
       TRUSTED_ROOT: .trusted
       CASE_ID: ${{ inputs.case_id }}
-      GH_TOKEN: ${{ github.token }}
       SINGLE_RESPONSE_ENABLED: ${{ vars.CLARIFICATION_SINGLE_RESPONSE_ENABLED }}
     run: python -m scripts.single_response prepare
   - name: Remove non-input checkout before assessment

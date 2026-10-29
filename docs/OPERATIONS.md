@@ -1,15 +1,17 @@
 # Activation and evidence runbook
 
-Current state: five hosted smoke attempts failed; none produced a recommendation.
+Current state: six hosted smoke attempts failed; the sixth saved a recommendation
+but failed on a read-only marker write. Its response also fails the JSON contract.
 The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
 The separate [single-response replacement](SINGLE-RESPONSE-REVISION.md) is locally
-implemented; its first smoke failed HTTP 400. The local correction awaits new
-approval before another push or test; configuration 3115d8ad was then approved
-for one follow-up. Its new switch
+implemented; its first smoke failed HTTP 400 and its follow-up failed after inference.
+The marker/contract correction removes the lifetime run-count and manual-rerun
+restrictions at the user's request. Configuration signoff, push and run approval
+are pending. Its switch
 is `CLARIFICATION_SINGLE_RESPONSE_ENABLED`; it needs no sandbox issue and cannot
-publish. After an approved first dispatch, reset that switch once preparation
+publish. After each approved dispatch or rerun, reset that switch once preparation
 finishes. Disable the new workflow and cancel its running job for an immediate
 stop. The legacy activation/publication procedure below does not enable it.
 

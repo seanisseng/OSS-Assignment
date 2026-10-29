@@ -71,20 +71,28 @@ preparation for human handling instead of silently truncating the report.
 The local correction has a five-credit proxy setting, a declared daily setting
 of fifteen, and no separate AI detector. This supersedes the deployed twenty-credit
 setting; actual one-request cost has not been measured and is not assumed to be one credit.
-It has no model-selectable external action, and its trusted output is a fixed
-framework no-op; the recommendation is only a raw artifact until clean Python
+It has no model-selectable external action and emits no framework action intents;
+the recommendation is only a raw artifact until clean Python
 validation. An AI threat verdict is unnecessary for that restricted artifact
 path and cannot replace structural validation. The publisher rejects this
 workflow's identity. Legacy workflows retain their separate detector.
 
+The harness prompt includes a closed JSON Schema with field types, decisions,
+missing-information categories and allowed evidence identifiers. In particular,
+`evidence` must be a nonempty array of source-key strings, never copied objects.
+This schema is supplied as instructions, not an unverified provider API option.
+Python remains authoritative: invalid output is retained and rejected without
+coercion, automatic retries or repair calls. The harness writes only workspace
+artifacts and never touches the read-only framework safe-output path.
+
 Preparation requires the new `CLARIFICATION_SINGLE_RESPONSE_ENABLED=true` switch,
-main in the allowlisted repository, case 15051, run attempt one, a current signed
-configuration and total dispatch count two after the failed first run. Reruns and
-later dispatches fail closed. The daily setting still does not constrain manual
-dispatch. Reset the switch after preparation; cancel running jobs to stop them.
-The approved next dispatch is consumed even by a refusal, 429 or timeout. There
-is no automatic recovery allowance; another attempt requires a changed, reviewed
-configuration. Never delete history to reset the guard.
+main in the allowlisted repository, case 15051 and a current signed configuration.
+At the user's explicit request, there is no lifetime dispatch-count limit or
+manual-rerun prohibition. Each manual dispatch or rerun can make one request;
+there are no automatic retries. Repeated tests of unchanged approved code do
+not require a counter reset or new configuration hash. External push/run approval
+is still required. The daily setting does not constrain manual dispatch. Reset
+the switch after preparation; cancel running jobs to stop them. Preserve all history.
 
 Preparation first creates `output/preparation.json`, then records prepared or
 refused status and re-raises the original error. The always-run raw upload warns
@@ -122,13 +130,13 @@ adversarial expectations, and obtain student semantic assessments.
 Only after local checks and separate approval should one hosted smoke test verify
 request count, skill evidence, output creation/validation and reported usage.
 
-The first run reached the gateway but failed request validation. Complete
-gateway compatibility, actual Auto selection, service rate limits and
-account billing remain unverified for this replacement. The one-request claim is
+The first run failed gateway request validation. The second returned a response
+from gpt-4o-mini-2024-07-18, then failed a read-only framework marker write; its
+evidence field also violated the contract. Clean validation and billing remain unverified. The one-request claim is
 about the caller's gateway POST; inspect proxy logs for any upstream behavior.
 Local verification is recorded in `evals/evidence/single-response-verification.json`.
 
-Verification: 69 Python tests pass, including thirteen Node transport/harness cases.
+Verification: 69 Python tests pass, including fifteen Node transport/harness cases.
 The Node harness has approximately 98% line and over 80% branch coverage. Timeout-finalization,
 refusal receipts and artifact ZIP extraction are covered. Compilation uses gh-aw v0.93.5.
 The initial missing adapter and missing case-identity guard were reproduced as

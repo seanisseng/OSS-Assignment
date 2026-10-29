@@ -4,7 +4,8 @@ Status: documentation/source audit and local regression tests. Configuration
 `3e538ec9...` was pushed as `c5cd1cd` and tested once in
 [run 40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929).
 It failed. The hardened correction `3115d8ad...` was subsequently approved for one
-push and follow-up smoke. No provider request was made during this audit.
+push and follow-up smoke. That second smoke failed after a successful inference;
+the local correction below awaits renewed approval. Audit tests make no provider requests.
 
 ## Failure, correction and test gap
 
@@ -29,14 +30,48 @@ in this attempt, but no assessment was produced.
 
 The initial mocks accepted that invalid combination: a test gap. A new regression
 models the exact captured gateway rule, failed before the fix and passes after
-it. After additional review hardening, all 69 Python tests pass, including 13 Node
+it. At that review checkpoint, all 69 Python tests passed, including 13 Node
 cases. Node coverage is approximately 98% of lines and over 80% of branches. Local success does
 not prove hosted compatibility.
 
-The proposed follow-up guard allows total dispatch count two, preserving the
-failed first run; reruns, foreign repositories, other cases and later dispatches
-remain forbidden. A new configuration approval and push/run authorization are
-required before that attempt.
+The user explicitly removed the lifetime run-count limit after the second
+smoke. Manual dispatches and reruns of unchanged approved code no longer need
+a counter reset. Repository, branch, case, configuration and switch checks remain.
+The changed candidate still needs configuration approval and push/run authorization.
+
+## Second smoke: response capture and output contract
+
+[Run 40917225932](https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932)
+used approved configuration `3115d8ad...` at commit `cfbfeb9`. Preparation and
+authentication passed. One gateway request returned `gpt-4o-mini-2024-07-18`,
+reporting 1,605 prompt and 1,101 completion tokens (2,706 total). The recommendation
+was saved. The harness then raised `EROFS` writing the framework's protected
+`safeoutputs/outputs.jsonl`; validation was skipped. This was neither empty model
+output nor a provider rate-limit failure. Actual credit deduction remains unknown.
+
+Independent offline validation of that unchanged recommendation rejects
+`invalid list: evidence`: the model copied an object where source-key strings
+are required. No correction is applied to the historical response or its decision.
+
+The local fix removes the unnecessary framework marker write. The actual run's
+safe-output job succeeded with that file absent; clean Python validation remains
+the acceptance gate. Mount permissions are unchanged. The prompt now includes an
+explicit closed JSON Schema and explains that evidence is an array such as
+`["issue"]`. No new provider options, tools or retries are introduced. Instructions
+can still be ignored; structural and human semantic validation remain necessary.
+
+Two regressions first failed for the absent schema and the protected write, then
+passed. A mocked `EROFS` write verifies that inference survives an unwritable
+framework path; integration checks schema parity with Python's field/category
+constants, ZIP staging, clean validation and rejection of object-shaped evidence.
+All 69 Python tests, including 15 Node cases, pass. Node coverage is 98.10% lines
+and 83.67% branches. See [TDD evidence](testing/single-response-output-fix.tdd.md).
+
+The prior two-dispatch allowance was consumed; that local limit is now removed
+at the user's request. Both switches remain off; the changed configuration needs
+genuine reapproval. No push or new inference was authorized
+by the request to fix locally. The original failure receipt is preserved in
+`evals/evidence/hardened-single-response-result.json` and the GitHub artifacts.
 
 ## Documentation and pinned-source audit
 
@@ -53,8 +88,8 @@ required before that attempt.
 | Validation | A job depending on a failed agent is skipped by default. This is expected; a missing/invalid recommendation remains a failure, never an invented abstention. |
 | Credits | Local correction lowers the deployed twenty-credit setting to five; declared daily fifteen is bypassed for manual dispatch. No one-credit cost assumption or account deduction is verified. The screenshot showed 3/200 used. |
 | Runtime | Ten minutes bounds analysis execution; setup, support and validation jobs have separate timeouts. |
-| Detection | Disabling AI detection is supported. This artifact-only workflow emits only a fixed trusted no-op; Python validates the recommendation and the publisher rejects this workflow. Semantic correctness/injection resistance remain unproven. |
-| Remaining proof | Real response parsing, returned model identity, output creation, fixed framework no-op and clean validation require a successful hosted attempt. Mocks do not establish these remotely. |
+| Detection | Disabling AI detection is supported. This artifact-only workflow emits no safe-output intents; Python validates the recommendation and the publisher rejects this workflow. Semantic correctness/injection resistance remain unproven. |
+| Remaining proof | Second smoke proves response parsing, returned model identity and output creation. Marker removal, correct model JSON, clean validation and decision quality still need hosted verification. |
 
 Further review identified an equal-deadline race and noisy uploads after refused
 preparation. Both are fixed locally and regression-tested. Generated CLI flags are
@@ -64,9 +99,9 @@ is not an observed or expected normal execution path.
 
 The artifact layout is documented and checked against the existing failed run's
 root metadata files. Local ZIP extraction checks the recommendation path; the
-real clean validation job still has not completed. No act or new hosted run was
-performed. Remaining failures still consume the single approved attempt, even if
-caused by provider rate limits. Provider behavior and the hosted success path
+real clean validation job still has not completed. No act run was performed.
+The second hosted run is recorded above. The former lifetime counter has been
+removed; each new dispatch remains a separately approved external action. Provider behavior and the hosted success path
 remain open; keep switches off until the corrected configuration is approved.
 
 ## References checked

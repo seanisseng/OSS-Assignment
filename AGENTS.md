@@ -57,8 +57,9 @@ Legacy clarify/smoke sessions read the installed skill explicitly; tool traces
 and hashes corroborate loading. Their report-first view indexes 8 KiB chunks.
 The single-response harness instead supplies `input/packet.json` directly, with
 the actual canonical skill in the captured request. The model has no tools and
-returns JSON; trusted code writes the raw response and recommendation. Request,
+receives an explicit JSON contract; trusted code saves the raw response and JSON. Request,
 packet and skill hashes corroborate delivery; human review checks procedure use.
+The harness never writes framework safe outputs; clean validation gates acceptance.
 Its packet includes the complete report, untrusted supplemental evidence and up
 to four traceback-linked source excerpts within 32 KiB. Never execute evidence.
 The harness deadline is at most 540 seconds, reduced by AWF startup time, inside

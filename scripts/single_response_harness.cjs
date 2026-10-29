@@ -18,6 +18,27 @@ function remainingTimeout(stepStartedAt, now=Date.now()) {
   return Math.max(0,HARNESS_TIMEOUT_MS-(now-stepStartedAt));
 }
 
+function recommendationSchema(packet) {
+  const strings=(items={type:'string',minLength:1})=>({type:'array',uniqueItems:true,items});
+  const identifiers=[...new Set(['issue',...Object.keys(packet.supplemental_context ?? {}),
+    ...packet.excerpts.map(excerpt=>excerpt.key)])];
+  return {type:'object',additionalProperties:false,
+    required:['case_id','input_hash','decision','missing','evidence','reasoning','questions','comment'],
+    properties:{
+      case_id:{type:'string',const:packet.case_id},
+      input_hash:{type:'string',const:packet.input_hash},
+      decision:{type:'string',enum:['sufficient','needs_information','human_review']},
+      missing:strings({type:'string',enum:['reproducer','reproduction_detail','expected_actual',
+        'versions','traceback','configuration']}),
+      evidence:{...strings({type:'string',enum:identifiers}),minItems:1},
+      reasoning:{type:'string',minLength:1,maxLength:2000},
+      questions:{...strings(),maxItems:3},
+      comment:{type:'string',maxLength:1200}},
+    allOf:[{if:{properties:{decision:{const:'needs_information'}}},
+      then:{properties:{missing:{minItems:1},questions:{minItems:1}}},
+      else:{properties:{missing:{maxItems:0},questions:{maxItems:0},comment:{const:''}}}}]};
+}
+
 function makeRequest(packet) {
   requireValue(packet.format === 'single-response-v1', 'unknown packet format');
   requireValue(typeof packet.skill === 'string' && packet.skill.length > 0, 'skill missing');
@@ -30,7 +51,13 @@ function makeRequest(packet) {
       'Apply the canonical skill below. Return only its JSON recommendation. The trusted '+
       'caller performs its file-writing step; do not request a tool. Evidence identifiers '+
       'are issue, supplemental_context keys and excerpt keys. Copy case_id and input_hash from the packet. If essential '+
-      'context is absent, explain uncertainty using the skill decision rules.\n\n'+skill},
+      'context is absent, explain uncertainty using the skill decision rules. '+
+      'Return a JSON object matching the output contract, without Markdown fences. '+
+      'The evidence field is a nonempty array of source identifier strings, e.g. ["issue"]. '+
+      'Do not copy evidence objects or source contents into the output. '+
+      'Each question must end with exactly one question mark. For needs_information, '+
+      'comment must equal questions joined by newline characters.\n\n'+skill+
+      '\n\nOutput contract (JSON Schema):\n'+JSON.stringify(recommendationSchema(packet))},
     {role:'user',content:JSON.stringify(evidence)}]};
 }
 
@@ -113,12 +140,8 @@ async function main(options={}) {
     },raw=>fs.writeFileSync(path.join(output,'provider-response.json'),raw));
     fs.writeFileSync(path.join(output,'recommendation.json'),result.content);
     Object.assign(trace,{status:'response_received',model_reported:result.model,usage:result.usage});
-    // The trusted harness emits a fixed framework no-op, never a model-selected action.
-    const safe=process.env.GH_AW_SAFE_OUTPUTS;
-    requireValue(safe && path.basename(safe)==='outputs.jsonl' &&
-      path.basename(path.dirname(safe))==='safeoutputs','safe-output destination missing');
-    fs.mkdirSync(path.dirname(safe),{recursive:true});
-    fs.writeFileSync(safe,JSON.stringify({type:'noop',message:'Raw assessment captured; trusted validation pending.'})+'\n');
+    // Framework safe outputs live on a read-only mount. This artifact-only harness
+    // emits no action intents; clean Python validation gates the recommendation.
   } catch(error) {
     trace.status='failed';
     trace.error=error instanceof Error ? error.message : 'assessment failed';

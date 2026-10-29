@@ -1,0 +1,101 @@
+{
+  "status": "completed",
+  "operator_pid": 46912,
+  "dispatch_attempts": 1,
+  "scheduled_for_utc": "2026-10-29T17:01:00+00:00",
+  "scheduled_for_singapore": "2026-10-30T01:01:00+08:00",
+  "expected_commit": "cfbfeb905bca1804003df21509b984f7f34d5162",
+  "switch_enabled": false,
+  "updated_at": "2026-10-29T17:06:52.797484+00:00",
+  "run_id": 40917225932,
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932",
+  "workflow_status": "completed",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": 123600581084,
+      "name": "activation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123601339195,
+      "name": "agent",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    {
+      "id": 123602360287,
+      "name": "safe_outputs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123602362539,
+      "name": "validate_recommendation",
+      "status": "completed",
+      "conclusion": "skipped"
+    },
+    {
+      "id": 123603131776,
+      "name": "conclusion",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 12917595577,
+      "name": "single-response-input"
+    },
+    {
+      "id": 12917485664,
+      "name": "activation"
+    },
+    {
+      "id": 12917047063,
+      "name": "usage"
+    },
+    {
+      "id": 12916127739,
+      "name": "single-response-raw"
+    },
+    {
+      "id": 12915798366,
+      "name": "info"
+    },
+    {
+      "id": 12915633834,
+      "name": "agent"
+    }
+  ],
+  "semantic_review": "pending",
+  "execution": {
+    "version": 1,
+    "status": "failed",
+    "requests_sent": 1,
+    "packet_sha256": "5d507cb060b3369adcd72e349675a3a115b872dafd9870c8c5c12eb13170f72d",
+    "skill_sha256": "a339604869e25fc2cd040398f48a112f3a96ef6b7cba5546d0c338e16d414457",
+    "model_requested": "auto",
+    "tools": [],
+    "run_id": "40917225932",
+    "run_attempt": "1",
+    "timeout_ms": 520966,
+    "model_reported": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "completion_tokens": 1101,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1605,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2706
+    },
+    "error": "EROFS: read-only file system, open '/home/runner/work/_temp/gh-aw/safeoutputs/outputs.jsonl'"
+  },
+  "model_reported": "gpt-4o-mini-2024-07-18",
+  "provider_error": null
+}

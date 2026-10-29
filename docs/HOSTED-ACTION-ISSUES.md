@@ -1,7 +1,7 @@
 # Hosted GitHub Action failures
 
 Repository: seanisseng/OSS-Assignment. These were manually dispatched, artifact-only
-smoke tests of development case `pytest-15051` on 29 October 2026. None produced a
+smoke tests of development case `pytest-15051` on 29 October UTC (29–30 October Singapore). None produced a
 valid recommendation or completed an end-to-end case evaluation. Publication was
 disabled throughout; no sandbox issue comment was posted.
 
@@ -16,6 +16,14 @@ disabled throughout; no sandbox issue comment was posted.
 | [40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929) | One request was rejected for an empty tools list combined with tool_choice (HTTP 400, invalid_request_body). No recommendation; validation skipped. | No successful inference usage records; token log empty. Actual billing unconfirmed. | One-request termination and capture worked. The format correction is local and tested; no retry dispatched. See docs/SINGLE-RESPONSE-AUDIT.md. |
 
 ## Model selection
+
+The sixth hosted attempt, [40917225932](https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932),
+made one successful request and saved a recommendation. Its response identified
+`gpt-4o-mini-2024-07-18` and reported 2,706 tokens. The harness then failed with
+`EROFS` writing a framework marker on a read-only mount. Clean validation was
+skipped; offline validation also rejects its object-shaped `evidence` field.
+Actual billing remains unconfirmed. The [output-failure audit](SINGLE-RESPONSE-AUDIT.md#second-smoke-response-capture-and-output-contract)
+records the local fixes and regression proof; another hosted run needs approval.
 
 The pinned gh-aw v0.93.5 launcher supported preserving native Auto, but did not
 pass the relevant option at its main model-resolution site. The correction in

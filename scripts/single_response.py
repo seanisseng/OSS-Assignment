@@ -9,7 +9,6 @@ import shutil
 
 from scripts.contract import REPOSITORY, digest, require, validate
 from scripts.evidence import file_hash, load, review_record
-from scripts.runtime import api
 
 
 PACKET_BYTES = 32768
@@ -99,13 +98,9 @@ def _prepare():
     root = Path(os.environ.get('TRUSTED_ROOT', '.')).resolve()
     require(os.environ.get('GITHUB_REPOSITORY') == REPOSITORY, 'foreign repository')
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'main required')
-    require(os.environ.get('GITHUB_RUN_ATTEMPT') == '1', 'retries forbidden')
     require(os.environ.get('SINGLE_RESPONSE_ENABLED') == 'true', 'single response disabled')
     require(os.environ.get('CASE_ID') == 'pytest-15051', 'only development case 15051 allowed')
     review = review_record(root)
-    runs = api('actions/workflows/single-response.lock.yml/runs?per_page=1')
-    require(type(runs['total_count']) is int and runs['total_count'] == 2,
-            'single-response smoke attempt exhausted or unknown')
     case = load(root / 'evals/golden/inputs/pytest-15051.json')
     require(case['case_id'] == 'pytest-15051', 'smoke case mismatch')
     expected = next(x for x in load(root / 'evals/golden/expectations.json')['expectations']
