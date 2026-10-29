@@ -42,7 +42,7 @@ class SmokeTests(unittest.TestCase):
             'configuration_hash': 'reviewed-configuration'})
         self.review_check = self.review.start()
         self.addCleanup(self.review.stop)
-        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 1})
+        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 2})
         self.api = self.api_patch.start()
         self.addCleanup(self.api_patch.stop)
 
@@ -70,12 +70,22 @@ class SmokeTests(unittest.TestCase):
                     smoke.prepare()
         self.api.assert_not_called()
 
-    def test_denies_second_dispatch_and_invalid_count(self):
-        for count in [2, 0, True, '1']:
+    def test_denies_unapproved_dispatch_and_invalid_count(self):
+        for count in [1, 3, 0, True, '2']:
             with self.subTest(count=count):
                 self.api.return_value = {'total_count': count}
                 with self.assertRaises(ValueError):
                     smoke.prepare()
+
+    def test_compiled_workflow_leaves_model_selection_to_copilot(self):
+        lock = (self.previous / '.github/workflows/smoke.lock.yml').read_text(encoding='utf-8')
+        selections = [line.split(':', 1)[1].strip() for line in lock.splitlines()
+                      if line.strip().startswith('COPILOT_MODEL:')]
+        self.assertEqual(selections, ['', ''])
+        self.assertNotIn('--model ', lock)
+        self.assertNotIn('--model=', lock)
+        self.assertIn('GH_AW_MAX_AI_CREDITS="10"', lock)
+        self.assertIn('GH_AW_MAX_AI_CREDITS="5"', lock)
 
     def test_denies_stale_review_and_changed_input(self):
         self.review_check.side_effect = ValueError('review configuration changed')

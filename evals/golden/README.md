@@ -15,7 +15,8 @@ The user accepted all individual expectations, including Rule A, the revised
 13902/13634 conditions, all diagnostics and all four adversarial expectations.
 Final signoff was explicitly given on 29 October 2026; review approval is true.
 See [the review guide](../../docs/REVIEW-GUIDE.md), review.json and REVIEW-REVISION.md.
-No inference or publication has run. No model result or human assessment is invented.
+One hosted smoke attempt failed before a model response; its native Copilot trace
+remains in GitHub Actions history; local debug copies were removed on request. No recommendation or human assessment exists.
 
 ```text
 python -m unittest discover -s tests -v

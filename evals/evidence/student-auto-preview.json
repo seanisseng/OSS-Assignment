@@ -1,0 +1,18 @@
+{
+  "status": "applied_user_authorized_replacement_not_dispatched",
+  "purpose": "Leave model selection to native Copilot instead of resolving the gh-aw auto alias to a concrete model.",
+  "candidate_source": ".github/workflows/smoke.md",
+  "candidate_source_sha256": "773190b99e9303c23352bba8dd7253d025cfb6b2ac07979b6651627778e936d0",
+  "compiler_version": "v0.93.5",
+  "compiled": true,
+  "checks": {
+    "runtime_model_environment_unset_in_analysis_and_detection": true,
+    "explicit_model_flags_absent": true,
+    "credit_limits_preserved": true,
+    "prompt_and_skill_unchanged": true,
+    "integration_identity_preserved": true
+  },
+  "hosted_native_auto_verified": false,
+  "inference_calls": 0,
+  "study_boundary": "User authorized one replacement. Trusted preparation accepts dispatch count exactly two and rejects reruns; answer key unchanged. First-run local debug copies removed on request."
+}

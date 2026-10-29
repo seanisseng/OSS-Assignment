@@ -77,9 +77,9 @@ Trace hashes detect changes but do not authenticate fabricated operator records.
 Local tests cover deterministic limits, malformed output, stale hashes, isolation,
 review binding, interrupted attempts and mocked publication. They do not prove
 model resistance, hosted permissions or semantic quality. See evals/evidence/.
-No inference, publication or genuine model transcript is currently recorded.
-Copilot access is unverified; execution.json records pending investigation, not
-an invented blocker. A dry-run submission needs a documented real execution limit.
+One hosted smoke attempt failed before a model response; its run remains in GitHub history.
+Copilot Student/CLI and the existing secret were verified; Auto model routing failed.
+execution.json records this attempt; permanent hosted unavailability is unproven.
 
 ## Governance
 
@@ -121,18 +121,18 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 
 | Component | Provenance and status |
 |---|---|
-| Model | Workflow requests Copilot gpt-4.1, not snapshot pinned; entitlement/reporting untested. Dry run uses actual recorded assistant identity, currently no run. |
+| Model | Original workflow requests gpt-4.1; approved smoke uses Auto, resolved to claude-sonnet-5.5 and rejected as unsupported. No model response. |
 | Runtime | gh-aw v0.93.5; action SHAs/container digests in lock; locally installed Codex CLI 0.164.0, signed in via ChatGPT. |
 | Instructions | AGENTS.md, canonical .claude skill, workflow prompt, CONTRIBUTING.md; dry-run adapter in scripts/dry_run.py. |
 | Tools/MCP | File write, cat/sha256sum plus compiler-added shell utilities in lock, framework safeoutputs MCP; dry-run MCP unavailable. |
 | Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs, deterministic tests/report/dashboard; real raw JSONL, usage and assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; first smoke failed at startup with zero reported usage; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-Submission remains blocked on a supported dry-run basis, fresh
+Submission remains blocked on working execution, fresh
 execution and human assessments. Hosted identity/firewall/MCP/publication and
 phone cancellation remain untested. Remote mode retains additional evidence gates.
 No push or third-party resource change is authorized by local completion work.

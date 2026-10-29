@@ -1,6 +1,7 @@
 # Activation and evidence runbook
 
-Current state: local implementation only. No inference or publication has run.
+Current state: one hosted smoke attempt failed before a model response.
+The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
 For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation

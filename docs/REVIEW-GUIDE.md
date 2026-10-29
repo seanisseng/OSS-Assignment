@@ -26,7 +26,8 @@ all three diagnostics, the revised 13902/13634 conditions and all four adversari
 expectations. Acceptance of those conditions resolves the earlier conditional
 acceptance of Rule A and cases 14389, 13716, 13986 and 13403.
 On 29 October 2026, after raising your concerns, you explicitly gave final signoff.
-Approval flags are true. No model evaluation has started.
+Approval flags are true. One hosted smoke attempt failed before a model response;
+its original run remains in GitHub Actions history.
 
 ## Nine unchanged real reports
 

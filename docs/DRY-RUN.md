@@ -2,10 +2,11 @@
 
 ## Status and limits
 
-No model run is recorded. Student final signoff is complete for the reviewed key.
+One hosted smoke attempt failed before a model response; its GitHub run remains.
+Student final signoff is complete for the reviewed key.
 The supplied updated brief permits a coding-assistant dry run when end-to-end
 execution is unavailable. `evals/evidence/execution.json` currently records a
-pending investigation; no unsupported technical blocker is asserted.
+failed hosted attempt; permanent hosted unavailability is not established.
 
 The offline helpers never launch an agent, call GitHub or publish. They export
 only one case and instructions, and archive a real coding-assistant JSONL trace

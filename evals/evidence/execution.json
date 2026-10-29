@@ -1,7 +1,7 @@
 {
-  "mode": "dry-run",
-  "end_to_end_status": "pending",
-  "reason": "Dry-run route selected. Copilot entitlement and hosted execution access have not been established; this is not yet evidence that end-to-end execution is impossible.",
+  "mode": "remote",
+  "end_to_end_status": "replacement_prepared",
+  "reason": "Native automatic-selection correction applied; user authorized exactly one replacement smoke dispatch. The first run remains in GitHub history; local downloaded debug copies were removed on request.",
   "blocking_evidence": [],
   "untested_controls": [
     "Hosted model entitlement and reported identity",
@@ -16,6 +16,9 @@
     "codex_cli_version": "0.164.0",
     "codex_login_status": "Logged in using ChatGPT",
     "gh_cli_in_current_shell": "Not found by Get-Command",
-    "inference_performed": false
-  }
+    "inference_performed": false,
+    "git_authentication": "Existing Git credential succeeded outside the filesystem sandbox; GitHub owner seanisseng verified before mutations."
+  },
+  "hosted_attempt_performed": true,
+  "prior_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074"
 }

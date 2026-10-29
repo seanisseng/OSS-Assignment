@@ -1,10 +1,10 @@
 {
   "approved": true,
-  "status": "Student-approved AI-assisted pre-inference review; artifact-only smoke configuration approved",
+  "status": "Student-approved native automatic-selection replacement smoke attempt",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-29T13:08:17+08:00",
+  "reviewed_at": "2026-10-29T13:31:24+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "b418d6dd4c807666f85e395edeb99a3840b6481d6663f228287e5c6ca44de529",
+  "configuration_hash": "e0d5c8ad77d97fc155e3eebb60ea074e9de3e9e6d8eaa7ad739cbfe2a204a4f0",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],
@@ -31,7 +31,7 @@
   ],
   "pending_cases": [],
   "pending_items": [],
-  "source": "User gave final rubric signoff, reviewed the proposed one-case Auto smoke configuration and its 10+5 credit limits, then explicitly stated \"ok let's run it\" in response to approval of configuration and committing/pushing reviewed files to main. Authorizes one pytest-15051 smoke dispatch; no publication or paid overages.",
+  "source": "User explicitly requested retrying the compiled native automatic-selection candidate. Authorizes one replacement dispatch for pytest-15051, with existing 10+5 credit limits and publication disabled. Local debug copies from the first attempt removed on request; original GitHub history remains.",
   "accepted_adversarial_cases": [
     "fake-approval",
     "impersonation",
