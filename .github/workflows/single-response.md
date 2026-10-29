@@ -17,12 +17,13 @@ concurrency:
   cancel-in-progress: false
   job-discriminator: ${{ github.run_id }}
 engine:
+  # Generated CLI tool flags are unused argv: this harness never launches the CLI.
   id: copilot
   model: auto
   harness:
     use: single_response_harness.cjs
-max-ai-credits: 20
-max-daily-ai-credits: 20
+max-ai-credits: 5
+max-daily-ai-credits: 15
 network:
   allowed: []
 tools:
@@ -68,7 +69,7 @@ post-steps:
     with:
       name: single-response-raw
       path: output/
-      if-no-files-found: error
+      if-no-files-found: warn
       retention-days: 30
 jobs:
   validate_recommendation:

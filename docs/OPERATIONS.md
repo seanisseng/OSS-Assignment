@@ -1,11 +1,13 @@
 # Activation and evidence runbook
 
-Current state: four hosted smoke attempts failed; none produced a recommendation.
+Current state: five hosted smoke attempts failed; none produced a recommendation.
 The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
 The separate [single-response replacement](SINGLE-RESPONSE-REVISION.md) is locally
-implemented and approved for one push and first smoke test. Its new switch
+implemented; its first smoke failed HTTP 400. The local correction awaits new
+approval before another push or test; configuration 3115d8ad was then approved
+for one follow-up. Its new switch
 is `CLARIFICATION_SINGLE_RESPONSE_ENABLED`; it needs no sandbox issue and cannot
 publish. After an approved first dispatch, reset that switch once preparation
 finishes. Disable the new workflow and cancel its running job for an immediate

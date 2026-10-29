@@ -5,7 +5,9 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+import time
 import unittest
+import zipfile
 from unittest.mock import patch
 
 from scripts import single_response
@@ -86,6 +88,36 @@ class SingleResponseTests(unittest.TestCase):
             harness.write_text('changed')
             self.assertNotEqual(configuration_hash(root), old)
 
+    def test_refused_preparation_records_reason_without_installing_harness(self):
+        previous = Path.cwd()
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            os.chdir(root)
+            try:
+                with patch.dict(os.environ,{'GITHUB_REPOSITORY':'foreign/repo',
+                        'RUNNER_TEMP':str(root / 'runner')}), patch.object(single_response,'api') as api:
+                    with self.assertRaisesRegex(ValueError,'foreign repository'):
+                        single_response.prepare()
+                    api.assert_not_called()
+                receipt=json.loads((root / 'output/preparation.json').read_text())
+                self.assertEqual(receipt['status'],'refused')
+                self.assertIn('foreign repository',receipt['reason'])
+                self.assertFalse((root / 'output/recommendation.json').exists())
+                self.assertFalse((root / 'runner/gh-aw/actions/single_response_harness.cjs').exists())
+            finally:
+                os.chdir(previous)
+
+    def test_workflow_keeps_refusals_visible_and_execution_success_gated(self):
+        source=Path('.github/workflows/single-response.md').read_text(encoding='utf-8')
+        raw=source.split('name: single-response-raw',1)[1].split('jobs:',1)[0]
+        self.assertTrue('if-no-files-found: warn' in raw,'Raw capture should not mask a refusal')
+        self.assertTrue('max-ai-credits: 5\n' in source,'Expected five-credit analysis setting')
+        self.assertTrue('max-daily-ai-credits: 15\n' in source,'Expected separate declared daily setting')
+        lock=Path('.github/workflows/single-response.lock.yml').read_text(encoding='utf-8')
+        execution=lock.split('- name: Execute GitHub Copilot CLI',1)[1].split('\n      - name:',1)[0]
+        conditions=[line for line in execution.splitlines() if line.startswith('        if:')]
+        self.assertFalse(conditions,'Default success condition must gate execution after refused preparation')
+
     def test_mocked_preparation_request_capture_and_clean_validation(self):
         repo = Path.cwd()
         harness = repo / 'scripts/single_response_harness.cjs'
@@ -114,7 +146,7 @@ class SingleResponseTests(unittest.TestCase):
                        'RUNNER_TEMP':str(root / 'runner')}
                 with patch.dict(os.environ,env), patch.object(single_response,'review_record',
                         return_value={'configuration_hash':'approved'}), patch.object(
-                        single_response,'api',return_value={'total_count':1}) as api:
+                        single_response,'api',return_value={'total_count':2}) as api:
                     single_response.prepare()
                     api.assert_called_once()
                     for key, value in [('SINGLE_RESPONSE_ENABLED','false'),
@@ -122,16 +154,21 @@ class SingleResponseTests(unittest.TestCase):
                                        ('GITHUB_REPOSITORY','pytest-dev/pytest')]:
                         with patch.dict(os.environ,{key:value}), self.assertRaises(ValueError):
                             single_response.prepare()
+                    for count in [0,1,3,True,'2']:
+                        api.return_value={'total_count':count}
+                        with self.assertRaises(ValueError):
+                            single_response.prepare()
                     api.return_value={'total_count':2}
-                    with self.assertRaises(ValueError):
-                        single_response.prepare()
-                    api.return_value={'total_count':1}
                     swapped = case | {'case_id':'a-different-case'}
                     with patch.object(single_response,'load',side_effect=[swapped,
                             {'expectations':[{'case_id':swapped['case_id'],
                                               'input_hash':digest(swapped)}]}]):
                         with self.assertRaisesRegex(ValueError,'case mismatch'):
                             single_response.prepare()
+                    # Restore a successful preparation before the mocked execution phase.
+                    single_response.prepare()
+                    self.assertEqual(json.loads((root / 'output/preparation.json').read_text())['status'],
+                                     'prepared')
                 result = self.result() | {'case_id':case['case_id'],'input_hash':digest(case)}
                 raw = json.dumps({'model':'mock','choices':[{'finish_reason':'stop',
                     'message':{'role':'assistant','content':json.dumps(result)}}]})
@@ -139,11 +176,20 @@ class SingleResponseTests(unittest.TestCase):
                     'GH_AW_SAFE_OUTPUTS':str(root / 'safeoutputs/outputs.jsonl'),
                     'MOCK_RESPONSE':raw}
                 code = ('global.fetch=async()=>new Response(process.env.MOCK_RESPONSE);'
-                        'require(process.argv[1]).main().catch(e=>{console.error(e);process.exitCode=1;});')
-                proc = subprocess.run(['node','-e',code,str(harness),'ignored-cli-arguments'],
+                        'require(process.argv[1]).main({stepStartFile:process.argv[2]}).catch(e=>{console.error(e);process.exitCode=1;});')
+                step_start=root / 'step-start.txt'
+                step_start.write_text(str(time.time_ns() // 1000000))
+                proc = subprocess.run(['node','-e',code,str(harness),str(step_start),'ignored-cli-arguments'],
                     env=child_env,capture_output=True,text=True,encoding='utf-8')
                 self.assertEqual(proc.returncode,0,proc.stderr)
-                shutil.copytree(root / 'output',root / 'staged')
+                archive=root / 'raw-artifact.zip'
+                with zipfile.ZipFile(archive,'w') as bundle:
+                    for file in (root / 'output').iterdir():
+                        bundle.write(file,arcname=file.relative_to(root / 'output'))
+                with zipfile.ZipFile(archive) as bundle:
+                    bundle.extractall(root / 'staged')
+                self.assertTrue((root / 'staged/recommendation.json').is_file())
+                self.assertFalse((root / 'staged/output').exists())
                 (root / 'trusted-input').mkdir()
                 shutil.copyfile(root / 'input/manifest.json',root / 'trusted-input/manifest.json')
                 single_response.validate_artifact()

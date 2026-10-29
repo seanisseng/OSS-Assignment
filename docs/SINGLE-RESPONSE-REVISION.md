@@ -1,12 +1,12 @@
-# Single-response revision: approved for one hosted smoke test
+# Single-response revision: hardened correction approved for one follow-up
 
-The user requested implementation and local testing before another hosted run.
-The replacement is a separate `single-response.md` workflow and compiled lock.
-The original clarify/smoke workflows and four original GitHub runs are retained
-for comparison. No replacement workflow has been pushed or dispatched, and no
-provider call was made while implementing or testing it. The user approved
-configuration `3e538ec9...`, a push and one first smoke with twenty configured
-proxy credits and a ten-minute timeout. No additional run or publication is authorized.
+The user approved configuration `3e538ec9...`, pushed as `c5cd1cd`, and one smoke.
+Run 40900450929 made one request and failed with HTTP 400 before producing an
+assessment. The [audit and correction](SINGLE-RESPONSE-AUDIT.md) record the exact
+request error, local regression fix and remaining compatibility checks. The fix
+was approved as configuration `3115d8ad...` for a push and one follow-up smoke.
+No second request has been dispatched as of this approval record.
+The original workflows and all five failed runs remain available for comparison.
 
 ## Evidence motivating the change
 
@@ -49,21 +49,28 @@ has been established. Request-rate restrictions are separate from that allowance
 ## Enforcement and compatibility boundary
 
 The custom harness is supported by the pinned gh-aw compiler. It calls the AWF
-Copilot Chat Completions gateway with `model: auto`, `tools: []`,
-`tool_choice: none`, `n: 1`, no redirect following and no retry loop. It does not launch a
+Copilot Chat Completions gateway with `model: auto` and `n: 1`. The local correction
+omits tools and tool_choice entirely; it offers no model tools, follows no
+redirects and has no retry loop. It does not launch a
 Copilot CLI agent session or resolve Auto into a chosen concrete model. The
 fixed local endpoint is `http://api-proxy:10002/chat/completions`; credentials
 remain in AWF's proxy. This is an integration with the documented proxy, not a
 claim that Copilot exposes a public direct-inference REST API.
 
-The caller aborts after ten minutes, requests at most 2,048 output tokens, bounds
+The caller aborts after at most 540 seconds, reduced by elapsed AWF startup time,
+inside the ten-minute execution step. This leaves a minute for evidence cleanup.
+Cancellation, runner loss or an external hard kill can still interrupt finalization;
+a request_sent trace without a terminal event is incomplete, never successful.
+The caller requests at most 2,048 output tokens, bounds
 the packet to 32 KiB and provider response to 64 KiB, and accepts at most 32 KiB
 of recommendation text. One fixed gateway request is enforced in caller code,
 not by the previously ineffective turn setting. If the complete issue exceeds
 the packet allowance, fail
 preparation for human handling instead of silently truncating the report.
 
-The new workflow has a twenty-credit proxy setting and no separate AI detector.
+The local correction has a five-credit proxy setting, a declared daily setting
+of fifteen, and no separate AI detector. This supersedes the deployed twenty-credit
+setting; actual one-request cost has not been measured and is not assumed to be one credit.
 It has no model-selectable external action, and its trusted output is a fixed
 framework no-op; the recommendation is only a raw artifact until clean Python
 validation. An AI threat verdict is unnecessary for that restricted artifact
@@ -72,9 +79,23 @@ workflow's identity. Legacy workflows retain their separate detector.
 
 Preparation requires the new `CLARIFICATION_SINGLE_RESPONSE_ENABLED=true` switch,
 main in the allowlisted repository, case 15051, run attempt one, a current signed
-configuration and exactly one dispatch in this new workflow's history. Reruns and
+configuration and total dispatch count two after the failed first run. Reruns and
 later dispatches fail closed. The daily setting still does not constrain manual
 dispatch. Reset the switch after preparation; cancel running jobs to stop them.
+The approved next dispatch is consumed even by a refusal, 429 or timeout. There
+is no automatic recovery allowance; another attempt requires a changed, reviewed
+configuration. Never delete history to reset the guard.
+
+Preparation first creates `output/preparation.json`, then records prepared or
+refused status and re-raises the original error. The always-run raw upload warns
+if no files exist; the validated-artifact upload still errors on a missing result.
+The execution step retains GitHub's default success condition, so failed preparation
+skips it instead of trying to load an uninstalled harness.
+
+The compiler retains a CLI step label and shell/write/all-paths arguments. These
+arguments are unused: the replacement harness ignores argv and never starts the
+CLI. The source workflow explicitly comments on this discrepancy. Model tool
+availability is determined by the request, which offers no tools.
 
 `request.json` captures the actual skill text and packet delivered to the model.
 `execution.json` records the sole request and packet/skill hashes; raw responses,
@@ -101,14 +122,15 @@ adversarial expectations, and obtain student semantic assessments.
 Only after local checks and separate approval should one hosted smoke test verify
 request count, skill evidence, output creation/validation and reported usage.
 
-Hosted gateway compatibility, actual Auto selection, service rate limits and
+The first run reached the gateway but failed request validation. Complete
+gateway compatibility, actual Auto selection, service rate limits and
 account billing remain unverified for this replacement. The one-request claim is
 about the caller's gateway POST; inspect proxy logs for any upstream behavior.
 Local verification is recorded in `evals/evidence/single-response-verification.json`.
 
-Verification: 67 Python tests pass, including ten Node transport/harness cases.
-Python adapter line coverage is approximately 96%; the Node harness has 97.35%
-line and 82.35% branch coverage. Compilation is reproducible with gh-aw v0.93.5.
+Verification: 69 Python tests pass, including thirteen Node transport/harness cases.
+The Node harness has approximately 98% line and over 80% branch coverage. Timeout-finalization,
+refusal receipts and artifact ZIP extraction are covered. Compilation uses gh-aw v0.93.5.
 The initial missing adapter and missing case-identity guard were reproduced as
 failing tests before implementation/fix. These results use mocked transport only.
 

@@ -9,7 +9,8 @@ The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) did not produce a
 recommendation. No further attempt of that looping version is authorized.
 
 The [single-response replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented
-and locally tested. The user approved its configuration, push and one smoke test.
+and locally tested. Its first hosted request failed HTTP 400; the local correction
+and [documentation audit](docs/SINGLE-RESPONSE-AUDIT.md) are approved for one follow-up smoke.
 Its custom harness supplies the packet directly; the model has no investigation tools.
 
 The updated assignment permits a documented coding-assistant dry run. Start with

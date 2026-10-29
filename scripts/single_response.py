@@ -78,6 +78,24 @@ def validate_response(case, packet, raw):
 
 
 def prepare():
+    """Preserve a refusal receipt while propagating the original preparation error."""
+    Path('output').mkdir(exist_ok=True)
+    receipt = Path('output/preparation.json')
+    require(not receipt.is_symlink(), 'symlink preparation receipt refused')
+    receipt.write_bytes(encoded(dict(status='checking', requests_sent=0)))
+    try:
+        _prepare()
+    except Exception as error:
+        reason = str(error) if isinstance(error, ValueError) else type(error).__name__
+        try:
+            receipt.write_bytes(encoded(dict(status='refused', reason=reason[:1000], requests_sent=0)))
+        except OSError:
+            pass  # Preserve the original refusal even if evidence storage also failed.
+        raise
+    receipt.write_bytes(encoded(dict(status='prepared', requests_sent=0)))
+
+
+def _prepare():
     root = Path(os.environ.get('TRUSTED_ROOT', '.')).resolve()
     require(os.environ.get('GITHUB_REPOSITORY') == REPOSITORY, 'foreign repository')
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'main required')
@@ -86,7 +104,7 @@ def prepare():
     require(os.environ.get('CASE_ID') == 'pytest-15051', 'only development case 15051 allowed')
     review = review_record(root)
     runs = api('actions/workflows/single-response.lock.yml/runs?per_page=1')
-    require(type(runs['total_count']) is int and runs['total_count'] == 1,
+    require(type(runs['total_count']) is int and runs['total_count'] == 2,
             'single-response smoke attempt exhausted or unknown')
     case = load(root / 'evals/golden/inputs/pytest-15051.json')
     require(case['case_id'] == 'pytest-15051', 'smoke case mismatch')
@@ -96,7 +114,6 @@ def prepare():
     skill = root / '.claude/skills/bug-report-clarification/SKILL.md'
     packet = build_packet(case, skill.read_text(encoding='utf-8'))
     Path('input').mkdir(exist_ok=True)
-    Path('output').mkdir(exist_ok=True)
     packet_path = Path('input/packet.json')
     packet_path.write_bytes(encoded(packet))
     manifest = dict(case_id=case['case_id'], input_hash=digest(case), sandbox_issue=None,
@@ -126,8 +143,8 @@ def validate_artifact():
     require(not path.is_symlink() and path.stat().st_size <= 32768, 'unsafe/oversized output')
     result = validate_response(case, packet, path.read_text(encoding='utf-8'))
     request = load('staged/request.json')
-    require(request['model'] == 'auto' and request['tools'] == [] and
-            request['tool_choice'] == 'none' and request['n'] == 1, 'request policy differs')
+    require(request['model'] == 'auto' and 'tools' not in request and
+            'tool_choice' not in request and request['n'] == 1, 'request policy differs')
     require(packet['skill'] in request['messages'][0]['content'] and
             json.loads(request['messages'][1]['content']) == {k:v for k,v in packet.items() if k != 'skill'},
             'packet or skill not present in captured request')

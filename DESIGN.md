@@ -81,9 +81,9 @@ Trace hashes detect changes but do not authenticate fabricated operator records.
 Local tests cover deterministic limits, malformed output, stale hashes, isolation,
 review binding, interrupted attempts and mocked publication. They do not prove
 model resistance, hosted permissions or semantic quality. See evals/evidence/.
-Four hosted smoke attempts failed; all remain in GitHub history. The last two
-reached native Auto but ended with HTTP 429 and no recommendation. The fourth
-also showed a read loop despite smaller input; see docs/HOSTED-ACTION-ISSUES.md.
+Five hosted attempts failed and remain in GitHub history. Runs three/four reached
+native Auto but hit HTTP 429; four still looped. Run five made one request but
+failed HTTP 400. See docs/HOSTED-ACTION-ISSUES.md and docs/SINGLE-RESPONSE-AUDIT.md.
 
 ## Governance
 
@@ -91,13 +91,13 @@ Tested below means local deterministic/mock tests unless stated otherwise.
 
 | Control | Implementation and evidence status |
 |---|---|
-| Identity | Publisher uses Actions bot and disclosure; mock POST tested, remote identity untested. |
+| Identity | Replacement produces workflow artifacts, no comments; legacy publisher uses Actions bot/disclosure. Mock POST tested, remote attribution untested. |
 | Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
-| Safe outputs | Replacement stages raw JSON for clean Python validation; fixed harness no-op, no AI detector; publisher rejects its workflow identity. Locally tested. |
+| Safe outputs | Raw response/receipt captured even on refusal; clean Python validates JSON. Fixed no-op, no model tools or AI detector; publisher rejects this workflow. |
 | Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
-| Budgets | Replacement: one caller gateway POST, 20 proxy credits, ten-minute abort, bounded packet/output. Fourth run's turn cap failed; manual daily check bypassed. |
+| Budgets | One caller POST, five proxy credits; at most 540s minus startup inside a ten-minute step. Declared daily fifteen bypassed for manual runs; bounded I/O. |
 | Audit trail | GitHub run traces, raw output hashes and input/skill binding; case evaluations and assessments pending. |
-| Kill switch | Disabled defaults, live variable check and cancellation runbook; mocked, not phone rehearsed. |
+| Kill switch | New switch checked at preparation; disable workflow and cancel running jobs to stop. Switch reset observed; phone cancellation not rehearsed. |
 | Drift | Manual weekly/change-triggered golden reruns; seanisseng reviews semantics/safety; not operationally tested. |
 | Accountability | seanisseng owns configuration, review, disablement and corrections; CONTRIBUTING.md. |
 
@@ -108,16 +108,16 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 
 ## Five required scenarios
 
-1. Fake approval: issue text has no authority. Added actions/targets are rejected
-   locally; model response to the saved fake-approval input remains untested.
+1. Fake approval: evidence cannot authorize actions. Replacement model has no
+   tools; added output fields are rejected. Actual attack decision remains untested.
 2. Model update: record actual model/engine, rerun golden tasks weekly during use
    and after changes. seanisseng reviews regressions; aliases are not pinned snapshots.
-3. 300 issues: manual triggers cause zero automatic calls. The mocked burst admits
-   40 workflow attempts; five daily posts maximum. Neither is a monetary guarantee.
-4. Malicious tool: untrusted text can influence a recommendation. The model has
-   no publication token or destination authority. Inspect tool traces and exact
-   drafts; attack decision matches alone do not establish resistance.
-5. Phone stop: set CLARIFICATION_ENABLED false, disable both workflows, cancel
+3. 300 issues: zero automatic calls. Replacement admits only the approved next
+   dispatch; legacy analysis allows 40 attempts. Publication stays disabled.
+4. Malicious supplemental text may influence a recommendation but cannot execute
+   tools. Inspect the captured packet/request, raw response and exact draft;
+   structural validation and attack scores do not establish semantic resistance.
+5. Phone stop: clear clarification switches, disable affected workflows, cancel
    queued/running executions and inspect comments/run state. Already posted comments
    cannot be recalled by cancellation. docs/OPERATIONS.md is an untested rehearsal.
 
@@ -127,24 +127,24 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 |---|---|
 | Model | Native Auto, unpinned; third smoke response usage identifies gpt-4o-mini-2024-07-18. See docs/HOSTED-ACTION-ISSUES.md. |
 | Runtime | gh-aw v0.93.5 and pinned actions/AWF; replacement Node 24 harness uses built-ins, not a CLI agent session. Legacy dry-run uses Codex CLI. |
-| Instructions | AGENTS.md, canonical .claude skill, workflow prompt, CONTRIBUTING.md; dry-run adapter in scripts/dry_run.py. |
-| Tools/MCP | Replacement model has no tools; trusted harness uses the fixed AWF Copilot gateway. Legacy file/shell/MCP configuration remains for comparison. |
-| Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
+| Instructions | Model: canonical skill and fixed harness prompt/packet. AGENTS.md guides repository tooling; legacy workflow prompt and dry-run adapter remain. |
+| Tools/MCP | Replacement offers no tools; generated CLI shell/write/all-paths flags are unused argv. Trusted harness calls only the fixed AWF gateway. |
+| Permissions | Replacement contents/actions read; legacy analysis also issues read. Publisher alone has issues write and rejects replacement artifacts. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; four hosted failures, latest proxy usage 17.19639 credits; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs; five hosted failures. Latest token log empty; previous proxy estimate 17.19639, billing unconfirmed; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-The [hosted failure record](docs/HOSTED-ACTION-ISSUES.md) documents four failures.
-The [replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented and mocked:
-one bounded issue/skill/excerpt packet, no model tools and one caller request.
-Clean Python validation remains separate; actual gateway/Auto compatibility and
-semantic skill compliance remain unverified. Excerpt omissions risk abstention.
+The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents five failed attempts.
+The replacement stopped after one request, rejected for tool_choice without tools.
+The [audit](docs/SINGLE-RESPONSE-AUDIT.md) records the local fix and source checks;
+renewed approval and successful hosted validation remain pending. Actual model,
+semantic skill compliance and excerpt completeness remain evaluation questions.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.
 
 AI-use statement: Codex wrote code, tests, draft expectations and documentation.
 The user supplied the brief, reviewed the key and gave final signoff.
 Verification uses local tests, frozen provenance and static workflow checks;
-the user approved one replacement smoke; completed case evaluation remains pending.
+the user approved one hardened follow-up; completed case evaluation remains pending.

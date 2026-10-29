@@ -1,0 +1,41 @@
+{
+  "run_id": 40900450929,
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929",
+  "commit": "c5cd1cd196a3d5ef4bb3d6d3f3f3711638c1d1ed",
+  "configuration_hash": "3e538ec940ea584d1a2c6d88121954fb10ae36e1cb9d7d8082c831d6c08024ac",
+  "conclusion": "failure",
+  "case_id": "pytest-15051",
+  "caller_request_count": 1,
+  "retries": 0,
+  "gateway_http_status": 400,
+  "provider_error": {
+    "message": "tools are required when tool choice is specified",
+    "code": "invalid_request_body"
+  },
+  "execution": {
+    "version": 1,
+    "status": "failed",
+    "requests_sent": 1,
+    "packet_sha256": "5d507cb060b3369adcd72e349675a3a115b872dafd9870c8c5c12eb13170f72d",
+    "skill_sha256": "a339604869e25fc2cd040398f48a112f3a96ef6b7cba5546d0c338e16d414457",
+    "model_requested": "auto",
+    "tools": [],
+    "run_id": "40900450929",
+    "run_attempt": "1",
+    "error": "gateway HTTP 400"
+  },
+  "request_contains_canonical_skill": true,
+  "packet_reconstructed_from_frozen_input": true,
+  "model_requested": "auto",
+  "model_reported": null,
+  "recommendation_present": false,
+  "validation_job": "skipped",
+  "proxy_usage_records": 0,
+  "proxy_credit_total": null,
+  "confirmed_billed_credits": null,
+  "switch_enabled": false,
+  "publication_enabled": false,
+  "temporary_debug_copies_removed": true,
+  "local_fix": "Omit tools and tool_choice entirely; never execute returned tool calls.",
+  "fixed_configuration_tested_hosted": false
+}
