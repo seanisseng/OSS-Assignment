@@ -1,8 +1,8 @@
 {
-  "approved": false,
-  "status": "Pending approval: trusted fixed CLI terminal noop and completion-aware validation; offline collector/conclusion replay passed",
+  "approved": true,
+  "status": "User approved fixed terminal CLI completion, push and one hosted smoke",
   "reviewer": "seanisseng",
-  "reviewed_at": null,
+  "reviewed_at": "2026-10-30T01:44:42+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
   "configuration_hash": "6b9412c724f5add9f7d64ae98307c7d9a93e5dbaec6031f1b9a49045aae7fc6d",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
@@ -217,6 +217,15 @@
       "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
       "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
       "source": "User replied \"approve\" to configuration d8b83540, pushing the fixes and one hosted pytest-15051 smoke with the existing five-credit proxy limit. Lifetime testing counter removed as explicitly requested; no automatic retries or publication authorized."
+    },
+    {
+      "approved": true,
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-30T01:44:42+08:00",
+      "configuration_hash": "6b9412c724f5add9f7d64ae98307c7d9a93e5dbaec6031f1b9a49045aae7fc6d",
+      "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+      "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+      "source": "User replied \"yes\" to configuration 6b9412c7, pushing the completion fix and one hosted pytest-15051 smoke. Existing five-credit proxy limit; no automatic retries or publication."
     }
   ],
   "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",

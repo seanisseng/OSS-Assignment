@@ -1,5 +1,5 @@
 {
-  "status": "completion_fix_locally_verified_pending_approval",
+  "status": "completion_fix_approved_for_one_hosted_smoke",
   "configuration_hash": "6b9412c724f5add9f7d64ae98307c7d9a93e5dbaec6031f1b9a49045aae7fc6d",
   "python_tests_passed": 69,
   "node_transport_cases_passed": 18,
@@ -63,7 +63,7 @@
     "Abrupt runner loss or cancellation can interrupt final evidence writes.",
     "No lifetime testing counter; manual switch, external run approval, per-attempt budget and deadline remain."
   ],
-  "approved_at": null,
+  "approved_at": "2026-10-30T01:44:42+08:00",
   "prior_approved_configuration_hash": "d8b8354099e01fd38a540eac66024502c2d47596a4d66dd207aadea3a3a244dc",
   "latest_attempt_run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777",
   "new_pushes_since_fix": 0,
