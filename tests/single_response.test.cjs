@@ -40,6 +40,21 @@ test('one fixed-gateway request contains the actual skill and no tools', async (
   assert.equal(result.content,'{"decision":"sufficient"}');
 });
 
+test('request supplies a closed JSON contract with evidence identifiers as a string array', () => {
+  const system=makeRequest({...packet,supplemental_context:{tool_result:'untrusted'},
+    excerpts:[{key:'src/example.py'}]}).messages[0].content;
+  const schema=JSON.parse(system.split('Output contract (JSON Schema):\n')[1]);
+  assert.equal(schema.additionalProperties,false);
+  assert.deepEqual(schema.required.sort(),['case_id','input_hash','decision','missing',
+    'evidence','reasoning','questions','comment'].sort());
+  assert.equal(schema.properties.case_id.const,packet.case_id);
+  assert.equal(schema.properties.input_hash.const,packet.input_hash);
+  assert.equal(schema.properties.evidence.type,'array');
+  assert.equal(schema.properties.evidence.items.type,'string');
+  assert.deepEqual(schema.properties.evidence.items.enum,['issue','tool_result','src/example.py']);
+  assert.match(system,/Do not copy evidence objects/);
+});
+
 test('provider rejects a tool selector without nonempty tool definitions', async () => {
   let calls=0;
   const result=await assess(packet,async(_url,options)=>{
@@ -130,6 +145,48 @@ test('trusted harness captures raw success and raw failure without another reque
     }
   } finally {
     global.fetch=oldFetch;
+    for (const key of Object.keys(process.env)) if (!(key in oldEnv)) delete process.env[key];
+    Object.assign(process.env,oldEnv);
+    assert.ok(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep));
+    fs.rmSync(root,{recursive:true,force:true});
+  }
+});
+
+test('successful inference never writes the read-only framework safe-output path', async () => {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'single-response-readonly-'));
+  const oldEnv={...process.env};
+  const originalWrite=fs.writeFileSync;
+  const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
+  try {
+    fs.mkdirSync(path.join(root,'input'));
+    const bytes=Buffer.from(JSON.stringify(packet));
+    fs.writeFileSync(path.join(root,'input/packet.json'),bytes);
+    fs.writeFileSync(path.join(root,'input/manifest.json'),JSON.stringify({
+      packet_sha256:sha(bytes),skill_sha256:sha(packet.skill),
+      case_id:packet.case_id,input_hash:packet.input_hash}));
+    const stepStartFile=path.join(root,'step-start.txt');
+    fs.writeFileSync(stepStartFile,String(Date.now()));
+    const safe=path.join(root,'safeoutputs/outputs.jsonl');
+    fs.mkdirSync(path.dirname(safe));
+    process.env.GITHUB_WORKSPACE=root;
+    process.env.GH_AW_SAFE_OUTPUTS=safe;
+    fs.writeFileSync=(destination,...args)=>{
+      if (destination===safe) throw Object.assign(new Error('read-only file system'),{code:'EROFS'});
+      return originalWrite(destination,...args);
+    };
+    let calls=0;
+    await main({stepStartFile,transport:async()=>{
+      calls++;return new Response(JSON.stringify(response('{"evidence":["issue"]}')));
+    }});
+    assert.equal(calls,1);
+    const trace=JSON.parse(fs.readFileSync(path.join(root,'output/execution.json'),'utf8'));
+    assert.equal(trace.status,'response_received');
+    assert.equal(trace.model_reported,'reported-model');
+    assert.equal(fs.existsSync(safe),false);
+    assert.equal(fs.readFileSync(path.join(root,'output/recommendation.json'),'utf8'),
+      '{"evidence":["issue"]}');
+  } finally {
+    fs.writeFileSync=originalWrite;
     for (const key of Object.keys(process.env)) if (!(key in oldEnv)) delete process.env[key];
     Object.assign(process.env,oldEnv);
     assert.ok(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep));
