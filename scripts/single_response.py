@@ -146,6 +146,7 @@ def validate_artifact():
     trace = load('staged/execution.json')
     require(type(trace['requests_sent']) is int and trace['requests_sent'] == 1
             and trace['status'] == 'response_received'
+            and trace.get('terminal_safe_output') == 'noop'
             and trace['packet_sha256'] == manifest['packet_sha256'], 'invalid execution trace')
     print('Recommendation validates. Semantic skill compliance still needs human review.')
     print('Exact approval hash:', digest(result))

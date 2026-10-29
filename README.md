@@ -9,9 +9,9 @@ The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) did not produce a
 recommendation. No further attempt of that looping version is authorized.
 
 The [single-response replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented
-and locally tested. Its second smoke returned a recommendation, then failed writing
-a protected marker; the recommendation also violated the output contract. The
-[local corrections](docs/SINGLE-RESPONSE-AUDIT.md#second-smoke-response-capture-and-output-contract) await approval before push or another run.
+and locally tested. Its third smoke passed inference and JSON validation, but the
+conclusion failed because the required completion signal was absent. The
+[completion correction](docs/SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output) passes offline replay and awaits approval before push or another run.
 Its custom harness supplies the packet directly; the model has no investigation tools.
 
 The updated assignment permits a documented coding-assistant dry run. Start with

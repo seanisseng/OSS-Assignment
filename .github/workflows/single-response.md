@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
   job-discriminator: ${{ github.run_id }}
 engine:
-  # Generated CLI tool flags are unused argv: this harness never launches the CLI.
+  # Generated tool flags are unused argv: the harness never launches the Copilot CLI.
   id: copilot
   model: auto
   harness:

@@ -1,0 +1,32 @@
+{
+  "source_commit": "32ecafbc061c9af57e9361942099e381102ae304",
+  "source_sha256": {
+    "mcp_cli_bridge.cjs": "eda43cc6e93f63ba91d014b30faaeb5b8d8c95ac5536edd9adfc56407c9faf8d",
+    "collect_ndjson_output.cjs": "ed4118298f20d02b89c5239337581b53945a1b1b5ccee91ba4ec5e20174f5d46",
+    "handle_agent_failure.cjs": "0c429a3e426995ecc1aa178db5e95464534e2c9ccd8c463fc54508629326fe25"
+  },
+  "saved_provider_response_sha256": "970d75faba0deb203b45dc2e8f6da9b05b74a7eb7960f2d3c933694ec5bddcd5",
+  "provider_requests_replayed": 1,
+  "new_ai_requests": 0,
+  "completion_calls": 1,
+  "direct_protected_writes": 0,
+  "negative_collector_cause": "missing_terminal_safe_output",
+  "positive_collector_items": [
+    {
+      "type": "noop"
+    }
+  ],
+  "positive_collector_errors": [],
+  "negative_conclusion_errors": [
+    "Agent reported that it could not complete the task"
+  ],
+  "positive_conclusion_errors": [],
+  "external_github_requests": 0,
+  "negative_blocked_api_calls": 1,
+  "positive_api_calls": 0,
+  "recommendation_sha256": "4f41ee5ebc40334558db2f08bb17ed3ba16b6deb57c115ffab65761541c5f9b2",
+  "recommendation_unchanged": true,
+  "limitations": [
+    "MCP server is a loopback fixture; actual Docker wrapper/mounts and hosted job orchestration remain untested."
+  ]
+}

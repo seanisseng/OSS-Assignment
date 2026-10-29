@@ -3,6 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { execFileSync } = require('node:child_process');
 
 const GATEWAY = 'http://api-proxy:10002/chat/completions';
 const PACKET_BYTES = 32768;
@@ -10,6 +11,20 @@ const RESPONSE_BYTES = 65536;
 const HARNESS_TIMEOUT_MS = 540000;
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
 const requireValue = (condition,message) => { if (!condition) throw new Error(message); };
+
+function emitCompletion(runCommand=execFileSync, runnerTemp=process.env.RUNNER_TEMP) {
+  requireValue(typeof runnerTemp==='string' && path.isAbsolute(runnerTemp),'runner temp missing or relative');
+  const cli=path.join(runnerTemp,'gh-aw/mcp-cli/bin/safeoutputs');
+  try {
+    // This fixed trusted call records a no-op through the writable MCP service.
+    // No model-generated command, argument, destination, or message is accepted.
+    runCommand(cli,['noop',JSON.stringify({
+      message:'Assessment response saved for separate validation; no publication requested.'})],
+      {shell:false,timeout:15000,maxBuffer:16384,stdio:['ignore','pipe','pipe']});
+  } catch {
+    throw new Error('completion signal failed');
+  }
+}
 
 function remainingTimeout(stepStartedAt, now=Date.now()) {
   if (stepStartedAt===null) return HARNESS_TIMEOUT_MS;
@@ -140,8 +155,9 @@ async function main(options={}) {
     },raw=>fs.writeFileSync(path.join(output,'provider-response.json'),raw));
     fs.writeFileSync(path.join(output,'recommendation.json'),result.content);
     Object.assign(trace,{status:'response_received',model_reported:result.model,usage:result.usage});
-    // Framework safe outputs live on a read-only mount. This artifact-only harness
-    // emits no action intents; clean Python validation gates the recommendation.
+    writeTrace(); // Preserve inference evidence before attempting framework finalization.
+    (options.emitCompletion ?? emitCompletion)();
+    trace.terminal_safe_output='noop';
   } catch(error) {
     trace.status='failed';
     trace.error=error instanceof Error ? error.message : 'assessment failed';
@@ -151,7 +167,7 @@ async function main(options={}) {
   }
 }
 
-module.exports={assess,makeRequest,main,RESPONSE_BYTES,GATEWAY,HARNESS_TIMEOUT_MS,remainingTimeout};
+module.exports={assess,makeRequest,main,emitCompletion,RESPONSE_BYTES,GATEWAY,HARNESS_TIMEOUT_MS,remainingTimeout};
 if (require.main===module) main().catch(error=>{
   console.error('Single-response assessment failed:',error.message);
   process.exitCode=1;

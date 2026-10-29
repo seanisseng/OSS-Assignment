@@ -1,5 +1,9 @@
 # Single-response output failure: TDD evidence
 
+Historical checkpoint: the completion-marker removal here was insufficient.
+Run 7 exposed the remaining conclusion failure; see the
+[terminal-completion correction](single-response-completion.tdd.md).
+
 Derived from hosted run [40917225932](https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932)
 and the user's request to fix it. AI-assisted implementation and documentation.
 

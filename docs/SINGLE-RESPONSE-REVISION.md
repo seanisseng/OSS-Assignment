@@ -1,12 +1,14 @@
-# Single-response revision: hardened correction approved for one follow-up
+# Single-response revision: completion correction pending approval
 
 The user approved configuration `3e538ec9...`, pushed as `c5cd1cd`, and one smoke.
 Run 40900450929 made one request and failed with HTTP 400 before producing an
 assessment. The [audit and correction](SINGLE-RESPONSE-AUDIT.md) record the exact
 request error, local regression fix and remaining compatibility checks. The fix
 was approved as configuration `3115d8ad...` for a push and one follow-up smoke.
-No second request has been dispatched as of this approval record.
-The original workflows and all five failed runs remain available for comparison.
+That second request exposed a protected marker write and malformed output. The
+approved third request passed inference and clean JSON validation, then failed
+the required terminal-output check. The CLI completion correction is locally
+verified and awaits renewed approval; all seven failed runs remain in GitHub.
 
 ## Evidence motivating the change
 
@@ -71,7 +73,7 @@ preparation for human handling instead of silently truncating the report.
 The local correction has a five-credit proxy setting, a declared daily setting
 of fifteen, and no separate AI detector. This supersedes the deployed twenty-credit
 setting; actual one-request cost has not been measured and is not assumed to be one credit.
-It has no model-selectable external action and emits no framework action intents;
+It has no model-selectable external action and emits only a fixed trusted framework noop;
 the recommendation is only a raw artifact until clean Python
 validation. An AI threat verdict is unnecessary for that restricted artifact
 path and cannot replace structural validation. The publisher rejects this
@@ -83,7 +85,12 @@ missing-information categories and allowed evidence identifiers. In particular,
 This schema is supplied as instructions, not an unverified provider API option.
 Python remains authoritative: invalid output is retained and rejected without
 coercion, automatic retries or repair calls. The harness writes only workspace
-artifacts and never touches the read-only framework safe-output path.
+artifacts without directly writing the read-only framework safe-output path.
+After capture, trusted code calls the installed safeoutputs CLI with a fixed noop;
+the model cannot control this command or its arguments. A terminal completion
+acknowledgement is required in the trace and by clean Python validation. The CLI
+has a 15-second timeout, 16 KiB output bound and no retries. See the
+[third-smoke correction](SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output).
 
 Preparation requires the new `CLARIFICATION_SINGLE_RESPONSE_ENABLED=true` switch,
 main in the allowlisted repository, case 15051 and a current signed configuration.
@@ -102,7 +109,7 @@ skips it instead of trying to load an uninstalled harness.
 
 The compiler retains a CLI step label and shell/write/all-paths arguments. These
 arguments are unused: the replacement harness ignores argv and never starts the
-CLI. The source workflow explicitly comments on this discrepancy. Model tool
+Copilot CLI. Trusted finalization calls only the fixed safeoutputs CLI. Model tool
 availability is determined by the request, which offers no tools.
 
 `request.json` captures the actual skill text and packet delivered to the model.
@@ -132,11 +139,12 @@ request count, skill evidence, output creation/validation and reported usage.
 
 The first run failed gateway request validation. The second returned a response
 from gpt-4o-mini-2024-07-18, then failed a read-only framework marker write; its
-evidence field also violated the contract. Clean validation and billing remain unverified. The one-request claim is
+evidence field also violated the contract. The third passed JSON validation but
+failed its final conclusion for missing terminal safe output. Billing remains unverified. The one-request claim is
 about the caller's gateway POST; inspect proxy logs for any upstream behavior.
 Local verification is recorded in `evals/evidence/single-response-verification.json`.
 
-Verification: 69 Python tests pass, including fifteen Node transport/harness cases.
+Verification: 69 Python tests pass, including eighteen Node transport/harness cases.
 The Node harness has approximately 98% line and over 80% branch coverage. Timeout-finalization,
 refusal receipts and artifact ZIP extraction are covered. Compilation uses gh-aw v0.93.5.
 The initial missing adapter and missing case-identity guard were reproduced as

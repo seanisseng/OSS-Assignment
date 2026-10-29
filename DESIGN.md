@@ -93,7 +93,7 @@ Tested below means local deterministic/mock tests unless stated otherwise.
 |---|---|
 | Identity | Replacement produces workflow artifacts, no comments; legacy publisher uses Actions bot/disclosure. Mock POST tested, remote attribution untested. |
 | Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
-| Safe outputs | Raw response/receipt captured even on refusal; explicit JSON contract, clean Python validation. No action intents, model tools or AI detector; publisher rejects this workflow. |
+| Safe outputs | Raw evidence retained; fixed trusted noop through installed MCP CLI, never direct protected writes. Clean Python requires completion acknowledgement and valid JSON; publisher rejects this workflow. |
 | Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
 | Budgets | One caller POST, five proxy credits; at most 540s minus startup inside a ten-minute step. Declared daily fifteen bypassed for manual runs; bounded I/O. |
 | Audit trail | GitHub run traces, raw output hashes and input/skill binding; case evaluations and assessments pending. |
@@ -128,18 +128,18 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 | Model | Native Auto, unpinned; third smoke response usage identifies gpt-4o-mini-2024-07-18. See docs/HOSTED-ACTION-ISSUES.md. |
 | Runtime | gh-aw v0.93.5 and pinned actions/AWF; replacement Node 24 harness uses built-ins, not a CLI agent session. Legacy dry-run uses Codex CLI. |
 | Instructions | Model: canonical skill and fixed harness prompt/packet. AGENTS.md guides repository tooling; legacy workflow prompt and dry-run adapter remain. |
-| Tools/MCP | Replacement offers no tools; generated CLI shell/write/all-paths flags are unused argv. Trusted harness calls only the fixed AWF gateway. |
+| Tools/MCP | Model has no tools; generated Copilot CLI flags are unused. Trusted harness makes one inference POST and one fixed safeoutputs noop call; no model-controlled commands. |
 | Permissions | Replacement contents/actions read; legacy analysis also issues read. Publisher alone has issues write and rejects replacement artifacts. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs; six hosted failures. Latest: one response, 2,706 reported tokens; marker/contract errors, billing unconfirmed; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs; seven hosted failures. Latest: inference/JSON validation passed; conclusion missing terminal output. Proxy estimate 0.042885, billing unconfirmed; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents six failed attempts.
-The latest returned one recommendation, then failed a protected marker write.
-The [audit](docs/SINGLE-RESPONSE-AUDIT.md#second-smoke-response-capture-and-output-contract) records marker removal and explicit JSON schema;
-renewed approval and successful hosted validation remain pending. Decision quality,
+The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents seven failed attempts.
+Run 40920259777 passed inference and clean JSON validation, but its conclusion failed.
+The [completion audit](docs/SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output) corrects the mistaken marker removal;
+the fixed CLI completion passes offline bridge/collector/conclusion replay; hosted proof and approval remain pending. Decision quality,
 semantic skill compliance and excerpt completeness remain evaluation questions.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.

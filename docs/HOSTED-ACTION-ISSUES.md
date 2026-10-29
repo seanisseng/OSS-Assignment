@@ -1,8 +1,9 @@
 # Hosted GitHub Action failures
 
 Repository: seanisseng/OSS-Assignment. These were manually dispatched, artifact-only
-smoke tests of development case `pytest-15051` on 29 October UTC (29–30 October Singapore). None produced a
-valid recommendation or completed an end-to-end case evaluation. Publication was
+smoke tests of development case `pytest-15051` on 29 October UTC (29–30 October Singapore).
+None completed an end-to-end case evaluation. The seventh produced a structurally
+valid recommendation but failed its final conclusion. Publication was
 disabled throughout; no sandbox issue comment was posted.
 
 ## Attempts and observed outcomes
@@ -14,6 +15,8 @@ disabled throughout; no sandbox issue comment was posted.
 | [40827503414](https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414) | Native Auto worked, but repeated large-input reads and helper delegation ended with upstream HTTP 429. No `output/recommendation.json` was written, so artifact preservation failed and validation was skipped. | Analysis 10.08027 credits; detection 0.28257; total 10.36284. Actual account billing is unconfirmed. | Provider responses occurred and the canonical skill content was read. Model-selection compatibility was fixed; task completion was not. |
 | [40889513595](https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595) | The approved report-first export loaded and no delegation occurred, but the agent ignored the two-chunk instruction and read one chunk 26 times. HTTP 429 ended execution with no recommendation; validation was skipped. | Analysis 16.76448 credits; detection 0.43191; total 17.19639. Actual billing is unconfirmed. | Smaller input and CLI exclusions did not prevent a read loop. The runtime recorded 46 turns despite the configured 16-turn value. Detection also hit HTTP 429. |
 | [40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929) | One request was rejected for an empty tools list combined with tool_choice (HTTP 400, invalid_request_body). No recommendation; validation skipped. | No successful inference usage records; token log empty. Actual billing unconfirmed. | One-request termination and capture worked. The format correction is local and tested; no retry dispatched. See docs/SINGLE-RESPONSE-AUDIT.md. |
+| [40917225932](https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932) | Inference returned and saved a recommendation, then a direct protected marker write failed EROFS. The response also had object-shaped evidence; validation skipped. | 2,706 reported tokens; actual billing unconfirmed. | Request compatibility and response capture worked; output/finalization did not. |
+| [40920259777](https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777) | Agent and clean JSON validation passed. Conclusion failed because removing the marker caused missing_terminal_safe_output. | 2,199 reported tokens; proxy estimate 0.042885 credits, actual deduction unconfirmed. | Required terminal noop was omitted. Fixed CLI completion passes local pinned bridge/collector/conclusion replay; hosted proof and human semantic review pending. |
 
 ## Model selection
 
@@ -136,3 +139,11 @@ model. One response is validated by Python, without automatic repair calls.
 This is now implemented and tested with mocked responses in a separate workflow,
 not a successful hosted fix. Actual adapter compatibility, semantic skill use and
 excerpt quality remain to be evaluated before claiming end-to-end success.
+
+## Third single-response smoke: completion protocol
+
+The [completion audit](SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output)
+records the seventh run, the incorrect assumption behind removing the marker,
+the trusted CLI correction and offline replay evidence. It supersedes earlier
+claims that no terminal safe output was needed. A successful inference or valid
+recommendation artifact is insufficient for the framework's final conclusion.

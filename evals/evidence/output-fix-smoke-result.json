@@ -1,0 +1,177 @@
+{
+  "status": "completed",
+  "expected_commit": "dc1d6aa0a6f135165933af656a6d1056fd936403",
+  "configuration_hash": "d8b8354099e01fd38a540eac66024502c2d47596a4d66dd207aadea3a3a244dc",
+  "approval_source": "User explicitly approved push and one smoke",
+  "prior_run_ids": [
+    40917225932,
+    40900450929
+  ],
+  "dispatch_attempts": 1,
+  "automatic_retries": false,
+  "case_id": "pytest-15051",
+  "switch_enabled": false,
+  "updated_at": "2026-10-29T17:22:38.974734+00:00",
+  "dispatch_output": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777",
+  "run_id": 40920259777,
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777",
+  "workflow_status": "completed",
+  "conclusion": "failure",
+  "jobs": [
+    {
+      "id": 123611258630,
+      "name": "activation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123612166120,
+      "name": "agent",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123613094181,
+      "name": "safe_outputs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123613094511,
+      "name": "validate_recommendation",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "id": 123613545742,
+      "name": "conclusion",
+      "status": "completed",
+      "conclusion": "failure"
+    }
+  ],
+  "completed_at": "2026-10-29T17:25:14Z",
+  "execution": {
+    "version": 1,
+    "status": "response_received",
+    "requests_sent": 1,
+    "packet_sha256": "5d507cb060b3369adcd72e349675a3a115b872dafd9870c8c5c12eb13170f72d",
+    "skill_sha256": "a339604869e25fc2cd040398f48a112f3a96ef6b7cba5546d0c338e16d414457",
+    "model_requested": "auto",
+    "tools": [],
+    "run_id": "40920259777",
+    "run_attempt": "1",
+    "timeout_ms": 519164,
+    "model_reported": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "completion_tokens": 220,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1979,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2199
+    }
+  },
+  "proxy_usage": [
+    {
+      "_schema": "token-usage/v0.28.70",
+      "timestamp": "2026-10-29T17:22:48.274Z",
+      "event": "token_usage",
+      "request_id": "cb44f466-95ad-4740-bd83-2e453f3e31c9",
+      "provider": "copilot",
+      "model": "gpt-4o-mini-2024-07-18",
+      "path": "/chat/completions",
+      "status": 200,
+      "streaming": false,
+      "input_tokens": 1979,
+      "output_tokens": 220,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "duration_ms": 2043,
+      "response_bytes": 2406,
+      "x_initiator": "agent",
+      "ai_credits_this_response": 0.042885,
+      "ai_credits_total": 0.042885,
+      "ai_credits_pricing_source": "models.dev",
+      "ai_credits_pricing_tier": "default",
+      "ai_credits_accounting_policy": "concrete_model",
+      "ai_credits_fallback_pricing_used": false
+    }
+  ],
+  "account_credit_deduction_verified": false,
+  "recommendation": {
+    "case_id": "pytest-15051",
+    "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+    "decision": "needs_information",
+    "missing": [
+      "versions",
+      "traceback"
+    ],
+    "evidence": [
+      "issue",
+      "src/_pytest/fixtures.py"
+    ],
+    "reasoning": "The provided report contains a traceback indicating an `AttributeError`, but it lacks the specific versions of pytest and Python that were used during testing. Knowing these versions is essential for replicating the crash. Additionally, the lack of a full traceback could hinder understanding the context of this error within the pytest framework.",
+    "questions": [
+      "What versions of pytest and Python are you using?",
+      "Can you provide the complete traceback leading to the error?"
+    ],
+    "comment": "What versions of pytest and Python are you using?\nCan you provide the complete traceback leading to the error?"
+  },
+  "recommendation_sha256": "4f41ee5ebc40334558db2f08bb17ed3ba16b6deb57c115ffab65761541c5f9b2",
+  "validated_artifact_matches_raw": true,
+  "structural_validation": "passed",
+  "framework_output": {
+    "items": [
+      {
+        "type": "report_incomplete",
+        "reason": "missing_terminal_safe_output",
+        "failureCause": "missing_terminal_safe_output",
+        "driverExitCode": 0,
+        "retryCount": 0,
+        "details": "Failure classification: missing_terminal_safe_output\nDriver exit code: 0\nSafe-output tools: available at setup (registered 3 tools)\nSafe-output MCP calls observed: 0\nNo terminal safe output was recorded. These observations do not establish why the agent omitted it; inspect the agent artifact (agent-session.jsonl and agent-stdio.log) for the final actions, then ensure the workflow emits a terminal safe output."
+      }
+    ],
+    "errors": [],
+    "collectorEmptyOutputCause": "missing_terminal_safe_output",
+    "collectorFailureCause": "missing_terminal_safe_output",
+    "collectorDriverExitCode": 0,
+    "collectorRetryCount": 0
+  },
+  "semantic_review": "pending human review",
+  "ai_diagnostic_note": "Conclusion failed: missing_terminal_safe_output after removing the required framework completion marker. Model also asks for a full traceback despite a supplied traceback; structural validation does not prove decision quality.",
+  "artifacts": [
+    {
+      "id": 12918790750,
+      "name": "usage"
+    },
+    {
+      "id": 12918191424,
+      "name": "single-response-raw"
+    },
+    {
+      "id": 12917323395,
+      "name": "agent"
+    },
+    {
+      "id": 12917108755,
+      "name": "single-response-input"
+    },
+    {
+      "id": 12916864050,
+      "name": "single-response-validated"
+    },
+    {
+      "id": 12916729275,
+      "name": "activation"
+    },
+    {
+      "id": 12916374902,
+      "name": "info"
+    }
+  ],
+  "publication_performed": false
+}

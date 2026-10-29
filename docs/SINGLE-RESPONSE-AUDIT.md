@@ -5,7 +5,9 @@ Status: documentation/source audit and local regression tests. Configuration
 [run 40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929).
 It failed. The hardened correction `3115d8ad...` was subsequently approved for one
 push and follow-up smoke. That second smoke failed after a successful inference;
-the local correction below awaits renewed approval. Audit tests make no provider requests.
+configuration `d8b83540...` was then approved and pushed as `dc1d6aa` for the third
+smoke. That run passed inference/JSON validation but failed the final conclusion.
+The completion correction below awaits renewed approval. Audit tests make no provider requests.
 
 ## Failure, correction and test gap
 
@@ -73,6 +75,47 @@ genuine reapproval. No push or new inference was authorized
 by the request to fix locally. The original failure receipt is preserved in
 `evals/evidence/hardened-single-response-result.json` and the GitHub artifacts.
 
+## Third smoke: required terminal output
+
+[Run 40920259777](https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777)
+made one successful gateway request. The agent, safe-output processing and clean
+JSON validation jobs passed. Its final conclusion failed at `Handle agent failure`:
+`Agent reported that it could not complete the task`.
+
+The actual `agent_output.json` explains why: `missing_terminal_safe_output`, driver
+exit code zero and no terminal safe output. The pinned collector treats an absent
+completion signal as `report_incomplete`; the conclusion handler then fails the
+run. A passing safe-output processing job alone does not prove completion. The
+prior conclusion that the marker was unnecessary was wrong; removing the protected
+file write fixed EROFS but removed a required protocol signal. The earlier test
+stopped at response capture and Python validation and missed this dependency.
+
+The saved response reports `gpt-4o-mini-2024-07-18`, 1,979 input and 220 output tokens.
+The proxy estimate is 0.042885 credits (`models.dev` pricing), not a verified account
+deduction. The recommendation and its validated artifact match byte for byte.
+Its question asking for a complete traceback appears redundant with the supplied
+report; structural success does not establish decision quality. Human review is pending.
+The unchanged failure receipt is `evals/evidence/output-fix-smoke-result.json`.
+
+The correction sends exactly one fixed `noop` through the framework-installed
+`safeoutputs` CLI after raw response and recommendation capture. The MCP service
+performs the protected write. The harness never directly writes that path, and
+never starts a Copilot CLI session. Command path, arguments and message are fixed
+trusted code; no model content is passed to them. The CLI subprocess has a 15-second
+timeout, 16 KiB output bound, no shell and no retries. The inference deadline leaves
+one minute before the step timeout, reserving time for this bounded finalization.
+Failures retain provider response, recommendation, model/usage and a failed trace.
+A successful trace records `terminal_safe_output: noop`; clean Python now requires it.
+The noop means capture completed, not that validation or the model decision is correct.
+
+The [replay/TDD record](testing/single-response-completion.tdd.md) documents RED/GREEN
+regressions and a zero-AI-request replay through the actual pinned CLI bridge,
+collector and conclusion handler. The negative case reproduces the original failure;
+the corrected case has one noop, no incomplete result and no conclusion errors.
+A loopback MCP fixture stands in for the server; actual hosted wrapper execution,
+Docker mounts and job orchestration still need a newly approved smoke. Both launch
+switches remain off. No lifetime run-count guard has been restored.
+
 ## Documentation and pinned-source audit
 
 | Area | Finding and evidence boundary |
@@ -88,8 +131,8 @@ by the request to fix locally. The original failure receipt is preserved in
 | Validation | A job depending on a failed agent is skipped by default. This is expected; a missing/invalid recommendation remains a failure, never an invented abstention. |
 | Credits | Local correction lowers the deployed twenty-credit setting to five; declared daily fifteen is bypassed for manual dispatch. No one-credit cost assumption or account deduction is verified. The screenshot showed 3/200 used. |
 | Runtime | Ten minutes bounds analysis execution; setup, support and validation jobs have separate timeouts. |
-| Detection | Disabling AI detection is supported. This artifact-only workflow emits no safe-output intents; Python validates the recommendation and the publisher rejects this workflow. Semantic correctness/injection resistance remain unproven. |
-| Remaining proof | Second smoke proves response parsing, returned model identity and output creation. Marker removal, correct model JSON, clean validation and decision quality still need hosted verification. |
+| Detection | Disabling AI detection is supported. This artifact-only workflow emits one fixed trusted noop through MCP; Python validates the recommendation and the publisher rejects this workflow. Semantic correctness/injection resistance remain unproven. |
+| Remaining proof | Second smoke proves response parsing, returned model identity and output creation. Third smoke proves model JSON and clean validation. Correct terminal completion, the final conclusion and decision quality still need hosted verification. |
 
 Further review identified an equal-deadline race and noisy uploads after refused
 preparation. Both are fixed locally and regression-tested. Generated CLI flags are
