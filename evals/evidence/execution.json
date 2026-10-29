@@ -1,7 +1,7 @@
 {
   "mode": "remote",
-  "end_to_end_status": "replacement_prepared",
-  "reason": "Native automatic-selection correction applied; user authorized exactly one replacement smoke dispatch. The first run remains in GitHub history; local downloaded debug copies were removed on request.",
+  "end_to_end_status": "replacement_failed",
+  "reason": "The native automatic-selection replacement reached the hosted CLI but stopped before inference: BYOK providers require an explicit model. The proxy-backed runtime did not accept an unset model. No recommendation was produced; no further run authorized.",
   "blocking_evidence": [],
   "untested_controls": [
     "Hosted model entitlement and reported identity",
@@ -20,5 +20,6 @@
     "git_authentication": "Existing Git credential succeeded outside the filesystem sandbox; GitHub owner seanisseng verified before mutations."
   },
   "hosted_attempt_performed": true,
-  "prior_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074"
+  "prior_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074",
+  "latest_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40823996951"
 }

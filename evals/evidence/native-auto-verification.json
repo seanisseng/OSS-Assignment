@@ -1,0 +1,23 @@
+{
+  "status": "local_verification_passed_hosted_verification_pending",
+  "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
+  "tests_passed": 56,
+  "compile_version": "v0.93.5",
+  "workflow_build_reproduced_identically_twice": true,
+  "generated_runtime_step_replayed_against_pinned_launcher": true,
+  "patched_launcher_syntax_check": "node --check passed; launcher not executed",
+  "native_auto_option_is_only_launcher_change": true,
+  "unknown_launcher_or_compiler_rejected": true,
+  "both_analysis_and_detection_protected": true,
+  "internal_retries": 0,
+  "credit_limits": {
+    "analysis": 10,
+    "detection": 5,
+    "rolling_daily_per_workflow": 15
+  },
+  "publication_enabled": false,
+  "new_inference_calls": 0,
+  "new_dispatches": 0,
+  "case_expectations_changed": false,
+  "configuration_approval": "pending"
+}

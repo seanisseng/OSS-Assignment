@@ -1,38 +1,67 @@
-# Native Copilot Student automatic selection candidate
+# Native Copilot Auto compatibility correction
 
-The first smoke run used model: auto, but gh-aw v0.93.5 resolved that framework
-alias to claude-sonnet-5.5. Copilot rejected the concrete selection as unsupported.
-The account's native automatic model selection should be left to Copilot.
+Status: implemented and locally verified; hosted inference is not yet verified.
+No new workflow dispatch or model call was made while preparing this correction.
 
-The user-authorized replacement adds the following under engine, preserving the existing
-model: auto metadata, prompt, skill and other controls:
+## What changes
 
-```yaml
-env:
-  COPILOT_MODEL: ""
-```
+The first attempt's model: auto was resolved by gh-aw to a concrete model, which
+Copilot rejected. The second attempt cleared COPILOT_MODEL, but the proxy-backed
+CLI requires an explicit selector. Neither attempt produced a recommendation.
+Their original GitHub run history remains; local first-run debug downloads were
+removed at the user's request.
 
-The compiler's final engine environment merge emits an empty COPILOT_MODEL in
-both analysis and detection. Neither invocation contains a --model flag. Inspection
-of the exact pinned copilot_harness.cjs shows that alias resolution returns early
-when COPILOT_MODEL is empty. This is a supported environment configuration,
-not a modification of the upstream harness or an access-policy bypass.
+Both analysis workflows now explicitly request auto. Before the analysis and
+threat-detection CLI runs, a trusted step verifies the exact SHA256 of the pinned
+Copilot launcher and adds preserveAuto for that exact selector to its existing
+shared resolver call. Other model identifiers are unchanged. The resolver already
+supports this option; the correction supplies it at the missing call site.
 
-Configuration: .github/workflows/smoke.md and its compiled lock.
-Static verification: evals/evidence/student-auto-preview.json.
-The limits remain ten analysis credits, five detection credits and fifteen daily;
-network isolation, integration identity and publication restrictions are preserved.
+The result is an explicit auto selector for the CLI, passed through to Copilot
+rather than rewritten to a concrete model by the launcher. No model entitlement,
+credential, provider identity or upstream access rule is changed. The AWF proxy
+stays enabled with its network and credit controls. Its pinned specification
+supports conservative credit accounting for the dynamic copilot:auto selector.
+A model selection is not a confirmed successful inference until a real run shows it.
 
-Compilation proves the runtime override is unset, not that hosted inference will
-succeed. Native Copilot defaults and the API proxy still need a real test. The
-separate MCP protocol error observed in the first attempt may also remain.
+## Reproducible build
 
-The user approved one replacement attempt. Its preparation accepts only the
-second workflow dispatch and rejects reruns or a third dispatch. The reviewed
-answer key is unchanged. First-run debug downloads were removed on request;
-GitHub retains the original run history.
+Run python -m scripts.compile_workflows with the reviewed gh-aw v0.93.5 compiler.
+The wrapper first runs the official release compiler with the existing immutable
+action SHA, then adds the compatibility step to both runtime jobs in each lock.
+The compiled metadata still corresponds to the Markdown inputs. This additional
+build step is intentional; direct gh aw compile alone removes the correction.
 
-References:
-- https://docs.github.com/en/copilot/get-started/plans
+The launcher source SHA256 is fixed in scripts/compile_workflows.py. Unknown,
+already-modified or structurally ambiguous launchers are refused before writing.
+The analysis CLI is skipped on failure; the detector explicitly requires its
+compatibility step to succeed. Upgrading the compiler/action requires reviewing
+and updating this correction rather than silently patching unfamiliar code.
+
+## Controls and validation
+
+- Ten configured analysis credits, five detection credits, fifteen rolling daily.
+- Network isolation, staged outputs, the canonical skill and prompt retained.
+- Internal harness retries set to zero; no repeated startup attempts.
+- Publication policy remains disabled and publisher rejects smoke artifacts.
+- Local smoke preparation allows only dispatch count three for case 15051, main,
+  the sandbox repository and GitHub run_attempt one. A fourth dispatch is refused.
+- New runtime configuration approval is pending; preparation refuses inference
+  until the human approves its configuration hash. Case expectations are unchanged.
+
+The suite checks exact-source hashing, single-site modification, unknown-version
+rejection, both runtime jobs, preserved detection conditions and fail-closed guards.
+The generated Python correction was replayed against the exact pinned launcher
+bytes; only the preserveAuto option changed. Node syntax validation passed without
+executing the launcher. No reporter or historical pytest code was executed.
+
+Hosted native-Auto/provider compatibility and the previously observed MCP protocol
+warning remain unverified. Do not describe local tests as successful agent evaluation.
+The next useful test is one separately authorized 15051 smoke attempt under the
+same credit limits. No further inference has been performed.
+
+## Primary references
+
+- https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/resolve_model_alias.cjs
 - https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/copilot_harness.cjs
-- https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/pkg/workflow/copilot_engine_execution.go
+- https://github.com/github/gh-aw-firewall/blob/v0.28.70/docs/awf-config-spec.md

@@ -24,7 +24,7 @@ def prepare():
             'smoke input differs from reviewed snapshot')
     runs = api('actions/workflows/smoke.lock.yml/runs?per_page=1')
     count = runs['total_count']
-    require(type(count) is int and count == 2, 'authorized replacement attempt exhausted or unknown')
+    require(type(count) is int and count == 3, 'native-Auto verification attempt exhausted or unknown')
     Path('input').mkdir(exist_ok=True)
     Path('output').mkdir(exist_ok=True)
     Path('input/case.json').write_text(json.dumps(case, ensure_ascii=False), encoding='utf-8')

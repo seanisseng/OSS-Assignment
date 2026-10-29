@@ -42,7 +42,7 @@ class SmokeTests(unittest.TestCase):
             'configuration_hash': 'reviewed-configuration'})
         self.review_check = self.review.start()
         self.addCleanup(self.review.stop)
-        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 2})
+        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 3})
         self.api = self.api_patch.start()
         self.addCleanup(self.api_patch.stop)
 
@@ -71,7 +71,7 @@ class SmokeTests(unittest.TestCase):
         self.api.assert_not_called()
 
     def test_denies_unapproved_dispatch_and_invalid_count(self):
-        for count in [1, 3, 0, True, '2']:
+        for count in [1, 2, 4, 0, True, '3']:
             with self.subTest(count=count):
                 self.api.return_value = {'total_count': count}
                 with self.assertRaises(ValueError):
@@ -81,7 +81,10 @@ class SmokeTests(unittest.TestCase):
         lock = (self.previous / '.github/workflows/smoke.lock.yml').read_text(encoding='utf-8')
         selections = [line.split(':', 1)[1].strip() for line in lock.splitlines()
                       if line.strip().startswith('COPILOT_MODEL:')]
-        self.assertEqual(selections, ['', ''])
+        self.assertEqual(selections, ['auto', 'auto'])
+        self.assertEqual(lock.count('name: Preserve native Copilot Auto'), 2)
+        self.assertIn("steps.native_auto_launcher.outcome == 'success'", lock)
+        self.assertIn('GH_AW_HARNESS_MAX_RETRIES: 0', lock)
         self.assertNotIn('--model ', lock)
         self.assertNotIn('--model=', lock)
         self.assertIn('GH_AW_MAX_AI_CREDITS="10"', lock)

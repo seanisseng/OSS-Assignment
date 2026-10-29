@@ -22,8 +22,10 @@ bug-report clarification experiment. The assignment brief is preserved in
 - `docs/REVIEW-GUIDE.md` and `docs/DRY-RUN.md`: student review and dry-run steps.
 
 Run `python -m unittest discover -s tests -v` and `python -m scripts.evaluate`.
-Compile using gh-aw v0.93.5:
-`gh aw compile clarify --action-mode release --action-tag 32ecafbc061c9af57e9361942099e381102ae304 --no-check-update`.
+Compile using gh-aw v0.93.5 through `python -m scripts.compile_workflows`.
+It invokes the pinned release compiler and adds the hash-checked native Copilot
+Auto compatibility step to analysis and detection. Direct compilation alone omits
+this required correction; see `docs/STUDENT-AUTO.md`.
 Run `python -m scripts.verify` before committing. No runtime pip packages required.
 For dry-run submission run `python -m scripts.verify --submission --mode dry-run`.
 Human review is conditions open, not approval. Do not infer approval from a request

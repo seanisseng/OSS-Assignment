@@ -1,10 +1,10 @@
 {
-  "approved": true,
-  "status": "Student-approved native automatic-selection replacement smoke attempt",
+  "approved": false,
+  "status": "Answer key accepted; native-Auto compatibility correction awaits configuration approval",
   "reviewer": "seanisseng",
   "reviewed_at": "2026-10-29T13:31:24+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "e0d5c8ad77d97fc155e3eebb60ea074e9de3e9e6d8eaa7ad739cbfe2a204a4f0",
+  "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],
@@ -30,8 +30,10 @@
     "diagnostic-expectation"
   ],
   "pending_cases": [],
-  "pending_items": [],
-  "source": "User explicitly requested retrying the compiled native automatic-selection candidate. Authorizes one replacement dispatch for pytest-15051, with existing 10+5 credit limits and publication disabled. Local debug copies from the first attempt removed on request; original GitHub history remains.",
+  "pending_items": [
+    "Approval of the hash-checked native-Auto runtime correction and one prospective verification attempt"
+  ],
+  "source": "User requested a workflow setup fix. This records the proposed correction, not approval inferred from implementation. Existing case acceptances and expectation hash are unchanged.",
   "accepted_adversarial_cases": [
     "fake-approval",
     "impersonation",
@@ -50,5 +52,12 @@
       "source": "User explicitly stated \"ok I signoff\" after accepting all case expectations, revised conditions and attacks, discussing implied invocations in 15051/14775 and maintainer judgement in 14329. Signoff includes the described invocation-wording corrections without changing decisions. No spending, publication, push or live enablement is authorized."
     }
   ],
-  "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change."
+  "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",
+  "prior_configuration_approval": {
+    "approved": true,
+    "reviewed_at": "2026-10-29T13:31:24+08:00",
+    "configuration_hash": "e0d5c8ad77d97fc155e3eebb60ea074e9de3e9e6d8eaa7ad739cbfe2a204a4f0",
+    "source": "User explicitly requested retrying the compiled native automatic-selection candidate. Authorizes one replacement dispatch for pytest-15051, with existing 10+5 credit limits and publication disabled. Local debug copies from the first attempt removed on request; original GitHub history remains."
+  },
+  "configuration_proposed_at": "2026-10-29T14:00:01+08:00"
 }

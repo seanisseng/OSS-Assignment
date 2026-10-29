@@ -18,8 +18,12 @@ concurrency:
   job-discriminator: ${{ github.run_id }}
 engine:
   id: copilot
-  model: gpt-4.1
+  model: auto
+  harness:
+    max-retries: 0
   max-turns: 8
+max-ai-credits: 10
+max-daily-ai-credits: 15
 network:
   allowed: []
 tools:
@@ -28,6 +32,8 @@ tools:
   bash: ["cat", "sha256sum"]
 checkout: false
 safe-outputs:
+  threat-detection:
+    max-ai-credits: 5
   staged: true
   report-failure-as-issue: false
   report-failed-jobs: false

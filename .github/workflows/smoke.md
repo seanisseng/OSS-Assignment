@@ -20,8 +20,8 @@ concurrency:
 engine:
   id: copilot
   model: auto
-  env:
-    COPILOT_MODEL: ""
+  harness:
+    max-retries: 0
   max-turns: 8
 max-ai-credits: 10
 max-daily-ai-credits: 15

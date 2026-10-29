@@ -26,6 +26,10 @@ The model reads untrusted issue text, historical source and simulated tool resul
 Expectations and later comments are excluded. No reporter code is executed.
 Network allowed is empty; GitHub tools are disabled. Hosted enforcement is untested.
 
+A pending native-Auto correction keeps the literal selector through the pinned
+launcher, verified by SHA256, in both runtime jobs. Compile with scripts.compile_workflows;
+unknown launcher bytes stop execution. Provider success remains unverified.
+
 The closed JSON contract permits sufficient, needs_information or human_review,
 evidence keys, reasoning, approved missing-detail categories and up to three
 questions. Only needs_information carries a comment, limited to 1,200 characters.
@@ -77,8 +81,8 @@ Trace hashes detect changes but do not authenticate fabricated operator records.
 Local tests cover deterministic limits, malformed output, stale hashes, isolation,
 review binding, interrupted attempts and mocked publication. They do not prove
 model resistance, hosted permissions or semantic quality. See evals/evidence/.
-One hosted smoke attempt failed before a model response; its run remains in GitHub history.
-Copilot Student/CLI and the existing secret were verified; Auto model routing failed.
+Two hosted smoke attempts failed before model responses; runs remain in GitHub history.
+Student/CLI and the secret were verified; alias routing and native Auto both failed.
 execution.json records this attempt; permanent hosted unavailability is unproven.
 
 ## Governance

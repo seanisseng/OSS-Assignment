@@ -32,3 +32,17 @@ Inspect the actual outcome, skill-read events and usage after this single attemp
 Do not launch the remaining evaluation or automatically retry. A correct decision
 still needs the student's semantic assessment. GitHub's original logs remain the
 source for each run; no failed output is repaired or reported as a no-action result.
+
+## Outcome
+
+The replacement run failed before a model response because the hosted BYOK-style
+provider requires an explicit model. Native automatic selection remains unresolved.
+The smoke switch is off and publication remains disabled. Both original runs
+remain in GitHub Actions history; downloaded first-run debug copies were removed.
+
+## Prepared compatibility correction
+
+See STUDENT-AUTO.md for the new hash-checked native-Auto correction. It keeps an
+explicit auto selector, the proxy and credit limits. One prospective verification
+attempt is restricted to dispatch count three; configuration approval and the
+smoke switch are both required before it can run. No third attempt has launched.
