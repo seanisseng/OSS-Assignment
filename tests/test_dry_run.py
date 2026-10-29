@@ -67,6 +67,7 @@ class DryRunTests(unittest.TestCase):
         dry_run.prepare(self.repo, 'case-1', workspace)
         files = {p.relative_to(workspace).as_posix() for p in workspace.rglob('*') if p.is_file()}
         self.assertEqual(files, {'AGENTS.md', 'input/case.json', 'input/manifest.json',
+                                'input/context/000-000.txt',
                                 '.github/skills/bug-report-clarification/SKILL.md', 'prompt.md'})
         with self.assertRaises(ValueError):
             dry_run.prepare(self.repo, '../escape', workspace)

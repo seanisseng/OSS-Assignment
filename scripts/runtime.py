@@ -7,6 +7,7 @@ import sys
 import urllib.request
 
 from scripts.contract import REPOSITORY, admit, digest, require
+from scripts.agent_input import export_case
 
 
 def api(path):
@@ -37,13 +38,14 @@ def prepare():
     require(type(issue) is int and issue in policy['allowed_issues'], 'not allowlisted')
     Path('input').mkdir(exist_ok=True)
     Path('output').mkdir(exist_ok=True)
-    Path('input/case.json').write_text(json.dumps(case, ensure_ascii=False), encoding='utf-8')
+    export_case(case, Path('.'))
     skill = (root / '.claude/skills/bug-report-clarification/SKILL.md').read_bytes()
     installed = Path('.github/skills/bug-report-clarification/SKILL.md')
     installed.parent.mkdir(parents=True, exist_ok=True)
     installed.write_bytes(skill)
     Path('AGENTS.md').write_bytes((root / 'AGENTS.md').read_bytes())
     Path('input/manifest.json').write_text(json.dumps(dict(case_id=case_id, input_hash=digest(case),
+        input_format='report-first-v1',
         sandbox_issue=issue, skill_sha256=__import__('hashlib').sha256(skill).hexdigest())), encoding='utf-8')
 
 

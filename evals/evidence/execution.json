@@ -1,7 +1,7 @@
 {
   "mode": "remote",
-  "end_to_end_status": "replacement_failed",
-  "reason": "The native automatic-selection replacement reached the hosted CLI but stopped before inference: BYOK providers require an explicit model. The proxy-backed runtime did not accept an unset model. No recommendation was produced; no further run authorized.",
+  "end_to_end_status": "failed_after_inference",
+  "reason": "Native Auto successfully reached Copilot and loaded the canonical skill, but the model could not read the large compact case JSON in one view, delegated and repeatedly searched it, then hit an upstream GitHub rate limit. No recommendation file was produced.",
   "blocking_evidence": [],
   "untested_controls": [
     "Hosted model entitlement and reported identity",
@@ -16,10 +16,10 @@
     "codex_cli_version": "0.164.0",
     "codex_login_status": "Logged in using ChatGPT",
     "gh_cli_in_current_shell": "Not found by Get-Command",
-    "inference_performed": false,
+    "inference_performed": true,
     "git_authentication": "Existing Git credential succeeded outside the filesystem sandbox; GitHub owner seanisseng verified before mutations."
   },
   "hosted_attempt_performed": true,
   "prior_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074",
-  "latest_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40823996951"
+  "latest_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414"
 }

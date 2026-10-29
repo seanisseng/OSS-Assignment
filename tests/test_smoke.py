@@ -1,6 +1,7 @@
 """The one-case hosted smoke test cannot enable publication."""
 import json
 import os
+import re
 from pathlib import Path
 import tempfile
 import unittest
@@ -42,7 +43,7 @@ class SmokeTests(unittest.TestCase):
             'configuration_hash': 'reviewed-configuration'})
         self.review_check = self.review.start()
         self.addCleanup(self.review.stop)
-        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 3})
+        self.api_patch = patch.object(smoke, 'api', return_value={'total_count': 4})
         self.api = self.api_patch.start()
         self.addCleanup(self.api_patch.stop)
 
@@ -55,7 +56,9 @@ class SmokeTests(unittest.TestCase):
         self.assertEqual(manifest['configuration_hash'], 'reviewed-configuration')
         self.assertEqual(Path('.github/skills/bug-report-clarification/SKILL.md').read_text(),
                          'Canonical procedure')
-        self.assertEqual(len(list(Path('input').iterdir())), 2)
+        self.assertEqual(len(list(Path('input').iterdir())), 3)
+        report = json.loads(Path('input/case.json').read_text())
+        self.assertEqual(report['context']['issue']['parts'], ['input/context/000-000.txt'])
         self.review_check.assert_called_once_with(self.root)
         self.api.assert_called_once_with('actions/workflows/smoke.lock.yml/runs?per_page=1')
         self.assertFalse(json.loads(Path('config/policy.json').read_text())['enabled'])
@@ -71,7 +74,7 @@ class SmokeTests(unittest.TestCase):
         self.api.assert_not_called()
 
     def test_denies_unapproved_dispatch_and_invalid_count(self):
-        for count in [1, 2, 4, 0, True, '3']:
+        for count in [1, 2, 3, 5, 0, True, '4']:
             with self.subTest(count=count):
                 self.api.return_value = {'total_count': count}
                 with self.assertRaises(ValueError):
@@ -87,8 +90,12 @@ class SmokeTests(unittest.TestCase):
         self.assertIn('GH_AW_HARNESS_MAX_RETRIES: 0', lock)
         self.assertNotIn('--model ', lock)
         self.assertNotIn('--model=', lock)
-        self.assertIn('GH_AW_MAX_AI_CREDITS="10"', lock)
+        self.assertIn('GH_AW_MAX_AI_CREDITS="20"', lock)
         self.assertIn('GH_AW_MAX_AI_CREDITS="5"', lock)
+        self.assertIn('GH_AW_MAX_TURNS: 16', lock)
+        timeouts = re.findall(r'"agentTimeout":(\d+)', lock.replace('\\"', '"'))
+        self.assertEqual(timeouts[0], '10')
+        self.assertIn('--excluded-tools=task,write_agent,read_agent,list_agents,skill,glob,grep,web_fetch', lock)
 
     def test_denies_stale_review_and_changed_input(self):
         self.review_check.side_effect = ValueError('review configuration changed')

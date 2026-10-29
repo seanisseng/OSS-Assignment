@@ -1,0 +1,144 @@
+{
+  "status": "approved_for_one_hosted_smoke",
+  "configuration_hash": "1a7549c89e072e88a54b463ea696ce4f3828ba81adcd1da180659b28a19d83db",
+  "prior_approved_configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
+  "tests_passed": 59,
+  "exporter_line_coverage_percent": 100,
+  "all_22_inputs_reconstructed_losslessly": true,
+  "exports": [
+    {
+      "case_id": "diagnostic-crash",
+      "report_bytes": 276,
+      "context_bytes": 35
+    },
+    {
+      "case_id": "diagnostic-expectation",
+      "report_bytes": 334,
+      "context_bytes": 87
+    },
+    {
+      "case_id": "diagnostic-trigger",
+      "report_bytes": 331,
+      "context_bytes": 88
+    },
+    {
+      "case_id": "fake-approval",
+      "report_bytes": 301,
+      "context_bytes": 48
+    },
+    {
+      "case_id": "impersonation",
+      "report_bytes": 325,
+      "context_bytes": 72
+    },
+    {
+      "case_id": "malicious-tool",
+      "report_bytes": 449,
+      "context_bytes": 107
+    },
+    {
+      "case_id": "pytest-13403",
+      "report_bytes": 2195,
+      "context_bytes": 209579
+    },
+    {
+      "case_id": "pytest-13634",
+      "report_bytes": 6850,
+      "context_bytes": 240038
+    },
+    {
+      "case_id": "pytest-13716",
+      "report_bytes": 2055,
+      "context_bytes": 201327
+    },
+    {
+      "case_id": "pytest-13849",
+      "report_bytes": 1992,
+      "context_bytes": 176847
+    },
+    {
+      "case_id": "pytest-13902",
+      "report_bytes": 2451,
+      "context_bytes": 171334
+    },
+    {
+      "case_id": "pytest-13986",
+      "report_bytes": 3587,
+      "context_bytes": 181068
+    },
+    {
+      "case_id": "pytest-14324",
+      "report_bytes": 3659,
+      "context_bytes": 228655
+    },
+    {
+      "case_id": "pytest-14329",
+      "report_bytes": 3709,
+      "context_bytes": 195044
+    },
+    {
+      "case_id": "pytest-14389",
+      "report_bytes": 3133,
+      "context_bytes": 229319
+    },
+    {
+      "case_id": "pytest-14456",
+      "report_bytes": 2729,
+      "context_bytes": 205091
+    },
+    {
+      "case_id": "pytest-14533",
+      "report_bytes": 4206,
+      "context_bytes": 178435
+    },
+    {
+      "case_id": "pytest-14775",
+      "report_bytes": 13688,
+      "context_bytes": 201907
+    },
+    {
+      "case_id": "pytest-15005",
+      "report_bytes": 4241,
+      "context_bytes": 239453
+    },
+    {
+      "case_id": "pytest-15051",
+      "report_bytes": 3036,
+      "context_bytes": 199286
+    },
+    {
+      "case_id": "pytest-15052",
+      "report_bytes": 2066,
+      "context_bytes": 198335
+    },
+    {
+      "case_id": "secret-exfiltration",
+      "report_bytes": 330,
+      "context_bytes": 71
+    }
+  ],
+  "compile_version": "v0.93.5",
+  "compiled_twice_identically": true,
+  "analysis_credit_setting": 20,
+  "detection_credit_setting": 5,
+  "daily_credit_setting": 25,
+  "analysis_max_turns": 16,
+  "analysis_timeout_minutes": 10,
+  "context_chunk_bytes": 8192,
+  "prompted_context_chunk_limit": 2,
+  "hosted_tool_exclusion_enforcement_verified": false,
+  "publication_enabled": false,
+  "pushes": 0,
+  "dispatches": 0,
+  "inference_calls": 0,
+  "limitations": [
+    "Credit settings are soft guardrails.",
+    "Two-chunk reading limit is a prompt instruction.",
+    "New CLI exclusions have not been verified in a hosted run.",
+    "Detector internal tools and runtime use framework defaults.",
+    "Pinned gh-aw explicitly bypasses daily credit checks for manual dispatch."
+  ],
+  "daily_credit_guard_enforced_for_manual_dispatch": false,
+  "previous_candidate_configuration_hash": "e605aa327d6c89ec45fecdeaba12996e640d67c2fe2cd9e836d9913fb9a97667",
+  "approved_at": "2026-10-29T22:12:56+08:00"
+}

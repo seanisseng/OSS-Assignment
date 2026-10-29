@@ -2,8 +2,11 @@
 
 Copilot analysis stages an essential-information recommendation; a separate
 human-approved executor can post one clarification to an allowlisted sandbox issue.
-Publication is disabled. Both hosted smoke attempts failed before a model
-response; see [the latest run](https://github.com/seanisseng/OSS-Assignment/actions/runs/40823996951).
+Publication is disabled. The third hosted attempt reached native Auto and loaded
+the skill, but hit rate limiting before producing a recommendation; see
+[the latest run](https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414).
+The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) is locally tested and
+approved for one monitored hosted smoke test with raised limits.
 
 The updated assignment permits a documented coding-assistant dry run. Start with
 [the plain-language review guide](docs/REVIEW-GUIDE.md) and

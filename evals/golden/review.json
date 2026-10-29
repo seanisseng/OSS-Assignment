@@ -1,10 +1,10 @@
 {
   "approved": true,
-  "status": "Native-Auto compatibility correction approved for one hosted verification",
+  "status": "User-approved simplified configuration, push and one monitored 15051 smoke",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-29T14:08:11+08:00",
+  "reviewed_at": "2026-10-29T22:12:56+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
+  "configuration_hash": "1a7549c89e072e88a54b463ea696ce4f3828ba81adcd1da180659b28a19d83db",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],
@@ -31,7 +31,7 @@
   ],
   "pending_cases": [],
   "pending_items": [],
-  "source": "User asked to test whether the corrected action works in response to the concrete request to push the native-Auto fix and run one 15051 test under the same configured 15-credit limit. No publication or further runs authorized.",
+  "source": "User explicitly replied \"ok let's do this!\" to approval of configuration 1a7549c8, a push, and one monitored 15051 smoke test with 20 analysis credits, 5 detection credits, 10 analysis minutes and 16 analysis turns. No publication or additional runs authorized.",
   "accepted_adversarial_cases": [
     "fake-approval",
     "impersonation",
@@ -48,6 +48,55 @@
       "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
       "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
       "source": "User explicitly stated \"ok I signoff\" after accepting all case expectations, revised conditions and attacks, discussing implied invocations in 15051/14775 and maintainer judgement in 14329. Signoff includes the described invocation-wording corrections without changing decisions. No spending, publication, push or live enablement is authorized."
+    },
+    {
+      "approved": true,
+      "status": "Native-Auto compatibility correction approved for one hosted verification",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-29T14:08:11+08:00",
+      "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+      "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
+      "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+      "rule_a": "Accepted by user",
+      "conditionally_accepted_cases": [],
+      "conditions_implemented_for_inspection": [],
+      "accepted_cases": [
+        "pytest-15052",
+        "pytest-15051",
+        "pytest-15005",
+        "pytest-14775",
+        "pytest-14533",
+        "pytest-14456",
+        "pytest-14329",
+        "pytest-14324",
+        "pytest-13849",
+        "diagnostic-trigger",
+        "pytest-14389",
+        "pytest-13716",
+        "pytest-13986",
+        "pytest-13403",
+        "pytest-13902",
+        "pytest-13634",
+        "diagnostic-crash",
+        "diagnostic-expectation"
+      ],
+      "pending_cases": [],
+      "pending_items": [],
+      "source": "User asked to test whether the corrected action works in response to the concrete request to push the native-Auto fix and run one 15051 test under the same configured 15-credit limit. No publication or further runs authorized.",
+      "accepted_adversarial_cases": [
+        "fake-approval",
+        "impersonation",
+        "malicious-tool",
+        "secret-exfiltration"
+      ],
+      "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",
+      "prior_configuration_approval": {
+        "approved": true,
+        "reviewed_at": "2026-10-29T13:31:24+08:00",
+        "configuration_hash": "e0d5c8ad77d97fc155e3eebb60ea074e9de3e9e6d8eaa7ad739cbfe2a204a4f0",
+        "source": "User explicitly requested retrying the compiled native automatic-selection candidate. Authorizes one replacement dispatch for pytest-15051, with existing 10+5 credit limits and publication disabled. Local debug copies from the first attempt removed on request; original GitHub history remains."
+      },
+      "configuration_proposed_at": "2026-10-29T14:00:01+08:00"
     }
   ],
   "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",
@@ -57,5 +106,7 @@
     "configuration_hash": "e0d5c8ad77d97fc155e3eebb60ea074e9de3e9e6d8eaa7ad739cbfe2a204a4f0",
     "source": "User explicitly requested retrying the compiled native automatic-selection candidate. Authorizes one replacement dispatch for pytest-15051, with existing 10+5 credit limits and publication disabled. Local debug copies from the first attempt removed on request; original GitHub history remains."
   },
-  "configuration_proposed_at": "2026-10-29T14:00:01+08:00"
+  "configuration_proposed_at": "2026-10-29T14:00:01+08:00",
+  "prior_approved_configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
+  "previous_candidate_configuration_hash": "e605aa327d6c89ec45fecdeaba12996e640d67c2fe2cd9e836d9913fb9a97667"
 }

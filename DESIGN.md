@@ -26,9 +26,9 @@ The model reads untrusted issue text, historical source and simulated tool resul
 Expectations and later comments are excluded. No reporter code is executed.
 Network allowed is empty; GitHub tools are disabled. Hosted enforcement is untested.
 
-A pending native-Auto correction keeps the literal selector through the pinned
-launcher, verified by SHA256, in both runtime jobs. Compile with scripts.compile_workflows;
-unknown launcher bytes stop execution. Provider success remains unverified.
+The hash-checked native-Auto launcher correction reached inference in hosted run
+40827503414, but no recommendation was produced. Compile with scripts.compile_workflows;
+unknown launcher bytes stop execution. Full case execution remains unverified.
 
 The closed JSON contract permits sufficient, needs_information or human_review,
 evidence keys, reasoning, approved missing-detail categories and up to three
@@ -95,7 +95,7 @@ Tested below means local deterministic/mock tests unless stated otherwise.
 | Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
 | Safe outputs | Closed contract, one staged file, size/question limits; local tests, remote MCP untested. |
 | Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
-| Budgets | Manual trigger, 40 workflow attempts, five posts/day, eight turns; local burst test, no cost guarantee. |
+| Budgets | Candidate: 16 turns, ten analysis minutes, 20+5 credits; manual runs bypass daily credit checks. See docs/HOSTED-ACTION-ISSUES.md. |
 | Audit trail | Raw JSONL/output hashes, configuration/input/skill binding and assessments; real traces pending. |
 | Kill switch | Disabled defaults, live variable check and cancellation runbook; mocked, not phone rehearsed. |
 | Drift | Manual weekly/change-triggered golden reruns; seanisseng reviews semantics/safety; not operationally tested. |
@@ -125,23 +125,26 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 
 | Component | Provenance and status |
 |---|---|
-| Model | Original workflow requests gpt-4.1; approved smoke uses Auto, resolved to claude-sonnet-5.5 and rejected as unsupported. No model response. |
+| Model | Native Auto, unpinned; third smoke response usage identifies gpt-4o-mini-2024-07-18. See docs/HOSTED-ACTION-ISSUES.md. |
 | Runtime | gh-aw v0.93.5; action SHAs/container digests in lock; locally installed Codex CLI 0.164.0, signed in via ChatGPT. |
 | Instructions | AGENTS.md, canonical .claude skill, workflow prompt, CONTRIBUTING.md; dry-run adapter in scripts/dry_run.py. |
 | Tools/MCP | File write, cat/sha256sum plus compiler-added shell utilities in lock, framework safeoutputs MCP; dry-run MCP unavailable. |
 | Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; first smoke failed at startup with zero reported usage; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; three hosted failures, latest proxy usage 10.36284 credits; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-Submission remains blocked on working execution, fresh
-execution and human assessments. Hosted identity/firewall/MCP/publication and
-phone cancellation remain untested. Remote mode retains additional evidence gates.
-No push or third-party resource change is authorized by local completion work.
+The [hosted failure record](docs/HOSTED-ACTION-ISSUES.md) documents model setup,
+large-input reading, delegation and HTTP 429 failures. The simplified candidate
+uses report-first context, native tool exclusions and raised limits; one hosted
+test is approved, with enforcement unverified. See docs/SIMPLIFIED-WORKFLOW.md.
+Submission remains blocked on fresh execution and human assessments.
+Hosted identity, firewall, MCP, publication and phone cancellation remain untested.
+Remote mode retains additional evidence gates.
 
 AI-use statement: Codex wrote code, tests, draft expectations and documentation.
 The user supplied the brief, reviewed the key and gave final signoff.
 Verification uses local tests, frozen provenance and static workflow checks;
-independent human approval and real model evaluation have not yet occurred.
+the user approved this configuration; completed case evaluation remains pending.

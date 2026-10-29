@@ -7,6 +7,7 @@ from pathlib import Path
 from scripts.contract import REPOSITORY, digest, require
 from scripts.evidence import review_record
 from scripts.runtime import api
+from scripts.agent_input import export_case
 
 
 def prepare():
@@ -24,16 +25,17 @@ def prepare():
             'smoke input differs from reviewed snapshot')
     runs = api('actions/workflows/smoke.lock.yml/runs?per_page=1')
     count = runs['total_count']
-    require(type(count) is int and count == 3, 'native-Auto verification attempt exhausted or unknown')
+    require(type(count) is int and count == 4, 'simplified smoke attempt exhausted or unknown')
     Path('input').mkdir(exist_ok=True)
     Path('output').mkdir(exist_ok=True)
-    Path('input/case.json').write_text(json.dumps(case, ensure_ascii=False), encoding='utf-8')
+    export_case(case, Path('.'))
     skill = (root / '.claude/skills/bug-report-clarification/SKILL.md').read_bytes()
     installed = Path('.github/skills/bug-report-clarification/SKILL.md')
     installed.parent.mkdir(parents=True, exist_ok=True)
     installed.write_bytes(skill)
     Path('AGENTS.md').write_bytes((root / 'AGENTS.md').read_bytes())
     manifest = dict(case_id=case['case_id'], input_hash=digest(case), sandbox_issue=None,
+                    input_format='report-first-v1',
                     artifact_only=True, skill_sha256=hashlib.sha256(skill).hexdigest(),
                     configuration_hash=review['configuration_hash'])
     Path('input/manifest.json').write_text(json.dumps(manifest), encoding='utf-8')

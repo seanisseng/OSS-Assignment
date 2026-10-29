@@ -1,5 +1,5 @@
 {
-  "status": "compatibility_correction_locally_verified_awaiting_approval",
+  "status": "native_auto_hosted_verified_task_incomplete",
   "purpose": "Leave model selection to native Copilot instead of resolving the gh-aw auto alias to a concrete model.",
   "candidate_source": ".github/workflows/smoke.md",
   "candidate_source_sha256": "773190b99e9303c23352bba8dd7253d025cfb6b2ac07979b6651627778e936d0",
@@ -16,10 +16,10 @@
     "runtime_script_replayed_on_pinned_source": true,
     "patched_node_syntax_valid": true
   },
-  "hosted_native_auto_verified": false,
+  "hosted_native_auto_verified": true,
   "inference_calls": 0,
   "study_boundary": "User authorized one replacement. Trusted preparation accepts dispatch count exactly two and rejects reruns; answer key unchanged. First-run local debug copies removed on request.",
-  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40823996951",
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414",
   "proposed_configuration_hash": "91d4c4756f996b71b735684e016f93ebbb7df6abe2b2972f8b3faf75beabbee2",
   "inference_calls_during_correction": 0,
   "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8"

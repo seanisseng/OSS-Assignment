@@ -1,5 +1,5 @@
 {
-  "status": "local_verification_passed_hosted_verification_pending",
+  "status": "hosted_auto_works_task_failed",
   "configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
   "tests_passed": 56,
   "compile_version": "v0.93.5",
@@ -16,8 +16,37 @@
     "rolling_daily_per_workflow": 15
   },
   "publication_enabled": false,
-  "new_inference_calls": 0,
-  "new_dispatches": 0,
+  "new_inference_calls": 32,
+  "new_dispatches": 1,
   "case_expectations_changed": false,
-  "configuration_approval": "approved_for_one_hosted_verification"
+  "configuration_approval": "approved_for_one_hosted_verification",
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414",
+  "workflow_conclusion": "failure",
+  "native_auto_provider_responses_observed": true,
+  "skill_read_content_matched": true,
+  "recommendation_present": false,
+  "validation_job": "skipped",
+  "provider_rate_limit_observed": true,
+  "delegation_observed": true,
+  "input_reader_rejected_large_compact_json": true,
+  "usage": {
+    "analysis_proxy_credits": 10.08027,
+    "detection_proxy_credits": 0.28257,
+    "total_proxy_credits": 10.36284,
+    "confirmed_billed_credits": null,
+    "models_in_response_usage": [
+      "gpt-4o-mini-2024-07-18"
+    ],
+    "successful_response_records": 32,
+    "input_tokens": 301666,
+    "cache_read_tokens": 728704,
+    "output_tokens": 1500
+  },
+  "limitations": [
+    "The action did not produce a recommendation and is not end-to-end successful.",
+    "The detector also encountered a rate limit; its job success is not proof of a completed scan.",
+    "Configured parent turn limits did not prevent a delegated helper from making additional calls.",
+    "The proxy reports completed-response usage slightly above the ten-credit analysis setting.",
+    "Original GitHub logs are the evidence source; temporary debug downloads are removed after inspection."
+  ]
 }

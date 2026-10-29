@@ -1,5 +1,9 @@
 # Native automatic-selection smoke retry
 
+Historical retry notes; the hosted result below supersedes earlier pending claims.
+See [the complete failure record](HOSTED-ACTION-ISSUES.md) and
+[the current pending configuration](SIMPLIFIED-WORKFLOW.md) for current status.
+
 The user authorized one replacement attempt on 29 October 2026. Case: pytest-15051.
 The first run remains in GitHub Actions history; local debug downloads were removed
 at the user's request. It failed before a model response and reported zero usage.
@@ -46,3 +50,14 @@ See STUDENT-AUTO.md for the new hash-checked native-Auto correction. It keeps an
 explicit auto selector, the proxy and credit limits. One prospective verification
 attempt is restricted to dispatch count three; configuration approval and the
 smoke switch are both required before it can run. No third attempt has launched.
+
+## Hosted verification result
+
+Run 40827503414 completed with failure. Native Auto reached the provider and the
+canonical skill was actually read. The model delegated and repeatedly tried to
+read/search the large compact case JSON, then hit GitHub rate limiting. No
+recommendation file exists, so this is not a successful end-to-end evaluation.
+Proxy-reported usage was 10.08027 analysis credits and 0.28257 detection credits;
+final account billing is unconfirmed. The detector also hit rate limiting.
+The smoke switch is off, publication stayed disabled and no further run started.
+Temporary debug downloads were removed after inspection; GitHub retains the logs.

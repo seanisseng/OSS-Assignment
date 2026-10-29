@@ -1,7 +1,8 @@
 # Native Copilot Auto compatibility correction
 
-Status: implemented and locally verified; hosted inference is not yet verified.
-No new workflow dispatch or model call was made while preparing this correction.
+Historical compatibility proposal; the hosted result below supersedes its initial status.
+For all three failures see [HOSTED-ACTION-ISSUES.md](HOSTED-ACTION-ISSUES.md).
+Current pending configuration and limits: [SIMPLIFIED-WORKFLOW.md](SIMPLIFIED-WORKFLOW.md).
 
 ## What changes
 
@@ -65,3 +66,14 @@ same credit limits. No further inference has been performed.
 - https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/resolve_model_alias.cjs
 - https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/copilot_harness.cjs
 - https://github.com/github/gh-aw-firewall/blob/v0.28.70/docs/awf-config-spec.md
+
+## Hosted verification result
+
+Run 40827503414 completed with failure. Native Auto reached the provider and the
+canonical skill was actually read. The model delegated and repeatedly tried to
+read/search the large compact case JSON, then hit GitHub rate limiting. No
+recommendation file exists, so this is not a successful end-to-end evaluation.
+Proxy-reported usage was 10.08027 analysis credits and 0.28257 detection credits;
+final account billing is unconfirmed. The detector also hit rate limiting.
+The smoke switch is off, publication stayed disabled and no further run started.
+Temporary debug downloads were removed after inspection; GitHub retains the logs.

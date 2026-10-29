@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 from scripts.contract import digest, require
+from scripts.agent_input import export_case
 from scripts.evidence import configuration_hash, file_hash, load, review_record, timestamp, trace_evidence
 
 
@@ -29,10 +30,11 @@ def prepare(repo, case_id, workspace):
     case = load(source)
     require(case['case_id'] == case_id, 'case mismatch')
     skill = repo / '.claude/skills/bug-report-clarification/SKILL.md'
-    manifest = dict(case_id=case_id, input_hash=digest(case), skill_sha256=file_hash(skill))
+    manifest = dict(case_id=case_id, input_hash=digest(case), skill_sha256=file_hash(skill),
+                    input_format='report-first-v1')
     workspace.mkdir(parents=True, exist_ok=False)
     (workspace / 'output').mkdir()
-    save(workspace / 'input/case.json', case)
+    export_case(case, workspace)
     save(workspace / 'input/manifest.json', manifest)
     installed = workspace / '.github/skills/bug-report-clarification/SKILL.md'
     installed.parent.mkdir(parents=True)
