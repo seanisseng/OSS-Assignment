@@ -178,7 +178,8 @@ class SingleResponseTests(unittest.TestCase):
                     'GH_AW_SAFE_OUTPUTS':str(root / 'safeoutputs/outputs.jsonl'),
                     'MOCK_RESPONSE':raw}
                 code = ('global.fetch=async()=>new Response(process.env.MOCK_RESPONSE);'
-                        'require(process.argv[1]).main({stepStartFile:process.argv[2]}).catch(e=>{console.error(e);process.exitCode=1;});')
+                        'require(process.argv[1]).main({stepStartFile:process.argv[2],'
+                        'emitCompletion:()=>{}}).catch(e=>{console.error(e);process.exitCode=1;});')
                 step_start=root / 'step-start.txt'
                 step_start.write_text(str(time.time_ns() // 1000000))
                 proc = subprocess.run(['node','-e',code,str(harness),str(step_start),'ignored-cli-arguments'],
@@ -206,6 +207,12 @@ class SingleResponseTests(unittest.TestCase):
                 single_response.validate_artifact()
                 execution = json.loads((root / 'staged/execution.json').read_text())
                 self.assertEqual(execution['requests_sent'],1)
+                self.assertEqual(execution['terminal_safe_output'],'noop')
+                missing_completion=execution.copy()
+                del missing_completion['terminal_safe_output']
+                (root / 'staged/execution.json').write_text(json.dumps(missing_completion))
+                with self.assertRaisesRegex(ValueError,'execution trace'):
+                    single_response.validate_artifact()
                 execution['requests_sent']=2
                 (root / 'staged/execution.json').write_text(json.dumps(execution))
                 with self.assertRaisesRegex(ValueError,'execution trace'):
