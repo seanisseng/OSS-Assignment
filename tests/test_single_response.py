@@ -96,7 +96,7 @@ class SingleResponseTests(unittest.TestCase):
             os.chdir(root)
             try:
                 with patch.dict(os.environ,{'GITHUB_REPOSITORY':'foreign/repo',
-                        'RUNNER_TEMP':str(root / 'runner')}), patch.object(single_response,'api') as api:
+                        'RUNNER_TEMP':str(root / 'runner')}), patch.object(single_response,'api',create=True) as api:
                     with self.assertRaisesRegex(ValueError,'foreign repository'):
                         single_response.prepare()
                     api.assert_not_called()
@@ -147,19 +147,20 @@ class SingleResponseTests(unittest.TestCase):
                        'RUNNER_TEMP':str(root / 'runner')}
                 with patch.dict(os.environ,env), patch.object(single_response,'review_record',
                         return_value={'configuration_hash':'approved'}), patch.object(
-                        single_response,'api',return_value={'total_count':3}) as api:
+                        single_response,'api',create=True,
+                        side_effect=AssertionError('Preparation must not query workflow run counts')) as api:
                     single_response.prepare()
-                    api.assert_called_once()
+                    api.assert_not_called()
                     for key, value in [('SINGLE_RESPONSE_ENABLED','false'),
-                                       ('CASE_ID','other'),('GITHUB_RUN_ATTEMPT','2'),
+                                       ('CASE_ID','other'),
                                        ('GITHUB_REPOSITORY','pytest-dev/pytest')]:
                         with patch.dict(os.environ,{key:value}), self.assertRaises(ValueError):
                             single_response.prepare()
-                    for count in [0,1,2,4,True,'3']:
-                        api.return_value={'total_count':count}
-                        with self.assertRaises(ValueError):
+                    # Fresh dispatches and manually rerun attempts need no counter reset.
+                    for attempt in ['1','2','17']:
+                        with patch.dict(os.environ,{'GITHUB_RUN_ATTEMPT':attempt}):
                             single_response.prepare()
-                    api.return_value={'total_count':3}
+                    api.assert_not_called()
                     swapped = case | {'case_id':'a-different-case'}
                     with patch.object(single_response,'load',side_effect=[swapped,
                             {'expectations':[{'case_id':swapped['case_id'],
