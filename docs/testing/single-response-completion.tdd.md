@@ -76,3 +76,12 @@ The lifetime testing limit stays removed; there are no automatic retries.
 - [Pinned collector](https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/collect_ndjson_output.cjs)
 - [Pinned conclusion handler](https://github.com/github/gh-aw/blob/32ecafbc061c9af57e9361942099e381102ae304/actions/setup/js/handle_agent_failure.cjs)
 - [MCP CLI mounting](https://github.github.com/gh-aw/reference/tools/#mcp-cli-mounting-cli-proxy)
+
+## Subsequent hosted verification
+
+After explicit user approval, configuration 6b9412c7 at commit 68dda64 passed all
+jobs in [run 40924362394](https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394).
+The trace acknowledges the fixed noop, and the actual framework output has one
+noop with no errors. This verifies the hosted wrapper/gateway and conclusion path
+for one development case. It does not validate model decision quality, the full
+evaluation or actual billing. See `evals/evidence/terminal-completion-smoke-result.json`.

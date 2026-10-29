@@ -131,15 +131,15 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 | Tools/MCP | Model has no tools; generated Copilot CLI flags are unused. Trusted harness makes one inference POST and one fixed safeoutputs noop call; no model-controlled commands. |
 | Permissions | Replacement contents/actions read; legacy analysis also issues read. Publisher alone has issues write and rejects replacement artifacts. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs; seven hosted failures. Latest: inference/JSON validation passed; conclusion missing terminal output. Proxy estimate 0.042885, billing unconfirmed; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs; seven failed smokes, eighth passed all jobs. One AI request, 2,278 reported tokens; proxy estimate 0.047625, billing unconfirmed; human assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents seven failed attempts.
-Run 40920259777 passed inference and clean JSON validation, but its conclusion failed.
-The [completion audit](docs/SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output) corrects the mistaken marker removal;
-the fixed CLI completion passes offline bridge/collector/conclusion replay; hosted proof and approval remain pending. Decision quality,
+The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents seven failures and one successful smoke.
+Run 40924362394 passed all jobs after the approved fixed CLI completion.
+The [completion audit](docs/SINGLE-RESPONSE-AUDIT.md#hosted-completion-follow-up) preserves the failure and correction;
+one development-case technical path is verified. Decision quality,
 semantic skill compliance and excerpt completeness remain evaluation questions.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.

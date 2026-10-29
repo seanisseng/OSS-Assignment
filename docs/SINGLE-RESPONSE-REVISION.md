@@ -1,4 +1,4 @@
-# Single-response revision: completion correction pending approval
+# Single-response revision: hosted completion verified
 
 The user approved configuration `3e538ec9...`, pushed as `c5cd1cd`, and one smoke.
 Run 40900450929 made one request and failed with HTTP 400 before producing an
@@ -7,8 +7,8 @@ request error, local regression fix and remaining compatibility checks. The fix
 was approved as configuration `3115d8ad...` for a push and one follow-up smoke.
 That second request exposed a protected marker write and malformed output. The
 approved third request passed inference and clean JSON validation, then failed
-the required terminal-output check. The CLI completion correction is locally
-verified and awaits renewed approval; all seven failed runs remain in GitHub.
+the required terminal-output check. Configuration 6b9412c7 was approved and
+passed all jobs in run 40924362394; all seven prior failures remain in GitHub.
 
 ## Evidence motivating the change
 

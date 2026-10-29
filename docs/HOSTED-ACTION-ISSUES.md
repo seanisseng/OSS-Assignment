@@ -1,10 +1,10 @@
-# Hosted GitHub Action failures
+# Hosted GitHub Action run history
 
-Repository: seanisseng/OSS-Assignment. These were manually dispatched, artifact-only
-smoke tests of development case `pytest-15051` on 29 October UTC (29–30 October Singapore).
-None completed an end-to-end case evaluation. The seventh produced a structurally
-valid recommendation but failed its final conclusion. Publication was
-disabled throughout; no sandbox issue comment was posted.
+Repository: seanisseng/OSS-Assignment. These are manually dispatched, artifact-only
+smokes of development case `pytest-15051` on 29 October UTC (29?30 October Singapore).
+Seven failed; the eighth passed the complete technical workflow. Model decision
+quality, human assessments and the full evaluation remain unfinished. Publication
+was disabled throughout; no sandbox issue comment was posted.
 
 ## Attempts and observed outcomes
 
@@ -17,6 +17,7 @@ disabled throughout; no sandbox issue comment was posted.
 | [40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929) | One request was rejected for an empty tools list combined with tool_choice (HTTP 400, invalid_request_body). No recommendation; validation skipped. | No successful inference usage records; token log empty. Actual billing unconfirmed. | One-request termination and capture worked. The format correction is local and tested; no retry dispatched. See docs/SINGLE-RESPONSE-AUDIT.md. |
 | [40917225932](https://github.com/seanisseng/OSS-Assignment/actions/runs/40917225932) | Inference returned and saved a recommendation, then a direct protected marker write failed EROFS. The response also had object-shaped evidence; validation skipped. | 2,706 reported tokens; actual billing unconfirmed. | Request compatibility and response capture worked; output/finalization did not. |
 | [40920259777](https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777) | Agent and clean JSON validation passed. Conclusion failed because removing the marker caused missing_terminal_safe_output. | 2,199 reported tokens; proxy estimate 0.042885 credits, actual deduction unconfirmed. | Required terminal noop was omitted. Fixed CLI completion passes local pinned bridge/collector/conclusion replay; hosted proof and human semantic review pending. |
+| [40924362394](https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394) | All five jobs passed, including clean JSON validation and final conclusion. One inference request and one fixed trusted noop. | 2,278 reported tokens; proxy estimate 0.047625 credits, actual deduction unconfirmed. | First successful hosted technical smoke. Recommendation still needs human quality review; no publication. |
 
 ## Model selection
 

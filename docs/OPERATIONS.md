@@ -1,15 +1,15 @@
 # Activation and evidence runbook
 
-Current state: seven hosted smoke attempts failed. The seventh passed inference
-and clean JSON validation, but failed the conclusion's terminal-output check.
+Current state: seven hosted smoke attempts failed; the eighth passed all jobs,
+including terminal completion, clean JSON validation and the final conclusion.
 The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
 The separate [single-response replacement](SINGLE-RESPONSE-REVISION.md) is locally
-implemented; its third smoke exposed the missing completion signal. The local
-correction uses a fixed trusted CLI noop and requires its acknowledgement in
-the execution trace. Lifetime run-count and manual-rerun restrictions remain
-removed as requested. Renewed configuration signoff, push and run approval are pending. Its switch
+implemented. Configuration 6b9412c7 was explicitly approved, pushed as 68dda64
+and passed hosted smoke 40924362394 using a fixed trusted CLI noop. Lifetime
+run-count and manual-rerun restrictions remain removed. New runs still need
+external-action approval; the launch switch is off. Its switch
 is `CLARIFICATION_SINGLE_RESPONSE_ENABLED`; it needs no sandbox issue and cannot
 publish. After each approved dispatch or rerun, reset that switch once preparation
 finishes. Disable the new workflow and cancel its running job for an immediate

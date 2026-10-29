@@ -9,9 +9,9 @@ The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) did not produce a
 recommendation. No further attempt of that looping version is authorized.
 
 The [single-response replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented
-and locally tested. Its third smoke passed inference and JSON validation, but the
-conclusion failed because the required completion signal was absent. The
-[completion correction](docs/SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output) passes offline replay and awaits approval before push or another run.
+and tested in GitHub Actions. [Run 40924362394](https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394)
+passed every job after the trusted completion fix. See the
+[completion record](docs/SINGLE-RESPONSE-AUDIT.md#hosted-completion-follow-up). Decision quality and the full evaluation remain pending.
 Its custom harness supplies the packet directly; the model has no investigation tools.
 
 The updated assignment permits a documented coding-assistant dry run. Start with

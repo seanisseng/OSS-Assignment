@@ -1,5 +1,5 @@
 {
-  "status": "completion_fix_approved_for_one_hosted_smoke",
+  "status": "hosted_technical_smoke_passed_semantic_review_pending",
   "configuration_hash": "6b9412c724f5add9f7d64ae98307c7d9a93e5dbaec6031f1b9a49045aae7fc6d",
   "python_tests_passed": 69,
   "node_transport_cases_passed": 18,
@@ -54,8 +54,8 @@
   "dispatches": 0,
   "inference_calls": 0,
   "limitations": [
-    "The previous run passed inference and clean JSON validation but failed the final conclusion. The new CLI completion is verified offline, not yet hosted.",
-    "The validated model response requests a traceback already supplied; human decision-quality review remains pending.",
+    "One development-case hosted technical smoke passed all jobs; the full 22-case evaluation is not complete.",
+    "The validated response marks traceback as missing despite supplied traceback evidence; human semantic review remains pending.",
     "A fixed noop acknowledges response capture only. Python validation still rejects malformed output without repair; human semantic review is separate.",
     "One request means one caller POST; inspect proxy logs for upstream behavior.",
     "Skill delivery does not establish semantic decision quality; human assessment remains necessary.",
@@ -65,10 +65,10 @@
   ],
   "approved_at": "2026-10-30T01:44:42+08:00",
   "prior_approved_configuration_hash": "d8b8354099e01fd38a540eac66024502c2d47596a4d66dd207aadea3a3a244dc",
-  "latest_attempt_run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40920259777",
-  "new_pushes_since_fix": 0,
-  "new_dispatches_since_fix": 0,
-  "new_provider_requests_since_fix": 0,
+  "latest_attempt_run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394",
+  "new_pushes_since_fix": 1,
+  "new_dispatches_since_fix": 1,
+  "new_provider_requests_since_fix": 1,
   "exact_gateway_error_regression_passed": true,
   "documentation_audit": "docs/SINGLE-RESPONSE-AUDIT.md",
   "previous_candidate_configuration_hash": "6e32bf47dd1373c09ce51670b26c6c9c7e08c64da2b198f5b44b23da49a7ba04",
@@ -95,8 +95,8 @@
     ]
   },
   "daily_credit_guard_enforced_for_manual_dispatch": false,
-  "historical_single_response_dispatches": 3,
-  "historical_single_response_caller_requests": 3,
+  "historical_single_response_dispatches": 4,
+  "historical_single_response_caller_requests": 4,
   "lifetime_dispatch_limit": null,
   "manual_reruns_allowed": true,
   "lifetime_count_api_used": false,
@@ -107,9 +107,9 @@
   "historical_invalid_object_evidence_rejected": true,
   "prior_auto_response_model": "gpt-4o-mini-2024-07-18",
   "prior_response_reported_tokens": 2706,
-  "latest_proxy_credit_estimate": 0.042885,
-  "latest_reported_tokens": 2199,
-  "latest_result": "evals/evidence/output-fix-smoke-result.json",
+  "latest_proxy_credit_estimate": 0.047625,
+  "latest_reported_tokens": 2278,
+  "latest_result": "evals/evidence/terminal-completion-smoke-result.json",
   "safe_output_marker_transport": "fixed trusted installed safeoutputs CLI noop",
   "safe_output_cli_timeout_ms": 15000,
   "safe_output_cli_maximum_bytes": 16384,
@@ -118,5 +118,5 @@
   "actual_pinned_bridge_collector_conclusion_replay_passed": true,
   "replay_new_ai_requests": 0,
   "replay_result": "evals/evidence/completion-replay-result.json",
-  "current_completion_fix_hosted_verified": false
+  "current_completion_fix_hosted_verified": true
 }

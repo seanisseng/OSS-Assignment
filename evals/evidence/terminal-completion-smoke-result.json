@@ -1,0 +1,185 @@
+{
+  "status": "completed",
+  "expected_commit": "68dda6420ab782bc1f281d28afe2baa87678863d",
+  "configuration_hash": "6b9412c724f5add9f7d64ae98307c7d9a93e5dbaec6031f1b9a49045aae7fc6d",
+  "approval_source": "User explicitly approved push and one hosted smoke",
+  "prior_run_ids": [
+    40920259777,
+    40917225932,
+    40900450929
+  ],
+  "dispatch_attempts": 1,
+  "automatic_retries": false,
+  "case_id": "pytest-15051",
+  "switch_enabled": false,
+  "updated_at": "2026-10-29T17:51:29.830737+00:00",
+  "dispatch_output": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394",
+  "run_id": 40924362394,
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394",
+  "workflow_status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "id": 123625797426,
+      "name": "activation",
+      "status": "completed",
+      "conclusion": "success",
+      "active": [],
+      "failed": []
+    },
+    {
+      "id": 123626639065,
+      "name": "agent",
+      "status": "completed",
+      "conclusion": "success",
+      "active": [],
+      "failed": []
+    },
+    {
+      "id": 123627736393,
+      "name": "validate_recommendation",
+      "status": "completed",
+      "conclusion": "success",
+      "active": [],
+      "failed": []
+    },
+    {
+      "id": 123627736421,
+      "name": "safe_outputs",
+      "status": "completed",
+      "conclusion": "success",
+      "active": [],
+      "failed": []
+    },
+    {
+      "id": 123628099323,
+      "name": "conclusion",
+      "status": "completed",
+      "conclusion": "success",
+      "active": [],
+      "failed": []
+    }
+  ],
+  "created_at": "2026-10-29T17:45:30Z",
+  "completed_at": "2026-10-29T17:50:59Z",
+  "completed_at_singapore": "2026-10-30T01:50:59+08:00",
+  "execution": {
+    "version": 1,
+    "status": "response_received",
+    "requests_sent": 1,
+    "packet_sha256": "5d507cb060b3369adcd72e349675a3a115b872dafd9870c8c5c12eb13170f72d",
+    "skill_sha256": "a339604869e25fc2cd040398f48a112f3a96ef6b7cba5546d0c338e16d414457",
+    "model_requested": "auto",
+    "tools": [],
+    "run_id": "40924362394",
+    "run_attempt": "1",
+    "timeout_ms": 510982,
+    "model_reported": "gpt-4o-mini-2024-07-18",
+    "usage": {
+      "completion_tokens": 299,
+      "completion_tokens_details": {
+        "accepted_prediction_tokens": 0,
+        "rejected_prediction_tokens": 0
+      },
+      "prompt_tokens": 1979,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "total_tokens": 2278
+    },
+    "terminal_safe_output": "noop"
+  },
+  "proxy_usage": [
+    {
+      "_schema": "token-usage/v0.28.70",
+      "timestamp": "2026-10-29T17:48:50.696Z",
+      "event": "token_usage",
+      "request_id": "1ea77953-7e8c-4f22-9000-3a4c678ae65f",
+      "provider": "copilot",
+      "model": "gpt-4o-mini-2024-07-18",
+      "path": "/chat/completions",
+      "status": 200,
+      "streaming": false,
+      "input_tokens": 1979,
+      "output_tokens": 299,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "duration_ms": 2713,
+      "response_bytes": 2845,
+      "x_initiator": "agent",
+      "ai_credits_this_response": 0.047625,
+      "ai_credits_total": 0.047625,
+      "ai_credits_pricing_source": "models.dev",
+      "ai_credits_pricing_tier": "default",
+      "ai_credits_accounting_policy": "concrete_model",
+      "ai_credits_fallback_pricing_used": false
+    }
+  ],
+  "account_credit_deduction_verified": false,
+  "recommendation": {
+    "case_id": "pytest-15051",
+    "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+    "decision": "needs_information",
+    "missing": [
+      "traceback",
+      "expected_actual",
+      "configuration"
+    ],
+    "evidence": [
+      "issue",
+      "src/_pytest/fixtures.py"
+    ],
+    "reasoning": "The provided issue includes a traceback of an error occurring during the execution of pytest when using --fixtures-per-test, indicating that there is a fundamental problem with handling doctests in that context. However, essential details are missing to fully understand the configuration that led to this error, such as specific pytest versions used and any configurations that might differ from defaults. Additionally, expected versus actual behavior is not clearly defined, making it difficult for maintainers to assess how the program should behave versus how it currently crashes.",
+    "questions": [
+      "What version of pytest are you using?",
+      "Can you provide details on any specific configurations that may affect the behavior?",
+      "What is the expected behavior when using --fixtures-per-test with doctests?"
+    ],
+    "comment": "What version of pytest are you using?\nCan you provide details on any specific configurations that may affect the behavior?\nWhat is the expected behavior when using --fixtures-per-test with doctests?"
+  },
+  "recommendation_sha256": "3136a2de64d019463a6408b3937f245b6bb50bb5e81a8f0e5b041575e8f35c43",
+  "validated_artifact_matches_raw": true,
+  "structural_validation": "passed",
+  "framework_output": {
+    "items": [
+      {
+        "type": "noop",
+        "message": "Assessment response saved for separate validation; no publication requested."
+      }
+    ],
+    "errors": []
+  },
+  "semantic_review": "pending human review",
+  "ai_diagnostic_note": "The model marks traceback as missing while acknowledging a supplied traceback. Successful execution and schema validation do not establish clarification necessity.",
+  "artifacts": [
+    {
+      "id": 12920750126,
+      "name": "single-response-raw"
+    },
+    {
+      "id": 12920445938,
+      "name": "single-response-input"
+    },
+    {
+      "id": 12920360961,
+      "name": "info"
+    },
+    {
+      "id": 12919613765,
+      "name": "usage"
+    },
+    {
+      "id": 12919582946,
+      "name": "activation"
+    },
+    {
+      "id": 12919318877,
+      "name": "agent"
+    },
+    {
+      "id": 12918979395,
+      "name": "single-response-validated"
+    }
+  ],
+  "publication_performed": false
+}

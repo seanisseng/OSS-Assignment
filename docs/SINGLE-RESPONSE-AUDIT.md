@@ -7,7 +7,8 @@ It failed. The hardened correction `3115d8ad...` was subsequently approved for o
 push and follow-up smoke. That second smoke failed after a successful inference;
 configuration `d8b83540...` was then approved and pushed as `dc1d6aa` for the third
 smoke. That run passed inference/JSON validation but failed the final conclusion.
-The completion correction below awaits renewed approval. Audit tests make no provider requests.
+The completion correction was approved as 6b9412c7 and passed hosted run
+40924362394. Audit tests themselves make no provider requests.
 
 ## Failure, correction and test gap
 
@@ -115,6 +116,28 @@ the corrected case has one noop, no incomplete result and no conclusion errors.
 A loopback MCP fixture stands in for the server; actual hosted wrapper execution,
 Docker mounts and job orchestration still need a newly approved smoke. Both launch
 switches remain off. No lifetime run-count guard has been restored.
+
+## Hosted completion follow-up
+
+The user approved configuration `6b9412c7...`, a push and one hosted smoke.
+[Run 40924362394](https://github.com/seanisseng/OSS-Assignment/actions/runs/40924362394)
+at commit `68dda64` passed activation, agent execution, clean recommendation
+validation, safe-output processing and the final conclusion. This is the first
+fully successful hosted technical smoke, following seven preserved failures.
+
+The trace records one caller request, `response_received`, the original packet
+and skill hashes, and `terminal_safe_output: noop`. The actual framework output
+contains exactly the fixed noop and no errors. Raw and validated recommendations
+match byte for byte. The launch switch was reset to false; publication stayed off.
+The reported model is `gpt-4o-mini-2024-07-18`, with 1,979 input and 299 output tokens
+(2,278 total). Proxy estimate: 0.047625 credits from models.dev pricing; actual
+account deduction remains unverified. Evidence is preserved unchanged in
+`evals/evidence/terminal-completion-smoke-result.json` and GitHub artifacts.
+
+The model still marks traceback as missing while its reasoning acknowledges the
+supplied traceback. JSON validity and technical workflow success do not establish
+clarification necessity or skill compliance. Human review and the full 22-case
+evaluation remain pending. No extra run or publication was performed.
 
 ## Documentation and pinned-source audit
 
