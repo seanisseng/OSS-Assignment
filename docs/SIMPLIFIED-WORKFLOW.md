@@ -1,4 +1,8 @@
-# Simplified clarification workflow: approved for one smoke test
+# Simplified clarification workflow: hosted smoke failed
+
+The [replacement revision](SINGLE-RESPONSE-REVISION.md) replaces investigation
+with one bounded packet and one request without model tools. It is implemented
+locally, awaiting approval; this page records the fourth run's configuration.
 
 The third hosted smoke run reached native Auto and read the canonical skill,
 but repeatedly read a large compact JSON input and delegated before GitHub
@@ -40,7 +44,12 @@ Tests cover lossless source reconstruction, bounded chunks including long Unicod
 lines, untrusted path names, malformed context rejection, hosted and dry-run
 exports, stale approval rejection, and the existing publication boundaries.
 Both workflows compile with the pinned gh-aw v0.93.5 toolchain.
-No new model execution or inference has occurred for this proposal.
+Run [40889513595](https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595)
+tested this exact configuration on commit `eb46064`. The report and skill loaded,
+and no delegation was observed. However, it read one chunk 26 times, recorded
+46 turns despite the configured 16, and hit HTTP 429 without producing output.
+Reported usage was 17.19639 credits across analysis and detection. The two-chunk
+instruction and configured turn value are not verified enforcement mechanisms.
 
 The prior approval belongs to its earlier configuration hash and is preserved
 in review history. The user explicitly approved configuration `1a7549c8...`,
@@ -57,8 +66,8 @@ or additional attempts. Keep all original GitHub run history.
 
 Native CLI tool exclusion flags are documented in the
 [Copilot CLI reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference).
-Compilation verifies argument emission; hosted enforcement of the new flags,
-rate-limit recovery, decision quality and actual billing are not yet verified.
+Compilation verifies argument emission; the hosted trace has no delegation.
+Rate-limit recovery, decision quality and actual billing remain unverified.
 Restricting context inspection may increase abstentions. Fresh case evaluations
 and student semantic review are still required for submission.
 

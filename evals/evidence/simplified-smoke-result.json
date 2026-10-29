@@ -1,0 +1,53 @@
+{
+  "run_id": 40889513595,
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595",
+  "commit": "eb460642b2207d37e772ac4da31bb2e85f2c9cf1",
+  "configuration_hash": "1a7549c89e072e88a54b463ea696ce4f3828ba81adcd1da180659b28a19d83db",
+  "status": "completed",
+  "conclusion": "failure",
+  "case_id": "pytest-15051",
+  "skill_read_content_matched": true,
+  "delegation_observed": false,
+  "configured_analysis_turns": 16,
+  "observed_analysis_turn_starts": 46,
+  "successful_response_records": 45,
+  "most_repeated_context_path": "input/context/002-012.txt",
+  "most_repeated_context_reads": 26,
+  "recommendation_present": false,
+  "validation_job": "skipped",
+  "upstream_status": 429,
+  "retry_after_seconds": 9660,
+  "proxy_guard_rejection": "none reported",
+  "analysis_usage": {
+    "input_tokens": 295968,
+    "output_tokens": 904,
+    "cache_read_tokens": 1636096,
+    "cache_write_tokens": 0,
+    "ambient_context": 10456,
+    "ai_credits": 16.76448,
+    "primary_model": "auto"
+  },
+  "detection_proxy_credit_estimate": 0.43191,
+  "total_proxy_credit_estimate": 17.19639,
+  "credit_pricing_sources": [
+    "models.dev"
+  ],
+  "account_credit_deduction_verified": false,
+  "account_screenshot": {
+    "source": "user supplied screenshot after run",
+    "used": 3,
+    "included": 200,
+    "month": "2026-10"
+  },
+  "smoke_switch_enabled": false,
+  "publication_enabled": false,
+  "new_dispatches": 1,
+  "retries": 0,
+  "notes": [
+    "The native path did not enforce the configured sixteen-turn value.",
+    "The two-chunk instruction was not followed.",
+    "Detector hit HTTP 429; successful detector job conclusion is not a completed scan.",
+    "Proxy model-price accounting is not an account billing ledger.",
+    "Temporary raw diagnostic downloads removed after inspection; original GitHub artifacts remain."
+  ]
+}

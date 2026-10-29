@@ -14,7 +14,9 @@ def verify(submission=False, mode='remote'):
     required = ['AGENTS.md', 'CONTRIBUTING.md', 'DESIGN.md',
                 '.claude/skills/bug-report-clarification/SKILL.md',
                 '.github/workflows/clarify.md', '.github/workflows/clarify.lock.yml',
-                '.github/workflows/publish.yml', 'evals/golden/expectations.json']
+                '.github/workflows/publish.yml', 'evals/golden/expectations.json',
+                '.github/workflows/single-response.md', '.github/workflows/single-response.lock.yml',
+                'scripts/single_response.py', 'scripts/single_response_harness.cjs']
     errors.extend('Missing ' + name for name in required if not Path(name).is_file())
     if errors:
         return errors

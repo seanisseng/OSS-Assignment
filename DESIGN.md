@@ -20,10 +20,10 @@ The evidence justifies an experiment, not unattended deployment.
 
 ## Implementation and boundaries
 
-The manual GitHub Agentic Workflow uses Copilot. Trusted setup exports approved
-input, AGENTS.md and the canonical Claude-format skill, then removes its checkout.
-The model reads untrusted issue text, historical source and simulated tool results.
-Expectations and later comments are excluded. No reporter code is executed.
+Legacy workflows use a Copilot CLI agent. The separate single-response replacement
+uses trusted preparation and a custom harness to send one bounded packet to AWF's
+Copilot gateway, with the canonical skill and no model tools. Both exclude the
+answer key/later comments and never execute reporter code or historical source.
 Network allowed is empty; GitHub tools are disabled. Hosted enforcement is untested.
 
 The hash-checked native-Auto launcher correction reached inference in hosted run
@@ -81,9 +81,9 @@ Trace hashes detect changes but do not authenticate fabricated operator records.
 Local tests cover deterministic limits, malformed output, stale hashes, isolation,
 review binding, interrupted attempts and mocked publication. They do not prove
 model resistance, hosted permissions or semantic quality. See evals/evidence/.
-Two hosted smoke attempts failed before model responses; runs remain in GitHub history.
-Student/CLI and the secret were verified; alias routing and native Auto both failed.
-execution.json records this attempt; permanent hosted unavailability is unproven.
+Four hosted smoke attempts failed; all remain in GitHub history. The last two
+reached native Auto but ended with HTTP 429 and no recommendation. The fourth
+also showed a read loop despite smaller input; see docs/HOSTED-ACTION-ISSUES.md.
 
 ## Governance
 
@@ -93,16 +93,16 @@ Tested below means local deterministic/mock tests unless stated otherwise.
 |---|---|
 | Identity | Publisher uses Actions bot and disclosure; mock POST tested, remote identity untested. |
 | Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
-| Safe outputs | Closed contract, one staged file, size/question limits; local tests, remote MCP untested. |
+| Safe outputs | Replacement stages raw JSON for clean Python validation; fixed harness no-op, no AI detector; publisher rejects its workflow identity. Locally tested. |
 | Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
-| Budgets | Candidate: 16 turns, ten analysis minutes, 20+5 credits; manual runs bypass daily credit checks. See docs/HOSTED-ACTION-ISSUES.md. |
-| Audit trail | Raw JSONL/output hashes, configuration/input/skill binding and assessments; real traces pending. |
+| Budgets | Replacement: one caller gateway POST, 20 proxy credits, ten-minute abort, bounded packet/output. Fourth run's turn cap failed; manual daily check bypassed. |
+| Audit trail | GitHub run traces, raw output hashes and input/skill binding; case evaluations and assessments pending. |
 | Kill switch | Disabled defaults, live variable check and cancellation runbook; mocked, not phone rehearsed. |
 | Drift | Manual weekly/change-triggered golden reruns; seanisseng reviews semantics/safety; not operationally tested. |
 | Accountability | seanisseng owns configuration, review, disablement and corrections; CONTRIBUTING.md. |
 
-Deleting run/comment history weakens counters. Five minutes limits the agent job,
-not all support jobs. Eight turns can entail additional provider inference.
+Deleting run/comment history weakens counters. Analysis and support jobs have
+separate timeouts; the fourth run did not enforce the configured turn value.
 Paid overages stay disabled; do not infer a monetary cap from attempt limits.
 Dry-run helpers never launch an agent or call a network; live policy stays disabled.
 
@@ -126,25 +126,25 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 | Component | Provenance and status |
 |---|---|
 | Model | Native Auto, unpinned; third smoke response usage identifies gpt-4o-mini-2024-07-18. See docs/HOSTED-ACTION-ISSUES.md. |
-| Runtime | gh-aw v0.93.5; action SHAs/container digests in lock; locally installed Codex CLI 0.164.0, signed in via ChatGPT. |
+| Runtime | gh-aw v0.93.5 and pinned actions/AWF; replacement Node 24 harness uses built-ins, not a CLI agent session. Legacy dry-run uses Codex CLI. |
 | Instructions | AGENTS.md, canonical .claude skill, workflow prompt, CONTRIBUTING.md; dry-run adapter in scripts/dry_run.py. |
-| Tools/MCP | File write, cat/sha256sum plus compiler-added shell utilities in lock, framework safeoutputs MCP; dry-run MCP unavailable. |
+| Tools/MCP | Replacement model has no tools; trusted harness uses the fixed AWF Copilot gateway. Legacy file/shell/MCP configuration remains for comparison. |
 | Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; three hosted failures, latest proxy usage 10.36284 credits; assessments pending. |
+| Logs/evaluations | Frozen hashes, 22 inputs, tests/dashboard; four hosted failures, latest proxy usage 17.19639 credits; assessments pending. |
 | Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-The [hosted failure record](docs/HOSTED-ACTION-ISSUES.md) documents model setup,
-large-input reading, delegation and HTTP 429 failures. The simplified candidate
-uses report-first context, native tool exclusions and raised limits; one hosted
-test is approved, with enforcement unverified. See docs/SIMPLIFIED-WORKFLOW.md.
+The [hosted failure record](docs/HOSTED-ACTION-ISSUES.md) documents four failures.
+The [replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented and mocked:
+one bounded issue/skill/excerpt packet, no model tools and one caller request.
+Clean Python validation remains separate; actual gateway/Auto compatibility and
+semantic skill compliance remain unverified. Excerpt omissions risk abstention.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.
-Remote mode retains additional evidence gates.
 
 AI-use statement: Codex wrote code, tests, draft expectations and documentation.
 The user supplied the brief, reviewed the key and gave final signoff.
 Verification uses local tests, frozen provenance and static workflow checks;
-the user approved this configuration; completed case evaluation remains pending.
+the user approved one replacement smoke; completed case evaluation remains pending.

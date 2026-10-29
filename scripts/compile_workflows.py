@@ -79,12 +79,21 @@ def main():
                              text=True, encoding='utf-8').stdout.strip()
     if version != 'gh aw version v0.93.5':
         raise ValueError('Install the reviewed gh-aw v0.93.5 compiler')
-    for name in ['clarify', 'smoke']:
+    for name in ['clarify', 'smoke', 'single-response']:
         subprocess.run(compiler + ['compile', name, '--action-mode', 'release', '--action-tag',
                                    ACTION_SHA, '--no-check-update'], check=True)
         path = Path('.github/workflows') / (name + '.lock.yml')
-        path.write_bytes(correct_workflow(path.read_text(encoding='utf-8')).encode('utf-8'))
-        print('Native-Auto compatibility applied to both jobs:', name)
+        source = path.read_text(encoding='utf-8')
+        if name != 'single-response':
+            source = correct_workflow(source)
+        else:
+            models = [line.split(':', 1)[1].strip() for line in source.splitlines()
+                      if line.strip().startswith('COPILOT_MODEL:')]
+            if ('single_response_harness.cjs' not in source or 'name: detection\n' in source
+                    or models != ['auto']):
+                raise ValueError('Single-response harness or artifact-only topology changed')
+        path.write_bytes(source.encode('utf-8'))
+        print('Compiled pinned workflow:', name)
 
 
 if __name__ == '__main__':

@@ -57,15 +57,17 @@ class NativeAutoTests(unittest.TestCase):
     def test_compile_uses_pinned_release_and_corrects_both_workflows(self):
         with patch.object(compile_workflows.subprocess, 'run', return_value=SimpleNamespace(
                 stdout='gh aw version v0.93.5\n')) as run, patch.object(
-                compile_workflows.Path, 'read_text', return_value=self.fixture()), patch.object(
+                compile_workflows.Path, 'read_text', side_effect=[self.fixture(),self.fixture(),
+                    '# custom single_response_harness.cjs\nCOPILOT_MODEL: auto\n']), patch.object(
                 compile_workflows.Path, 'write_bytes') as write:
             compile_workflows.main()
-        self.assertEqual(write.call_count, 2)
+        self.assertEqual(write.call_count, 3)
         for call in run.call_args_list[1:]:
             self.assertIn(compile_workflows.ACTION_SHA, call.args[0])
             self.assertIn('--no-check-update', call.args[0])
-        for call in write.call_args_list:
+        for call in write.call_args_list[:2]:
             self.assertIn(b'preserveAuto: configuredModel === "auto"', call.args[0])
+        self.assertNotIn(b'preserveAuto', write.call_args_list[2].args[0])
 
     def test_compile_refuses_unreviewed_compiler_without_writing(self):
         with patch.object(compile_workflows.subprocess, 'run', return_value=SimpleNamespace(

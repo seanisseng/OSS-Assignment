@@ -1,7 +1,7 @@
 {
   "mode": "remote",
   "end_to_end_status": "failed_after_inference",
-  "reason": "Native Auto successfully reached Copilot and loaded the canonical skill, but the model could not read the large compact case JSON in one view, delegated and repeatedly searched it, then hit an upstream GitHub rate limit. No recommendation file was produced.",
+  "reason": "Report-first input and no delegation; native execution read the same chunk 26 times, recorded 46 turns despite configured sixteen, and hit upstream HTTP 429 without recommendation.",
   "blocking_evidence": [],
   "untested_controls": [
     "Hosted model entitlement and reported identity",
@@ -21,5 +21,7 @@
   },
   "hosted_attempt_performed": true,
   "prior_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074",
-  "latest_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414"
+  "latest_attempt_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414",
+  "status": "failed_after_inference",
+  "latest_run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595"
 }

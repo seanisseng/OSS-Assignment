@@ -1,5 +1,5 @@
 {
-  "status": "approved_for_one_hosted_smoke",
+  "status": "hosted_smoke_failed_read_loop_and_rate_limit",
   "configuration_hash": "1a7549c89e072e88a54b463ea696ce4f3828ba81adcd1da180659b28a19d83db",
   "prior_approved_configuration_hash": "8fda698568e86a66ea7b3b8398163dfb2a1000b390552e02110e550aadc589e8",
   "tests_passed": 59,
@@ -128,9 +128,9 @@
   "prompted_context_chunk_limit": 2,
   "hosted_tool_exclusion_enforcement_verified": false,
   "publication_enabled": false,
-  "pushes": 0,
-  "dispatches": 0,
-  "inference_calls": 0,
+  "pushes": 1,
+  "dispatches": 1,
+  "inference_calls": 45,
   "limitations": [
     "Credit settings are soft guardrails.",
     "Two-chunk reading limit is a prompt instruction.",
@@ -140,5 +140,7 @@
   ],
   "daily_credit_guard_enforced_for_manual_dispatch": false,
   "previous_candidate_configuration_hash": "e605aa327d6c89ec45fecdeaba12996e640d67c2fe2cd9e836d9913fb9a97667",
-  "approved_at": "2026-10-29T22:12:56+08:00"
+  "approved_at": "2026-10-29T22:12:56+08:00",
+  "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595",
+  "analysis_turn_limit_enforcement_verified": false
 }

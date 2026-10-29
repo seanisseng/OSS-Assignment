@@ -12,6 +12,7 @@ disabled throughout; no sandbox issue comment was posted.
 | [40821878074](https://github.com/seanisseng/OSS-Assignment/actions/runs/40821878074) | The pinned launcher resolved `auto` to `claude-sonnet-5.5`; the provider rejected that model with HTTP 400. | Zero reported inference usage. | Trusted setup ran, but the assessment never reached inference. |
 | [40823996951](https://github.com/seanisseng/OSS-Assignment/actions/runs/40823996951) | Clearing the model selector avoided alias substitution, but the proxy-backed BYOK path required an explicit model. | Zero reported inference usage. | An empty model selector is incompatible with this provider path. |
 | [40827503414](https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414) | Native Auto worked, but repeated large-input reads and helper delegation ended with upstream HTTP 429. No `output/recommendation.json` was written, so artifact preservation failed and validation was skipped. | Analysis 10.08027 credits; detection 0.28257; total 10.36284. Actual account billing is unconfirmed. | Provider responses occurred and the canonical skill content was read. Model-selection compatibility was fixed; task completion was not. |
+| [40889513595](https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595) | The approved report-first export loaded and no delegation occurred, but the agent ignored the two-chunk instruction and read one chunk 26 times. HTTP 429 ended execution with no recommendation; validation was skipped. | Analysis 16.76448 credits; detection 0.43191; total 17.19639. Actual billing is unconfirmed. | Smaller input and CLI exclusions did not prevent a read loop. The runtime recorded 46 turns despite the configured 16-turn value. Detection also hit HTTP 429. |
 
 ## Model selection
 
@@ -60,19 +61,20 @@ that the output file exists, validates, or contains a correct case decision.
 
 ## Current response and remaining verification
 
-The smoke switch was reset to false after the third attempt; publication remains
+The smoke switch was reset to false after preparation of the fourth attempt; publication remains
 disabled. Original GitHub runs and logs remain the evidence source. Temporary
 downloaded debug copies were removed after inspection. Local summaries are in
 `evals/evidence/native-auto-verification.json` and `execution.json`.
 
 The [simplified configuration](SIMPLIFIED-WORKFLOW.md) keeps the report separate
 from lossless optional context chunks, removes native delegation tools from
-analysis, and bounds runtime and configured usage. It is locally
-tested, but has not been pushed or run. A changed configuration hash requires
-renewed human approval; the previous signoff cannot cover new instructions.
+analysis, and bounds configured usage. It was pushed as `eb46064` after explicit
+approval and tested once in run 40889513595. Its reading instruction and configured
+turn value did not constrain the observed loop. A further configuration change
+requires renewed human approval; no additional inference is authorized.
 
-The next hosted run, if separately approved, must verify actual tool exclusions,
-skill loading, output creation and validation, decision quality, and usage.
+Any next hosted run needs enforceable read/turn bounds, output creation and
+validation, decision quality and usage checks; raising limits alone did not work.
 All failures must remain in the experiment record. The assignment also permits
 the documented coding-assistant dry-run route; further hosted spending is optional.
 
@@ -103,3 +105,25 @@ The native [Copilot CLI session-limit option](https://docs.github.com/en/copilot
 currently requires at least 30 credits. This repository instead sets gh-aw
 frontmatter limits compiled into the firewall API proxy; the native CLI minimum
 does not establish that the workflow's smaller proxy settings are invalid.
+
+## Account display versus proxy accounting
+
+After the fourth run, the user supplied a screenshot of their October 2026
+Copilot Student AI usage page showing 3 of 200 included credits used. It does
+not show the roughly 17.20-credit deduction that the fourth proxy total might
+suggest. The inspected response record explicitly sets
+`ai_credits_pricing_source` to `models.dev`, with `concrete_model` accounting.
+These values are token-based workflow cost calculations, not a GitHub account
+ledger. Actual charged or deducted credits remain unknown. The difference is
+not proof of free usage, nor evidence that billing must update after a particular
+delay. See [GitHub usage monitoring](https://docs.github.com/en/copilot/how-tos/manage-and-track-spending/monitor-ai-usage)
+and the [gh-aw accounting formula](https://github.github.com/gh-aw/specs/ai-credits-specification/).
+
+## Proposed response to the fourth failure
+
+The [single-response revision](SINGLE-RESPONSE-REVISION.md) moves context selection
+into trusted preparation and removes investigation tools from the assessment
+model. One response is validated by Python, without automatic repair calls.
+This is now implemented and tested with mocked responses in a separate workflow,
+not a successful hosted fix. Actual adapter compatibility, semantic skill use and
+excerpt quality remain to be evaluated before claiming end-to-end success.

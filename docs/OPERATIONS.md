@@ -1,8 +1,15 @@
 # Activation and evidence runbook
 
-Current state: one hosted smoke attempt failed before a model response.
+Current state: four hosted smoke attempts failed; none produced a recommendation.
 The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
+
+The separate [single-response replacement](SINGLE-RESPONSE-REVISION.md) is locally
+implemented and approved for one push and first smoke test. Its new switch
+is `CLARIFICATION_SINGLE_RESPONSE_ENABLED`; it needs no sandbox issue and cannot
+publish. After an approved first dispatch, reset that switch once preparation
+finishes. Disable the new workflow and cancel its running job for an immediate
+stop. The legacy activation/publication procedure below does not enable it.
 
 For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation
 steps below. Student final signoff is complete. Both live policy

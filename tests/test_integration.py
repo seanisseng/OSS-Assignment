@@ -93,17 +93,18 @@ class IntegrationTests(unittest.TestCase):
             post.assert_not_called()
 
     def test_smoke_workflow_can_never_publish(self):
-        def smoke_api(path):
-            value = self.api(path)
-            if path == 'actions/runs/123':
-                value['path'] = '.github/workflows/smoke.lock.yml'
-            return value
+        for workflow in ['smoke.lock.yml', 'single-response.lock.yml']:
+            def smoke_api(path):
+                value = self.api(path)
+                if path == 'actions/runs/123':
+                    value['path'] = '.github/workflows/' + workflow
+                return value
 
-        with patch.object(publish, 'api', side_effect=smoke_api), patch.object(
-                publish.urllib.request, 'urlopen') as post:
-            with self.assertRaisesRegex(ValueError, 'untrusted'):
-                publish.main()
-            post.assert_not_called()
+            with self.subTest(workflow=workflow), patch.object(publish, 'api', side_effect=smoke_api), patch.object(
+                    publish.urllib.request, 'urlopen') as post:
+                with self.assertRaisesRegex(ValueError, 'untrusted'):
+                    publish.main()
+                post.assert_not_called()
 
     def test_live_disabled_never_posts(self):
         def disabled(path):

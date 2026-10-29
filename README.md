@@ -2,11 +2,15 @@
 
 Copilot analysis stages an essential-information recommendation; a separate
 human-approved executor can post one clarification to an allowlisted sandbox issue.
-Publication is disabled. The third hosted attempt reached native Auto and loaded
-the skill, but hit rate limiting before producing a recommendation; see
-[the latest run](https://github.com/seanisseng/OSS-Assignment/actions/runs/40827503414).
-The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) is locally tested and
-approved for one monitored hosted smoke test with raised limits.
+Publication is disabled. The fourth hosted attempt used the smaller input and
+no delegation, but looped on context reading and hit rate limiting; see
+[the latest run](https://github.com/seanisseng/OSS-Assignment/actions/runs/40889513595).
+The [simplified configuration](docs/SIMPLIFIED-WORKFLOW.md) did not produce a
+recommendation. No further attempt of that looping version is authorized.
+
+The [single-response replacement](docs/SINGLE-RESPONSE-REVISION.md) is implemented
+and locally tested. The user approved its configuration, push and one smoke test.
+Its custom harness supplies the packet directly; the model has no investigation tools.
 
 The updated assignment permits a documented coding-assistant dry run. Start with
 [the plain-language review guide](docs/REVIEW-GUIDE.md) and

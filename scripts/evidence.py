@@ -25,7 +25,8 @@ def configuration_hash(repo):
     paths = [repo / 'AGENTS.md', repo / 'CONTRIBUTING.md',
              repo / '.claude/skills/bug-report-clarification/SKILL.md',
              *sorted((repo / '.github/workflows').glob('*')),
-             *sorted((repo / 'scripts').glob('*.py')), repo / 'config/policy.json']
+             *sorted((repo / 'scripts').glob('*.py')),
+             *sorted((repo / 'scripts').glob('*.cjs')), repo / 'config/policy.json']
     return digest({p.relative_to(repo).as_posix(): file_hash(p) for p in paths if p.is_file()})
 
 
