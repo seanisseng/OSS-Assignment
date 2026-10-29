@@ -2,7 +2,7 @@
 
 ## Status and limits
 
-No model run is recorded. Student review is **conditions open**, not approval.
+No model run is recorded. Student final signoff is complete for the reviewed key.
 The supplied updated brief permits a coding-assistant dry run when end-to-end
 execution is unavailable. `evals/evidence/execution.json` currently records a
 pending investigation; no unsupported technical blocker is asserted.

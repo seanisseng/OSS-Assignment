@@ -9,12 +9,12 @@ from scripts.scoring import apply_review_conditions
 
 CASES = {
     15052: ('development', 'sufficient', [], 'Concrete output and one-line expected correction.'),
-    15051: ('development', 'sufficient', [], 'Exact command, traceback, failing attribute and item type.'),
+    15051: ('development', 'sufficient', [], 'Relevant option and suite context, traceback, failing attribute and item type; no full invocation is supplied.'),
     13403: ('development', 'human_review', [], 'Body delegates meaning to a linked discussion not supplied here.'),
     13986: ('development', 'sufficient', [], 'The example specifies current and desired counts, enough to investigate under Rule A; whether a failed subtest should fail its parent remains a design choice.'),
     13716: ('development', 'sufficient', [], 'The title supplies the CLI syntax and the one-sentence body proposes a usage error. A clearly specified behavior-change request is investigable under Rule A, without implying the change must be accepted.'),
     15005: ('held-out', 'sufficient', [], 'Complete Decimal reproducer, expected/actual and versions.'),
-    14775: ('held-out', 'sufficient', [], 'Minimal class fixture, command, commit and tracebacks.'),
+    14775: ('held-out', 'sufficient', [], 'Minimal class fixture, relevant -Werror flag, commit and tracebacks; no full invocation is supplied.'),
     14533: ('held-out', 'sufficient', [], 'Minimal test and bisected regression with command and output.'),
     14456: ('held-out', 'sufficient', [], 'Pinned source line and concrete incorrect literal are investigable.'),
     14329: ('held-out', 'sufficient', [], 'Inheritance example, assertion output, expected result and version.'),

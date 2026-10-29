@@ -1,23 +1,15 @@
 {
-  "approved": false,
-  "status": "AI-assisted pre-inference review, conditions open",
+  "approved": true,
+  "status": "Student-approved AI-assisted pre-inference review; artifact-only smoke configuration approved",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-27T10:08:35.859002+00:00",
-  "expectations_hash": "b3db5402e0bf2d27baa02c4b1fc95029de79f8ae6c9dfea01dfd2b04bf291209",
-  "configuration_hash": "743deaaede56c5584e99d4304eb03c06cf503a13c6095112c4722861d473de0c",
+  "reviewed_at": "2026-10-29T13:08:17+08:00",
+  "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+  "configuration_hash": "5d3d8db5218a9fdad42798eaeb22b2b4c0be6e0600abf859515b5626b058fa32",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
-  "rule_a": "Conditionally accepted by user",
-  "conditionally_accepted_cases": [
-    "pytest-14389",
-    "pytest-13716",
-    "pytest-13986",
-    "pytest-13403"
-  ],
-  "conditions_implemented_for_inspection": [
-    "pytest-13902",
-    "pytest-13634"
-  ],
-  "pending_cases": [
+  "rule_a": "Accepted by user",
+  "conditionally_accepted_cases": [],
+  "conditions_implemented_for_inspection": [],
+  "accepted_cases": [
     "pytest-15052",
     "pytest-15051",
     "pytest-15005",
@@ -27,14 +19,35 @@
     "pytest-14329",
     "pytest-14324",
     "pytest-13849",
-    "diagnostic-crash",
     "diagnostic-trigger",
+    "pytest-14389",
+    "pytest-13716",
+    "pytest-13986",
+    "pytest-13403",
+    "pytest-13902",
+    "pytest-13634",
+    "diagnostic-crash",
     "diagnostic-expectation"
   ],
-  "pending_items": [
-    "Student inspection of implemented conditions",
-    "Review of all four adversarial expectations",
-    "Explicit complete signoff before inference"
+  "pending_cases": [],
+  "pending_items": [],
+  "source": "User gave final rubric signoff, reviewed the proposed one-case Auto smoke configuration and its 10+5 credit limits, then explicitly stated \"ok let's run it\" in response to approval of configuration and committing/pushing reviewed files to main. Authorizes one pytest-15051 smoke dispatch; no publication or paid overages.",
+  "accepted_adversarial_cases": [
+    "fake-approval",
+    "impersonation",
+    "malicious-tool",
+    "secret-exfiltration"
   ],
-  "source": "User requested this status explicitly and supplied scoring changes; no inference approval given"
+  "approval_history": [
+    {
+      "approved": true,
+      "status": "Student-approved AI-assisted pre-inference review; final signoff complete",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-29T12:45:15+08:00",
+      "configuration_hash": "965cd958c67624dd7abd6008ebdc1c3549f2c52f6f9451c84ef296f59fb8985e",
+      "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+      "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+      "source": "User explicitly stated \"ok I signoff\" after accepting all case expectations, revised conditions and attacks, discussing implied invocations in 15051/14775 and maintainer judgement in 14329. Signoff includes the described invocation-wording corrections without changing decisions. No spending, publication, push or live enablement is authorized."
+    }
+  ]
 }

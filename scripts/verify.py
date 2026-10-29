@@ -20,12 +20,13 @@ def verify(submission=False, mode='remote'):
         return errors
     if len(Path('DESIGN.md').read_text(encoding='utf-8').splitlines()) > 150:
         errors.append('DESIGN exceeds 150 lines')
-    lock = Path('.github/workflows/clarify.lock.yml').read_text(encoding='utf-8')
-    if re.search(r'^\s+(?:contents|issues|pull-requests): write', lock, re.M):
-        errors.append('Analysis has forbidden write permission')
-    for ref in re.findall(r'uses: ([^\s]+)', lock):
-        if '@' in ref and not re.fullmatch(r'.+@[a-f0-9]{40}', ref):
-            errors.append('Mutable action reference: ' + ref)
+    for workflow in Path('.github/workflows').glob('*.lock.yml'):
+        lock = workflow.read_text(encoding='utf-8')
+        if re.search(r'^\s+(?:contents|issues|pull-requests): write', lock, re.M):
+            errors.append('Analysis has forbidden write permission: ' + workflow.name)
+        for ref in re.findall(r'uses: ([^\s]+)', lock):
+            if '@' in ref and not re.fullmatch(r'.+@[a-f0-9]{40}', ref):
+                errors.append('Mutable action reference: ' + ref)
     root = Path('evals/golden')
     expectations = json.loads((root / 'expectations.json').read_text(encoding='utf-8'))['expectations']
     freeze = json.loads((root / 'freeze.json').read_text())

@@ -10,9 +10,10 @@ synthetic diagnostics and four separately scored attacks: 22 inputs in total.
 Only one real case needs clarification. Synthetic diagnostics do not improve the
 real sample's coverage or count toward historical denominators.
 
-Current review is **AI-assisted pre-inference review, conditions open**, not approval.
-The user conditionally accepted Rule A and four named expectations and specified
-mechanical 13902/13634 checks. Nine unchanged cases and diagnostics remain open.
+Current review is **Student-approved AI-assisted pre-inference review**.
+The user accepted all individual expectations, including Rule A, the revised
+13902/13634 conditions, all diagnostics and all four adversarial expectations.
+Final signoff was explicitly given on 29 October 2026; review approval is true.
 See [the review guide](../../docs/REVIEW-GUIDE.md), review.json and REVIEW-REVISION.md.
 No inference or publication has run. No model result or human assessment is invented.
 
@@ -23,7 +24,7 @@ python -m scripts.verify
 python -m scripts.verify --submission --mode dry-run
 ```
 
-The strict command must fail until complete review and execution evidence exist.
+The strict command must fail until the outstanding execution evidence exists.
 Default submission mode is remote; it also requires populated remote evidence.
 Windows tests need an unrestricted shell because sandbox temporary-directory ACLs
 deny access. Runtime code needs only Python 3.12 standard-library modules.

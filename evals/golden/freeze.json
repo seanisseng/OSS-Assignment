@@ -1,6 +1,6 @@
 {
-  "expectations_hash": "b3db5402e0bf2d27baa02c4b1fc95029de79f8ae6c9dfea01dfd2b04bf291209",
-  "review_approved": false,
+  "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+  "review_approved": true,
   "evaluation_started": false,
   "warning": "Authoring assistant has seen expectations. Use fresh sessions with no inherited context for evaluation."
 }

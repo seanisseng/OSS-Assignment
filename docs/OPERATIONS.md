@@ -4,7 +4,7 @@ Current state: local implementation only. No inference or publication has run.
 Do not treat compiler success or mocked API tests as end-to-end evidence.
 
 For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation
-steps below. Student review is conditions open, not approval. Both live policy
+steps below. Student final signoff is complete. Both live policy
 flags remain false. A dry run does not require a bot comment or phone rehearsal;
 it must document those controls as remotely untested and explain a real blocker.
 

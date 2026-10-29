@@ -1,0 +1,40 @@
+{
+  "status": "prepared_not_dispatched",
+  "case_id": "pytest-15051",
+  "workflow": ".github/workflows/smoke.lock.yml",
+  "model_requested": "auto",
+  "proposed_configuration_hash": "5d3d8db5218a9fdad42798eaeb22b2b4c0be6e0600abf859515b5626b058fa32",
+  "original_review_configuration_hash": "965cd958c67624dd7abd6008ebdc1c3549f2c52f6f9451c84ef296f59fb8985e",
+  "approval_for_configuration_update": "approved",
+  "account_observations": {
+    "source": "Visible GitHub account and Actions-secret settings read via native Chrome accessibility on 2026-10-29",
+    "browser_account": "seanisseng",
+    "plan": "Copilot Student",
+    "copilot_cli": "Enabled",
+    "included_usage_display": "3 / 200 AI credits (page not refreshed; not a current remaining-balance assertion)",
+    "user_reported_remaining_credits": 187,
+    "additional_usage": "Not enabled; $0.00 / $0 budget",
+    "repository_secret_names": [
+      "COPILOT_GITHUB_TOKEN"
+    ],
+    "secret_value_accessed": false,
+    "connector_account": "Joentze",
+    "connector_repository_push_permission": false,
+    "git_credentials": "Unavailable without interactive login"
+  },
+  "configured_credit_limits": {
+    "analysis": 10,
+    "threat_detection": 5,
+    "rolling_daily": 15
+  },
+  "validation": {
+    "unit_and_mock_integration_tests_passed": 49,
+    "compiled": true,
+    "hosted_enforcement_tested": false
+  },
+  "inference_performed": false,
+  "remote_mutations_performed": false,
+  "historical_inputs_changed": false,
+  "notes": "User approved the proposed smoke configuration, push to main and one dispatch. No model result exists yet. Prior configuration approval is retained in review.json approval_history.",
+  "approved_at": "2026-10-29T13:08:17+08:00"
+}

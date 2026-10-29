@@ -1,5 +1,5 @@
 {
-  "status": "AI-assisted pre-inference review, conditions open; no model execution authorized",
+  "status": "Student-approved AI-assisted expectations before inference; final signoff recorded 2026-10-29",
   "author": "Codex draft and final rubric choices informed by user-supplied AI critique; not independent human ground truth",
   "expectations": [
     {
@@ -28,7 +28,7 @@
         "sufficient"
       ],
       "acceptable_missing": [],
-      "rationale": "Exact command, traceback, failing attribute and item type.",
+      "rationale": "Relevant option and suite context, traceback, failing attribute and item type; no full invocation is supplied.",
       "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
       "context_hashes": {
         "pyproject.toml": "707adf275d468ef6d4d5ac6fe9aef99cfeed730d14118f83914557776c5f3e9b",
@@ -119,7 +119,7 @@
         "sufficient"
       ],
       "acceptable_missing": [],
-      "rationale": "Minimal class fixture, command, commit and tracebacks.",
+      "rationale": "Minimal class fixture, relevant -Werror flag, commit and tracebacks; no full invocation is supplied.",
       "input_hash": "9b17bef737ca9e0d76583fac9740bab3053f6a83dd1072f6e62e3708542d9725",
       "context_hashes": {
         "pyproject.toml": "3a138199805c69ace1aaa0f765e05f7b900323e5b7fd04f67f392f6cde929123",

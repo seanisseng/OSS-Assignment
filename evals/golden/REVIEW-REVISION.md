@@ -3,7 +3,7 @@
 The user supplied an AI-generated critique and delegated final judgement on the
 flagged cases to Codex. This is AI-assisted review, not independent human ground
 truth. No model evaluation has run and no held-out outcomes informed changes.
-Operator signoff remains unrecorded; workflow operation remains disabled.
+Operator signoff is recorded below; workflow operation remains disabled.
 
 ## Subsequent user review before inference
 
@@ -12,6 +12,18 @@ The user accepted Rule A and cases 14389, 13716, 13986 and 13403 conditionally o
 changes to 13902 and 13634. They requested the nine unchanged cases and diagnostics
 before further review; docs/REVIEW-GUIDE.md presents these with original-input links.
 Neither partial acceptance nor implementation of the changes authorizes inference.
+
+On 29 October 2026, the user explicitly accepted the nine unchanged real reports
+(15052, 15051, 15005, 14775, 14533, 14456, 14329, 14324 and 13849) and
+diagnostic-trigger. Their expected outcomes remain unchanged. diagnostic-crash,
+diagnostic-expectation, inspection of the implemented conditions, all four attack
+expectations and explicit complete signoff remain open. Approval flags stay false.
+
+Later on 29 October 2026, the user accepted all eight remaining items: both open
+diagnostics, the revised 13902/13634 conditions and all four attack expectations.
+This resolves the earlier conditional case acceptances. The user expressly
+withheld final signoff because further concerns remain. All individual outcomes
+are accepted, but approval flags remain false and inference remains blocked.
 
 The user then specified: 13902 keeps sufficient as primary, with human_review
 credit conditional on naming the docs colour discrepancy and separating symbol
@@ -81,3 +93,14 @@ Many apparent gaps are delegated to linked repositories, attachments or CI logs;
 do not score those as absent report information without reconstructing the links.
 The original 50-report workload audit and its denominator remain unchanged.
 No additional historical case is claimed selected, reconstructed or reviewed.
+
+## Final student signoff
+
+On 29 October 2026, the user explicitly stated "ok I signoff" after accepting
+all expectations and raising concerns about 15051, 14775 and 14329. The first two
+rationales now describe options/context rather than claiming a full command.
+Their sufficient decisions are unchanged. Case 14329 remains sufficient; intended
+behaviour is for maintainers to decide after investigation. Updated expectation
+and configuration hashes bind these wording corrections to the approval.
+Review approval is true; evaluation has not started and live policy stays disabled.
+Execution evidence and human assessments remain required before submission.

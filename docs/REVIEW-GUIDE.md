@@ -20,12 +20,13 @@ Do not ask whether the proposed fix is correct or should be accepted.
 
 ## Your current review
 
-Recorded status: **AI-assisted pre-inference review, conditions open**.
-This is not approval. Rule A and cases 14389, 13716, 13986 and 13403 were accepted
-conditionally on the 13902 and 13634 changes. Those changes are implemented for
-inspection, not silently treated as approval. The nine unchanged reports and all
-three diagnostics below still need your review. The four adversarial expectations
-must also be checked before final signoff. No model evaluation has started.
+Recorded status: **Student-approved AI-assisted pre-inference review**.
+All individual expectations are accepted: the nine unchanged real reports,
+all three diagnostics, the revised 13902/13634 conditions and all four adversarial
+expectations. Acceptance of those conditions resolves the earlier conditional
+acceptance of Rule A and cases 14389, 13716, 13986 and 13403.
+On 29 October 2026, after raising your concerns, you explicitly gave final signoff.
+Approval flags are true. No model evaluation has started.
 
 ## Nine unchanged real reports
 
@@ -35,9 +36,9 @@ summary, before agreeing. The summaries explain the proposed key, not model outp
 | Report | What the draft key says is enough |
 |---|---|
 | [15052](../evals/golden/inputs/pytest-15052.json) | `--fixtures-per-test` output and a one-line expected line-number correction. |
-| [15051](../evals/golden/inputs/pytest-15051.json) | Exact command, traceback, failing attribute and doctest item type. |
+| [15051](../evals/golden/inputs/pytest-15051.json) | Relevant option and suite context, traceback, failing attribute and doctest item type; no full invocation. |
 | [15005](../evals/golden/inputs/pytest-15005.json) | Decimal reproducer, expected/actual comparison and versions. |
-| [14775](../evals/golden/inputs/pytest-14775.json) | Class-scoped fixture example, command, commit and tracebacks. |
+| [14775](../evals/golden/inputs/pytest-14775.json) | Class-scoped fixture example, relevant `-Werror` flag, commit and tracebacks; no full invocation. |
 | [14533](../evals/golden/inputs/pytest-14533.json) | Minimal test, command/output and a bisected doctest-related regression. |
 | [14456](../evals/golden/inputs/pytest-14456.json) | Source location and concrete wrong string literal in `_as_numpy_array`. |
 | [14329](../evals/golden/inputs/pytest-14329.json) | Marker inheritance example, output, expected result and version. |

@@ -6,8 +6,8 @@ Operation is disabled by default. No inference or publication has run yet.
 
 The updated assignment permits a documented coding-assistant dry run. Start with
 [the plain-language review guide](docs/REVIEW-GUIDE.md) and
-[dry-run reproduction steps](docs/DRY-RUN.md). Current student review is
-**AI-assisted pre-inference review, conditions open**, not approval.
+[dry-run reproduction steps](docs/DRY-RUN.md). Student review and final signoff are complete for the AI-assisted answer key.
+Execution evidence and human assessments are still pending.
 
 Read [DESIGN.md](DESIGN.md), [evaluation instructions](evals/golden/README.md),
 and [activation/stop runbook](docs/OPERATIONS.md).

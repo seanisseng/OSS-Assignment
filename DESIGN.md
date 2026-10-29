@@ -50,7 +50,7 @@ at the GitHub scope level, so the model is kept separate from its token and code
 Fifteen original unedited historical inputs retain pre-report source and license:
 five development and ten held-out. Three synthetic diagnostics and four attacks
 are separate, making 22 inputs. Edit provenance and expectation hashes are saved.
-Student status is AI-assisted pre-inference review, conditions open, not approval.
+Student final signoff is recorded for the AI-assisted key before inference.
 The nine unchanged cases and diagnostics are presented in docs/REVIEW-GUIDE.md.
 
 Before inference, user-requested rules keep 13902 primarily sufficient and allow
@@ -128,16 +128,16 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 | Permissions | Analysis contents/actions/issues read; publisher contents/actions read and issues write; no model-chosen target. |
 | Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
 | Logs/evaluations | Frozen hashes, 22 inputs, deterministic tests/report/dashboard; real raw JSONL, usage and assessments pending. |
-| Responsible human | seanisseng, student/reviewer/operator; partial AI-assisted review recorded without approval. |
+| Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
 
 ## Unresolved and AI use
 
-Submission remains blocked on complete review, a supported dry-run basis, fresh
+Submission remains blocked on a supported dry-run basis, fresh
 execution and human assessments. Hosted identity/firewall/MCP/publication and
 phone cancellation remain untested. Remote mode retains additional evidence gates.
 No push or third-party resource change is authorized by local completion work.
 
 AI-use statement: Codex wrote code, tests, draft expectations and documentation.
-The user supplied the brief, partial review and revised scoring conditions.
+The user supplied the brief, reviewed the key and gave final signoff.
 Verification uses local tests, frozen provenance and static workflow checks;
 independent human approval and real model evaluation have not yet occurred.
