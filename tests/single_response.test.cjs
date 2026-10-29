@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { assess, makeRequest, main, RESPONSE_BYTES, GATEWAY, HARNESS_TIMEOUT_MS,
-  remainingTimeout } = require('../scripts/single_response_harness.cjs');
+  remainingTimeout, emitCompletion } = require('../scripts/single_response_harness.cjs');
 const fs=require('node:fs');
 const os=require('node:os');
 const path=require('node:path');
@@ -13,6 +13,37 @@ const packet = {format:'single-response-v1', case_id:'example', input_hash:'a'.r
   excerpts:[], omitted_context:[]};
 const response = content => ({model:'reported-model', choices:[{
   finish_reason:'stop', message:{role:'assistant',content}}], usage:{prompt_tokens:10}});
+
+test('trusted completion uses the installed CLI and fixed noop arguments without a shell', () => {
+  const runner=path.resolve(os.tmpdir(),'trusted-runner');
+  let calls=0;
+  emitCompletion((file,args,options)=>{
+    calls++;
+    assert.equal(file,path.join(runner,'gh-aw/mcp-cli/bin/safeoutputs'));
+    assert.equal(args[0],'noop');
+    assert.equal(args.length,2);
+    assert.deepEqual(JSON.parse(args[1]),{
+      message:'Assessment response saved for separate validation; no publication requested.'});
+    assert.equal(options.shell,false);
+    assert.equal(options.timeout,15000);
+    assert.equal(options.maxBuffer,16384);
+  },runner);
+  assert.equal(calls,1);
+});
+
+test('completion failures are terminal, bounded and do not expose child output', () => {
+  let calls=0;
+  assert.throws(()=>emitCompletion(()=>{
+    calls++;throw Object.assign(new Error('private child output'),{status:1});
+  },path.resolve(os.tmpdir())),error=>{
+    assert.match(error.message,/completion signal failed/);
+    assert.doesNotMatch(error.message,/private child output/);
+    return true;
+  });
+  assert.equal(calls,1);
+  assert.throws(()=>emitCompletion(()=>{calls++;},''),/runner temp/);
+  assert.equal(calls,1);
+});
 
 test('deadline reserves cleanup time and subtracts time already spent in the step', () => {
   assert.equal(HARNESS_TIMEOUT_MS,540000);
@@ -132,7 +163,10 @@ test('trusted harness captures raw success and raw failure without another reque
       let calls=0;
       const raw=fail ? '{invalid JSON' : JSON.stringify(response('{}'));
       global.fetch=async()=>{calls++;return new Response(raw);};
-      if (fail) await assert.rejects(main({stepStartFile})); else await main({stepStartFile});
+      let completions=0;
+      const options={stepStartFile,emitCompletion:()=>{completions++;}};
+      if (fail) await assert.rejects(main(options)); else await main(options);
+      assert.equal(completions,fail?0:1);
       assert.equal(calls,1);
       assert.equal(fs.readFileSync(path.join(workspace,'output/provider-response.json'),'utf8'),raw);
       const trace=JSON.parse(fs.readFileSync(path.join(workspace,'output/execution.json'),'utf8'));
@@ -175,18 +209,61 @@ test('successful inference never writes the read-only framework safe-output path
       return originalWrite(destination,...args);
     };
     let calls=0;
-    await main({stepStartFile,transport:async()=>{
+    let completions=0;
+    await main({stepStartFile,emitCompletion:()=>{completions++;},transport:async()=>{
       calls++;return new Response(JSON.stringify(response('{"evidence":["issue"]}')));
     }});
     assert.equal(calls,1);
+    assert.equal(completions,1);
     const trace=JSON.parse(fs.readFileSync(path.join(root,'output/execution.json'),'utf8'));
     assert.equal(trace.status,'response_received');
     assert.equal(trace.model_reported,'reported-model');
+    assert.equal(trace.terminal_safe_output,'noop');
     assert.equal(fs.existsSync(safe),false);
     assert.equal(fs.readFileSync(path.join(root,'output/recommendation.json'),'utf8'),
       '{"evidence":["issue"]}');
   } finally {
     fs.writeFileSync=originalWrite;
+    for (const key of Object.keys(process.env)) if (!(key in oldEnv)) delete process.env[key];
+    Object.assign(process.env,oldEnv);
+    assert.ok(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep));
+    fs.rmSync(root,{recursive:true,force:true});
+  }
+});
+
+test('a rejected completion preserves the exact response and never retries inference', async () => {
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'single-response-completion-failure-'));
+  const oldEnv={...process.env};
+  const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
+  try {
+    fs.mkdirSync(path.join(root,'input'));
+    const bytes=Buffer.from(JSON.stringify(packet));
+    fs.writeFileSync(path.join(root,'input/packet.json'),bytes);
+    fs.writeFileSync(path.join(root,'input/manifest.json'),JSON.stringify({
+      packet_sha256:sha(bytes),skill_sha256:sha(packet.skill),
+      case_id:packet.case_id,input_hash:packet.input_hash}));
+    const stepStartFile=path.join(root,'step-start.txt');
+    fs.writeFileSync(stepStartFile,String(Date.now()));
+    process.env.GITHUB_WORKSPACE=root;
+    const raw=JSON.stringify(response('{"evidence":["issue"]}'));
+    let calls=0,completions=0;
+    await assert.rejects(main({stepStartFile,transport:async()=>{
+      calls++;return new Response(raw);
+    },emitCompletion:()=>{
+      completions++;
+      const trace=JSON.parse(fs.readFileSync(path.join(root,'output/execution.json'),'utf8'));
+      assert.equal(trace.status,'response_received');
+      throw new Error('completion signal failed');
+    }}),/completion signal failed/);
+    assert.equal(calls,1);
+    assert.equal(completions,1);
+    assert.equal(fs.readFileSync(path.join(root,'output/provider-response.json'),'utf8'),raw);
+    assert.equal(fs.readFileSync(path.join(root,'output/recommendation.json'),'utf8'),'{"evidence":["issue"]}');
+    const trace=JSON.parse(fs.readFileSync(path.join(root,'output/execution.json'),'utf8'));
+    assert.equal(trace.status,'failed');
+    assert.equal(trace.model_reported,'reported-model');
+    assert.equal(trace.terminal_safe_output,undefined);
+  } finally {
     for (const key of Object.keys(process.env)) if (!(key in oldEnv)) delete process.env[key];
     Object.assign(process.env,oldEnv);
     assert.ok(path.resolve(root).startsWith(path.resolve(os.tmpdir())+path.sep));
