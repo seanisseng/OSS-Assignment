@@ -120,13 +120,27 @@ class SingleResponseTests(unittest.TestCase):
         self.assertFalse(conditions,'Default success condition must gate execution after refused preparation')
 
     def test_mocked_preparation_request_capture_and_clean_validation(self):
+        for case_id in ['pytest-15052','pytest-15051','pytest-13403','pytest-13986',
+                        'pytest-13716','diagnostic-crash','diagnostic-trigger']:
+            with self.subTest(case_id=case_id):
+                self._exercise_preparation_request_and_validation(case_id)
+
+    def test_only_frozen_development_cases_and_two_diagnostics_are_allowed(self):
+        key=json.loads(Path('evals/golden/expectations.json').read_text(encoding='utf-8'))
+        development={x['case_id'] for x in key['expectations']
+                     if x['split']=='development' and not x.get('synthetic')}
+        wanted=development | {'diagnostic-crash','diagnostic-trigger'}
+        self.assertEqual(getattr(single_response,'DEVELOPMENT_CASES',None),wanted)
+        self.assertEqual(len(wanted),7)
+
+    def _exercise_preparation_request_and_validation(self, case_id):
         repo = Path.cwd()
         harness = repo / 'scripts/single_response_harness.cjs'
-        case = self.case | {'case_id': 'pytest-15051'}
+        case = self.case | {'case_id': case_id}
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             for name, value in {
-                'evals/golden/inputs/pytest-15051.json': case,
+                f'evals/golden/inputs/{case_id}.json': case,
                 'evals/golden/expectations.json': {'expectations': [
                     {'case_id':case['case_id'], 'input_hash':digest(case)}]},
             }.items():
@@ -143,7 +157,7 @@ class SingleResponseTests(unittest.TestCase):
             try:
                 env = {'TRUSTED_ROOT': str(root), 'GITHUB_REPOSITORY':'seanisseng/OSS-Assignment',
                        'GITHUB_REF':'refs/heads/main', 'GITHUB_RUN_ATTEMPT':'1',
-                       'CASE_ID':'pytest-15051','SINGLE_RESPONSE_ENABLED':'true',
+                       'CASE_ID':case_id,'SINGLE_RESPONSE_ENABLED':'true',
                        'RUNNER_TEMP':str(root / 'runner')}
                 with patch.dict(os.environ,env), patch.object(single_response,'review_record',
                         return_value={'configuration_hash':'approved'}), patch.object(
@@ -152,7 +166,8 @@ class SingleResponseTests(unittest.TestCase):
                     single_response.prepare()
                     api.assert_not_called()
                     for key, value in [('SINGLE_RESPONSE_ENABLED','false'),
-                                       ('CASE_ID','other'),
+                                       ('CASE_ID','other'),('CASE_ID','pytest-15005'),
+                                       ('CASE_ID','../pytest-15051'),
                                        ('GITHUB_REPOSITORY','pytest-dev/pytest')]:
                         with patch.dict(os.environ,{key:value}), self.assertRaises(ValueError):
                             single_response.prepare()
@@ -204,18 +219,23 @@ class SingleResponseTests(unittest.TestCase):
                 self.assertFalse((root / 'staged/output').exists())
                 (root / 'trusted-input').mkdir()
                 shutil.copyfile(root / 'input/manifest.json',root / 'trusted-input/manifest.json')
-                single_response.validate_artifact()
+                with patch.dict(os.environ,{'CASE_ID':case_id}):
+                    single_response.validate_artifact()
+                other='pytest-15052' if case_id!='pytest-15052' else 'pytest-15051'
+                with patch.dict(os.environ,{'CASE_ID':other}), self.assertRaisesRegex(
+                        ValueError,'case mismatch'):
+                    single_response.validate_artifact()
                 execution = json.loads((root / 'staged/execution.json').read_text())
                 self.assertEqual(execution['requests_sent'],1)
                 self.assertEqual(execution['terminal_safe_output'],'noop')
                 missing_completion=execution.copy()
                 del missing_completion['terminal_safe_output']
                 (root / 'staged/execution.json').write_text(json.dumps(missing_completion))
-                with self.assertRaisesRegex(ValueError,'execution trace'):
+                with patch.dict(os.environ,{'CASE_ID':case_id}), self.assertRaisesRegex(ValueError,'execution trace'):
                     single_response.validate_artifact()
                 execution['requests_sent']=2
                 (root / 'staged/execution.json').write_text(json.dumps(execution))
-                with self.assertRaisesRegex(ValueError,'execution trace'):
+                with patch.dict(os.environ,{'CASE_ID':case_id}), self.assertRaisesRegex(ValueError,'execution trace'):
                     single_response.validate_artifact()
             finally:
                 os.chdir(previous)
