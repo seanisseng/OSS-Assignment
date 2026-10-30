@@ -1,1 +1,14 @@
 .github/workflows/*.lock.yml linguist-generated=true
+AGENTS.md text eol=lf
+CONTRIBUTING.md text eol=lf
+.claude/skills/bug-report-clarification/SKILL.md text eol=lf
+.github/workflows/* text eol=lf
+scripts/*.py text eol=lf
+scripts/*.cjs text eol=lf
+config/policy.json text eol=lf
+evals/golden/single-response-inputs.json text eol=lf
+
+# Preserve exact downloaded hosted evidence bytes in Git.
+evals/evidence/development-batch-20261030/** -text -whitespace
+evals/golden/hosted/** -text -whitespace
+evals/evidence/final-preflight/final-revision.patch -whitespace

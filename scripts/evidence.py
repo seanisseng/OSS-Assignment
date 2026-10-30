@@ -26,7 +26,8 @@ def configuration_hash(repo):
              repo / '.claude/skills/bug-report-clarification/SKILL.md',
              *sorted((repo / '.github/workflows').glob('*')),
              *sorted((repo / 'scripts').glob('*.py')),
-             *sorted((repo / 'scripts').glob('*.cjs')), repo / 'config/policy.json']
+             *sorted((repo / 'scripts').glob('*.cjs')), repo / 'config/policy.json',
+             repo / 'evals/golden/single-response-inputs.json']
     return digest({p.relative_to(repo).as_posix(): file_hash(p) for p in paths if p.is_file()})
 
 
@@ -89,6 +90,9 @@ def trace_evidence(path, skill, require_skill=True):
 
 def inspect_attempt(repo, case_id, mode):
     """Return evidence errors separately from recommendation validation errors."""
+    if mode == 'single-response':
+        from scripts.hosted_evidence import inspect_attempt as hosted_attempt
+        return hosted_attempt(repo, case_id)
     root = repo / 'evals/golden'
     errors = []
     validation = 'not run'
@@ -175,7 +179,15 @@ def submission_evidence(repo, mode):
             sessions.add(session)
     if not skill_reads:
         errors.append('No actual skill-loading evidence in any attempt')
-    if mode == 'dry-run':
+    if mode == 'single-response':
+        try:
+            from scripts.hosted_evidence import controls, study_evidence
+            controls(repo)
+            study_evidence(repo)
+            require(load(repo / 'config/policy.json')['enabled'] is False, 'publication must stay disabled')
+        except (OSError, KeyError, TypeError, ValueError) as error:
+            errors.append('Artifact-only controls: ' + str(error))
+    elif mode == 'dry-run':
         try:
             execution = load(repo / 'evals/evidence/execution.json')
             require(execution['mode'] == mode and execution['end_to_end_status'] == 'blocked',

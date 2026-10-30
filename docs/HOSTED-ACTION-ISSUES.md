@@ -1,3 +1,13 @@
+# Current status: final revision pending approval
+
+The earlier seven-case development batch completed seven workflows, with 1/5 real
+decision matches and 2/2 diagnostic matches. These are previous-configuration
+results, preserved in `evals/evidence/development-batch-20261030/`.
+The final 22-case version 2 envelope study has not started. See
+[the freeze packet](FINAL-STUDY.md) and [final review](reviews/FINAL-22-CASE-REVIEW.md).
+Older ?not successful? or pending statements below describe their dated attempts;
+they are not current claims about all later executions. Preserve every failure.
+
 # Hosted GitHub Action run history
 
 Repository: seanisseng/OSS-Assignment. These are manually dispatched, artifact-only

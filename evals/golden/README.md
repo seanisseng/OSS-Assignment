@@ -15,31 +15,42 @@ The user accepted all individual expectations, including Rule A, the revised
 13902/13634 conditions, all diagnostics and all four adversarial expectations.
 Final signoff was explicitly given on 29 October 2026; review approval is true.
 See [the review guide](../../docs/REVIEW-GUIDE.md), review.json and REVIEW-REVISION.md.
-One hosted smoke attempt failed before a model response; its native Copilot trace
-remains in GitHub Actions history; local debug copies were removed on request. No recommendation or human assessment exists.
+The earlier development batch completed seven workflows: 1/5 real and 2/2 diagnostic
+decision matches. Its preserved bundles are separate from the final configuration.
+The final study awaits approval of the tested diff, configuration hash and 22 calls.
+Accepted expectations and historical inputs remain unchanged.
 
 ```text
 python -m unittest discover -s tests -v
-python -m scripts.evaluate
+node --test tests/single_response.test.cjs
+python -m scripts.compile_workflows
+python -m scripts.evaluate --mode single-response
+python -m scripts.final_report
 python -m scripts.verify
-python -m scripts.verify --submission --mode dry-run
+python -m scripts.verify --submission --mode single-response
 ```
 
-The strict command must fail until the outstanding execution evidence exists.
-Default submission mode is remote; it also requires populated remote evidence.
-Windows tests need an unrestricted shell because sandbox temporary-directory ACLs
-deny access. Runtime code needs only Python 3.12 standard-library modules.
+The strict command must fail before complete execution evidence and actual reviews
+exist. Wrong model decisions may remain. Windows tests need an unrestricted shell
+because sandbox temporary-directory ACLs deny access. Runtime Python uses only the
+standard library. The Node harness uses built-ins; compiler/actions are pinned.
 
-Follow [the dry-run guide](../../docs/DRY-RUN.md). Helpers export one case outside
-the repository and import exact output and real Codex JSONL events. The adapter
-does not enforce all hosted controls; document every untested control and the actual
-end-to-end blocker. Unknown entitlement alone is not evidence of impossibility.
+The final hosted mode checks native request, canonical skill, bounded packet,
+provider response, assistant text, derived files, commit and unique run provenance.
+It does not fabricate Codex events. `hosted/` preserves original downloaded bundles;
+`actual/` holds structurally valid extracted recommendations, `transcripts/` holds
+native provenance records and `assessments/` holds explicitly draft/reviewed case
+assessments. Invalid output stays in original bundles and transcripts as a failure.
+The model's evidence audit is stored in the bundle and draft assessment. It does
+not establish procedural compliance. Complete evidence is distinct from correctness.
 
-Each attempt retains actual/CASE_ID.json when output exists, transcripts/CASE_ID.json,
-transcripts/raw/CASE_ID.jsonl, trusted preparations/CASE_ID.json and a student-written
-assessments/CASE_ID.json. No output on an interruption is recorded as a failure,
-not a no-action result. Never repair invalid JSON or overwrite an earlier attempt.
-Completed runs need actual skill-read events and matching content, not self-report.
+See [operations](../../docs/OPERATIONS.md) for ledger/recovery commands. Record before
+dispatch, recover by token/run ID, and never infer that a lost connection permits
+another request. Refusals and cancellations remain visible. Run one case at a time
+on the approved frozen inference commit. Clear the switch after completion or stop.
+Legacy [dry-run](../../docs/DRY-RUN.md) checks still require actual Codex tool events;
+legacy remote submission still checks publication and phone-stop evidence. The new
+artifact-only mode instead requires accurate control-status explanations.
 
 Reporting separates primary and conditional decision matches, per-class results,
 and primary/best-F1 missing-category counts. The primary 13634 bundle is traceback

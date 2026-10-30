@@ -1,10 +1,10 @@
 {
   "approved": true,
-  "status": "User-requested GitHub queue corrected with queue:max; inference configuration unchanged",
+  "status": "User explicitly approved final version 2 configuration and 22-call scope; expectations unchanged",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-30T11:05:45.958826+08:00",
+  "reviewed_at": "2026-10-30T16:43:03.000861+00:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "116d099b97f4dd208e7db0841c8d46a58aedd63a968f5dd60cf16e5edfe97a13",
+  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],

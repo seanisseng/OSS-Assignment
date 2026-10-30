@@ -1,0 +1,19 @@
+{
+  "case_id": "pytest-15051",
+  "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+  "decision": "needs_information",
+  "missing": [
+    "expected_actual",
+    "reproducer"
+  ],
+  "evidence": [
+    "issue",
+    "src/_pytest/fixtures.py"
+  ],
+  "reasoning": "The issue describes a crash when using `--fixtures-per-test` with a doctest, but it lacks details on the expected behavior and the context in which this occurs. Specifically, without knowing what the expected outcome is when running the doctest, it's challenging to assess the nature of the error. Additionally, a reproducer is essential to fully understand how to trigger the issue consistently.",
+  "questions": [
+    "What is the expected behavior when running `--fixtures-per-test` on the doctest?",
+    "Can you provide a minimal example or reproducer for this issue?"
+  ],
+  "comment": "What is the expected behavior when running `--fixtures-per-test` on the doctest?\nCan you provide a minimal example or reproducer for this issue?"
+}

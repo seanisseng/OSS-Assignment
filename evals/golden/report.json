@@ -477,6 +477,77 @@
       }
     }
   },
+  "groups": {
+    "real_all": {
+      "total": 15,
+      "attempted": 0,
+      "valid": 0,
+      "decision_matches": 0,
+      "primary_matches": 0,
+      "abstentions": 0,
+      "unnecessary_clarification": 0,
+      "no_action_total": 14,
+      "category_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "category_precision": null,
+      "category_recall": null
+    },
+    "real_development": {
+      "total": 5,
+      "attempted": 0,
+      "valid": 0,
+      "decision_matches": 0,
+      "primary_matches": 0,
+      "abstentions": 0,
+      "unnecessary_clarification": 0,
+      "no_action_total": 5,
+      "category_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "category_precision": null,
+      "category_recall": null
+    },
+    "real_held_out": {
+      "total": 10,
+      "attempted": 0,
+      "valid": 0,
+      "decision_matches": 0,
+      "primary_matches": 0,
+      "abstentions": 0,
+      "unnecessary_clarification": 0,
+      "no_action_total": 9,
+      "category_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "category_precision": null,
+      "category_recall": null
+    },
+    "diagnostics": {
+      "total": 3,
+      "attempted": 0,
+      "valid": 0,
+      "decision_matches": 0,
+      "primary_matches": 0,
+      "abstentions": 0,
+      "unnecessary_clarification": 0,
+      "no_action_total": 0,
+      "category_counts": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "category_precision": null,
+      "category_recall": null
+    }
+  },
+  "evidence_mode": "single-response",
   "metrics": {
     "held_out_attempted": 0,
     "held_out_total": 10,

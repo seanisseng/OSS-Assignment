@@ -11,9 +11,12 @@ is not kept. There is no upstream pytest build here.
 - `.claude/skills/bug-report-clarification/SKILL.md`: canonical procedure.
 - `.github/workflows/clarify.md` and `clarify.lock.yml`: Copilot analysis.
 - `.github/workflows/publish.yml`: separate trusted executor.
-- `.github/workflows/single-response.md`: artifact-only development testing for
-  five real development cases and two diagnostics; one tool-free Copilot gateway
-  request per run and no publication path. Held-out inputs are rejected.
+- `.github/workflows/single-response.md`: artifact-only evaluation of exactly 22
+  frozen inputs; one tool-free Copilot gateway request per run, version 2 evidence
+  envelope and no publication path. Explicit final approval precedes dispatch.
+- `scripts/hosted_collect.py`: one-shot dispatch ledger, run binding and independent
+  artifact recovery. Never redispatch after an uncertain connection failure.
+- `scripts/hosted_evidence.py`: native hosted provenance; no synthetic tool events.
 - `scripts/`: standard-library Python 3.12 implementation and research tooling.
 - `tests/`: deterministic unit and mocked integration tests.
 - `evals/golden/inputs/`: original unedited report snapshots and prior source.
@@ -33,6 +36,8 @@ Auto compatibility step to analysis and detection. Direct compilation alone omit
 this required correction; see `docs/STUDENT-AUTO.md`.
 Run `python -m scripts.verify` before committing. No runtime pip packages required.
 For dry-run submission run `python -m scripts.verify --submission --mode dry-run`.
+For hosted artifact-only submission use `--mode single-response` and regenerate
+reports with `python -m scripts.evaluate --mode single-response`.
 Human review is conditions open, not approval. Do not infer approval from a request
 to implement tooling. Keep review_approved false until explicit complete signoff.
 

@@ -1,0 +1,58 @@
+{
+  "status": "stopped",
+  "operator_pid": 27724,
+  "configuration_hash": "568b39af71df71eec7a415bca57238e50ca7f1ee0ec64d26477671cc546fbd26",
+  "expected_commit": "6548ea5c21b3834bc47432e1e3fe49f00d496ec0",
+  "requested_cases": [
+    "pytest-15052",
+    "pytest-15051",
+    "pytest-13403",
+    "pytest-13986",
+    "pytest-13716",
+    "diagnostic-crash",
+    "diagnostic-trigger"
+  ],
+  "cases": [
+    {
+      "case_id": "pytest-15052",
+      "status": "monitoring",
+      "dispatch_attempts": 1,
+      "run_id": 40993042848,
+      "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40993042848",
+      "workflow_status": "in_progress",
+      "jobs": [
+        {
+          "name": "activation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "agent",
+          "status": "in_progress",
+          "conclusion": ""
+        }
+      ]
+    }
+  ],
+  "current_run_id": 40993042848,
+  "switch_enabled": false,
+  "automatic_retries": false,
+  "critic": false,
+  "maximum_dispatches": 7,
+  "maximum_provider_requests": 7,
+  "proxy_credit_setting_per_run": 5,
+  "maximum_sum_of_proxy_run_ceilings": 35,
+  "account_credit_deductions_verified": false,
+  "human_review": "pending",
+  "updated_at": "2026-10-30T02:48:22.743905+00:00",
+  "error": "Command '['C:/Program Files/GitHub CLI/gh.exe', 'run', 'view', '40993042848', '--repo', 'seanisseng/OSS-Assignment', '--json', 'status,conclusion,jobs,url,headSha,updatedAt']' returned non-zero exit status 1.",
+  "retry_authorized": false,
+  "not_run": [
+    "pytest-15051",
+    "pytest-13403",
+    "pytest-13986",
+    "pytest-13716",
+    "diagnostic-crash",
+    "diagnostic-trigger"
+  ]
+}

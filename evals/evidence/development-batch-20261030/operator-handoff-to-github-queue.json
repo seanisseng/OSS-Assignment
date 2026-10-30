@@ -1,0 +1,197 @@
+{
+  "status": "running",
+  "operator_pid": 8736,
+  "configuration_hash": "568b39af71df71eec7a415bca57238e50ca7f1ee0ec64d26477671cc546fbd26",
+  "expected_commit": "6548ea5c21b3834bc47432e1e3fe49f00d496ec0",
+  "requested_cases": [
+    "pytest-15052",
+    "pytest-15051",
+    "pytest-13403",
+    "pytest-13986",
+    "pytest-13716",
+    "diagnostic-crash",
+    "diagnostic-trigger"
+  ],
+  "cases": [
+    {
+      "case_id": "pytest-15052",
+      "status": "completed",
+      "dispatch_attempts": 1,
+      "run_id": 40993042848,
+      "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40993042848",
+      "workflow_status": "in_progress",
+      "jobs": [
+        {
+          "name": "activation",
+          "conclusion": "success",
+          "id": 123859714310
+        },
+        {
+          "name": "agent",
+          "conclusion": "success",
+          "id": 123859999403
+        },
+        {
+          "name": "validate_recommendation",
+          "conclusion": "success",
+          "id": 123860497945
+        },
+        {
+          "name": "safe_outputs",
+          "conclusion": "success",
+          "id": 123860497991
+        },
+        {
+          "name": "conclusion",
+          "conclusion": "success",
+          "id": 123860778114
+        }
+      ],
+      "execution": {
+        "version": 1,
+        "status": "response_received",
+        "requests_sent": 1,
+        "packet_sha256": "3506a6ef13597f49ab4c7d5b878e287d4480e0acd33e50680bfe9150308896f9",
+        "skill_sha256": "c0ed62ba13c4be2c7d679fbac2be644d4e6969e40f9bf44a2e3a59505b6c515c",
+        "model_requested": "auto",
+        "tools": [],
+        "run_id": "40993042848",
+        "run_attempt": "1",
+        "timeout_ms": 519661,
+        "model_reported": "gpt-4o-mini-2024-07-18",
+        "usage": {
+          "completion_tokens": 226,
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "prompt_tokens": 1706,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 1932
+        },
+        "terminal_safe_output": "noop"
+      },
+      "recommendation_sha256": "4aafa2ac8f2de0c31c6a9b4c3f69deb6c172826262d2b1717b221b7037c02496",
+      "recommendation": {
+        "case_id": "pytest-15052",
+        "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016",
+        "decision": "needs_information",
+        "missing": [
+          "expected_actual"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report indicates an off-by-one error in the line number displayed in the `--fixtures-per-test` output but does not clearly specify what the expected behavior or correct output should be. Without knowing the expected correct line number or behavior, it's unclear how to verify or reproduce the bug effectively.",
+        "questions": [
+          "What is the expected output for the `--fixtures-per-test` command?",
+          "Can you provide a test case that demonstrates the expected behavior?",
+          "Is there a known correct version of the output format that you can compare against?"
+        ],
+        "comment": "What is the expected output for the `--fixtures-per-test` command?\nCan you provide a test case that demonstrates the expected behavior?\nIs there a known correct version of the output format that you can compare against?"
+      },
+      "reference_type": "real development",
+      "expected_decision": "sufficient",
+      "decision_match": false,
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": false
+      },
+      "human_semantic_assessment": "pending",
+      "proxy_usage": [
+        {
+          "_schema": "token-usage/v0.28.70",
+          "timestamp": "2026-10-30T02:42:41.285Z",
+          "event": "token_usage",
+          "request_id": "c5cf83be-dfec-4997-a5aa-a990fea5caff",
+          "provider": "copilot",
+          "model": "gpt-4o-mini-2024-07-18",
+          "path": "/chat/completions",
+          "status": 200,
+          "streaming": false,
+          "input_tokens": 1706,
+          "output_tokens": 226,
+          "cache_read_tokens": 0,
+          "cache_write_tokens": 0,
+          "duration_ms": 2408,
+          "response_bytes": 2447,
+          "x_initiator": "agent",
+          "ai_credits_this_response": 0.03915,
+          "ai_credits_total": 0.03915,
+          "ai_credits_pricing_source": "models.dev",
+          "ai_credits_pricing_tier": "default",
+          "ai_credits_accounting_policy": "concrete_model",
+          "ai_credits_fallback_pricing_used": false
+        }
+      ],
+      "conclusion": "success",
+      "output_directory": "evals/evidence/development-batch-20261030/pytest-15052"
+    },
+    {
+      "case_id": "pytest-15051",
+      "status": "monitoring",
+      "dispatch_attempts": 1,
+      "run_id": 40994445337,
+      "run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/40994445337",
+      "workflow_status": "in_progress",
+      "jobs": [
+        {
+          "name": "activation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "agent",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate_recommendation",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "safe_outputs",
+          "status": "in_progress",
+          "conclusion": ""
+        }
+      ]
+    }
+  ],
+  "current_run_id": 40994445337,
+  "switch_enabled": false,
+  "automatic_retries": false,
+  "critic": false,
+  "maximum_dispatches": 7,
+  "maximum_provider_requests": 7,
+  "proxy_credit_setting_per_run": 5,
+  "maximum_sum_of_proxy_run_ceilings": 35,
+  "account_credit_deductions_verified": false,
+  "human_review": "pending",
+  "updated_at": "2026-10-30T02:59:26.403583+00:00",
+  "retry_authorized": false,
+  "not_run": [
+    "pytest-15051",
+    "pytest-13403",
+    "pytest-13986",
+    "pytest-13716",
+    "diagnostic-crash",
+    "diagnostic-trigger"
+  ],
+  "operator_interruptions": [
+    "operator-interruption-1.json"
+  ]
+}

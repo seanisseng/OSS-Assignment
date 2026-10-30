@@ -1,0 +1,8 @@
+{
+  "observed_at": "2026-10-30T16:38:47.522621+00:00",
+  "repository": "seanisseng/OSS-Assignment",
+  "visibility": "public",
+  "launch_switch": "false",
+  "method": "Read-only gh api repository and gh variable get; no mutation",
+  "note": "Account usage and paid-overage settings have not yet been inspected for the final batch."
+}

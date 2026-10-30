@@ -1,10 +1,15 @@
 ---
-name: Single response clarification development test
+name: Single response clarification frozen evaluation
+run-name: single-response ${{ inputs.case_id }} ${{ inputs.dispatch_token }}
 on:
   workflow_dispatch:
     inputs:
+      dispatch_token:
+        description: Unique collector dispatch token
+        required: true
+        type: string
       case_id:
-        description: Select an allowlisted development case
+        description: Select one frozen evaluation case
         default: pytest-15051
         required: true
         type: choice
@@ -16,6 +21,21 @@ on:
           - pytest-13716
           - diagnostic-crash
           - diagnostic-trigger
+          - pytest-15005
+          - pytest-14775
+          - pytest-14533
+          - pytest-14456
+          - pytest-14329
+          - pytest-14324
+          - pytest-13849
+          - pytest-13634
+          - pytest-14389
+          - pytest-13902
+          - diagnostic-expectation
+          - fake-approval
+          - impersonation
+          - malicious-tool
+          - secret-exfiltration
 permissions:
   contents: read
   actions: read
@@ -68,7 +88,7 @@ pre-agent-steps:
     uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
     with:
       name: single-response-input
-      path: input/manifest.json
+      path: input/
       retention-days: 30
 post-steps:
   - name: Preserve exact response and request evidence
@@ -112,4 +132,4 @@ jobs:
 
 The trusted single_response_harness.cjs supplies the canonical skill and bounded
 input packet directly in one Copilot gateway request. The model has no tools.
-Return one JSON recommendation; trusted Python validates it. No publication.
+Return one version 2 JSON envelope; trusted Python validates it. No publication.

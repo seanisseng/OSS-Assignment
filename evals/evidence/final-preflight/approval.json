@@ -1,0 +1,12 @@
+{
+  "approved_at": "2026-10-30T16:43:03.000861+00:00",
+  "reviewer": "seanisseng",
+  "user_text": "I approve!",
+  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "planned_requests": 22,
+  "proxy_ceiling_sum": 110,
+  "publication": false,
+  "additional_inference_authorized": false,
+  "submission_push_authorized": false,
+  "evidence_storage_note": "Before inference, Git attributes mark original hosted bundles as -text to preserve exact bytes; whitespace checks are disabled only for these verbatim bundles and the saved patch. Runtime/configuration hash unchanged."
+}

@@ -78,7 +78,7 @@ def verify(submission=False, mode='remote'):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--submission', action='store_true')
-    parser.add_argument('--mode', choices=['dry-run', 'remote'], default='remote')
+    parser.add_argument('--mode', choices=['dry-run', 'remote', 'single-response'], default='remote')
     args = parser.parse_args()
     errors = verify(args.submission, args.mode)
     print('\n'.join(errors) if errors else 'Local repository verification passed.')

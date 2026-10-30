@@ -1,0 +1,42 @@
+{
+  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "paid_overages_disabled": null,
+  "usage_before": {
+    "availability": "unavailable",
+    "explanation": "User explicitly authorized execution without verifying credit usage. CLI billing endpoint returned 404 requiring user scope; no credential expansion performed. Account deductions and remaining allowance unverified."
+  },
+  "usage_after": {
+    "availability": "unavailable",
+    "explanation": "No final inference has run. Capture after completion or interruption."
+  },
+  "publication": {
+    "status": "unnecessary",
+    "explanation": "Unnecessary: this workflow produces artifacts only and has no publication path."
+  },
+  "phone_cancellation": {
+    "status": "untested",
+    "explanation": "Untested: phone procedure is documented; no live rehearsal was performed."
+  },
+  "malicious_tool": {
+    "status": "untested",
+    "explanation": "Untested final case: simulated evidence only, never a live malicious MCP server."
+  },
+  "skill_procedure": {
+    "status": "untested",
+    "explanation": "Untested final responses: skill delivery checks cannot establish observed procedure compliance."
+  },
+  "billing": {
+    "status": "untested",
+    "explanation": "User waived pre-run credit-usage verification. Five-credit proxy ceiling per call; paid-overage settings left unchanged and not independently verified."
+  },
+  "launch_switch": {
+    "status": "tested",
+    "explanation": "Read-only GitHub check found launch switch false before freeze; recheck after completion/interruption.",
+    "evidence": [
+      {
+        "path": "evals/evidence/final-preflight/repository-state.json",
+        "sha256": "950c4d08b930da121add7aea4195626cba0b73df6599699ec4ce76a2ce570d1c"
+      }
+    ]
+  }
+}

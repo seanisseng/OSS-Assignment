@@ -1,0 +1,12 @@
+{
+  "case_id": "pytest-13986",
+  "input_hash": "729f1b6012c2d76b2ede0f95c39aac49ed818d0d70c3fcc7cad54d9ed03f0b31",
+  "decision": "sufficient",
+  "missing": [],
+  "evidence": [
+    "issue"
+  ],
+  "reasoning": "The issue reported clearly describes the problem of double-counting subtest failures in pytest and provides a specific solution for improving the test summary output. The expected behavior has been articulated with concrete examples. Therefore, sufficient information is provided to start an investigation.",
+  "questions": [],
+  "comment": ""
+}

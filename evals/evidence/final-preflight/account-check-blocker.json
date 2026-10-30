@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-30T16:43:03.000861+00:00",
+  "status": "credit-usage verification waived by user",
+  "reason": "Computer Use could not verify current browser URL; CLI billing endpoint requires user scope absent from current credentials. No credential refresh or scope expansion performed.",
+  "requests_sent": 0,
+  "usage": null,
+  "paid_overages_disabled": null,
+  "updated_at": "2026-10-30T16:43:56.852811+00:00",
+  "cli_attempt": {
+    "usage_endpoint": "users/seanisseng/settings/billing/premium_request/usage",
+    "usage_http_status": 404,
+    "github_diagnostic": "This API operation needs the user scope",
+    "budgets_endpoint": "users/seanisseng/settings/billing/budgets",
+    "budgets_http_status": 404
+  },
+  "waived_at": "2026-10-30T16:44:47.092674+00:00",
+  "user_instruction": "can you run the workflow without verifying the credit usage",
+  "billing_settings_changed": false
+}

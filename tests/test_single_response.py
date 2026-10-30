@@ -28,6 +28,10 @@ class SingleResponseTests(unittest.TestCase):
                     decision='sufficient', missing=[], evidence=['issue'],
                     reasoning='The traceback identifies the failure.', questions=[], comment='')
 
+    def envelope(self, result=None):
+        return dict(version=2, assessment=dict(supplied_facts=[dict(source='issue', quote='Crash')], gaps=[]),
+                    recommendation=result or self.result())
+
     def test_packet_keeps_full_report_and_traceback_excerpt_provenance(self):
         original = digest(self.case)
         packet = build_packet(self.case, self.skill)
@@ -65,12 +69,12 @@ class SingleResponseTests(unittest.TestCase):
 
     def test_validation_never_repairs_or_invents_a_recommendation(self):
         packet = build_packet(self.case, self.skill)
-        result = self.result()
+        result = self.envelope()
         self.assertEqual(validate_response(self.case, packet, json.dumps(result)), result)
         for raw in ['not json', json.dumps(result | {'command': 'execute'}),
-                    json.dumps(result | {'input_hash': 'wrong'}),
-                    json.dumps(result | {'evidence': {'issue': self.case['body']}}),
-                    json.dumps(result | {'evidence': ['not-supplied.py']})]:
+                    json.dumps(self.envelope(self.result() | {'input_hash': 'wrong'})),
+                    json.dumps(self.envelope(self.result() | {'evidence': {'issue': self.case['body']}})),
+                    json.dumps(self.envelope(self.result() | {'evidence': ['not-supplied.py']}))]:
             with self.subTest(raw=raw[:60]), self.assertRaises(ValueError):
                 validate_response(self.case, packet, raw)
 
@@ -113,7 +117,7 @@ class SingleResponseTests(unittest.TestCase):
         choices=source.split('options:',1)[1].split('permissions:',1)[0]
         listed={line.strip().removeprefix('- ') for line in choices.splitlines()
                 if line.strip().startswith('- ')}
-        self.assertEqual(listed,single_response.DEVELOPMENT_CASES)
+        self.assertEqual(listed,single_response.ALLOWED_CASES)
         validator=source.split('name: Validate output and skill/request evidence',1)[1]
         self.assertIn('CASE_ID: ${{ inputs.case_id }}',validator)
         raw=source.split('name: single-response-raw',1)[1].split('jobs:',1)[0]
@@ -149,6 +153,7 @@ class SingleResponseTests(unittest.TestCase):
             root = Path(directory)
             for name, value in {
                 f'evals/golden/inputs/{case_id}.json': case,
+                'evals/golden/single-response-inputs.json': {x:{'input_hash':digest(case)} for x in single_response.CASE_ORDER},
                 'evals/golden/expectations.json': {'expectations': [
                     {'case_id':case['case_id'], 'input_hash':digest(case)}]},
             }.items():
@@ -165,27 +170,28 @@ class SingleResponseTests(unittest.TestCase):
             try:
                 env = {'TRUSTED_ROOT': str(root), 'GITHUB_REPOSITORY':'seanisseng/OSS-Assignment',
                        'GITHUB_REF':'refs/heads/main', 'GITHUB_RUN_ATTEMPT':'1',
+                       'GITHUB_RUN_ID':'123','GITHUB_SHA':'a'*40,
                        'CASE_ID':case_id,'SINGLE_RESPONSE_ENABLED':'true',
                        'RUNNER_TEMP':str(root / 'runner')}
                 with patch.dict(os.environ,env), patch.object(single_response,'review_record',
-                        return_value={'configuration_hash':'approved'}), patch.object(
+                        return_value={'configuration_hash':configuration_hash(root)}), patch.object(
                         single_response,'api',create=True,
                         side_effect=AssertionError('Preparation must not query workflow run counts')) as api:
                     single_response.prepare()
                     api.assert_not_called()
                     for key, value in [('SINGLE_RESPONSE_ENABLED','false'),
-                                       ('CASE_ID','other'),('CASE_ID','pytest-15005'),
+                                       ('CASE_ID','other'),
                                        ('CASE_ID','../pytest-15051'),
                                        ('GITHUB_REPOSITORY','pytest-dev/pytest')]:
                         with patch.dict(os.environ,{key:value}), self.assertRaises(ValueError):
                             single_response.prepare()
-                    # Fresh dispatches and manually rerun attempts need no counter reset.
-                    for attempt in ['1','2','17']:
-                        with patch.dict(os.environ,{'GITHUB_RUN_ATTEMPT':attempt}):
+                    for attempt in ['2','17']:
+                        with patch.dict(os.environ,{'GITHUB_RUN_ATTEMPT':attempt}), self.assertRaisesRegex(ValueError,'reruns'):
                             single_response.prepare()
                     api.assert_not_called()
                     swapped = case | {'case_id':'a-different-case'}
-                    with patch.object(single_response,'load',side_effect=[swapped,
+                    with patch.object(single_response,'load',side_effect=[
+                            {x:{'input_hash':digest(case)} for x in single_response.CASE_ORDER}, swapped,
                             {'expectations':[{'case_id':swapped['case_id'],
                                               'input_hash':digest(swapped)}]}]):
                         with self.assertRaisesRegex(ValueError,'case mismatch'):
@@ -194,12 +200,12 @@ class SingleResponseTests(unittest.TestCase):
                     single_response.prepare()
                     self.assertEqual(json.loads((root / 'output/preparation.json').read_text())['status'],
                                      'prepared')
-                result = self.result() | {'case_id':case['case_id'],'input_hash':digest(case)}
+                result = self.envelope(self.result() | {'case_id':case['case_id'],'input_hash':digest(case)})
                 raw = json.dumps({'model':'mock','choices':[{'finish_reason':'stop',
                     'message':{'role':'assistant','content':json.dumps(result)}}]})
                 child_env = os.environ | {'GITHUB_WORKSPACE':str(root),
                     'GH_AW_SAFE_OUTPUTS':str(root / 'safeoutputs/outputs.jsonl'),
-                    'MOCK_RESPONSE':raw}
+                    'MOCK_RESPONSE':raw,'GITHUB_RUN_ID':'123','GITHUB_SHA':'a'*40,'GITHUB_RUN_ATTEMPT':'1'}
                 code = ('global.fetch=async()=>new Response(process.env.MOCK_RESPONSE);'
                         'require(process.argv[1]).main({stepStartFile:process.argv[2],'
                         'emitCompletion:()=>{}}).catch(e=>{console.error(e);process.exitCode=1;});')
@@ -210,7 +216,7 @@ class SingleResponseTests(unittest.TestCase):
                 self.assertEqual(proc.returncode,0,proc.stderr)
                 request=json.loads((root / 'output/request.json').read_text(encoding='utf-8'))
                 schema=json.loads(request['messages'][0]['content'].split(
-                    'Output contract (JSON Schema):\n',1)[1])
+                    'Output contract (JSON Schema):\n',1)[1])['properties']['recommendation']
                 self.assertEqual(set(schema['properties']),FIELDS)
                 self.assertEqual(set(schema['required']),FIELDS)
                 self.assertEqual(set(schema['properties']['missing']['items']['enum']),CATEGORIES)
@@ -227,7 +233,7 @@ class SingleResponseTests(unittest.TestCase):
                 self.assertFalse((root / 'staged/output').exists())
                 (root / 'trusted-input').mkdir()
                 shutil.copyfile(root / 'input/manifest.json',root / 'trusted-input/manifest.json')
-                with patch.dict(os.environ,{'CASE_ID':case_id}):
+                with patch.dict(os.environ,{'CASE_ID':case_id,'GITHUB_RUN_ID':'123','GITHUB_SHA':'a'*40,'GITHUB_RUN_ATTEMPT':'1'}):
                     single_response.validate_artifact()
                 other='pytest-15052' if case_id!='pytest-15052' else 'pytest-15051'
                 with patch.dict(os.environ,{'CASE_ID':other}), self.assertRaisesRegex(
@@ -239,11 +245,11 @@ class SingleResponseTests(unittest.TestCase):
                 missing_completion=execution.copy()
                 del missing_completion['terminal_safe_output']
                 (root / 'staged/execution.json').write_text(json.dumps(missing_completion))
-                with patch.dict(os.environ,{'CASE_ID':case_id}), self.assertRaisesRegex(ValueError,'execution trace'):
+                with patch.dict(os.environ,{'CASE_ID':case_id,'GITHUB_RUN_ID':'123','GITHUB_SHA':'a'*40,'GITHUB_RUN_ATTEMPT':'1'}), self.assertRaisesRegex(ValueError,'execution trace'):
                     single_response.validate_artifact()
                 execution['requests_sent']=2
                 (root / 'staged/execution.json').write_text(json.dumps(execution))
-                with patch.dict(os.environ,{'CASE_ID':case_id}), self.assertRaisesRegex(ValueError,'execution trace'):
+                with patch.dict(os.environ,{'CASE_ID':case_id,'GITHUB_RUN_ID':'123','GITHUB_SHA':'a'*40,'GITHUB_RUN_ATTEMPT':'1'}), self.assertRaisesRegex(ValueError,'execution trace'):
                     single_response.validate_artifact()
             finally:
                 os.chdir(previous)

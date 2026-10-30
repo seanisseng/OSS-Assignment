@@ -1,5 +1,6 @@
 """Reproduce metrics and an escaped local dashboard; absent runs are never successes."""
 import html
+import argparse
 import json
 from pathlib import Path
 import re
@@ -22,10 +23,19 @@ def baseline(case):
     return dict(decision='needs_information' if missing else 'sufficient', missing=missing)
 
 
-def attempt(root, case_id, case):
+def attempt(root, case_id, case, mode=None):
     """A transcript without output still records a failed/interrupted attempt."""
     path = root / f'actual/{case_id}.json'
     transcript = root / f'transcripts/{case_id}.json'
+    if mode == 'single-response' and transcript.exists():
+        from scripts.hosted_evidence import inspect_attempt
+        checked = inspect_attempt(root.parent.parent, case_id)
+        # Human review is reported separately; native evidence failures prevent credit.
+        provenance_errors = [x for x in checked['errors'] if not x.startswith('Case review:')]
+        if provenance_errors:
+            return {}, '; '.join(provenance_errors)
+        if checked['validation'] != 'valid':
+            return {}, checked['validation']
     if not path.exists():
         if transcript.exists():
             try:
@@ -46,13 +56,13 @@ def attempt(root, case_id, case):
         return {}, str(error)
 
 
-def adversarial_results(root):
+def adversarial_results(root, mode=None):
     rows = []
     for path in sorted((root / 'adversarial').glob('*.json')):
         expected = json.loads(path.read_text(encoding='utf-8'))
         case_id = expected['case_id']
         case = json.loads((root / f'inputs/{case_id}.json').read_text(encoding='utf-8'))
-        actual, validation = attempt(root, case_id, case)
+        actual, validation = attempt(root, case_id, case, mode)
         rows.append(dict(case_id=case_id, expected=expected['expected_decision'], actual=actual or None,
                          validation=validation, decision_match=validation == 'valid' and
                          actual.get('decision') == expected['expected_decision'],
@@ -61,7 +71,7 @@ def adversarial_results(root):
     return rows
 
 
-def evaluate(root):
+def evaluate(root, mode=None):
     expected = json.loads((root / 'expectations.json').read_text(encoding='utf-8'))['expectations']
     rows = []
     tp = fp = fn = correct = primary_correct = completed = abstained = unnecessary = no_action = 0
@@ -73,7 +83,7 @@ def evaluate(root):
                    synthetic=item.get('synthetic', False),
                    acceptable_decisions=accepted_decisions(item),
                    baseline=baseline(case), actual=None, validation='not run', disagreement=None)
-        actual, row['validation'] = attempt(root, case_id, case)
+        actual, row['validation'] = attempt(root, case_id, case, mode)
         if row['validation'] != 'not run':
             row['actual'] = actual or None
             row['decision_match'] = row['validation'] == 'valid' and decision_match(item, actual)
@@ -101,7 +111,7 @@ def evaluate(root):
         rows.append(row)
     held = [r for r in rows if r['split'] == 'held-out']
     synthetic_diagnostics = [r for r in rows if r['synthetic']]
-    attacks = adversarial_results(root)
+    attacks = adversarial_results(root, mode)
     assessed = sum((root / f"assessments/{r['case_id']}.json").exists() for r in rows + attacks)
     real = [r for r in rows if not r['synthetic']]
     attempted_real = [r for r in real if r['validation'] != 'not run']
@@ -115,7 +125,29 @@ def evaluate(root):
             always_sufficient_per_class=class_results(class_rows(values, lambda r: 'sufficient')),
             checklist_primary_matches=sum(r['baseline']['decision'] == r['expected'] for r in values),
             checklist_per_class=class_results(class_rows(values, lambda r: r['baseline']['decision'])))
-    return dict(rows=rows, adversarial=attacks, baselines=baselines, metrics=dict(held_out_attempted=completed, held_out_total=len(held),
+    groups = {}
+    for name, values in [('real_all', real), ('real_development', [r for r in real if r['split']=='development']),
+                         ('real_held_out', held), ('diagnostics', synthetic_diagnostics)]:
+        counts = dict(tp=0, fp=0, fn=0)
+        for row in values:
+            if row['validation'] == 'not run':
+                continue
+            item = next(x for x in expected if x['case_id'] == row['case_id'])
+            scores = category_scores(item, row['actual'] if row['validation']=='valid' else {})['primary']
+            for key in counts:
+                counts[key] += scores[key]
+        no_action_rows = [r for r in values if 'needs_information' not in r['acceptable_decisions']]
+        groups[name] = dict(total=len(values), attempted=sum(r['validation']!='not run' for r in values),
+            valid=sum(r['validation']=='valid' for r in values),
+            decision_matches=sum(r.get('decision_match',False) for r in values),
+            primary_matches=sum(r.get('primary_decision_match',False) for r in values),
+            abstentions=sum(prediction(r)=='human_review' for r in values),
+            unnecessary_clarification=sum(prediction(r)=='needs_information' for r in no_action_rows),
+            no_action_total=len(no_action_rows), category_counts=counts,
+            category_precision=counts['tp']/(counts['tp']+counts['fp']) if counts['tp']+counts['fp'] else None,
+            category_recall=counts['tp']/(counts['tp']+counts['fn']) if counts['tp']+counts['fn'] else None)
+    return dict(rows=rows, adversarial=attacks, baselines=baselines, groups=groups,
+        evidence_mode=mode or 'legacy', metrics=dict(held_out_attempted=completed, held_out_total=len(held),
         primary_decision_matches=primary_correct,
         decision_matches=correct,
         per_class=class_results(class_rows(attempted_real, prediction)),
@@ -142,9 +174,12 @@ def evaluate(root):
         runtime_usage='see per-case transcripts; usage not parsed' if any(r['validation'] != 'not run' for r in rows + attacks) else 'no inference run'))
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--mode', choices=['legacy', 'single-response'], default='legacy')
+    args = parser.parse_args([] if argv is None else argv)
     root = Path('evals/golden')
-    result = evaluate(root)
+    result = evaluate(root, None if args.mode == 'legacy' else args.mode)
     save(root / 'report.json', result)
     rows = ''.join('<tr>' + ''.join('<td>' + html.escape(str(row[k])) + '</td>'
         for k in ['case_id', 'split', 'expected', 'acceptable_decisions', 'actual', 'baseline', 'validation']) + '</tr>'
@@ -191,4 +226,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    main(sys.argv[1:])

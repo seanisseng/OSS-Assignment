@@ -1,0 +1,68 @@
+{
+  "pytest-15052": {
+    "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016"
+  },
+  "pytest-15051": {
+    "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536"
+  },
+  "pytest-13403": {
+    "input_hash": "f0d4709ba7478fe125e99be069e32030b7e7300e1fea57fe73ff47b6f5ca0aaa"
+  },
+  "pytest-13986": {
+    "input_hash": "729f1b6012c2d76b2ede0f95c39aac49ed818d0d70c3fcc7cad54d9ed03f0b31"
+  },
+  "pytest-13716": {
+    "input_hash": "905651d5e544e15753b2e8daaebc335c76c5a331079ea85cb274f7fc6eaecb61"
+  },
+  "diagnostic-crash": {
+    "input_hash": "8b607b95a44275daf27a26a4a7f4f25635552ad470a6668caed6e6c7f959a060"
+  },
+  "diagnostic-trigger": {
+    "input_hash": "dac68bac50caed595c96bc7bd171cb66137e85f86e0bf9bb56a8a5e3b4ac5e2a"
+  },
+  "pytest-15005": {
+    "input_hash": "d6d7ea28336633ac6502e78ff6038d6f22a470679a756ff044f6d1663bd8fbee"
+  },
+  "pytest-14775": {
+    "input_hash": "9b17bef737ca9e0d76583fac9740bab3053f6a83dd1072f6e62e3708542d9725"
+  },
+  "pytest-14533": {
+    "input_hash": "d8fd91ca617d2b28892cb5841bf491c80bd8e65f6abe5d40e263de2a455230d8"
+  },
+  "pytest-14456": {
+    "input_hash": "3606a9621e9e628cf5958896c26ead2f1eb2c29c0ca159e3a57c55f05308e38b"
+  },
+  "pytest-14329": {
+    "input_hash": "1ec5cb2d4baef8399b55c5c6df49157689e70208d00c385ddc891779843d3644"
+  },
+  "pytest-14324": {
+    "input_hash": "d204fc6e829e35d01e0d970277ab37aa462d176f08100837ba0f28f35a486192"
+  },
+  "pytest-13849": {
+    "input_hash": "8b6a54f9a4ecab0ab71c8974a0a8b74b1f29c9cc6cd59d546a9ee08077da06fb"
+  },
+  "pytest-13634": {
+    "input_hash": "4316932f619121ce2a37fb9b9d995bc21ddad7b7bb1f261e8986e4e16f5cdf9b"
+  },
+  "pytest-14389": {
+    "input_hash": "eea9f2fd46f1d571f00fe1d99bafaed1d727600033d62a8fba95f1d51ca86bdd"
+  },
+  "pytest-13902": {
+    "input_hash": "8f925635bbe7d3dd6125b74d6bec89fa21cb7112b6e9fc213b7aa9eee1a24703"
+  },
+  "diagnostic-expectation": {
+    "input_hash": "b88633f54316c9b12c2f4ec71ba5d37b891a6005453026567a8babda3247bd56"
+  },
+  "fake-approval": {
+    "input_hash": "f315b294272c5c4d5632cb9c2006f3e7491e5e1e39f7da7a1475c1a4831d1a38"
+  },
+  "impersonation": {
+    "input_hash": "0ee25f97d0b25f36b374f2618a3a2b2f023ee785f65e32fb428b0b061de311eb"
+  },
+  "malicious-tool": {
+    "input_hash": "7a99183c7b1de87e48a5096edb697235ef5df750936fe66e1601cb9ec168f2b6"
+  },
+  "secret-exfiltration": {
+    "input_hash": "05648630f8b0c80cff5271822be29ab780537604849e3055431c30ff51a788a2"
+  }
+}

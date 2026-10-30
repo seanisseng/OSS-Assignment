@@ -1,0 +1,16 @@
+Tracked changes against HEAD plus these new files:
+.github/aw/actions-lock.json
+docs/FINAL-STUDY.md
+docs/reviews/FINAL-22-CASE-REVIEW.md
+docs/testing/final-envelope.tdd.md
+evals/evidence/single-response-controls.json
+evals/golden/execution-summary.json
+evals/golden/final-configuration.json
+evals/golden/single-response-inputs.json
+scripts/final_report.py
+scripts/hosted_collect.py
+scripts/hosted_evidence.py
+tests/test_envelope.py
+tests/test_hosted.py
+
+Previous batch and preflight evidence preserved separately; preflight patch excludes itself.

@@ -1,28 +1,79 @@
 # Activation and evidence runbook
 
-Current state: seven hosted smoke attempts failed; the eighth passed all jobs,
-including terminal completion, clean JSON validation and the final conclusion.
-The original run remains in GitHub Actions history; downloaded debug copies were removed. No publication has run.
-Do not treat compiler success or mocked API tests as end-to-end evidence.
+The final artifact-only revision is awaiting approval. Its exact scope is 22
+one-shot requests on one inference commit and configuration hash. Publication
+remains disabled. GitHub read-only checks on 31 October 2026 found the repository
+public and `CLARIFICATION_SINGLE_RESPONSE_ENABLED=false`.
 
-The separate [single-response replacement](SINGLE-RESPONSE-REVISION.md) is locally
-implemented. Configuration 6b9412c7 was explicitly approved, pushed as 68dda64
-and passed hosted smoke 40924362394 using a fixed trusted CLI noop. Lifetime
-run-count and manual-rerun restrictions remain removed. New runs still need
-external-action approval; the launch switch is off. Its switch
-is `CLARIFICATION_SINGLE_RESPONSE_ENABLED`; it needs no sandbox issue and cannot
-publish. After each approved dispatch or rerun, reset that switch once preparation
-finishes. Disable the new workflow and cancel its running job for an immediate
-stop. The legacy activation/publication procedure below does not enable it.
+The previous seven-case development batch completed all seven workflows, with
+1/5 real decision matches and 2/2 diagnostic matches. Preserve it under
+`evals/evidence/development-batch-20261030/`; it is a different configuration.
+Earlier smoke failures remain in [the hosted history](HOSTED-ACTION-ISSUES.md).
 
-The development adapter now supports the five real development cases and two
-diagnostics listed in [the test plan](reviews/ESSENTIAL-INFORMATION-REVISION.md).
-The user authorized one sequential batch; all held-out cases remain blocked.
+## Final study procedure
 
-For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation
-steps below. Student final signoff is complete. Both live policy
-flags remain false. A dry run does not require a bot comment or phone rehearsal;
-it must document those controls as remotely untested and explain a real blocker.
+See [the freeze packet](FINAL-STUDY.md) and [per-case review](reviews/FINAL-22-CASE-REVIEW.md).
+Complete runtime, collector and evidence changes and run all pre-freeze checks.
+Present the tested diff, hash and 22-call scope for explicit approval. Do not push,
+enable the switch or dispatch before that approval. Record the actual approval;
+do not invent a student review. Leave paid overages disabled and record available
+account usage before and after, including unavailable fields and their reason.
+
+After approval, create the inference commit, push it and initialize the ledger:
+
+```text
+python -m scripts.hosted_collect init --study evals/golden/hosted/final --commit FULL_SHA
+```
+
+Bind the plan's approval to the user's actual approval record. `run` handles one
+case, enables the switch, records its dispatch first, binds the unique token to a
+run, waits, downloads and imports evidence, then clears the switch in `finally`.
+Use the order in `scripts.single_response.CASE_ORDER`: five real development,
+two development diagnostics, ten held-out real, the remaining diagnostic, four
+adversarial. Archive a case before beginning the next. Never change instructions
+once final inference starts. Do not use workflow reruns.
+
+```text
+python -m scripts.hosted_collect run --study evals/golden/hosted/final --case CASE_ID
+```
+
+A connection failure never authorizes another inference. Find the existing run by
+its ledger token, then recover with `bind`, `download` and `import`; these commands
+do not dispatch. Refusals, cancellations and failed outputs stay in the archive.
+Infrastructure/authentication/throttling failures pause the sequence. An additional
+inference requires explicit authorization and disclosure; it is not part of an
+identical 22-call study. Invalid model output and semantic mismatches remain failures
+and do not themselves justify a retry. A hard process kill may interrupt switch
+cleanup: independently confirm the variable is false after interruption/completion.
+
+For an immediate stop on a phone: open repository Settings / Actions / Variables,
+set the launch variable false; open Actions, disable this workflow and cancel every
+queued/running execution. Confirm state after cancellation and recover artifacts.
+This procedure is documented, not a tested phone rehearsal. It cannot revoke a
+request already sent or recover evidence lost to abrupt cancellation.
+
+Original bundles live under `evals/golden/hosted/`; canonical recommendations,
+transcripts and draft assessments are populated by import. Review every actual
+question against delivered facts, implied facts, expected decisions and blockers.
+Record only actual review identities/times. Model audit text is not human approval.
+
+```text
+python -m scripts.evaluate --mode single-response
+python -m scripts.final_report
+python -m scripts.verify --submission --mode single-response
+```
+
+Complete `evals/evidence/single-response-controls.json` with accurate statuses and
+hashed evidence. Publication is unnecessary for artifact-only submission. Do not
+require a publication or phone-cancellation test to pass this mode. Legacy dry-run
+and remote modes retain their earlier evidence requirements. Scan tracked files
+for credentials/caches, review the final diff and request approval of the exact
+submission commit before pushing. Verify that commit's required files and links.
+
+## Historical legacy activation procedure (not the final study)
+
+The following applies only to the older multi-turn/publishing workflows. Its
+publication and phone rehearsal steps are not final artifact-only submission gates.
 
 1. Review `evals/golden/audit/RUBRIC.md` and `expectations.json`. Record the
    student's approval and the expectation hash in `review.json` before inference.

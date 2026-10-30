@@ -26,11 +26,17 @@ all three diagnostics, the revised 13902/13634 conditions and all four adversari
 expectations. Acceptance of those conditions resolves the earlier conditional
 acceptance of Rule A and cases 14389, 13716, 13986 and 13403.
 On 29 October 2026, after raising your concerns, you explicitly gave final signoff.
-The run-8 configuration was approved; a subsequent instruction revision is pending
-new configuration approval. Seven hosted smokes failed; run 8 passed
-the technical workflow. Its decision differs from the accepted key. Review the
-[run 8 findings and student checklist](reviews/RUN-8-PYTEST-15051.md); semantic
-review remains pending and is separate from the pre-inference key signoff.
+The previous seven-case development batch had seven successful workflows,
+1/5 real decision matches and 2/2 diagnostic matches. Those results remain evidence
+for its previous configuration. The final version 2 evidence-envelope revision is
+awaiting explicit configuration/22-call approval; accepted expectations are unchanged.
+
+Read [the final per-case review](reviews/FINAL-22-CASE-REVIEW.md) after collection.
+Native request/skill hashes establish delivery, not procedural compliance. Check
+whether facts already answer each question and whether the claimed blocker is
+necessary. Distinguish reporter omissions from maintainer design decisions.
+AI-written assessments remain drafts until reviewed; identities/timestamps must
+record actual review. Wrong decisions do not invalidate complete evidence.
 
 ## Nine unchanged real reports
 

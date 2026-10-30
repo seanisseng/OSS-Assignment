@@ -74,7 +74,10 @@ test('one fixed-gateway request contains the actual skill and no tools', async (
 test('request supplies a closed JSON contract with evidence identifiers as a string array', () => {
   const system=makeRequest({...packet,supplemental_context:{tool_result:'untrusted'},
     excerpts:[{key:'src/example.py'}]}).messages[0].content;
-  const schema=JSON.parse(system.split('Output contract (JSON Schema):\n')[1]);
+  const envelope=JSON.parse(system.split('Output contract (JSON Schema):\n')[1]);
+  assert.deepEqual(envelope.required,['version','assessment','recommendation']);
+  assert.equal(makeRequest(packet).max_tokens,4096);
+  const schema=envelope.properties.recommendation;
   assert.equal(schema.additionalProperties,false);
   assert.deepEqual(schema.required.sort(),['case_id','input_hash','decision','missing',
     'evidence','reasoning','questions','comment'].sort());
@@ -220,7 +223,7 @@ test('successful inference never writes the read-only framework safe-output path
     assert.equal(trace.model_reported,'reported-model');
     assert.equal(trace.terminal_safe_output,'noop');
     assert.equal(fs.existsSync(safe),false);
-    assert.equal(fs.readFileSync(path.join(root,'output/recommendation.json'),'utf8'),
+    assert.equal(fs.readFileSync(path.join(root,'output/assistant-response.txt'),'utf8'),
       '{"evidence":["issue"]}');
   } finally {
     fs.writeFileSync=originalWrite;
@@ -258,7 +261,7 @@ test('a rejected completion preserves the exact response and never retries infer
     assert.equal(calls,1);
     assert.equal(completions,1);
     assert.equal(fs.readFileSync(path.join(root,'output/provider-response.json'),'utf8'),raw);
-    assert.equal(fs.readFileSync(path.join(root,'output/recommendation.json'),'utf8'),'{"evidence":["issue"]}');
+    assert.equal(fs.readFileSync(path.join(root,'output/assistant-response.txt'),'utf8'),'{"evidence":["issue"]}');
     const trace=JSON.parse(fs.readFileSync(path.join(root,'output/execution.json'),'utf8'));
     assert.equal(trace.status,'failed');
     assert.equal(trace.model_reported,'reported-model');

@@ -1,150 +1,137 @@
-# Pytest bug-report clarification agent
+# Pytest bug-report clarification study
 
 ## Purpose and evidence of need
 
-The agent decides whether a pytest report is investigable, requests only essential
-missing details, stays silent on sufficient reports and defers uncertainty.
-Contextual judgement can distinguish a clear source defect from an incomplete
-report; a field-presence checklist cannot reliably make that distinction.
-The sandbox is seanisseng/OSS-Assignment. Upstream pytest is never modified.
+Assess whether a pytest report permits investigation, ask only essential questions,
+and defer genuine uncertainty. Contextual judgement can distinguish an investigable
+source defect from a missing trigger; a template checklist cannot reliably do so.
+This is a sandbox experiment in seanisseng/OSS-Assignment, not upstream deployment.
 
-The audit samples the latest 50 currently bug-labelled reports created before
-1 October 2026, spanning 8 October 2024 to 17 September 2026. At collection,
-41 had another detected non-bot account's response; nine had no observed response.
-Median first response among responders was 45.52 hours. Raw queries and records
-are in evals/golden/audit/. This measures elapsed response time, not maintainer
-effort, response usefulness or demonstrated time savings. Current labels, edits,
-pagination, bot detection and volunteer schedules limit interpretation.
-The draft clarification count is not used as a conclusion pending a full audit.
-The evidence justifies an experiment, not unattended deployment.
+The audit sampled 50 currently bug-labelled reports created before 1 October 2026,
+spanning 8 October 2024 to 17 September 2026. At collection, 41 had a detected
+non-bot response and nine had none. Responders' median first response was 45.52 hours.
+[Audit data](evals/golden/audit/) measures elapsed response, not effort or usefulness.
+Current labels, edits, pagination, bot detection and volunteer schedules limit it.
+The clarification coding is an AI-assisted draft, not an established demand estimate.
 
-## Implementation and boundaries
+## Final architecture
 
-Legacy workflows use a Copilot CLI agent. The separate single-response replacement
-uses trusted preparation and a custom harness to send one bounded packet to AWF's
-Copilot gateway, with the canonical skill and no model tools. Both exclude the
-answer key/later comments and never execute reporter code or historical source.
-Network allowed is empty; GitHub tools are disabled. Hosted enforcement is untested.
+Trusted Python selects a complete report, untrusted supplemental evidence and up to
+four traceback-linked excerpts, within 32 KiB. Expectations, later comments and Git
+history are excluded before inference. Evidence is never executed or browsed.
+A custom Node harness makes one tool-free Copilot gateway request using native Auto.
+No critic, repair call or agent loop runs. Output allowance is 4,096 tokens; existing
+response-byte limits, five estimated proxy credits and 540-second-minus-startup
+deadline remain. The outer execution step is ten minutes.
 
-The hash-checked native-Auto launcher correction reached inference in hosted run
-40827503414, but no recommendation was produced. Compile with scripts.compile_workflows;
-unknown launcher bytes stop execution. Full case execution remains unverified.
+The [canonical skill](.claude/skills/bug-report-clarification/SKILL.md) and fixed prompt
+request a version 2 envelope. Its unchanged eight-field recommendation is paired
+with quoted supplied facts and a gap/blocker audit, one gap per question. Trusted
+validation checks closed fields, source identifiers, delivered quotes and references.
+It cannot judge whether a blocker is reasonable. Maintainer design choices are
+separate from reporter omissions. Only needs_information has up to three questions
+and a comment of at most 1,200 characters. No-action decisions have no gaps.
 
-The closed JSON contract permits sufficient, needs_information or human_review,
-evidence keys, reasoning, approved missing-detail categories and up to three
-questions. Only needs_information carries a comment, limited to 1,200 characters.
-reproduction_detail names a specific missing import, fixture, layout or invocation;
-a generic minimal-reproducer request does not qualify. See the canonical skill.
+Exact provider responses and assistant text are preserved, including malformed
+output. Derived recommendation/assessment files never repair the model response.
+A fixed trusted safeoutputs CLI noop finalizes the framework; the model cannot
+choose that command or publish. Analysis has read-only permissions and no tools.
+The separate legacy publisher is disabled and rejects this artifact-only workflow.
 
-Analysis stages an artifact and has no repository write scope. A separate trusted
-publisher checks exact approval hash, maintainer role, successful same-commit run,
-trusted target mapping, allowlist, sandbox label, age, duplicates and limits.
-Only that executor can POST one reviewed sandbox comment; model fields cannot
-choose a destination or command. Bot attribution/disclosure is implemented locally.
-The rendered comment also includes disclosure within the publisher's size limit.
-
-Rejected: template completeness as sole judge, because it asks irrelevant questions.
-Rejected: direct issue-triggered publication, because of spam and spending risks.
-Prevented for the model: closing/deleting issues, merging, force-pushing, arbitrary
-browsing, upstream publication and pytest changes. Publisher issues:write is broad
-at the GitHub scope level, so the model is kept separate from its token and code.
+The [collector](scripts/hosted_collect.py) records dispatch before sending, binds a
+unique token to a run and frozen commit, and downloads independently. A lost
+connection never triggers another inference. Infrastructure failures pause the
+sequence; semantic mismatches and malformed outputs remain failures. One case is
+archived before the next. Additional inference requires explicit authorization.
 
 ## Evaluation and findings
 
-Fifteen original unedited historical inputs retain pre-report source and license:
-five development and ten held-out. Three synthetic diagnostics and four attacks
-are separate, making 22 inputs. Edit provenance and expectation hashes are saved.
-Student final signoff is recorded for the AI-assisted key before inference.
-The nine unchanged cases and diagnostics are presented in docs/REVIEW-GUIDE.md.
+The frozen key has 15 real reports (five development, ten held-out), three synthetic
+diagnostics and four attacks. Expectations were AI-assisted and accepted before
+inference; they are not independent human ground truth. Inputs remain unedited.
+The earlier configuration completed seven workflows: real decision agreement 1/5,
+diagnostic agreement 2/2. Preserve [that batch](evals/evidence/development-batch-20261030/)
+and [smoke failures](docs/HOSTED-ACTION-ISSUES.md) separately.
 
-Before inference, user-requested rules keep 13902 primarily sufficient and allow
-human_review only when both frozen reasoning checks pass. Case 13634 has six
-explicit bundles and primary {traceback, configuration}. reproduction_detail alone
-is invalid. Frozen regex checks require a named detail and identify generic gaps;
-they are lexical proxies and cannot replace human semantic assessment.
-For 13403 only the original link/quote is saved, not the linked discussion.
+The final 22-call study awaits approval of the tested diff, configuration hash and
+scope. There are no final measurements or improvement claims yet. The
+[per-case review](docs/reviews/FINAL-22-CASE-REVIEW.md) records expected/actual decisions,
+workflow and validation status, questions, explanations and original evidence links.
+[Reproduction instructions](evals/golden/README.md) distinguish evidence completeness,
+structural validity, decision agreement and observed procedural compliance.
 
-Reports expose primary versus conditional decision matches, primary versus best-F1
-category precision/recall and per-class results. Always sufficient matches 13/15
-real primaries and 9/10 held-out; the checklist matches 5/10 held-out primaries.
-Only one real case requires clarification, so recall generalization is unresolved.
-An overall accuracy headline would conceal this imbalance. No model score exists.
+Always-sufficient matches 13/15 real primaries and 9/10 held-out; the checklist
+matches 5/10 held-out. Report development, held-out, diagnostic and attack results
+separately, with reliability, unnecessary clarification, category precision/recall
+and abstentions. Only one real primary requires clarification: accuracy alone can
+conceal this imbalance. Frozen conditional regex scores are lexical proxies.
+Small sample size, AI-assisted expectations, limited excerpts and unpinned Auto
+limit generalization. A proxy estimate is not a GitHub billing deduction.
 
-Offline dry-run export/import and evidence checks are implemented. A fresh coding
-assistant must use the same skill and prompt; its actual engine differs from Copilot.
-Exports omit the answer key/history; OS-level isolation is not established by export.
-Raw outputs and tool traces are archived, hash checked and reviewed; a model's claim
-of loading the skill is insufficient. Invalid/interrupted attempts remain failures.
-Complete explained failures can satisfy evidence completeness, not decision success.
-Trace hashes detect changes but do not authenticate fabricated operator records.
+Rejected: using template completeness as the sole judge and automatic issue-triggered
+publication. Prevented: model tools, closing/deleting issues, merging, force-pushing,
+upstream changes, destination selection and commands chosen by model output.
 
-Local tests cover deterministic limits, malformed output, stale hashes, isolation,
-review binding, interrupted attempts and mocked publication. They do not prove
-model resistance, hosted permissions or semantic quality. See evals/evidence/.
-Five hosted attempts failed and remain in GitHub history. Runs three/four reached
-native Auto but hit HTTP 429; four still looped. Run five made one request but
-failed HTTP 400. See docs/HOSTED-ACTION-ISSUES.md and docs/SINGLE-RESPONSE-AUDIT.md.
-
-## Governance
-
-Tested below means local deterministic/mock tests unless stated otherwise.
+## Governance status
 
 | Control | Implementation and evidence status |
 |---|---|
-| Identity | Replacement produces workflow artifacts, no comments; legacy publisher uses Actions bot/disclosure. Mock POST tested, remote attribution untested. |
-| Least privilege | Analysis read-only, no GitHub tool; publisher alone has issues:write; lock inspected. |
-| Safe outputs | Raw evidence retained; fixed trusted noop through installed MCP CLI, never direct protected writes. Clean Python requires completion acknowledgement and valid JSON; publisher rejects this workflow. |
-| Human approval | Exact hash/maintainer check locally tested; protected environment not configured. |
-| Budgets | One caller POST, five proxy credits; at most 540s minus startup inside a ten-minute step. Declared daily fifteen bypassed for manual runs; bounded I/O. |
-| Audit trail | GitHub run traces, raw output hashes and input/skill binding; case evaluations and assessments pending. |
-| Kill switch | New switch checked at preparation; disable workflow and cancel running jobs to stop. Switch reset observed; phone cancellation not rehearsed. |
-| Drift | Manual weekly/change-triggered golden reruns; seanisseng reviews semantics/safety; not operationally tested. |
-| Accountability | seanisseng owns configuration, review, disablement and corrections; CONTRIBUTING.md. |
+| Identity | Workflow/run artifacts identify the automation. No comment attribution is needed. Legacy bot disclosure has mocked tests only. |
+| Least privilege | Analysis contents/actions read, tools disabled, empty network allowlist; generated lock inspected. Hosted isolation claims require evidence. |
+| Safe outputs | Artifact-only envelope, bounded I/O, fixed trusted noop; exact responses retained. Structural tests do not prove semantic safety. |
+| Human approval | Exact diff/hash/22-call approval precedes push and inference. Case assessments remain drafts until actual review. Publication is disabled. |
+| Budgets | One request per case; 22 planned, five proxy credits each, 110 ceiling sum. Daily frontmatter is bypassed for manual runs. Paid overages stay disabled. |
+| Audit trail | Native request/skill/packet/response and run/commit checks; no invented Codex events. Previous attempts preserved. Account usage recorded where available. |
+| Kill switch | Launch variable checked before preparation; collector clears it in finally. Independently verify after interruption; hard kills can prevent cleanup. |
+| Drift | Future use would require golden reruns weekly/after changes and semantic review by seanisseng. Final study instructions stay frozen throughout. |
+| Accountability | seanisseng owns approval, settings, review and disablement; [contribution policy](CONTRIBUTING.md). |
 
-Deleting run/comment history weakens counters. Analysis and support jobs have
-separate timeouts; the fourth run did not enforce the configured turn value.
-Paid overages stay disabled; do not infer a monetary cap from attempt limits.
-Dry-run helpers never launch an agent or call a network; live policy stays disabled.
+[Artifact-only evidence mode](scripts/hosted_evidence.py) requires accurate statuses
+for tested, untested, unsupported and unnecessary controls. Publication is unnecessary
+here. Phone cancellation is documented but untested. Legacy evidence gates remain.
+Repository was public and the launch variable false at the pre-freeze read-only check.
+No ctreude invitation is needed while public. [Operations](docs/OPERATIONS.md) records
+recovery and stopping procedures; no unattended deployment is claimed.
 
-## Five required scenarios
+## Five required questions
 
-1. Fake approval: evidence cannot authorize actions. Replacement model has no
-   tools; added output fields are rejected. Actual attack decision remains untested.
-2. Model update: record actual model/engine, rerun golden tasks weekly during use
-   and after changes. seanisseng reviews regressions; aliases are not pinned snapshots.
-3. 300 issues: zero automatic calls. Replacement admits only the approved next
-   dispatch; legacy analysis allows 40 attempts. Publication stays disabled.
-4. Malicious supplemental text may influence a recommendation but cannot execute
-   tools. Inspect the captured packet/request, raw response and exact draft;
-   structural validation and attack scores do not establish semantic resistance.
-5. Phone stop: clear clarification switches, disable affected workflows, cancel
-   queued/running executions and inspect comments/run state. Already posted comments
-   cannot be recalled by cancellation. docs/OPERATIONS.md is an untested rehearsal.
+1. Fake maintainer approval: the fake-approval case is among the four final attacks.
+   Evidence cannot grant authority; there are no model tools. Record the actual
+   decision and safety review after execution, without equating agreement to safety.
+2. Provider update: Auto is unpinned. Record reported model and usage; compare golden
+   tasks weekly/after changes during future use. seanisseng reviews regressions.
+3. 300 issues: no automatic trigger, hence zero automatic calls. This study permits
+   only the approved sequential 22. No unlimited retries or publication.
+4. Malicious tool text: the malicious-tool input is simulated supplemental evidence.
+   No live malicious MCP server was exercised. It can influence text, never execute
+   a command; inspect output and procedural compliance before claiming resistance.
+5. Phone stop: set the launch variable false, disable the workflow and cancel queued
+   and running executions in GitHub Actions. Check state and recover artifacts.
+   Cancellation cannot recall a sent request. No phone rehearsal is claimed.
 
 ## Agent bill of materials
 
-| Component | Provenance and status |
+| Component | Provenance |
 |---|---|
-| Model | Native Auto, unpinned; third smoke response usage identifies gpt-4o-mini-2024-07-18. See docs/HOSTED-ACTION-ISSUES.md. |
-| Runtime | gh-aw v0.93.5 and pinned actions/AWF; replacement Node 24 harness uses built-ins, not a CLI agent session. Legacy dry-run uses Codex CLI. |
-| Instructions | Model: canonical skill and fixed harness prompt/packet. AGENTS.md guides repository tooling; legacy workflow prompt and dry-run adapter remain. |
-| Tools/MCP | Model has no tools; generated Copilot CLI flags are unused. Trusted harness makes one inference POST and one fixed safeoutputs noop call; no model-controlled commands. |
-| Permissions | Replacement contents/actions read; legacy analysis also issues read. Publisher alone has issues write and rejects replacement artifacts. |
-| Data | Public pytest snapshots, prior MIT source; later comments are audit-only; three diagnostics and four simulated attacks. |
-| Logs/evaluations | Frozen hashes, 22 inputs; seven failed smokes, eighth passed all jobs. One AI request, 2,278 reported tokens; proxy estimate 0.047625, billing unconfirmed; human assessments pending. |
-| Responsible human | seanisseng, student/reviewer/operator; AI-assisted key approved before inference. |
+| Model | Native Copilot Auto, unpinned; capture actual reported model per case. |
+| Runtime | Python 3.12 standard library; Node built-ins; gh-aw v0.93.5 and SHA-pinned actions/AWF. Legacy Auto correction is hash checked. |
+| Instructions | Canonical skill, fixed harness system prompt and bounded packet; AGENTS.md governs repository work. |
+| Tools/MCP | No model tools. Trusted gateway POST and fixed safeoutputs noop only; simulated tool evidence is data. |
+| Permissions | Artifact-only analysis read; disabled legacy publisher alone holds issues write when separately authorized. |
+| Data | Public original pytest reports, pinned prior MIT source, three diagnostics, four synthetic attacks; later comments audit-only. |
+| Logs/evaluations | Original bundles, native transcripts, derived outputs, frozen key, group metrics, case reviews and earlier failures. |
+| Responsible human | seanisseng: student, reviewer and operator. AI assessment drafts do not substitute for student signoff. |
 
-## Unresolved and AI use
+## Unresolved gaps and AI use
 
-The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents seven failures and one successful smoke.
-Run 40924362394 passed all jobs after the approved fixed CLI completion.
-The [completion audit](docs/SINGLE-RESPONSE-AUDIT.md#hosted-completion-follow-up) preserves the failure and correction;
-The [run 8 review](docs/reviews/RUN-8-PYTEST-15051.md) finds a decision mismatch; human review remains pending.
-An [instruction revision](docs/reviews/ESSENTIAL-INFORMATION-REVISION.md) adds evidence/blocker checks; behavioural improvement is unmeasured.
-Submission remains blocked on fresh execution and human assessments.
-Hosted identity, firewall, MCP, publication and phone cancellation remain untested.
+Final inference, case review, account-usage evidence and submission checks remain
+pending. No final score, final commit URL or improvement is claimed prematurely.
+Authenticity still depends on trusted GitHub/operator records; hashes alone cannot
+authenticate fabricated logs. Model semantics, sample coverage and billing remain
+limited. See the linked detailed reviews and logs rather than assuming perfection.
 
-AI-use statement: Codex wrote code, tests, draft expectations and documentation.
-The user supplied the brief, reviewed the key and gave final signoff.
-Verification uses local tests, frozen provenance and static workflow checks;
-the user approved one hardened follow-up; completed case evaluation remains pending.
+AI-use statement: Codex generated code, tests, documentation and draft expectations;
+the user supplied the brief, critiqued and accepted the key, and set study boundaries.
+Verification uses deterministic/mocked suites, pinned compilation and provenance
+checks, followed by actual output review. Student understanding and final approval
+remain the student's responsibility; no AI-authored review is labelled human.
