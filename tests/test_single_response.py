@@ -121,6 +121,8 @@ class SingleResponseTests(unittest.TestCase):
         self.assertTrue('max-ai-credits: 5\n' in source,'Expected five-credit analysis setting')
         self.assertTrue('max-daily-ai-credits: 15\n' in source,'Expected separate declared daily setting')
         lock=Path('.github/workflows/single-response.lock.yml').read_text(encoding='utf-8')
+        top_queue=lock.split('\nconcurrency:\n',1)[1].split('\n',4)[:4]
+        self.assertIn('  queue: max',top_queue,'All submitted cases must remain queued, not replace pending runs')
         execution=lock.split('- name: Execute GitHub Copilot CLI',1)[1].split('\n      - name:',1)[0]
         conditions=[line for line in execution.splitlines() if line.startswith('        if:')]
         self.assertFalse(conditions,'Default success condition must gate execution after refused preparation')
