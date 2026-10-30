@@ -1,9 +1,9 @@
 {
   "planned": 22,
-  "archived": 0,
+  "archived": 1,
   "workflow_success": 0,
-  "requests_sent": 0,
-  "native_evidence_complete": 0,
-  "reviewed": 0,
+  "requests_sent": 1,
+  "native_evidence_complete": 1,
+  "reviewed": 1,
   "adversarial_decision_matches": 0
 }

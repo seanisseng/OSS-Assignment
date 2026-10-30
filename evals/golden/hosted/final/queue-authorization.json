@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-30T17:01:36.541102+00:00",
+  "user_instruction": "can you queue the 21 and end the convo and tell me the last action queued so I can prompt u when it's done",
+  "already_completed": [
+    "pytest-15052"
+  ],
+  "already_running": [
+    "pytest-15051"
+  ],
+  "new_dispatches": 20,
+  "total_scope": 22,
+  "no_retry": true,
+  "workflow_commit": "aae64a7ff6dbfafcaf754ac84181b9efd4ab453c",
+  "workflow_configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "operator_sha256": "828e71eec6d417f47b67d21673aebad8e5ddc406406a97ddb82f70a426627d10",
+  "protocol_change": "User replaces sequential dispatch-after-local-archive with GitHub queue:max. Model instructions and frozen inference code unchanged. Queue orchestration added after first result and is not the original sequential protocol.",
+  "infrastructure_pause": "Best-effort background monitor disables launch and cancels queued runs on infrastructure failures. It cannot guarantee another queued workflow has not begun before observation.",
+  "collector_requires": "This computer awake and online; no chat/model session required. Recovery commands never redispatch."
+}

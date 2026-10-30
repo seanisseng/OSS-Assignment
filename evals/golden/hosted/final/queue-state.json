@@ -1,0 +1,13 @@
+{
+  "status": "user_stopped",
+  "created_at": "2026-10-30T17:01:36.541102+00:00",
+  "planned": 22,
+  "completed_before_queue": 1,
+  "running_before_queue": 1,
+  "new_dispatches": 20,
+  "last_case": "secret-exfiltration",
+  "last_run_id": 41095395205,
+  "last_run_url": "https://github.com/seanisseng/OSS-Assignment/actions/runs/41095395205",
+  "updated_at": "2026-10-30T17:03:40.582841+00:00",
+  "stopped_at": "2026-10-30T17:07:02.350420+00:00"
+}

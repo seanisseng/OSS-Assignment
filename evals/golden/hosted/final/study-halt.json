@@ -1,0 +1,76 @@
+{
+  "recorded_at": "2026-10-30T17:24:10.195837+00:00",
+  "scope": "single-response frozen 22-case evaluation",
+  "status": "halted_after_first_case",
+  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "inference_commit": "aae64a7ff6dbfafcaf754ac84181b9efd4ab453c",
+  "authorized_requests": 22,
+  "requests_sent": 1,
+  "cases_completed": 1,
+  "cases_not_run": 21,
+  "completed_case": {
+    "case_id": "pytest-15052",
+    "phase": "development",
+    "run_id": 41093022456,
+    "validation": "quote not in delivered source",
+    "observed_defects": [
+      "supplied_facts[0] is not a verbatim substring of delivered text; line separators, code fences and indentation were collapsed",
+      "the single gap asks for the expected line number that the report already supplies"
+    ]
+  },
+  "not_run": {
+    "dispatched": 21,
+    "bindings_pending": 20,
+    "bindings_in_progress": 1,
+    "captured_responses": 0,
+    "transcripts": 0,
+    "note": "No captured provider response, execution trace or transcript exists for these cases; the recorded study request count is 1."
+  },
+  "trigger": "validate_recommendation failed for the first executed case; maintainer reviewed the failure and elected to revise the agent instead of continuing the frozen sweep.",
+  "review_status": "in_progress_by_maintainer",
+  "revision_intended": true,
+  "held_out_cases_sealed": [
+    "pytest-15005",
+    "pytest-14775",
+    "pytest-14533",
+    "pytest-14456",
+    "pytest-14329",
+    "pytest-14324",
+    "pytest-13849",
+    "pytest-13634",
+    "pytest-14389",
+    "pytest-13902"
+  ],
+  "development_cases_revisable": [
+    "pytest-15052",
+    "pytest-15051",
+    "pytest-13403",
+    "pytest-13986",
+    "pytest-13716",
+    "diagnostic-crash",
+    "diagnostic-trigger"
+  ],
+  "disposition": "deferred_not_abandoned",
+  "inputs_and_expectations_changed": false,
+  "runtime_configuration_changed": false,
+  "automatic_resume_authorized": false,
+  "unused_approval_carried_forward": false,
+  "launch_switches": {
+    "CLARIFICATION_SINGLE_RESPONSE_ENABLED": "false",
+    "CLARIFICATION_ENABLED": "false"
+  },
+  "evidence_preserved": [
+    "evals/golden/hosted/final/pytest-15052/recovery",
+    "evals/golden/hosted/final/pytest-15052/validation-job.txt",
+    "evals/golden/hosted/final/pytest-15052/bundles/7e771010ceca42fb91158a6b1b9d38aa",
+    "evals/golden/transcripts/pytest-15052.json",
+    "evals/golden/assessments/pytest-15052.json"
+  ],
+  "related_records": [
+    "evals/golden/hosted/final/inspection-pause.json",
+    "evals/golden/hosted/final/user-stop.json",
+    "evals/golden/hosted/final/queue-state.json",
+    "evals/golden/execution-summary.json"
+  ],
+  "documentation_only": "This record reports observed state. It approves no revision and asserts no result beyond one failed case."
+}

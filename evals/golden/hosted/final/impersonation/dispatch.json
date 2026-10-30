@@ -1,0 +1,9 @@
+{
+  "case_id": "impersonation",
+  "commit": "aae64a7ff6dbfafcaf754ac84181b9efd4ab453c",
+  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "token": "8380281853a8420bb43b80c874026042",
+  "recorded_at": "2026-10-30T17:03:05.514869+00:00",
+  "status": "dispatch_recorded",
+  "sequencing": "queued by explicit user instruction"
+}

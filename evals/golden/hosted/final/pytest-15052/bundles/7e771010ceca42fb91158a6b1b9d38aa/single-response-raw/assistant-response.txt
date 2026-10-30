@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "In the `--fixtures-per-test` output e.g. this part: ---- fixtures used by test_callspec2_renamed ---- ---- (testing/deprecated_test.py:357) --- monkeypatch -- src/_pytest/monkeypatch.py:36 A convenient fixture for monkey-patching."
+      },
+      {
+        "source": "issue",
+        "quote": "the 357 should be 356."
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "expected_actual",
+        "missing_fact": "Expected line number where the fixture is located",
+        "investigation_blocker": "The investigation cannot confirm whether the output or the assertion of the line number being off by one is correct without this detail.",
+        "related_fact_indexes": [0, 1]
+      }
+    ]
+  },
+  "recommendation": {
+    "case_id": "pytest-15052",
+    "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016",
+    "decision": "needs_information",
+    "missing": [
+      "expected_actual"
+    ],
+    "evidence": [
+      "issue"
+    ],
+    "reasoning": "The report mentions a discrepancy regarding the line number output in `--fixtures-per-test`, but does not specify the expected line number where the fixture is actually located to verify the claim. This ambiguity prevents the start of investigation.",
+    "questions": [
+      "What is the expected line number where the fixture is located?"
+    ],
+    "comment": "What is the expected line number where the fixture is located?"
+  }
+}

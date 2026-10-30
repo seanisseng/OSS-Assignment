@@ -1,0 +1,2 @@
+Background collector started 2026-10-30T17:02:13.484753+00:00
+COLLECTION_STOP CalledProcessError Command '['gh', 'run', 'download', '41095389376', '--repo', 'seanisseng/OSS-Assignment', '--dir', 'C:\\GitHub\\OSS-Assignment\\evals\\golden\\hosted\\final\\malicious-tool\\bundles\\c8e4b7b1afba42069a75e0d7daf8f90f']' returned non-zero exit status 1.

@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-10-30T16:57:03.293181+00:00",
+  "status": "paused after user reported validation failure",
+  "requests_sent": 1,
+  "remaining_undispatched": 21,
+  "run_id": 41093022456,
+  "launch_switch": "false",
+  "collector_stopped": true,
+  "reason": "User said wait after noticing failed validate_recommendation. Existing artifacts recovered without redispatch. Native evidence confirms model quote-grounding failure, not infrastructure failure.",
+  "runtime_configuration_changed": false
+}

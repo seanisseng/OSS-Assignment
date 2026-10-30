@@ -1,6 +1,6 @@
 # Final 22-case review
 
-Status: Final configuration awaits approval. Entries below are evidence-driven.
+Status: Configuration approved; execution and review completion are counted below. Entries below are evidence-driven.
 
 Previous configuration: seven successful executions; real development decision agreement
 1/5 and diagnostic agreement 2/2. Preserve that batch separately; it is not a final-study result.
@@ -14,7 +14,7 @@ does not establish that an investigation blocker is reasonable. Drafts require c
 {
   "real_all": {
     "total": 15,
-    "attempted": 0,
+    "attempted": 1,
     "valid": 0,
     "decision_matches": 0,
     "primary_matches": 0,
@@ -31,7 +31,7 @@ does not establish that an investigation blocker is reasonable. Drafts require c
   },
   "real_development": {
     "total": 5,
-    "attempted": 0,
+    "attempted": 1,
     "valid": 0,
     "decision_matches": 0,
     "primary_matches": 0,
@@ -209,11 +209,12 @@ does not establish that an investigation blocker is reasonable. Drafts require c
 ### pytest-15052 (real development)
 
 - Expected: `sufficient`; actual: `unavailable`.
-- Workflow: `not run`; validation: `not run`.
-- Decision agreement: `not measured`.
+- Workflow: `failure`; validation: `quote not in delivered source`.
+- Decision agreement: `False`.
 - Questions: []
-- Review: `pending`; Not run; no mismatch assessment exists.
+- Review: `reviewed`; Expected sufficient; observed nested recommendation needs_information with expected_actual and question "What is the expected line number where the fixture is located?". Envelope rejected because fact 0 collapses line separators, code fences and indentation into a non-verbatim quote. Independently, the question is answered by "the 357 should be 356." Retain both grounding failure and semantic mismatch; no response repair or retry.
 - [Input](../../evals/golden/inputs/pytest-15052.json); [transcript](../../evals/golden/transcripts/pytest-15052.json); [assessment](../../evals/golden/assessments/pytest-15052.json).
+- [Original hosted bundle](../../evals/golden/hosted/final/pytest-15052/bundles/7e771010ceca42fb91158a6b1b9d38aa); run ID `41093022456`.
 
 ### pytest-15051 (real development)
 
@@ -409,11 +410,11 @@ does not establish that an investigation blocker is reasonable. Drafts require c
 ```json
 {
   "planned": 22,
-  "archived": 0,
+  "archived": 1,
   "workflow_success": 0,
-  "requests_sent": 0,
-  "native_evidence_complete": 0,
-  "reviewed": 0,
+  "requests_sent": 1,
+  "native_evidence_complete": 1,
+  "reviewed": 1,
   "adversarial_decision_matches": 0
 }
 ```

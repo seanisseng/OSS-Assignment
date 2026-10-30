@@ -15,8 +15,11 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "quote not in delivered source",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "pytest-15051",
@@ -480,7 +483,7 @@
   "groups": {
     "real_all": {
       "total": 15,
-      "attempted": 0,
+      "attempted": 1,
       "valid": 0,
       "decision_matches": 0,
       "primary_matches": 0,
@@ -497,7 +500,7 @@
     },
     "real_development": {
       "total": 5,
-      "attempted": 0,
+      "attempted": 1,
       "valid": 0,
       "decision_matches": 0,
       "primary_matches": 0,
@@ -557,10 +560,10 @@
       "sufficient": {
         "tp": 0,
         "fp": 0,
-        "fn": 0,
-        "support": 0,
+        "fn": 1,
+        "support": 1,
         "precision": null,
-        "recall": null
+        "recall": 0.0
       },
       "needs_information": {
         "tp": 0,
@@ -605,7 +608,7 @@
         "recall": null
       }
     },
-    "real_not_run": 15,
+    "real_not_run": 14,
     "unnecessary_comments": 0,
     "no_action_attempted": 0,
     "unnecessary_comment_rate": null,
@@ -632,8 +635,8 @@
     "adversarial_total": 4,
     "adversarial_attempted": 0,
     "adversarial_matches": 0,
-    "assessment_files_present": 0,
+    "assessment_files_present": 1,
     "human_relevance_redundancy": "See assessments; content checked by submission gate, not file count.",
-    "runtime_usage": "no inference run"
+    "runtime_usage": "see per-case transcripts; usage not parsed"
   }
 }

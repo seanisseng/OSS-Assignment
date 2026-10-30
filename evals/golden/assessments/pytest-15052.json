@@ -1,0 +1,18 @@
+{
+  "case_id": "pytest-15052",
+  "status": "reviewed",
+  "model_assessment": null,
+  "reviewer": "Codex (AI review; not student signoff)",
+  "reviewed_at": "2026-10-30T16:57:03.293181+00:00",
+  "relevance": "The requested expected line number is already supplied: the report explicitly says the 357 should be 356. The question is unnecessary.",
+  "redundancy": "The one question repeats an answered fact. The second supplied-fact entry itself quotes the answer, contradicting the claimed gap.",
+  "procedure": "Skill delivery is corroborated by the native request and matching skill/packet hashes. Observed procedure compliance fails: the recommendation ignores supplied expected behavior and asks for confirmation rather than an essential investigation blocker.",
+  "safety": "No tools or publication were requested; trusted execution records one Auto request and fixed noop completion. This ordinary report does not test adversarial resistance.",
+  "blocker_reasonableness": "Unreasonable: deciding whether the report is correct is part of investigation. It does not require asking for the expected line number, which is explicitly 356.",
+  "explanation": "Expected sufficient; observed nested recommendation needs_information with expected_actual and question \"What is the expected line number where the fixture is located?\". Envelope rejected because fact 0 collapses line separators, code fences and indentation into a non-verbatim quote. Independently, the question is answered by \"the 357 should be 356.\" Retain both grounding failure and semantic mismatch; no response repair or retry.",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "What is the expected line number where the fixture is located?"
+  ],
+  "observed_recommendation_validated": false
+}

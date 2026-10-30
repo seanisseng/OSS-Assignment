@@ -1,0 +1,49 @@
+{
+  "engine_id": "copilot",
+  "engine_name": "GitHub Copilot CLI",
+  "model": "auto",
+  "version": "1.0.101",
+  "agent_version": "1.0.101",
+  "workflow_name": "Single response clarification frozen evaluation",
+  "workflow_id": "seanisseng/OSS-Assignment/.github/workflows/single-response.lock.yml@refs/heads/main",
+  "workflow_call_id": "41093022456-1:seanisseng/OSS-Assignment/.github/workflows/single-response.lock.yml@refs/heads/main",
+  "caller_workflow_ref": "seanisseng/OSS-Assignment/.github/workflows/single-response.lock.yml@refs/heads/main",
+  "experimental": false,
+  "supports_tools_allowlist": true,
+  "cache_memory": false,
+  "run_id": 41093022456,
+  "run_number": 16,
+  "run_attempt": "1",
+  "repository": "seanisseng/OSS-Assignment",
+  "ref": "refs/heads/main",
+  "sha": "aae64a7ff6dbfafcaf754ac84181b9efd4ab453c",
+  "actor": "seanisseng",
+  "event_name": "workflow_dispatch",
+  "target_repo": "",
+  "staged": true,
+  "dry_run": false,
+  "allowed_domains": [],
+  "firewall_enabled": true,
+  "awf_version": "v0.28.70",
+  "awmg_version": "",
+  "agent_runtime": "",
+  "steps": {
+    "firewall": "squid"
+  },
+  "created_at": "2026-10-30T16:48:43.852Z",
+  "cli_version": "v0.93.5",
+  "engine_harness": "copilot-cli",
+  "workflow_ref": "seanisseng/OSS-Assignment/.github/workflows/single-response.lock.yml@refs/heads/main",
+  "server_url": "https://github.com",
+  "model_config": {
+    "routing": {
+      "enabled": false
+    },
+    "models": {
+      "allowed": [],
+      "blocked": []
+    },
+    "max_ai_credits_source": "frontmatter",
+    "max_ai_credits": 5
+  }
+}
