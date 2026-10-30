@@ -1,5 +1,12 @@
 # Final study approval packet
 
+> **Update, 2026-10-30T17:24Z:** this configuration was approved and executed for
+> exactly one case, which failed recommendation validation at quote grounding. The
+> 22-case study is halted after that case and the agent is under revision. No
+> further case was executed. The status paragraphs below describe the
+> approval-time state and are preserved as such. See
+> [V2-STUDY-HALT.md](V2-STUDY-HALT.md).
+
 Status: implemented and locally tested; final approval pending. No push or final
 inference has occurred. The accepted expectations are unchanged. The previous
 configuration approval does not approve these new bytes.
@@ -57,7 +64,9 @@ See [preflight evidence](../evals/evidence/final-preflight/README.md) for actual
 commands/results and packet sizes. Compilation used gh-aw v0.93.5. The lock was
 inspected for read-only analysis, Auto, no detection request, pinned actions,
 full packet upload, ten-minute execution and five-credit proxy configuration.
-All 22 packets fit 32 KiB; largest is 23250 bytes.
+Under the version 2 configuration, all 22 packets fit 32 KiB; largest was 23250 bytes.
+That bound is superseded: the current packet builder ships whole files under a
+320 KiB allowance, and all 22 packets were re-measured below that bound.
 
 The submission gate intentionally fails today: final approval, 22 native bundles,
 actual case assessments and final account/control evidence do not exist. No outputs

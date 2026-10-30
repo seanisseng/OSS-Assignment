@@ -11,8 +11,7 @@ from scripts.contract import REPOSITORY, digest, require, validate
 from scripts.evidence import configuration_hash, file_hash, load, review_record
 
 
-PACKET_BYTES = 32768
-EXCERPT_LINES = 21
+PACKET_BYTES = 327680
 MAX_EXCERPTS = 4
 DEVELOPMENT_CASES = frozenset({
     'pytest-15052', 'pytest-15051', 'pytest-13403', 'pytest-13986', 'pytest-13716',
@@ -59,45 +58,37 @@ def encoded(value):
 
 
 def build_packet(case, skill):
-    """Only explicit report file/line references select source, never expectations."""
-    sources = {k for k in case['context'] if re.search(r'\.(?:py|toml|ini|cfg|md|rst|txt)$', k)}
+    """Only frozen context files select source, never expectations.
+
+    Every source file in the frozen context ships whole, so the agent never has to
+    choose between a narrow excerpt and the lines it needs. Files that cannot fit
+    the allowance stay listed in omitted_context instead of being truncated.
+    """
+    sources = sorted(k for k in case['context']
+                     if re.search(r'\.(?:py|toml|ini|cfg|md|rst|txt)$', k))
     supplemental = {k:v for k,v in case['context'].items() if k != 'issue' and k not in sources}
     issue = case['context'].get('issue')
     if issue and issue not in {case['body'], case['title'] + '\n\n' + case['body']}:
         supplemental['issue'] = issue
     packet = dict(format='single-response-v1', case_id=case['case_id'], input_hash=digest(case),
                   skill=skill, report=dict(title=case['title'], body=case['body']),
-                  supplemental_context=supplemental, excerpts=[], omitted_context=sorted(sources))
+                  supplemental_context=supplemental, excerpts=[], omitted_context=sources)
     require(len(encoded(packet)) <= PACKET_BYTES, 'complete report exceeds packet allowance')
-    references = re.findall(
-        r'([\w./\\-]+\.(?:py|toml|ini|cfg))[^\n]{0,8}?(?:line\s+|:)(\d+)',
-        case['body'])
-    used = set()
-    for filename, line_number in references:
-        name = filename.replace('\\', '/')
-        matches = [k for k in case['context'] if k != 'issue' and
-                   (k == name or name.endswith('/' + k) or k.endswith('/' + name))]
-        if len(matches) != 1:
+    for key in sources:
+        if len(packet['excerpts']) == MAX_EXCERPTS:
+            break
+        text = case['context'][key]
+        lines = text.splitlines(keepends=True)
+        if not lines:
             continue
-        key, number = matches[0], int(line_number)
-        lines = case['context'][key].splitlines(keepends=True)
-        if not 1 <= number <= len(lines) or (key, number) in used:
-            continue
-        radius = EXCERPT_LINES // 2
-        start, end = max(1, number - radius), min(len(lines), number + radius)
-        text = ''.join(lines[start-1:end])
-        excerpt = dict(key=key, start_line=start, end_line=end, text=text,
+        excerpt = dict(key=key, start_line=1, end_line=len(lines), text=text,
                        source_sha256=hashlib.sha256(case['context'][key].encode()).hexdigest(),
                        excerpt_sha256=hashlib.sha256(text.encode()).hexdigest())
         candidate = packet | {'excerpts': packet['excerpts'] + [excerpt]}
         if len(encoded(candidate)) <= PACKET_BYTES:
             packet = candidate
-            used.add((key, number))
-        if len(packet['excerpts']) == MAX_EXCERPTS:
-            break
-    # This lists files not excerpted at all; complete snapshots are never modified.
-    packet['omitted_context'] = sorted(set(packet['omitted_context']) -
-                                        {x['key'] for x in packet['excerpts']})
+    # This lists files not shipped at all; complete snapshots are never modified.
+    packet['omitted_context'] = sorted(set(sources) - {x['key'] for x in packet['excerpts']})
     return packet
 
 

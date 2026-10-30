@@ -6,7 +6,7 @@ const crypto = require('node:crypto');
 const { execFileSync } = require('node:child_process');
 
 const GATEWAY = 'http://api-proxy:10002/chat/completions';
-const PACKET_BYTES = 32768;
+const PACKET_BYTES = 327680;
 const RESPONSE_BYTES = 65536;
 const HARNESS_TIMEOUT_MS = 540000;
 const hash = data => crypto.createHash('sha256').update(data).digest('hex');
@@ -69,12 +69,17 @@ function makeRequest(packet) {
       'context is absent, explain uncertainty using the skill decision rules. '+
       'Return a JSON object matching the output contract, without Markdown fences. '+
       'The evidence field is a nonempty array of source identifier strings, e.g. ["issue"]. '+
-      'Do not copy evidence objects or source contents into the output. '+
+      'Do not copy evidence objects into the output. In supplied_facts.quote, copy text '+
+      'character-for-character from one delivered source: keep newlines, spaces and leading '+
+      'indentation exactly, never join lines or reformat a code block, and prefer one short '+
+      'line. A quote that is not an exact substring of a delivered source is invalid. '+
       'Each question must end with exactly one question mark. For needs_information, '+
       'comment must equal questions joined by newline characters.\n\n'+skill+
       '\nCheck supplied and unambiguously implied facts before declaring any gap. '+
+      'A fact that answers a candidate question counts as supplied: never raise a gap for '+
+      'information the delivered text already states. '+
       'Reporter omissions are distinct from maintainer design decisions. '+
-      'assessment.supplied_facts must contain 1 to 8 exact quotes (at most 240 characters each) '+
+      'assessment.supplied_facts must contain 1 to 8 verbatim quotes (at most 240 characters each) '+
       'with delivered source identifiers. assessment.gaps must contain one entry per question '+
       '(zero to three), using zero-based question_index and related_fact_indexes. '+
       'Each gap names its missing_fact and investigation_blocker and one missing category. '+
@@ -205,7 +210,7 @@ async function main(options={}) {
   }
 }
 
-module.exports={assess,makeRequest,main,emitCompletion,RESPONSE_BYTES,GATEWAY,HARNESS_TIMEOUT_MS,remainingTimeout};
+module.exports={assess,makeRequest,main,emitCompletion,PACKET_BYTES,RESPONSE_BYTES,GATEWAY,HARNESS_TIMEOUT_MS,remainingTimeout};
 if (require.main===module) main().catch(error=>{
   console.error('Single-response assessment failed:',error.message);
   process.exitCode=1;

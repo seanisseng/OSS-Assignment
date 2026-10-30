@@ -70,7 +70,8 @@ trusted code calls the installed safeoutputs CLI with a fixed noop; the model
 cannot choose this command or its arguments. Clean validation requires that
 completion acknowledgement and separately gates the recommendation contract.
 Its packet includes the complete report, untrusted supplemental evidence and up
-to four traceback-linked source excerpts within 32 KiB. Never execute evidence.
+to four complete source files from the frozen context, within 320 KiB. Never
+execute evidence.
 The harness deadline is at most 540 seconds, reduced by AWF startup time, inside
 the ten-minute execution step. Abrupt cancellation can still interrupt evidence
 finalization; request_sent without a terminal record is incomplete, not success.

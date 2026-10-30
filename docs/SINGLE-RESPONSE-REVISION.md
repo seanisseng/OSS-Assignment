@@ -30,11 +30,14 @@ has been established. Request-rate restrictions are separate from that allowance
    It builds one size-bounded assessment packet containing the complete issue,
    the canonical skill text and relevant historical source excerpts. Original
    snapshots remain unchanged and available to humans for audit.
-2. `scripts/single_response.py` selects only explicit report file/line references
-   that resolve to an approved source key: up to four 21-line excerpts, centered
-   on the cited line. It records evidence keys, ranges, source/excerpt hashes and
-   files not excerpted. Non-source context, including simulated tool responses,
-   is preserved as untrusted evidence. Selection does not read expected decisions.
+2. `scripts/single_response.py` ships every frozen context source file whole
+   (`start_line: 1` through the last line), up to four files, so the agent never
+   has to choose between a narrow excerpt and the lines it needs. It records
+   evidence keys, ranges, source/excerpt hashes and files not shipped at all.
+   A file is never truncated; if it cannot fit the allowance it is listed in
+   `omitted_context` instead. Non-source context, including simulated tool
+   responses, is preserved as untrusted evidence. Selection does not read
+   expected decisions.
 3. `scripts/single_response_harness.cjs` sends the packet directly in one gateway POST.
    The assessment model receives no file-reading, search, shell, network,
    delegation or publication tools. Skill use means applying the supplied skill;
@@ -64,7 +67,7 @@ inside the ten-minute execution step. This leaves a minute for evidence cleanup.
 Cancellation, runner loss or an external hard kill can still interrupt finalization;
 a request_sent trace without a terminal event is incomplete, never successful.
 The caller requests at most 2,048 output tokens, bounds
-the packet to 32 KiB and provider response to 64 KiB, and accepts at most 32 KiB
+the packet to 320 KiB and provider response to 64 KiB, and accepts at most 32 KiB
 of recommendation text. One fixed gateway request is enforced in caller code,
 not by the previously ineffective turn setting. If the complete issue exceeds
 the packet allowance, fail

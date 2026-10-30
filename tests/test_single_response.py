@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import tempfile
@@ -32,7 +33,7 @@ class SingleResponseTests(unittest.TestCase):
         return dict(version=2, assessment=dict(supplied_facts=[dict(source='issue', quote='Crash')], gaps=[]),
                     recommendation=result or self.result())
 
-    def test_packet_keeps_full_report_and_traceback_excerpt_provenance(self):
+    def test_packet_ships_whole_source_files_with_provenance(self):
         original = digest(self.case)
         packet = build_packet(self.case, self.skill)
         self.assertEqual(packet['report']['body'], self.case['body'])
@@ -40,10 +41,10 @@ class SingleResponseTests(unittest.TestCase):
         self.assertEqual(packet['skill'], self.skill)
         excerpt = packet['excerpts'][0]
         self.assertEqual(excerpt['key'], 'pkg/example.py')
-        self.assertLessEqual(excerpt['start_line'], 12)
-        self.assertGreaterEqual(excerpt['end_line'], 12)
-        lines = self.case['context'][excerpt['key']].splitlines(keepends=True)
-        self.assertEqual(excerpt['text'], ''.join(lines[excerpt['start_line']-1:excerpt['end_line']]))
+        self.assertEqual(excerpt['start_line'], 1)
+        self.assertEqual(excerpt['end_line'], 100)
+        self.assertEqual(excerpt['text'], self.case['context']['pkg/example.py'])
+        self.assertEqual(packet['omitted_context'], [])
         self.assertEqual(digest(self.case), original)
 
     def test_oversized_complete_report_fails_instead_of_truncating(self):
@@ -65,7 +66,23 @@ class SingleResponseTests(unittest.TestCase):
                 packet = build_packet(case, skill)
                 self.assertEqual(packet['report']['body'], case['body'])
                 self.assertNotIn('expectations', packet)
+                self.assertEqual(packet['omitted_context'], [])
+                for excerpt in packet['excerpts']:
+                    self.assertEqual(excerpt['start_line'], 1)
+                    self.assertEqual(excerpt['text'], case['context'][excerpt['key']])
                 self.assertLessEqual(len(json.dumps(packet, ensure_ascii=False).encode()), PACKET_BYTES)
+
+    def test_verbatim_multiline_quote_is_accepted_and_reflow_is_rejected(self):
+        packet = build_packet(self.case, self.skill)
+        exact = 'File "pkg/example.py", line 12\nboom'
+        accepted = self.envelope() | {'assessment': dict(
+            supplied_facts=[dict(source='issue', quote=exact)], gaps=[])}
+        self.assertEqual(validate_response(self.case, packet, json.dumps(accepted)), accepted)
+        for quote in ['File "pkg/example.py", line 12 boom', exact.replace('\n', '')]:
+            rejected = self.envelope() | {'assessment': dict(
+                supplied_facts=[dict(source='issue', quote=quote)], gaps=[])}
+            with self.subTest(quote=quote), self.assertRaisesRegex(ValueError, 'quote'):
+                validate_response(self.case, packet, json.dumps(rejected))
 
     def test_validation_never_repairs_or_invents_a_recommendation(self):
         packet = build_packet(self.case, self.skill)
@@ -82,6 +99,11 @@ class SingleResponseTests(unittest.TestCase):
         result = subprocess.run(['node', '--test', 'tests/single_response.test.cjs'],
                                 capture_output=True, text=True, encoding='utf-8')
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+
+    def test_harness_packet_allowance_matches_the_packet_builder(self):
+        source = (Path(__file__).resolve().parent.parent /
+                  'scripts/single_response_harness.cjs').read_text(encoding='utf-8')
+        self.assertEqual(int(re.search(r'PACKET_BYTES = (\d+)', source).group(1)), PACKET_BYTES)
 
     def test_harness_is_covered_by_configuration_hash(self):
         with tempfile.TemporaryDirectory() as directory:

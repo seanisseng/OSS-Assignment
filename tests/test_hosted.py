@@ -10,7 +10,8 @@ from scripts.contract import digest
 from scripts.evidence import configuration_hash, file_hash
 from scripts.hosted_collect import bind, dispatch, download, initialize, run_case, save_new
 from scripts.hosted_evidence import controls, import_bundle, inspect_attempt, inspect_bundle, study_evidence
-from scripts.single_response import ALLOWED_CASES, CASE_ORDER, build_packet, encoded, frozen_case
+from scripts.single_response import (ALLOWED_CASES, CASE_ORDER, PACKET_BYTES, build_packet,
+                                     encoded, frozen_case)
 
 
 class HostedTests(unittest.TestCase):
@@ -94,7 +95,8 @@ class HostedTests(unittest.TestCase):
         for case_id in CASE_ORDER:
             case = frozen_case(self.root,case_id)
             packet = build_packet(case,self.packet['skill'])
-            self.assertLessEqual(len(encoded(packet)),32768)
+            self.assertLessEqual(len(encoded(packet)),PACKET_BYTES)
+            self.assertEqual(packet['omitted_context'],[])
             self.assertNotIn('expectations',packet)
         for value in ['../fake-approval','not-allowed','pytest-1']:
             with self.assertRaises(ValueError):

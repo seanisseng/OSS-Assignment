@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { assess, makeRequest, main, RESPONSE_BYTES, GATEWAY, HARNESS_TIMEOUT_MS,
+const { assess, makeRequest, main, PACKET_BYTES, RESPONSE_BYTES, GATEWAY, HARNESS_TIMEOUT_MS,
   remainingTimeout, emitCompletion } = require('../scripts/single_response_harness.cjs');
 const fs=require('node:fs');
 const os=require('node:os');
@@ -140,7 +140,7 @@ test('timeout aborts the sole request without retry', async () => {
 
 test('oversized packet fails before network', async () => {
   let calls=0;
-  await assert.rejects(assess({...packet,report:{body:'x'.repeat(32769)}},async()=>{calls++;}));
+  await assert.rejects(assess({...packet,report:{body:'x'.repeat(PACKET_BYTES)}},async()=>{calls++;}));
   assert.equal(calls,0);
   assert.equal(makeRequest(packet).model,'auto');
 });
