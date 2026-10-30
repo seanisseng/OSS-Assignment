@@ -22,6 +22,7 @@ permissions:
 timeout-minutes: 10
 concurrency:
   group: clarification-single-response
+  queue: max
   cancel-in-progress: false
   job-discriminator: ${{ github.run_id }}
 engine:

@@ -1,10 +1,10 @@
 {
   "approved": true,
-  "status": "User requested execution of the one-pass instruction revision across the seven development inputs",
+  "status": "User-requested GitHub queue corrected with queue:max; inference configuration unchanged",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-30T10:36:56.693391+08:00",
+  "reviewed_at": "2026-10-30T11:05:45.958826+08:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
-  "configuration_hash": "568b39af71df71eec7a415bca57238e50ca7f1ee0ec64d26477671cc546fbd26",
+  "configuration_hash": "116d099b97f4dd208e7db0841c8d46a58aedd63a968f5dd60cf16e5edfe97a13",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
   "rule_a": "Accepted by user",
   "conditionally_accepted_cases": [],
@@ -235,6 +235,15 @@
       "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
       "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
       "source": "After agreeing to the modest one-pass instruction revision and development-case testing, the user explicitly asked: \"can you run the workflow and end the conversation\". Authorizes the necessary push and one sequential seven-case development batch; one model request per case, existing five-credit proxy setting, no critic, automatic retries, held-out execution or publication."
+    },
+    {
+      "approved": true,
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-30T11:05:45.958826+08:00",
+      "configuration_hash": "116d099b97f4dd208e7db0841c8d46a58aedd63a968f5dd60cf16e5edfe97a13",
+      "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+      "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+      "source": "User explicitly requested \"can you queue the cases\". The necessary queue:max correction enables that requested queue; four submissions cancelled before any jobs are resubmitted, with no repeated inference. Skill, case allowlist, model, budgets and one-request policy unchanged."
     }
   ],
   "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",
