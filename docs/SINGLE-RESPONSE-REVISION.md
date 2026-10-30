@@ -93,7 +93,10 @@ has a 15-second timeout, 16 KiB output bound and no retries. See the
 [third-smoke correction](SINGLE-RESPONSE-AUDIT.md#third-smoke-required-terminal-output).
 
 Preparation requires the new `CLARIFICATION_SINGLE_RESPONSE_ENABLED=true` switch,
-main in the allowlisted repository, case 15051 and a current signed configuration.
+main in the allowlisted repository, an allowlisted development case and a current
+signed configuration. The seven-case menu covers five real development inputs
+and diagnostic-crash/diagnostic-trigger; held-out cases are rejected. Clean
+validation also binds the artifact to the selected case.
 At the user's explicit request, there is no lifetime dispatch-count limit or
 manual-rerun prohibition. Each manual dispatch or rerun can make one request;
 there are no automatic retries. Repeated tests of unchanged approved code do

@@ -26,8 +26,11 @@ all three diagnostics, the revised 13902/13634 conditions and all four adversari
 expectations. Acceptance of those conditions resolves the earlier conditional
 acceptance of Rule A and cases 14389, 13716, 13986 and 13403.
 On 29 October 2026, after raising your concerns, you explicitly gave final signoff.
-Approval flags are true. One hosted smoke attempt failed before a model response;
-its original run remains in GitHub Actions history.
+The run-8 configuration was approved; a subsequent instruction revision is pending
+new configuration approval. Seven hosted smokes failed; run 8 passed
+the technical workflow. Its decision differs from the accepted key. Review the
+[run 8 findings and student checklist](reviews/RUN-8-PYTEST-15051.md); semantic
+review remains pending and is separate from the pre-inference key signoff.
 
 ## Nine unchanged real reports
 

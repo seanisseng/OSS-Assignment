@@ -1,13 +1,21 @@
 ---
-name: Single response clarification smoke (15051 only)
+name: Single response clarification development test
 on:
   workflow_dispatch:
     inputs:
       case_id:
-        description: Only pytest-15051 is permitted
+        description: Select an allowlisted development case
         default: pytest-15051
         required: true
-        type: string
+        type: choice
+        options:
+          - pytest-15052
+          - pytest-15051
+          - pytest-13403
+          - pytest-13986
+          - pytest-13716
+          - diagnostic-crash
+          - diagnostic-trigger
 permissions:
   contents: read
   actions: read
@@ -90,6 +98,8 @@ jobs:
           name: single-response-input
           path: trusted-input
       - name: Validate output and skill/request evidence in trusted checkout
+        env:
+          CASE_ID: ${{ inputs.case_id }}
         run: python -m scripts.single_response validate
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

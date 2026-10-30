@@ -14,6 +14,10 @@ from scripts.evidence import file_hash, load, review_record
 PACKET_BYTES = 32768
 EXCERPT_LINES = 21
 MAX_EXCERPTS = 4
+DEVELOPMENT_CASES = frozenset({
+    'pytest-15052', 'pytest-15051', 'pytest-13403', 'pytest-13986', 'pytest-13716',
+    'diagnostic-crash', 'diagnostic-trigger',
+})
 
 
 def encoded(value):
@@ -99,10 +103,11 @@ def _prepare():
     require(os.environ.get('GITHUB_REPOSITORY') == REPOSITORY, 'foreign repository')
     require(os.environ.get('GITHUB_REF') == 'refs/heads/main', 'main required')
     require(os.environ.get('SINGLE_RESPONSE_ENABLED') == 'true', 'single response disabled')
-    require(os.environ.get('CASE_ID') == 'pytest-15051', 'only development case 15051 allowed')
+    case_id = os.environ.get('CASE_ID')
+    require(case_id in DEVELOPMENT_CASES, 'only allowlisted development cases allowed')
     review = review_record(root)
-    case = load(root / 'evals/golden/inputs/pytest-15051.json')
-    require(case['case_id'] == 'pytest-15051', 'smoke case mismatch')
+    case = load(root / f'evals/golden/inputs/{case_id}.json')
+    require(case['case_id'] == case_id, 'development case mismatch')
     expected = next(x for x in load(root / 'evals/golden/expectations.json')['expectations']
                     if x['case_id'] == case['case_id'])
     require(digest(case) == expected['input_hash'], 'frozen input differs')
@@ -125,9 +130,13 @@ def _prepare():
 
 def validate_artifact():
     manifest = load('trusted-input/manifest.json')
-    require(manifest['case_id'] == 'pytest-15051' and manifest['artifact_only'] is True
+    case_id = os.environ.get('CASE_ID')
+    require(case_id in DEVELOPMENT_CASES, 'only allowlisted development cases allowed')
+    require(manifest['case_id'] == case_id, 'development case mismatch')
+    require(manifest['artifact_only'] is True
             and manifest['sandbox_issue'] is None, 'not the artifact-only smoke case')
-    case = load('evals/golden/inputs/pytest-15051.json')
+    case = load(f'evals/golden/inputs/{case_id}.json')
+    require(case['case_id'] == case_id, 'development case mismatch')
     require(manifest['input_hash'] == digest(case), 'manifest input differs')
     skill = Path('.claude/skills/bug-report-clarification/SKILL.md')
     require(file_hash(skill) == manifest['skill_sha256'], 'skill differs')

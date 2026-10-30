@@ -15,6 +15,10 @@ publish. After each approved dispatch or rerun, reset that switch once preparati
 finishes. Disable the new workflow and cancel its running job for an immediate
 stop. The legacy activation/publication procedure below does not enable it.
 
+The development adapter now supports the five real development cases and two
+diagnostics listed in [the test plan](reviews/ESSENTIAL-INFORMATION-REVISION.md).
+The user authorized one sequential batch; all held-out cases remain blocked.
+
 For the selected dry-run route use [DRY-RUN.md](DRY-RUN.md), not the activation
 steps below. Student final signoff is complete. Both live policy
 flags remain false. A dry run does not require a bot comment or phone rehearsal;

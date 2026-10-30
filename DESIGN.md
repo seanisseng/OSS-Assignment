@@ -139,8 +139,8 @@ Dry-run helpers never launch an agent or call a network; live policy stays disab
 The [hosted record](docs/HOSTED-ACTION-ISSUES.md) documents seven failures and one successful smoke.
 Run 40924362394 passed all jobs after the approved fixed CLI completion.
 The [completion audit](docs/SINGLE-RESPONSE-AUDIT.md#hosted-completion-follow-up) preserves the failure and correction;
-one development-case technical path is verified. Decision quality,
-semantic skill compliance and excerpt completeness remain evaluation questions.
+The [run 8 review](docs/reviews/RUN-8-PYTEST-15051.md) finds a decision mismatch; human review remains pending.
+An [instruction revision](docs/reviews/ESSENTIAL-INFORMATION-REVISION.md) adds evidence/blocker checks; behavioural improvement is unmeasured.
 Submission remains blocked on fresh execution and human assessments.
 Hosted identity, firewall, MCP, publication and phone cancellation remain untested.
 

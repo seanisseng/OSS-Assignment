@@ -110,6 +110,12 @@ class SingleResponseTests(unittest.TestCase):
 
     def test_workflow_keeps_refusals_visible_and_execution_success_gated(self):
         source=Path('.github/workflows/single-response.md').read_text(encoding='utf-8')
+        choices=source.split('options:',1)[1].split('permissions:',1)[0]
+        listed={line.strip().removeprefix('- ') for line in choices.splitlines()
+                if line.strip().startswith('- ')}
+        self.assertEqual(listed,single_response.DEVELOPMENT_CASES)
+        validator=source.split('name: Validate output and skill/request evidence',1)[1]
+        self.assertIn('CASE_ID: ${{ inputs.case_id }}',validator)
         raw=source.split('name: single-response-raw',1)[1].split('jobs:',1)[0]
         self.assertTrue('if-no-files-found: warn' in raw,'Raw capture should not mask a refusal')
         self.assertTrue('max-ai-credits: 5\n' in source,'Expected five-credit analysis setting')

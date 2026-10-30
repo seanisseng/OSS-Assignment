@@ -11,8 +11,9 @@ is not kept. There is no upstream pytest build here.
 - `.claude/skills/bug-report-clarification/SKILL.md`: canonical procedure.
 - `.github/workflows/clarify.md` and `clarify.lock.yml`: Copilot analysis.
 - `.github/workflows/publish.yml`: separate trusted executor.
-- `.github/workflows/single-response.md`: proposed replacement smoke, custom
-  harness makes one tool-free Copilot gateway request; no publication path.
+- `.github/workflows/single-response.md`: artifact-only development testing for
+  five real development cases and two diagnostics; one tool-free Copilot gateway
+  request per run and no publication path. Held-out inputs are rejected.
 - `scripts/`: standard-library Python 3.12 implementation and research tooling.
 - `tests/`: deterministic unit and mocked integration tests.
 - `evals/golden/inputs/`: original unedited report snapshots and prior source.
