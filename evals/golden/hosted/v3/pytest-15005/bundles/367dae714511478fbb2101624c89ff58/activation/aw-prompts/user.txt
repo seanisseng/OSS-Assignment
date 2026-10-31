@@ -1,0 +1,5 @@
+
+The trusted single_response_harness.cjs supplies the canonical skill and bounded
+input packet directly in one Copilot gateway request. The model has no tools.
+Return one version 2 JSON envelope; trusted Python validates it. No publication.
+

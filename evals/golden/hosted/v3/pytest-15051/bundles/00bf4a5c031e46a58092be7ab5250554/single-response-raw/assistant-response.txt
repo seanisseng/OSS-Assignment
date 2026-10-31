@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "Doctests can use fixtures, but they don't have `item.function`, as the type ignore on the line correctly indicates."
+      },
+      {
+        "source": "issue",
+        "quote": "Running `--fixtures-per-test` on pytest's own test suite crashes with:"
+      },
+      {
+        "source": "issue",
+        "quote": "AttributeError: 'DoctestItem' object has no attribute 'function'"
+      },
+      {
+        "source": "issue",
+        "quote": "INTERNALERROR>   File \"/home/ran/src/pytest/src/_pytest/fixtures.py\", line 2491, in write_item"
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "expected_actual",
+        "missing_fact": "Expected behavior when running `--fixtures-per-test` with doctests.",
+        "investigation_blocker": "Cannot determine if the reported outcome (crash) is unexpected or not without knowing the expected behavior.",
+        "related_fact_indexes": [0, 1]
+      },
+      {
+        "question_index": 1,
+        "category": "reproduction_detail",
+        "missing_fact": "Specific doctest being run that triggers the crash.",
+        "investigation_blocker": "Without the specific doctest input, it's unclear if the issue can be reproduced consistently.",
+        "related_fact_indexes": [1, 2]
+      }
+    ]
+  },
+  "recommendation": {
+    "case_id": "pytest-15051",
+    "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+    "decision": "needs_information",
+    "missing": [
+      "expected_actual",
+      "reproduction_detail"
+    ],
+    "evidence": [
+      "issue"
+    ],
+    "reasoning": "The report describes a crash when using `--fixtures-per-test` but lacks details on expected behavior and the specific doctest that causes the crash, which are essential for investigation.",
+    "questions": [
+      "What is the expected behavior when running `--fixtures-per-test` with doctests?",
+      "Which specific doctest is being run that triggers the crash?"
+    ],
+    "comment": "What is the expected behavior when running `--fixtures-per-test` with doctests?\nWhich specific doctest is being run that triggers the crash?"
+  }
+}

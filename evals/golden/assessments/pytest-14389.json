@@ -1,0 +1,24 @@
+{
+  "case_id": "pytest-14389",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "An overlong quote invalidates the envelope. The report describes __context__ versus __cause__, proposes raise ... from exc, and identifies RaisesExc.matches as a likely location. Choosing the implementation location is maintainer investigation, not an essential reporter omission.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. An overlong quote invalidates the envelope. The report describes __context__ versus __cause__, proposes raise ... from exc, and identifies RaisesExc.matches as a likely location. Choosing the implementation location is maintainer investigation, not an essential reporter omission.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "An overlong quote invalidates the envelope. The report describes __context__ versus __cause__, proposes raise ... from exc, and identifies RaisesExc.matches as a likely location. Choosing the implementation location is maintainer investigation, not an essential reporter omission.",
+  "explanation": "An overlong quote invalidates the envelope. The report describes __context__ versus __cause__, proposes raise ... from exc, and identifies RaisesExc.matches as a likely location. Choosing the implementation location is maintainer investigation, not an essential reporter omission.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.184947+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure_and_misjudged",
+  "hosted_validation": "invalid quote length",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you clarify the specific method or location in the code where the logic needs to be modified for this change?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

@@ -1,0 +1,3601 @@
+python : test_rejects_nontext_context_before_exporting 
+(test_agent_input.AgentInputTests.test_rejects_nontext_context_before_exporting) ... ERROR
+At line:2 char:1
++ python -m unittest discover -s tests -v *> .local/v3-final-tests.txt; ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_rejects_no...ting) ... ERROR:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_report_is_small_and_all_context_can_be_reconstructed 
+(test_agent_input.AgentInputTests.test_report_is_small_and_all_context_can_be_reconstructed) ... ERROR
+test_unicode_long_lines_and_untrusted_paths_are_data_only 
+(test_agent_input.AgentInputTests.test_unicode_long_lines_and_untrusted_paths_are_data_only) ... ERROR
+test_burst (test_contract.ContractTests.test_burst) ... ok
+test_no_action (test_contract.ContractTests.test_no_action) ... ok
+test_publication_boundaries (test_contract.ContractTests.test_publication_boundaries) ... ok
+test_reject_mutations (test_contract.ContractTests.test_reject_mutations) ... ok
+test_types (test_contract.ContractTests.test_types) ... ok
+test_valid (test_contract.ContractTests.test_valid) ... ok
+test_adversarial_results_are_separate_from_real_accuracy 
+(test_dry_run.DryRunTests.test_adversarial_results_are_separate_from_real_accuracy) ... ERROR
+test_adversarial_results_are_separate_from_real_accuracy 
+(test_dry_run.DryRunTests.test_adversarial_results_are_separate_from_real_accuracy) ... ERROR
+test_altered_preparation_is_rejected (test_dry_run.DryRunTests.test_altered_preparation_is_rejected) ... ERROR
+test_altered_preparation_is_rejected (test_dry_run.DryRunTests.test_altered_preparation_is_rejected) ... ERROR
+test_changed_trace_and_missing_assessment_are_rejected 
+(test_dry_run.DryRunTests.test_changed_trace_and_missing_assessment_are_rejected) ... ERROR
+test_changed_trace_and_missing_assessment_are_rejected 
+(test_dry_run.DryRunTests.test_changed_trace_and_missing_assessment_are_rejected) ... ERROR
+test_complete_dry_run_can_include_a_failed_model 
+(test_dry_run.DryRunTests.test_complete_dry_run_can_include_a_failed_model) ... ERROR
+test_complete_dry_run_can_include_a_failed_model 
+(test_dry_run.DryRunTests.test_complete_dry_run_can_include_a_failed_model) ... ERROR
+test_export_excludes_expectations_history_and_credentials 
+(test_dry_run.DryRunTests.test_export_excludes_expectations_history_and_credentials) ... ERROR
+test_export_excludes_expectations_history_and_credentials 
+(test_dry_run.DryRunTests.test_export_excludes_expectations_history_and_credentials) ... ERROR
+test_failure_before_session_start_is_archived_without_invented_events 
+(test_dry_run.DryRunTests.test_failure_before_session_start_is_archived_without_invented_events) ... ERROR
+test_failure_before_session_start_is_archived_without_invented_events 
+(test_dry_run.DryRunTests.test_failure_before_session_start_is_archived_without_invented_events) ... ERROR
+test_false_model_success_and_altered_exports_are_rejected 
+(test_dry_run.DryRunTests.test_false_model_success_and_altered_exports_are_rejected) ... ERROR
+test_false_model_success_and_altered_exports_are_rejected 
+(test_dry_run.DryRunTests.test_false_model_success_and_altered_exports_are_rejected) ... ERROR
+test_hash_only_review_cannot_approve_after_inference 
+(test_dry_run.DryRunTests.test_hash_only_review_cannot_approve_after_inference) ... ERROR
+test_hash_only_review_cannot_approve_after_inference 
+(test_dry_run.DryRunTests.test_hash_only_review_cannot_approve_after_inference) ... ERROR
+test_interruption_is_an_attempt_without_fabricated_output 
+(test_dry_run.DryRunTests.test_interruption_is_an_attempt_without_fabricated_output) ... ERROR
+test_interruption_is_an_attempt_without_fabricated_output 
+(test_dry_run.DryRunTests.test_interruption_is_an_attempt_without_fabricated_output) ... ERROR
+test_invalid_output_can_have_complete_evidence 
+(test_dry_run.DryRunTests.test_invalid_output_can_have_complete_evidence) ... ERROR
+test_invalid_output_can_have_complete_evidence 
+(test_dry_run.DryRunTests.test_invalid_output_can_have_complete_evidence) ... ERROR
+test_missing_skill_read_failure_is_preserved_for_review 
+(test_dry_run.DryRunTests.test_missing_skill_read_failure_is_preserved_for_review) ... ERROR
+test_missing_skill_read_failure_is_preserved_for_review 
+(test_dry_run.DryRunTests.test_missing_skill_read_failure_is_preserved_for_review) ... ERROR
+test_pending_or_tampered_blocker_is_not_submission_evidence 
+(test_dry_run.DryRunTests.test_pending_or_tampered_blocker_is_not_submission_evidence) ... ERROR
+test_pending_or_tampered_blocker_is_not_submission_evidence 
+(test_dry_run.DryRunTests.test_pending_or_tampered_blocker_is_not_submission_evidence) ... ERROR
+test_record_cli_keeps_original_output (test_dry_run.DryRunTests.test_record_cli_keeps_original_output) ... ERROR
+test_record_cli_keeps_original_output (test_dry_run.DryRunTests.test_record_cli_keeps_original_output) ... ERROR
+test_reusing_session_across_cases_is_rejected (test_dry_run.DryRunTests.test_reusing_session_across_cases_is_rejected) 
+... ERROR
+test_reusing_session_across_cases_is_rejected (test_dry_run.DryRunTests.test_reusing_session_across_cases_is_rejected) 
+... ERROR
+test_review_is_required_and_configuration_bound 
+(test_dry_run.DryRunTests.test_review_is_required_and_configuration_bound) ... ERROR
+test_review_is_required_and_configuration_bound 
+(test_dry_run.DryRunTests.test_review_is_required_and_configuration_bound) ... ERROR
+test_self_reported_skill_loading_is_not_evidence 
+(test_dry_run.DryRunTests.test_self_reported_skill_loading_is_not_evidence) ... ERROR
+test_self_reported_skill_loading_is_not_evidence 
+(test_dry_run.DryRunTests.test_self_reported_skill_loading_is_not_evidence) ... ERROR
+test_duplicate_json_keys_are_not_silently_repaired 
+(test_envelope.EnvelopeTests.test_duplicate_json_keys_are_not_silently_repaired) ... ok
+test_each_question_has_one_gap_and_valid_fact_references 
+(test_envelope.EnvelopeTests.test_each_question_has_one_gap_and_valid_fact_references) ... ok
+test_grounded_no_action (test_envelope.EnvelopeTests.test_grounded_no_action) ... ok
+test_missing_gap_unknown_source_and_invented_quotes_fail 
+(test_envelope.EnvelopeTests.test_missing_gap_unknown_source_and_invented_quotes_fail) ... ok
+test_all_22_frozen_packets_and_explicit_adversarial_preparation 
+(test_hosted.HostedTests.test_all_22_frozen_packets_and_explicit_adversarial_preparation) ... ERROR
+test_all_22_frozen_packets_and_explicit_adversarial_preparation 
+(test_hosted.HostedTests.test_all_22_frozen_packets_and_explicit_adversarial_preparation) ... ERROR
+test_artifact_only_controls_require_explanations_not_publication_or_phone_tests 
+(test_hosted.HostedTests.test_artifact_only_controls_require_explanations_not_publication_or_phone_tests) ... ERROR
+test_artifact_only_controls_require_explanations_not_publication_or_phone_tests 
+(test_hosted.HostedTests.test_artifact_only_controls_require_explanations_not_publication_or_phone_tests) ... ERROR
+test_bind_and_download_recover_without_dispatch 
+(test_hosted.HostedTests.test_bind_and_download_recover_without_dispatch) ... ERROR
+test_bind_and_download_recover_without_dispatch 
+(test_hosted.HostedTests.test_bind_and_download_recover_without_dispatch) ... ERROR
+test_dispatch_records_before_failure_and_never_resends 
+(test_hosted.HostedTests.test_dispatch_records_before_failure_and_never_resends) ... ERROR
+test_dispatch_records_before_failure_and_never_resends 
+(test_hosted.HostedTests.test_dispatch_records_before_failure_and_never_resends) ... ERROR
+test_final_study_rejects_unapproved_or_mixed_commit_records 
+(test_hosted.HostedTests.test_final_study_rejects_unapproved_or_mixed_commit_records) ... ERROR
+test_final_study_rejects_unapproved_or_mixed_commit_records 
+(test_hosted.HostedTests.test_final_study_rejects_unapproved_or_mixed_commit_records) ... ERROR
+test_import_is_resumable_and_draft_is_not_review 
+(test_hosted.HostedTests.test_import_is_resumable_and_draft_is_not_review) ... ERROR
+test_import_is_resumable_and_draft_is_not_review 
+(test_hosted.HostedTests.test_import_is_resumable_and_draft_is_not_review) ... ERROR
+test_invalid_model_output_can_have_complete_native_evidence 
+(test_hosted.HostedTests.test_invalid_model_output_can_have_complete_native_evidence) ... ERROR
+test_invalid_model_output_can_have_complete_native_evidence 
+(test_hosted.HostedTests.test_invalid_model_output_can_have_complete_native_evidence) ... ERROR
+test_missing_artifacts_and_reused_run_id_rejected 
+(test_hosted.HostedTests.test_missing_artifacts_and_reused_run_id_rejected) ... ERROR
+test_missing_artifacts_and_reused_run_id_rejected 
+(test_hosted.HostedTests.test_missing_artifacts_and_reused_run_id_rejected) ... ERROR
+test_refusal_and_cancellation_are_preserved (test_hosted.HostedTests.test_refusal_and_cancellation_are_preserved) ... 
+ERROR
+test_refusal_and_cancellation_are_preserved (test_hosted.HostedTests.test_refusal_and_cancellation_are_preserved) ... 
+ERROR
+test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails 
+(test_hosted.HostedTests.test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails) ... ERROR
+test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails 
+(test_hosted.HostedTests.test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails) ... ERROR
+test_run_disables_launch_switch_on_connection_failure 
+(test_hosted.HostedTests.test_run_disables_launch_switch_on_connection_failure) ... ERROR
+test_run_disables_launch_switch_on_connection_failure 
+(test_hosted.HostedTests.test_run_disables_launch_switch_on_connection_failure) ... ERROR
+test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected 
+(test_hosted.HostedTests.test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected) ... ERROR
+test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected 
+(test_hosted.HostedTests.test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected) ... ERROR
+test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry 
+(test_hosted.HostedTests.test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry) ... ERROR
+test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry 
+(test_hosted.HostedTests.test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry) ... ERROR
+test_clean_stage_validates_and_rejects_wrong_input 
+(test_integration.IntegrationTests.test_clean_stage_validates_and_rejects_wrong_input) ... ERROR
+test_four_synthetic_executor_attacks (test_integration.IntegrationTests.test_four_synthetic_executor_attacks) ... ERROR
+test_interrupted_analysis_never_posts (test_integration.IntegrationTests.test_interrupted_analysis_never_posts) ... 
+ERROR
+test_live_disabled_never_posts (test_integration.IntegrationTests.test_live_disabled_never_posts) ... ERROR
+test_missing_context (test_integration.IntegrationTests.test_missing_context) ... ERROR
+test_pagination_fails_closed (test_integration.IntegrationTests.test_pagination_fails_closed) ... ERROR
+test_prepare (test_integration.IntegrationTests.test_prepare) ... ERROR
+test_prepare_disabled_and_burst_limit (test_integration.IntegrationTests.test_prepare_disabled_and_burst_limit) ... 
+ERROR
+test_publisher_complete_contract (test_integration.IntegrationTests.test_publisher_complete_contract) ... ERROR
+test_publisher_foreign_or_incomplete_never_posts 
+(test_integration.IntegrationTests.test_publisher_foreign_or_incomplete_never_posts) ... ERROR
+test_smoke_workflow_can_never_publish (test_integration.IntegrationTests.test_smoke_workflow_can_never_publish) ... 
+ERROR
+test_both_runtime_jobs_receive_the_same_guarded_correction 
+(test_native_auto.NativeAutoTests.test_both_runtime_jobs_receive_the_same_guarded_correction) ... ok
+test_compile_refuses_unreviewed_compiler_without_writing 
+(test_native_auto.NativeAutoTests.test_compile_refuses_unreviewed_compiler_without_writing) ... ok
+test_compile_uses_pinned_release_and_corrects_both_workflows 
+(test_native_auto.NativeAutoTests.test_compile_uses_pinned_release_and_corrects_both_workflows) ... ok
+test_incomplete_changed_or_repeated_compilation_is_rejected 
+(test_native_auto.NativeAutoTests.test_incomplete_changed_or_repeated_compilation_is_rejected) ... ok
+test_only_the_expected_launcher_is_changed 
+(test_native_auto.NativeAutoTests.test_only_the_expected_launcher_is_changed) ... ok
+test_unknown_or_ambiguous_source_is_rejected 
+(test_native_auto.NativeAutoTests.test_unknown_or_ambiguous_source_is_rejected) ... ok
+test_13403_context_does_not_include_linked_discussion 
+(test_rubric.RubricTests.test_13403_context_does_not_include_linked_discussion) ... ok
+test_13634_primary_and_optional_bundle_scores_differ 
+(test_rubric.RubricTests.test_13634_primary_and_optional_bundle_scores_differ) ... ok
+test_13902_requires_both_checklist_items (test_rubric.RubricTests.test_13902_requires_both_checklist_items) ... ok
+test_per_class_exposes_majority_baseline (test_rubric.RubricTests.test_per_class_exposes_majority_baseline) ... ok
+test_reproduction_detail_is_specific_and_never_valid_alone 
+(test_rubric.RubricTests.test_reproduction_detail_is_specific_and_never_valid_alone) ... ok
+test_explicit_alternative (test_scoring.ScoringTests.test_explicit_alternative) ... ok
+test_full_metrics_count_alternatives_and_optional_categories 
+(test_scoring.ScoringTests.test_full_metrics_count_alternatives_and_optional_categories) ... ERROR
+test_irrelevant_category_still_penalized (test_scoring.ScoringTests.test_irrelevant_category_still_penalized) ... ok
+test_legacy_single_reference (test_scoring.ScoringTests.test_legacy_single_reference) ... ok
+test_optional_gaps_are_not_all_required (test_scoring.ScoringTests.test_optional_gaps_are_not_all_required) ... ok
+test_primary_is_default (test_scoring.ScoringTests.test_primary_is_default) ... ok
+test_reports_keep_absence_and_escape_untrusted_body 
+(test_scoring.ScoringTests.test_reports_keep_absence_and_escape_untrusted_body) ... ERROR
+test_frozen_inputs_export_without_answer_key_and_within_bounds 
+(test_single_response.SingleResponseTests.test_frozen_inputs_export_without_answer_key_and_within_bounds) ... ok
+test_harness_is_covered_by_configuration_hash 
+(test_single_response.SingleResponseTests.test_harness_is_covered_by_configuration_hash) ... ERROR
+test_harness_packet_allowance_matches_the_packet_builder 
+(test_single_response.SingleResponseTests.test_harness_packet_allowance_matches_the_packet_builder) ... ok
+test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) ... 
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-15052') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-15051') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13403') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13986') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13716') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='diagnostic-crash') ... ERROR
+  test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='diagnostic-trigger') ... ERROR
+test_node_transport_checks (test_single_response.SingleResponseTests.test_node_transport_checks) ... FAIL
+test_only_frozen_development_cases_and_two_diagnostics_are_allowed 
+(test_single_response.SingleResponseTests.test_only_frozen_development_cases_and_two_diagnostics_are_allowed) ... ok
+test_oversized_complete_report_fails_instead_of_truncating 
+(test_single_response.SingleResponseTests.test_oversized_complete_report_fails_instead_of_truncating) ... ok
+test_packet_ships_whole_source_files_with_provenance 
+(test_single_response.SingleResponseTests.test_packet_ships_whole_source_files_with_provenance) ... ok
+test_refused_preparation_records_reason_without_installing_harness 
+(test_single_response.SingleResponseTests.test_refused_preparation_records_reason_without_installing_harness) ... ERROR
+test_simulated_tool_attack_is_preserved_as_untrusted_evidence 
+(test_single_response.SingleResponseTests.test_simulated_tool_attack_is_preserved_as_untrusted_evidence) ... ok
+test_validation_never_repairs_or_invents_a_recommendation 
+(test_single_response.SingleResponseTests.test_validation_never_repairs_or_invents_a_recommendation) ... ok
+test_verbatim_multiline_quote_is_accepted_and_reflow_is_rejected 
+(test_single_response.SingleResponseTests.test_verbatim_multiline_quote_is_accepted_and_reflow_is_rejected) ... ok
+test_workflow_keeps_refusals_visible_and_execution_success_gated 
+(test_single_response.SingleResponseTests.test_workflow_keeps_refusals_visible_and_execution_success_gated) ... ok
+test_compiled_workflow_leaves_model_selection_to_copilot 
+(test_smoke.SmokeTests.test_compiled_workflow_leaves_model_selection_to_copilot) ... ERROR
+test_compiled_workflow_leaves_model_selection_to_copilot 
+(test_smoke.SmokeTests.test_compiled_workflow_leaves_model_selection_to_copilot) ... ERROR
+test_denies_disabled_wrong_case_branch_repository_and_retries 
+(test_smoke.SmokeTests.test_denies_disabled_wrong_case_branch_repository_and_retries) ... ERROR
+test_denies_disabled_wrong_case_branch_repository_and_retries 
+(test_smoke.SmokeTests.test_denies_disabled_wrong_case_branch_repository_and_retries) ... ERROR
+test_denies_stale_review_and_changed_input (test_smoke.SmokeTests.test_denies_stale_review_and_changed_input) ... ERROR
+test_denies_stale_review_and_changed_input (test_smoke.SmokeTests.test_denies_stale_review_and_changed_input) ... ERROR
+test_denies_unapproved_dispatch_and_invalid_count 
+(test_smoke.SmokeTests.test_denies_unapproved_dispatch_and_invalid_count) ... ERROR
+test_denies_unapproved_dispatch_and_invalid_count 
+(test_smoke.SmokeTests.test_denies_unapproved_dispatch_and_invalid_count) ... ERROR
+test_exports_only_case_instructions_and_manifest_with_publication_disabled 
+(test_smoke.SmokeTests.test_exports_only_case_instructions_and_manifest_with_publication_disabled) ... ERROR
+test_exports_only_case_instructions_and_manifest_with_publication_disabled 
+(test_smoke.SmokeTests.test_exports_only_case_instructions_and_manifest_with_publication_disabled) ... ERROR
+
+======================================================================
+ERROR: test_rejects_nontext_context_before_exporting 
+(test_agent_input.AgentInputTests.test_rejects_nontext_context_before_exporting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb8_2jz9n'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_agent_input.py", line 43, in test_rejects_nontext_context_before_exporting
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb8_2jz9n'
+
+======================================================================
+ERROR: test_report_is_small_and_all_context_can_be_reconstructed 
+(test_agent_input.AgentInputTests.test_report_is_small_and_all_context_can_be_reconstructed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_agvbwvy\\input\\context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_agent_input.py", line 17, in 
+test_report_is_small_and_all_context_can_be_reconstructed
+    export_case(case, root)
+  File "C:\GitHub\OSS-Assignment\scripts\agent_input.py", line 18, in export_case
+    folder.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_agvbwvy\\input'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_agvbwvy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_agent_input.py", line 15, in 
+test_report_is_small_and_all_context_can_be_reconstructed
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_agvbwvy'
+
+======================================================================
+ERROR: test_unicode_long_lines_and_untrusted_paths_are_data_only 
+(test_agent_input.AgentInputTests.test_unicode_long_lines_and_untrusted_paths_are_data_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3stpxrex\\input\\context'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_agent_input.py", line 34, in 
+test_unicode_long_lines_and_untrusted_paths_are_data_only
+    export_case(case, root)
+  File "C:\GitHub\OSS-Assignment\scripts\agent_input.py", line 18, in export_case
+    folder.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3stpxrex\\input'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3stpxrex'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_agent_input.py", line 32, in 
+test_unicode_long_lines_and_untrusted_paths_are_data_only
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3stpxrex'
+
+======================================================================
+ERROR: test_adversarial_results_are_separate_from_real_accuracy 
+(test_dry_run.DryRunTests.test_adversarial_results_are_separate_from_real_accuracy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq\\repo'
+
+======================================================================
+ERROR: test_adversarial_results_are_separate_from_real_accuracy 
+(test_dry_run.DryRunTests.test_adversarial_results_are_separate_from_real_accuracy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl8i3_5sq'
+
+======================================================================
+ERROR: test_altered_preparation_is_rejected (test_dry_run.DryRunTests.test_altered_preparation_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq\\repo'
+
+======================================================================
+ERROR: test_altered_preparation_is_rejected (test_dry_run.DryRunTests.test_altered_preparation_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmm7o3swq'
+
+======================================================================
+ERROR: test_changed_trace_and_missing_assessment_are_rejected 
+(test_dry_run.DryRunTests.test_changed_trace_and_missing_assessment_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y\\repo'
+
+======================================================================
+ERROR: test_changed_trace_and_missing_assessment_are_rejected 
+(test_dry_run.DryRunTests.test_changed_trace_and_missing_assessment_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpw4zy25_y'
+
+======================================================================
+ERROR: test_complete_dry_run_can_include_a_failed_model 
+(test_dry_run.DryRunTests.test_complete_dry_run_can_include_a_failed_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24\\repo'
+
+======================================================================
+ERROR: test_complete_dry_run_can_include_a_failed_model 
+(test_dry_run.DryRunTests.test_complete_dry_run_can_include_a_failed_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_2s62i24'
+
+======================================================================
+ERROR: test_export_excludes_expectations_history_and_credentials 
+(test_dry_run.DryRunTests.test_export_excludes_expectations_history_and_credentials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt\\repo'
+
+======================================================================
+ERROR: test_export_excludes_expectations_history_and_credentials 
+(test_dry_run.DryRunTests.test_export_excludes_expectations_history_and_credentials)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpl49xnfqt'
+
+======================================================================
+ERROR: test_failure_before_session_start_is_archived_without_invented_events 
+(test_dry_run.DryRunTests.test_failure_before_session_start_is_archived_without_invented_events)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr\\repo'
+
+======================================================================
+ERROR: test_failure_before_session_start_is_archived_without_invented_events 
+(test_dry_run.DryRunTests.test_failure_before_session_start_is_archived_without_invented_events)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp4f0ddhbr'
+
+======================================================================
+ERROR: test_false_model_success_and_altered_exports_are_rejected 
+(test_dry_run.DryRunTests.test_false_model_success_and_altered_exports_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98\\repo'
+
+======================================================================
+ERROR: test_false_model_success_and_altered_exports_are_rejected 
+(test_dry_run.DryRunTests.test_false_model_success_and_altered_exports_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp_7rx1i98'
+
+======================================================================
+ERROR: test_hash_only_review_cannot_approve_after_inference 
+(test_dry_run.DryRunTests.test_hash_only_review_cannot_approve_after_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z\\repo'
+
+======================================================================
+ERROR: test_hash_only_review_cannot_approve_after_inference 
+(test_dry_run.DryRunTests.test_hash_only_review_cannot_approve_after_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwy5sj_5z'
+
+======================================================================
+ERROR: test_interruption_is_an_attempt_without_fabricated_output 
+(test_dry_run.DryRunTests.test_interruption_is_an_attempt_without_fabricated_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu\\repo'
+
+======================================================================
+ERROR: test_interruption_is_an_attempt_without_fabricated_output 
+(test_dry_run.DryRunTests.test_interruption_is_an_attempt_without_fabricated_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb9demwyu'
+
+======================================================================
+ERROR: test_invalid_output_can_have_complete_evidence 
+(test_dry_run.DryRunTests.test_invalid_output_can_have_complete_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6\\repo'
+
+======================================================================
+ERROR: test_invalid_output_can_have_complete_evidence 
+(test_dry_run.DryRunTests.test_invalid_output_can_have_complete_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkkdcjky6'
+
+======================================================================
+ERROR: test_missing_skill_read_failure_is_preserved_for_review 
+(test_dry_run.DryRunTests.test_missing_skill_read_failure_is_preserved_for_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp\\repo'
+
+======================================================================
+ERROR: test_missing_skill_read_failure_is_preserved_for_review 
+(test_dry_run.DryRunTests.test_missing_skill_read_failure_is_preserved_for_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpgb61i8qp'
+
+======================================================================
+ERROR: test_pending_or_tampered_blocker_is_not_submission_evidence 
+(test_dry_run.DryRunTests.test_pending_or_tampered_blocker_is_not_submission_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c\\repo'
+
+======================================================================
+ERROR: test_pending_or_tampered_blocker_is_not_submission_evidence 
+(test_dry_run.DryRunTests.test_pending_or_tampered_blocker_is_not_submission_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp9oprp80c'
+
+======================================================================
+ERROR: test_record_cli_keeps_original_output (test_dry_run.DryRunTests.test_record_cli_keeps_original_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2\\repo'
+
+======================================================================
+ERROR: test_record_cli_keeps_original_output (test_dry_run.DryRunTests.test_record_cli_keeps_original_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpkfk_ugz2'
+
+======================================================================
+ERROR: test_reusing_session_across_cases_is_rejected 
+(test_dry_run.DryRunTests.test_reusing_session_across_cases_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79\\repo'
+
+======================================================================
+ERROR: test_reusing_session_across_cases_is_rejected 
+(test_dry_run.DryRunTests.test_reusing_session_across_cases_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmyzskb79'
+
+======================================================================
+ERROR: test_review_is_required_and_configuration_bound 
+(test_dry_run.DryRunTests.test_review_is_required_and_configuration_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9\\repo'
+
+======================================================================
+ERROR: test_review_is_required_and_configuration_bound 
+(test_dry_run.DryRunTests.test_review_is_required_and_configuration_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpeh1rj1v9'
+
+======================================================================
+ERROR: test_self_reported_skill_loading_is_not_evidence 
+(test_dry_run.DryRunTests.test_self_reported_skill_loading_is_not_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf\\repo\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf\\repo\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf\\repo\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 21, in setUp
+    self.write('evals/golden/inputs/case-1.json', self.case)
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 40, in write
+    return self.text(path, json.dumps(value))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_dry_run.py", line 35, in text
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf\\repo'
+
+======================================================================
+ERROR: test_self_reported_skill_loading_is_not_evidence 
+(test_dry_run.DryRunTests.test_self_reported_skill_loading_is_not_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpupn3tzqf'
+
+======================================================================
+ERROR: test_all_22_frozen_packets_and_explicit_adversarial_preparation 
+(test_hosted.HostedTests.test_all_22_frozen_packets_and_explicit_adversarial_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp78ydc0fh\\scripts'
+
+======================================================================
+ERROR: test_all_22_frozen_packets_and_explicit_adversarial_preparation 
+(test_hosted.HostedTests.test_all_22_frozen_packets_and_explicit_adversarial_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp78ydc0fh'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp78ydc0fh'
+
+======================================================================
+ERROR: test_artifact_only_controls_require_explanations_not_publication_or_phone_tests 
+(test_hosted.HostedTests.test_artifact_only_controls_require_explanations_not_publication_or_phone_tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpum78dxpl\\scripts'
+
+======================================================================
+ERROR: test_artifact_only_controls_require_explanations_not_publication_or_phone_tests 
+(test_hosted.HostedTests.test_artifact_only_controls_require_explanations_not_publication_or_phone_tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpum78dxpl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpum78dxpl'
+
+======================================================================
+ERROR: test_bind_and_download_recover_without_dispatch 
+(test_hosted.HostedTests.test_bind_and_download_recover_without_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvbxe056r\\scripts'
+
+======================================================================
+ERROR: test_bind_and_download_recover_without_dispatch 
+(test_hosted.HostedTests.test_bind_and_download_recover_without_dispatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvbxe056r'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvbxe056r'
+
+======================================================================
+ERROR: test_dispatch_records_before_failure_and_never_resends 
+(test_hosted.HostedTests.test_dispatch_records_before_failure_and_never_resends)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmsrzqcy1\\scripts'
+
+======================================================================
+ERROR: test_dispatch_records_before_failure_and_never_resends 
+(test_hosted.HostedTests.test_dispatch_records_before_failure_and_never_resends)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmsrzqcy1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmsrzqcy1'
+
+======================================================================
+ERROR: test_final_study_rejects_unapproved_or_mixed_commit_records 
+(test_hosted.HostedTests.test_final_study_rejects_unapproved_or_mixed_commit_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyy1o5d54\\scripts'
+
+======================================================================
+ERROR: test_final_study_rejects_unapproved_or_mixed_commit_records 
+(test_hosted.HostedTests.test_final_study_rejects_unapproved_or_mixed_commit_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyy1o5d54'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyy1o5d54'
+
+======================================================================
+ERROR: test_import_is_resumable_and_draft_is_not_review 
+(test_hosted.HostedTests.test_import_is_resumable_and_draft_is_not_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmppx0_jux1\\scripts'
+
+======================================================================
+ERROR: test_import_is_resumable_and_draft_is_not_review 
+(test_hosted.HostedTests.test_import_is_resumable_and_draft_is_not_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmppx0_jux1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmppx0_jux1'
+
+======================================================================
+ERROR: test_invalid_model_output_can_have_complete_native_evidence 
+(test_hosted.HostedTests.test_invalid_model_output_can_have_complete_native_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp5oy8bl8a\\scripts'
+
+======================================================================
+ERROR: test_invalid_model_output_can_have_complete_native_evidence 
+(test_hosted.HostedTests.test_invalid_model_output_can_have_complete_native_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp5oy8bl8a'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp5oy8bl8a'
+
+======================================================================
+ERROR: test_missing_artifacts_and_reused_run_id_rejected 
+(test_hosted.HostedTests.test_missing_artifacts_and_reused_run_id_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpuxpnv293\\scripts'
+
+======================================================================
+ERROR: test_missing_artifacts_and_reused_run_id_rejected 
+(test_hosted.HostedTests.test_missing_artifacts_and_reused_run_id_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpuxpnv293'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpuxpnv293'
+
+======================================================================
+ERROR: test_refusal_and_cancellation_are_preserved 
+(test_hosted.HostedTests.test_refusal_and_cancellation_are_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpf8p3_b0c\\scripts'
+
+======================================================================
+ERROR: test_refusal_and_cancellation_are_preserved 
+(test_hosted.HostedTests.test_refusal_and_cancellation_are_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpf8p3_b0c'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpf8p3_b0c'
+
+======================================================================
+ERROR: test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails 
+(test_hosted.HostedTests.test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp39hd3zp6\\scripts'
+
+======================================================================
+ERROR: test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails 
+(test_hosted.HostedTests.test_reviewed_wrong_decision_has_complete_evidence_and_tampering_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp39hd3zp6'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp39hd3zp6'
+
+======================================================================
+ERROR: test_run_disables_launch_switch_on_connection_failure 
+(test_hosted.HostedTests.test_run_disables_launch_switch_on_connection_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpest32wz9\\scripts'
+
+======================================================================
+ERROR: test_run_disables_launch_switch_on_connection_failure 
+(test_hosted.HostedTests.test_run_disables_launch_switch_on_connection_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpest32wz9'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpest32wz9'
+
+======================================================================
+ERROR: test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected 
+(test_hosted.HostedTests.test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpk11f8lj_\\scripts'
+
+======================================================================
+ERROR: test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected 
+(test_hosted.HostedTests.test_tampered_packet_skill_delivery_derived_response_and_incomplete_trace_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpk11f8lj_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpk11f8lj_'
+
+======================================================================
+ERROR: test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry 
+(test_hosted.HostedTests.test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_hosted.py", line 27, in setUp
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvmupcedl\\scripts'
+
+======================================================================
+ERROR: test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry 
+(test_hosted.HostedTests.test_truncated_model_output_is_a_failure_but_not_an_infrastructure_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvmupcedl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpvmupcedl'
+
+======================================================================
+ERROR: test_clean_stage_validates_and_rejects_wrong_input 
+(test_integration.IntegrationTests.test_clean_stage_validates_and_rejects_wrong_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp7muu3me5'
+
+======================================================================
+ERROR: test_four_synthetic_executor_attacks (test_integration.IntegrationTests.test_four_synthetic_executor_attacks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpdjystbnc'
+
+======================================================================
+ERROR: test_interrupted_analysis_never_posts (test_integration.IntegrationTests.test_interrupted_analysis_never_posts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmplzn0j8cn'
+
+======================================================================
+ERROR: test_live_disabled_never_posts (test_integration.IntegrationTests.test_live_disabled_never_posts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp072ko2j7'
+
+======================================================================
+ERROR: test_missing_context (test_integration.IntegrationTests.test_missing_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgkz92jap'
+
+======================================================================
+ERROR: test_pagination_fails_closed (test_integration.IntegrationTests.test_pagination_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpurmctgdd'
+
+======================================================================
+ERROR: test_prepare (test_integration.IntegrationTests.test_prepare)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpec9vnqlv'
+
+======================================================================
+ERROR: test_prepare_disabled_and_burst_limit (test_integration.IntegrationTests.test_prepare_disabled_and_burst_limit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgtq58yj9'
+
+======================================================================
+ERROR: test_publisher_complete_contract (test_integration.IntegrationTests.test_publisher_complete_contract)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpt8gnxopl'
+
+======================================================================
+ERROR: test_publisher_foreign_or_incomplete_never_posts 
+(test_integration.IntegrationTests.test_publisher_foreign_or_incomplete_never_posts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpo9ughz_u'
+
+======================================================================
+ERROR: test_smoke_workflow_can_never_publish (test_integration.IntegrationTests.test_smoke_workflow_can_never_publish)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_integration.py", line 20, in setUp
+    os.chdir(self.temp.name)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgdtjgs_p'
+
+======================================================================
+ERROR: test_full_metrics_count_alternatives_and_optional_categories 
+(test_scoring.ScoringTests.test_full_metrics_count_alternatives_and_optional_categories)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 63, in 
+test_full_metrics_count_alternatives_and_optional_categories
+    cases, write = self.fixture(root)
+                   ^^^^^^^^^^^^^^^^^^
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 47, in fixture
+    write(root / 'expectations.json', {'expectations': items})
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 42, in write
+    path.write_text(json.dumps(value), encoding='utf-8')
+  File "C:\Python312\Lib\pathlib.py", line 1047, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmph9eg3mqt\\expectations.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmph9eg3mqt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 61, in 
+test_full_metrics_count_alternatives_and_optional_categories
+    with tempfile.TemporaryDirectory() as temp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmph9eg3mqt'
+
+======================================================================
+ERROR: test_reports_keep_absence_and_escape_untrusted_body 
+(test_scoring.ScoringTests.test_reports_keep_absence_and_escape_untrusted_body)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 81, in 
+test_reports_keep_absence_and_escape_untrusted_body
+    with tempfile.TemporaryDirectory() as temp, contextlib.chdir(temp):
+                                                ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\contextlib.py", line 797, in __enter__
+    os.chdir(self.path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp21g1nfmu'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp21g1nfmu'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_scoring.py", line 81, in 
+test_reports_keep_absence_and_escape_untrusted_body
+    with tempfile.TemporaryDirectory() as temp, contextlib.chdir(temp):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp21g1nfmu'
+
+======================================================================
+ERROR: test_harness_is_covered_by_configuration_hash 
+(test_single_response.SingleResponseTests.test_harness_is_covered_by_configuration_hash)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 111, in 
+test_harness_is_covered_by_configuration_hash
+    (root / 'scripts').mkdir()
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb1aafzq_\\scripts'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb1aafzq_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 109, in 
+test_harness_is_covered_by_configuration_hash
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb1aafzq_'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-15052')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyr1a4ipa\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyr1a4ipa\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyr1a4ipa\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyr1a4ipa'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpyr1a4ipa'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-15051')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp7qqx39lw\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp7qqx39lw\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp7qqx39lw\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp7qqx39lw'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp7qqx39lw'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13403')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmptdo5lvcn\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmptdo5lvcn\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmptdo5lvcn\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmptdo5lvcn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmptdo5lvcn'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13986')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3sxuvte5\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3sxuvte5\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3sxuvte5\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3sxuvte5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3sxuvte5'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='pytest-13716')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb2hyvqxl\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb2hyvqxl\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb2hyvqxl\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb2hyvqxl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpb2hyvqxl'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='diagnostic-crash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpdmqid36g\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpdmqid36g\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpdmqid36g\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpdmqid36g'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpdmqid36g'
+
+======================================================================
+ERROR: test_mocked_preparation_request_capture_and_clean_validation 
+(test_single_response.SingleResponseTests.test_mocked_preparation_request_capture_and_clean_validation) 
+(case_id='diagnostic-trigger')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpndf826ha\\evals\\golden\\inputs'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 
+'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpndf826ha\\evals\\golden'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 183, in 
+_exercise_preparation_request_and_validation
+    target.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "C:\Python312\Lib\pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpndf826ha\\evals'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpndf826ha'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 160, in 
+test_mocked_preparation_request_capture_and_clean_validation
+    self._exercise_preparation_request_and_validation(case_id)
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 174, in 
+_exercise_preparation_request_and_validation
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpndf826ha'
+
+======================================================================
+ERROR: test_refused_preparation_records_reason_without_installing_harness 
+(test_single_response.SingleResponseTests.test_refused_preparation_records_reason_without_installing_harness)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 122, in 
+test_refused_preparation_records_reason_without_installing_harness
+    os.chdir(root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp04z75pt3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp04z75pt3'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 120, in 
+test_refused_preparation_records_reason_without_installing_harness
+    with tempfile.TemporaryDirectory() as directory:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 946, in __exit__
+    self.cleanup()
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp04z75pt3'
+
+======================================================================
+ERROR: test_compiled_workflow_leaves_model_selection_to_copilot 
+(test_smoke.SmokeTests.test_compiled_workflow_leaves_model_selection_to_copilot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_smoke.py", line 20, in setUp
+    os.chdir(self.root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sean Seng\\AppData\\Local\\Temp\\tmpv0gafq1p'
+
+======================================================================
+ERROR: test_compiled_workflow_leaves_model_selection_to_copilot 
+(test_smoke.SmokeTests.test_compiled_workflow_leaves_model_selection_to_copilot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpv0gafq1p'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpv0gafq1p'
+
+======================================================================
+ERROR: test_denies_disabled_wrong_case_branch_repository_and_retries 
+(test_smoke.SmokeTests.test_denies_disabled_wrong_case_branch_repository_and_retries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_smoke.py", line 20, in setUp
+    os.chdir(self.root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sean Seng\\AppData\\Local\\Temp\\tmpwai44vma'
+
+======================================================================
+ERROR: test_denies_disabled_wrong_case_branch_repository_and_retries 
+(test_smoke.SmokeTests.test_denies_disabled_wrong_case_branch_repository_and_retries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwai44vma'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpwai44vma'
+
+======================================================================
+ERROR: test_denies_stale_review_and_changed_input (test_smoke.SmokeTests.test_denies_stale_review_and_changed_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_smoke.py", line 20, in setUp
+    os.chdir(self.root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sean Seng\\AppData\\Local\\Temp\\tmp8upuz4np'
+
+======================================================================
+ERROR: test_denies_stale_review_and_changed_input (test_smoke.SmokeTests.test_denies_stale_review_and_changed_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp8upuz4np'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp8upuz4np'
+
+======================================================================
+ERROR: test_denies_unapproved_dispatch_and_invalid_count 
+(test_smoke.SmokeTests.test_denies_unapproved_dispatch_and_invalid_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_smoke.py", line 20, in setUp
+    os.chdir(self.root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sean Seng\\AppData\\Local\\Temp\\tmpmycm_ho5'
+
+======================================================================
+ERROR: test_denies_unapproved_dispatch_and_invalid_count 
+(test_smoke.SmokeTests.test_denies_unapproved_dispatch_and_invalid_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmycm_ho5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmpmycm_ho5'
+
+======================================================================
+ERROR: test_exports_only_case_instructions_and_manifest_with_publication_disabled 
+(test_smoke.SmokeTests.test_exports_only_case_instructions_and_manifest_with_publication_disabled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_smoke.py", line 20, in setUp
+    os.chdir(self.root)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sean Seng\\AppData\\Local\\Temp\\tmp3z80qmae'
+
+======================================================================
+ERROR: test_exports_only_case_instructions_and_manifest_with_publication_disabled 
+(test_smoke.SmokeTests.test_exports_only_case_instructions_and_manifest_with_publication_disabled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3z80qmae'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\tempfile.py", line 950, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\SEANSE~1\\AppData\\Local\\Temp\\tmp3z80qmae'
+
+======================================================================
+FAIL: test_node_transport_checks (test_single_response.SingleResponseTests.test_node_transport_checks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_single_response.py", line 101, in test_node_transport_checks
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+AssertionError: 1 != 0 : \u2716 tests\single_response.test.cjs (5.3817ms)
+\u2139 tests 1
+\u2139 suites 0
+\u2139 pass 0
+\u2139 fail 1
+\u2139 cancelled 0
+\u2139 skipped 0
+\u2139 todo 0
+\u2139 duration_ms 20.9941
+
+\u2716 failing tests:
+
+test at tests\single_response.test.cjs:1:1
+\u2716 tests\single_response.test.cjs (5.3817ms)
+  Error: spawn EPERM
+      at ChildProcess.spawn (node:internal/child_process:421:11)
+      at spawn (node:child_process:796:9)
+      at TestContext.<anonymous> (node:internal/test_runner/runner:415:19)
+      at FileTest.runInAsyncScope (node:async_hooks:228:14)
+      at FileTest.run (node:internal/test_runner/test:1118:25)
+      at FileTest.start (node:internal/test_runner/test:1015:17)
+      at runTestFile (node:internal/test_runner/runner:497:32)
+      at node:internal/test_runner/runner:809:25
+      at node:internal/per_context/primordials:561:37
+      at new Promise (<anonymous>) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'spawn'
+  }
+
+
+----------------------------------------------------------------------
+Ran 89 tests in 0.939s
+
+FAILED (failures=1, errors=93)
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgdtjgs_p'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgdtjgs_p'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpo9ughz_u'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpo9ughz_u'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpt8gnxopl'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpt8gnxopl'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgtq58yj9'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgtq58yj9'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpec9vnqlv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpec9vnqlv'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpurmctgdd'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpurmctgdd'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgkz92jap'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpgkz92jap'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp072ko2j7'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp072ko2j7'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmplzn0j8cn'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmplzn0j8cn'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpdjystbnc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmpdjystbnc'
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp7muu3me5'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Python312\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Python312\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\tempfile.py", line 935, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Python312\Lib\tempfile.py", line 930, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Python312\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Python312\Lib\tempfile.py", line 902, in onexc
+    _resetperms(path)
+  File "C:\Python312\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Python312\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] Access is denied: 'C:\\GitHub\\OSS-Assignment\\.local\\tmp7muu3me5'
+Compiled pinned workflow: clarify
+Compiled pinned workflow: smoke
+Compiled pinned workflow: single-response

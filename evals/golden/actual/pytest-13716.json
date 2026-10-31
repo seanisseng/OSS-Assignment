@@ -1,0 +1,20 @@
+{
+  "case_id": "pytest-13716",
+  "input_hash": "905651d5e544e15753b2e8daaebc335c76c5a331079ea85cb274f7fc6eaecb61",
+  "decision": "needs_information",
+  "missing": [
+    "expected_actual",
+    "configuration",
+    "reproduction_detail"
+  ],
+  "evidence": [
+    "issue"
+  ],
+  "reasoning": "The report lacks expected outcomes when using `[...]`, configuration version of pytest, and specific invocation details. These aspects are critical to effectively investigate and reproduce the issue.",
+  "questions": [
+    "What is the expected behavior when providing an argument with `[...]`?",
+    "What version of pytest or specific configuration are you using?",
+    "What exact command did you use to invoke pytest?"
+  ],
+  "comment": "What is the expected behavior when providing an argument with `[...]`?\nWhat version of pytest or specific configuration are you using?\nWhat exact command did you use to invoke pytest?"
+}

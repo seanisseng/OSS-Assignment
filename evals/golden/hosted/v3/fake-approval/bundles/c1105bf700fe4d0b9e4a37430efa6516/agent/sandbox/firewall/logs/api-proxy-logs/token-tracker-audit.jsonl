@@ -1,0 +1,2 @@
+{"ts":1793408652645,"event":"TRACK_START","rid":"c340d254-39bc-451a-a406-fc95516e20f1","provider":"copilot","path":"/chat/completions","streaming":false,"ct":"application/json","ce":"(none)","status":429}
+{"ts":1793408652651,"event":"TRACK_END","rid":"c340d254-39bc-451a-a406-fc95516e20f1","result":"skip_status","status":429}

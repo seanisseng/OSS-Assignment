@@ -11,4 +11,7 @@ evals/golden/single-response-inputs.json text eol=lf
 # Preserve exact downloaded hosted evidence bytes in Git.
 evals/evidence/development-batch-20261030/** -text -whitespace
 evals/golden/hosted/** -text -whitespace
+evals/recovery/** -text -whitespace
+evals/evidence/v3-finalization/** -text -whitespace
+evals/golden/transcripts/*.json -text -whitespace
 evals/evidence/final-preflight/final-revision.patch -whitespace

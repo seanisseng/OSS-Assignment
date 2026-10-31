@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-10-30T19:33:42.954361+00:00",
+  "reviewer": "seanisseng",
+  "approved": true,
+  "source": "User selected: Try only the next unrun case, pytest-14456, and stop afterward (recommended).",
+  "case_id": "pytest-14456",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "commit": "1d8ae5896d67ac071ddad8e90d47615f33a6ada9",
+  "maximum_new_dispatches": 1,
+  "resume_after": "pytest-14533",
+  "infrastructure_review": "Earlier HTTP 429 remains a failed result; this authorizes only the next new case.",
+  "automatic_batch_resume": false,
+  "redispatch_authorized": false
+}

@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-31T01:27:49.867958+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "tests": {
+    "count": 89,
+    "status": "passed",
+    "runtime_seconds": 28.253,
+    "environment": "unsandboxed after sandbox denied temporary-directory operations",
+    "log": "tests.txt"
+  },
+  "checks": [
+    {
+      "name": "evaluate",
+      "command": [
+        "python",
+        "-m",
+        "scripts.evaluate",
+        "--mode",
+        "single-response"
+      ],
+      "exit_code": 0,
+      "log": "evaluate.txt"
+    },
+    {
+      "name": "verify",
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify"
+      ],
+      "exit_code": 0,
+      "log": "verify.txt"
+    },
+    {
+      "name": "submission",
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify",
+        "--submission",
+        "--mode",
+        "single-response"
+      ],
+      "exit_code": 1,
+      "log": "submission.txt"
+    }
+  ],
+  "human_signoff": "pending",
+  "submission_ready": false,
+  "operator_snapshots": "Original local operator source snapshots; ROOT assumed .local execution. Not installed as new frozen runtime scripts."
+}

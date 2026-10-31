@@ -1,0 +1,26 @@
+{
+  "case_id": "diagnostic-trigger",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
+  "explanation": "The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.138123+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure",
+  "hosted_validation": "one gap per question required",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "How is the fixture 'account' defined in the test?",
+    "Where is the fixture 'account' being imported from?",
+    "Has the fixture 'account' been properly registered in the test suite?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

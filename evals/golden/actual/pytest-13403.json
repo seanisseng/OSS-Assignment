@@ -1,0 +1,16 @@
+{
+  "case_id": "pytest-13403",
+  "input_hash": "f0d4709ba7478fe125e99be069e32030b7e7300e1fea57fe73ff47b6f5ca0aaa",
+  "decision": "needs_information",
+  "missing": [
+    "reproducer"
+  ],
+  "evidence": [
+    "issue"
+  ],
+  "reasoning": "The issue describes a request to disable assertion rewriting of external modules in pytest but does not provide a simple case that demonstrates the failure during test module collection.",
+  "questions": [
+    "Can you provide a simple case that reproduces the failure in test module collection?"
+  ],
+  "comment": "Can you provide a simple case that reproduces the failure in test module collection?"
+}

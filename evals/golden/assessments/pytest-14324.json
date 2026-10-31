@@ -1,0 +1,26 @@
+{
+  "case_id": "pytest-14324",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "An overlong quote violates the 240-character contract. The report includes executable example text, callback output, error, expected callback contract and Python/pytest versions. Asking for a minimal example repeats evidence; other environment questions lack a necessary blocker rationale.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. An overlong quote violates the 240-character contract. The report includes executable example text, callback output, error, expected callback contract and Python/pytest versions. Asking for a minimal example repeats evidence; other environment questions lack a necessary blocker rationale.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "An overlong quote violates the 240-character contract. The report includes executable example text, callback output, error, expected callback contract and Python/pytest versions. Asking for a minimal example repeats evidence; other environment questions lack a necessary blocker rationale.",
+  "explanation": "An overlong quote violates the 240-character contract. The report includes executable example text, callback output, error, expected callback contract and Python/pytest versions. Asking for a minimal example repeats evidence; other environment questions lack a necessary blocker rationale.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.177913+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure_and_misjudged",
+  "hosted_validation": "invalid quote length",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you provide a minimal example that reproduces this error?",
+    "Are there any specific configurations or dependencies you have set up apart from pytest 9.0.2?",
+    "What does your test environment look like beyond the Python version and pytest version?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

@@ -1,0 +1,26 @@
+{
+  "case_id": "pytest-13634",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "An overlong quote invalidates the envelope. The frozen key allows targeted import/layout/configuration questions with failure diagnostics. The response asks generic reproducer/isolation questions without identifying the specific import/layout relationship; a raw needs_information label is insufficient for category credit.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. An overlong quote invalidates the envelope. The frozen key allows targeted import/layout/configuration questions with failure diagnostics. The response asks generic reproducer/isolation questions without identifying the specific import/layout relationship; a raw needs_information label is insufficient for category credit.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "An overlong quote invalidates the envelope. The frozen key allows targeted import/layout/configuration questions with failure diagnostics. The response asks generic reproducer/isolation questions without identifying the specific import/layout relationship; a raw needs_information label is insufficient for category credit.",
+  "explanation": "An overlong quote invalidates the envelope. The frozen key allows targeted import/layout/configuration questions with failure diagnostics. The response asks generic reproducer/isolation questions without identifying the specific import/layout relationship; a raw needs_information label is insufficient for category credit.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.182428+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure",
+  "hosted_validation": "invalid quote length",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you provide a detailed reproducible scenario that demonstrates the issue?",
+    "Can you isolate a specific portion of your code or configuration that causes this behavior?",
+    "Are there any specific test cases or conditions that trigger the AssertionError you're encountering?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

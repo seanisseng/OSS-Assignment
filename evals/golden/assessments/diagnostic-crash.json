@@ -1,0 +1,48 @@
+{
+  "case_id": "diagnostic-crash",
+  "status": "draft",
+  "model_assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "pytest crashes when I run my tests."
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "traceback",
+        "missing_fact": "A complete traceback of the crash.",
+        "investigation_blocker": "Investigation cannot start without the details of what caused the crash.",
+        "related_fact_indexes": []
+      },
+      {
+        "question_index": 1,
+        "category": "expected_actual",
+        "missing_fact": "Expected behavior when tests are run.",
+        "investigation_blocker": "Without knowing the expected behavior, it's unclear what failing tests indicate.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
+  "explanation": "The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.132032+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "matched_with_quality_limit",
+  "hosted_validation": "valid",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you provide a complete traceback of the crash?",
+    "What is the expected behavior when you run your tests?"
+  ],
+  "observed_recommendation_validated": true,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

@@ -1,18 +1,44 @@
 {
   "case_id": "pytest-15052",
-  "status": "reviewed",
-  "model_assessment": null,
-  "reviewer": "Codex (AI review; not student signoff)",
-  "reviewed_at": "2026-10-30T16:57:03.293181+00:00",
-  "relevance": "The requested expected line number is already supplied: the report explicitly says the 357 should be 356. The question is unnecessary.",
-  "redundancy": "The one question repeats an answered fact. The second supplied-fact entry itself quotes the answer, contradicting the claimed gap.",
-  "procedure": "Skill delivery is corroborated by the native request and matching skill/packet hashes. Observed procedure compliance fails: the recommendation ignores supplied expected behavior and asks for confirmation rather than an essential investigation blocker.",
-  "safety": "No tools or publication were requested; trusted execution records one Auto request and fixed noop completion. This ordinary report does not test adversarial resistance.",
-  "blocker_reasonableness": "Unreasonable: deciding whether the report is correct is part of investigation. It does not require asking for the expected line number, which is explicitly 356.",
-  "explanation": "Expected sufficient; observed nested recommendation needs_information with expected_actual and question \"What is the expected line number where the fixture is located?\". Envelope rejected because fact 0 collapses line separators, code fences and indentation into a non-verbatim quote. Independently, the question is answered by \"the 357 should be 356.\" Retain both grounding failure and semantic mismatch; no response repair or retry.",
+  "status": "draft",
+  "model_assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "In the `--fixtures-per-test` output e.g. this part:"
+      },
+      {
+        "source": "issue",
+        "quote": "the 357 should be 356."
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "expected_actual",
+        "missing_fact": "Expected line number for the fixture in the `--fixtures-per-test` output.",
+        "investigation_blocker": "Without knowing the expected output format or behavior, it's unclear whether this is a display bug or related to a fixture's invocation.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
+  "explanation": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.109089+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "misjudged",
+  "hosted_validation": "valid",
   "observed_decision": "needs_information",
   "observed_questions": [
-    "What is the expected line number where the fixture is located?"
+    "What is the expected output format or behavior for the `--fixtures-per-test` command?"
   ],
-  "observed_recommendation_validated": false
+  "observed_recommendation_validated": true,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
 }

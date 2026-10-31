@@ -1,0 +1,9 @@
+{
+  "status": "stopped",
+  "started_at": "2026-10-31T01:18:42.069471+00:00",
+  "completed": [],
+  "automatic_restart_authorized": false,
+  "current_case": "pytest-14533",
+  "error": "dry-run execution incomplete: stop without retry",
+  "finished_at": "2026-10-31T01:18:42.528420+00:00"
+}

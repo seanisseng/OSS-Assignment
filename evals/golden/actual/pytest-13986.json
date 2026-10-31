@@ -1,0 +1,18 @@
+{
+  "case_id": "pytest-13986",
+  "input_hash": "729f1b6012c2d76b2ede0f95c39aac49ed818d0d70c3fcc7cad54d9ed03f0b31",
+  "decision": "needs_information",
+  "missing": [
+    "reproducer",
+    "expected_actual"
+  ],
+  "evidence": [
+    "issue"
+  ],
+  "reasoning": "The report describes an observed behavior where subtest failures are double-counted, but lacks a minimal example to reproduce the issue. It also does not specify the expected versus actual summary output, which is essential for diagnosing and understanding the problem.",
+  "questions": [
+    "Can you provide a minimal working example demonstrating the double-counting issue?",
+    "What is the expected output for the summary compared to the actual output you are seeing?"
+  ],
+  "comment": "Can you provide a minimal working example demonstrating the double-counting issue?\nWhat is the expected output for the summary compared to the actual output you are seeing?"
+}

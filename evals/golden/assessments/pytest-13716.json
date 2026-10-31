@@ -1,0 +1,64 @@
+{
+  "case_id": "pytest-13716",
+  "status": "draft",
+  "model_assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "`pytest x.py[param]` is silently treated as `pytest x.py`"
+      },
+      {
+        "source": "issue",
+        "quote": "If an argument contains a `[...]` on the path part, it is silently ignored."
+      },
+      {
+        "source": "issue",
+        "quote": "I think it should be a usage error instead."
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "expected_actual",
+        "missing_fact": "Expected behavior when providing an argument with `[...]`",
+        "investigation_blocker": "Need to understand what the user expected to happen versus what actually happened.",
+        "related_fact_indexes": []
+      },
+      {
+        "question_index": 1,
+        "category": "configuration",
+        "missing_fact": "Information on the specific pytest version or configuration used.",
+        "investigation_blocker": "This information is essential for reproducing the issue.",
+        "related_fact_indexes": []
+      },
+      {
+        "question_index": 2,
+        "category": "reproduction_detail",
+        "missing_fact": "Details about how the user invoked pytest and the exact command used.",
+        "investigation_blocker": "The command is necessary to start reproducing the issue.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The report explicitly contrasts silent ignoring of [...] in the path with the requested usage error. Asking expected behavior repeats the answer; the version/configuration/invocation questions do not explain why they block investigation of that specified behavior.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The report explicitly contrasts silent ignoring of [...] in the path with the requested usage error. Asking expected behavior repeats the answer; the version/configuration/invocation questions do not explain why they block investigation of that specified behavior.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The report explicitly contrasts silent ignoring of [...] in the path with the requested usage error. Asking expected behavior repeats the answer; the version/configuration/invocation questions do not explain why they block investigation of that specified behavior.",
+  "explanation": "The report explicitly contrasts silent ignoring of [...] in the path with the requested usage error. Asking expected behavior repeats the answer; the version/configuration/invocation questions do not explain why they block investigation of that specified behavior.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.127018+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "misjudged",
+  "hosted_validation": "valid",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "What is the expected behavior when providing an argument with `[...]`?",
+    "What version of pytest or specific configuration are you using?",
+    "What exact command did you use to invoke pytest?"
+  ],
+  "observed_recommendation_validated": true,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

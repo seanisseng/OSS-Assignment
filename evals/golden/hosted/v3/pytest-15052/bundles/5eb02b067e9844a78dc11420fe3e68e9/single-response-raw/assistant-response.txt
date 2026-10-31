@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "In the `--fixtures-per-test` output e.g. this part:"
+      },
+      {
+        "source": "issue",
+        "quote": "the 357 should be 356."
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "expected_actual",
+        "missing_fact": "Expected line number for the fixture in the `--fixtures-per-test` output.",
+        "investigation_blocker": "Without knowing the expected output format or behavior, it's unclear whether this is a display bug or related to a fixture's invocation.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "recommendation": {
+    "case_id": "pytest-15052",
+    "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016",
+    "decision": "needs_information",
+    "missing": [
+      "expected_actual"
+    ],
+    "evidence": [
+      "issue"
+    ],
+    "reasoning": "The issue states that the line number 357 should be 356, but it is unclear what 356 represents in terms of expected output. This absence of clear expected output format or behavior prevents investigation from starting.",
+    "questions": [
+      "What is the expected output format or behavior for the `--fixtures-per-test` command?"
+    ],
+    "comment": "What is the expected output format or behavior for the `--fixtures-per-test` command?"
+  }
+}

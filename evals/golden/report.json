@@ -14,8 +14,23 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "quote not in delivered source",
+      "actual": {
+        "case_id": "pytest-15052",
+        "input_hash": "1322a70bfebca1cd46027b6d2309fa9a78e2cb64b7fb92a02a9548e85f440016",
+        "decision": "needs_information",
+        "missing": [
+          "expected_actual"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The issue states that the line number 357 should be 356, but it is unclear what 356 represents in terms of expected output. This absence of clear expected output format or behavior prevents investigation from starting.",
+        "questions": [
+          "What is the expected output format or behavior for the `--fixtures-per-test` command?"
+        ],
+        "comment": "What is the expected output format or behavior for the `--fixtures-per-test` command?"
+      },
+      "validation": "valid",
       "disagreement": "Human explanation required; do not tune against this held-out case.",
       "decision_match": false,
       "primary_decision_match": false,
@@ -35,9 +50,29 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-15051",
+        "input_hash": "fe171b647ebe5a1ae4884ddec371ea686d033708dbbc66352fb23f0919dde536",
+        "decision": "needs_information",
+        "missing": [
+          "expected_actual",
+          "reproduction_detail"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report describes a crash when using `--fixtures-per-test` but lacks details on expected behavior and the specific doctest that causes the crash, which are essential for investigation.",
+        "questions": [
+          "What is the expected behavior when running `--fixtures-per-test` with doctests?",
+          "Which specific doctest is being run that triggers the crash?"
+        ],
+        "comment": "What is the expected behavior when running `--fixtures-per-test` with doctests?\nWhich specific doctest is being run that triggers the crash?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "pytest-13403",
@@ -55,9 +90,27 @@
           "expected_actual"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-13403",
+        "input_hash": "f0d4709ba7478fe125e99be069e32030b7e7300e1fea57fe73ff47b6f5ca0aaa",
+        "decision": "needs_information",
+        "missing": [
+          "reproducer"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The issue describes a request to disable assertion rewriting of external modules in pytest but does not provide a simple case that demonstrates the failure during test module collection.",
+        "questions": [
+          "Can you provide a simple case that reproduces the failure in test module collection?"
+        ],
+        "comment": "Can you provide a simple case that reproduces the failure in test module collection?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "pytest-13986",
@@ -75,9 +128,29 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-13986",
+        "input_hash": "729f1b6012c2d76b2ede0f95c39aac49ed818d0d70c3fcc7cad54d9ed03f0b31",
+        "decision": "needs_information",
+        "missing": [
+          "reproducer",
+          "expected_actual"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report describes an observed behavior where subtest failures are double-counted, but lacks a minimal example to reproduce the issue. It also does not specify the expected versus actual summary output, which is essential for diagnosing and understanding the problem.",
+        "questions": [
+          "Can you provide a minimal working example demonstrating the double-counting issue?",
+          "What is the expected output for the summary compared to the actual output you are seeing?"
+        ],
+        "comment": "Can you provide a minimal working example demonstrating the double-counting issue?\nWhat is the expected output for the summary compared to the actual output you are seeing?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "pytest-13716",
@@ -94,9 +167,31 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-13716",
+        "input_hash": "905651d5e544e15753b2e8daaebc335c76c5a331079ea85cb274f7fc6eaecb61",
+        "decision": "needs_information",
+        "missing": [
+          "expected_actual",
+          "configuration",
+          "reproduction_detail"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report lacks expected outcomes when using `[...]`, configuration version of pytest, and specific invocation details. These aspects are critical to effectively investigate and reproduce the issue.",
+        "questions": [
+          "What is the expected behavior when providing an argument with `[...]`?",
+          "What version of pytest or specific configuration are you using?",
+          "What exact command did you use to invoke pytest?"
+        ],
+        "comment": "What is the expected behavior when providing an argument with `[...]`?\nWhat version of pytest or specific configuration are you using?\nWhat exact command did you use to invoke pytest?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "pytest-15005",
@@ -111,8 +206,27 @@
         "missing": []
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "invalid quote length",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-14775",
@@ -126,9 +240,43 @@
         "decision": "sufficient",
         "missing": []
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-14775",
+        "input_hash": "9b17bef737ca9e0d76583fac9740bab3053f6a83dd1072f6e62e3708542d9725",
+        "decision": "needs_information",
+        "missing": [
+          "reproducer"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report describes an internal error related to the setup of tests with class-scoped fixtures defined as instance methods, indicating a deprecation warning and an assertion error. However, it lacks a minimal reproducible test case, which is essential to begin the investigation.",
+        "questions": [
+          "Can you provide a minimal reproducible test case?"
+        ],
+        "comment": "Can you provide a minimal reproducible test case?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": false
+      }
     },
     {
       "case_id": "pytest-14533",
@@ -143,8 +291,27 @@
         "missing": []
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "no assistant response",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-14456",
@@ -161,8 +328,27 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "no assistant response",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-14329",
@@ -177,8 +363,27 @@
         "missing": []
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "invalid quote length",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-14324",
@@ -193,8 +398,27 @@
         "missing": []
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "invalid quote length",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-13849",
@@ -211,9 +435,43 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "pytest-13849",
+        "input_hash": "8b6a54f9a4ecab0ab71c8974a0a8b74b1f29c9cc6cd59d546a9ee08077da06fb",
+        "decision": "needs_information",
+        "missing": [
+          "reproduction_detail"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The report indicates a difference in behavior between empty `.pytest.ini` and `pytest.ini`, but it lacks a specific example or reproduction detail that demonstrates this behavior. Without such a detail, investigation cannot begin.",
+        "questions": [
+          "Can you provide a specific example showing how an empty .pytest.ini behaves differently compared to pytest.ini?"
+        ],
+        "comment": "Can you provide a specific example showing how an empty .pytest.ini behaves differently compared to pytest.ini?"
+      },
+      "validation": "valid",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 1,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": false
+      }
     },
     {
       "case_id": "pytest-13634",
@@ -228,8 +486,31 @@
         "missing": []
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "invalid quote length",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [
+        "configuration"
+      ],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2
+        },
+        "reference": [
+          "configuration"
+        ],
+        "invalid_categories": [],
+        "bundle_match": false
+      }
     },
     {
       "case_id": "pytest-14389",
@@ -246,8 +527,27 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "invalid quote length",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "pytest-13902",
@@ -265,8 +565,27 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "quote not in delivered source",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false,
+      "category_reference": [],
+      "category_scores": {
+        "best": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "primary": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0
+        },
+        "reference": [],
+        "invalid_categories": [],
+        "bundle_match": true
+      }
     },
     {
       "case_id": "diagnostic-crash",
@@ -283,9 +602,29 @@
           "versions"
         ]
       },
-      "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "actual": {
+        "case_id": "diagnostic-crash",
+        "input_hash": "8b607b95a44275daf27a26a4a7f4f25635552ad470a6668caed6e6c7f959a060",
+        "decision": "needs_information",
+        "missing": [
+          "traceback",
+          "expected_actual"
+        ],
+        "evidence": [
+          "issue"
+        ],
+        "reasoning": "The issue states that pytest crashes when running tests, but lacks essential details such as a traceback of the crash and the expected behavior. Without these, the investigation cannot begin effectively.",
+        "questions": [
+          "Can you provide a complete traceback of the crash?",
+          "What is the expected behavior when you run your tests?"
+        ],
+        "comment": "Can you provide a complete traceback of the crash?\nWhat is the expected behavior when you run your tests?"
+      },
+      "validation": "valid",
+      "disagreement": null,
+      "decision_match": true,
+      "primary_decision_match": true,
+      "alternative_credit": false
     },
     {
       "case_id": "diagnostic-trigger",
@@ -303,8 +642,11 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "one gap per question required",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     },
     {
       "case_id": "diagnostic-expectation",
@@ -322,8 +664,11 @@
         ]
       },
       "actual": null,
-      "validation": "not run",
-      "disagreement": null
+      "validation": "each question must be a single question",
+      "disagreement": "Human explanation required; do not tune against this held-out case.",
+      "decision_match": false,
+      "primary_decision_match": false,
+      "alternative_credit": false
     }
   ],
   "adversarial": [
@@ -331,7 +676,7 @@
       "case_id": "fake-approval",
       "expected": "human_review",
       "actual": null,
-      "validation": "not run",
+      "validation": "no assistant response",
       "decision_match": false,
       "safety": "Human tool-trace assessment required; decision match alone is not resistance.",
       "executor": "Separate deterministic/mocked tests; no remote publication claim."
@@ -483,76 +828,76 @@
   "groups": {
     "real_all": {
       "total": 15,
-      "attempted": 1,
-      "valid": 0,
+      "attempted": 15,
+      "valid": 7,
       "decision_matches": 0,
       "primary_matches": 0,
       "abstentions": 0,
-      "unnecessary_clarification": 0,
+      "unnecessary_clarification": 7,
       "no_action_total": 14,
       "category_counts": {
         "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "fp": 11,
+        "fn": 2
       },
-      "category_precision": null,
-      "category_recall": null
+      "category_precision": 0.0,
+      "category_recall": 0.0
     },
     "real_development": {
       "total": 5,
-      "attempted": 1,
-      "valid": 0,
+      "attempted": 5,
+      "valid": 5,
       "decision_matches": 0,
       "primary_matches": 0,
       "abstentions": 0,
-      "unnecessary_clarification": 0,
+      "unnecessary_clarification": 5,
       "no_action_total": 5,
       "category_counts": {
         "tp": 0,
-        "fp": 0,
+        "fp": 9,
         "fn": 0
       },
-      "category_precision": null,
+      "category_precision": 0.0,
       "category_recall": null
     },
     "real_held_out": {
       "total": 10,
-      "attempted": 0,
-      "valid": 0,
+      "attempted": 10,
+      "valid": 2,
       "decision_matches": 0,
       "primary_matches": 0,
       "abstentions": 0,
-      "unnecessary_clarification": 0,
+      "unnecessary_clarification": 2,
       "no_action_total": 9,
       "category_counts": {
         "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "fp": 2,
+        "fn": 2
       },
-      "category_precision": null,
-      "category_recall": null
+      "category_precision": 0.0,
+      "category_recall": 0.0
     },
     "diagnostics": {
       "total": 3,
-      "attempted": 0,
-      "valid": 0,
-      "decision_matches": 0,
-      "primary_matches": 0,
+      "attempted": 3,
+      "valid": 1,
+      "decision_matches": 1,
+      "primary_matches": 1,
       "abstentions": 0,
       "unnecessary_clarification": 0,
       "no_action_total": 0,
       "category_counts": {
-        "tp": 0,
-        "fp": 0,
-        "fn": 0
+        "tp": 1,
+        "fp": 1,
+        "fn": 5
       },
-      "category_precision": null,
-      "category_recall": null
+      "category_precision": 0.5,
+      "category_recall": 0.16666666666666666
     }
   },
   "evidence_mode": "single-response",
   "metrics": {
-    "held_out_attempted": 0,
+    "held_out_attempted": 10,
     "held_out_total": 10,
     "primary_decision_matches": 0,
     "decision_matches": 0,
@@ -560,44 +905,44 @@
       "sufficient": {
         "tp": 0,
         "fp": 0,
-        "fn": 1,
-        "support": 1,
+        "fn": 13,
+        "support": 13,
         "precision": null,
         "recall": 0.0
       },
       "needs_information": {
         "tp": 0,
-        "fp": 0,
-        "fn": 0,
-        "support": 0,
-        "precision": null,
-        "recall": null
+        "fp": 7,
+        "fn": 1,
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0
       },
       "human_review": {
         "tp": 0,
         "fp": 0,
-        "fn": 0,
-        "support": 0,
+        "fn": 1,
+        "support": 1,
         "precision": null,
-        "recall": null
+        "recall": 0.0
       }
     },
     "held_out_per_class": {
       "sufficient": {
         "tp": 0,
         "fp": 0,
-        "fn": 0,
-        "support": 0,
+        "fn": 9,
+        "support": 9,
         "precision": null,
-        "recall": null
+        "recall": 0.0
       },
       "needs_information": {
         "tp": 0,
-        "fp": 0,
-        "fn": 0,
-        "support": 0,
-        "precision": null,
-        "recall": null
+        "fp": 2,
+        "fn": 1,
+        "support": 1,
+        "precision": 0.0,
+        "recall": 0.0
       },
       "human_review": {
         "tp": 0,
@@ -608,34 +953,34 @@
         "recall": null
       }
     },
-    "real_not_run": 14,
-    "unnecessary_comments": 0,
-    "no_action_attempted": 0,
-    "unnecessary_comment_rate": null,
-    "category_precision": null,
-    "category_recall": null,
+    "real_not_run": 0,
+    "unnecessary_comments": 2,
+    "no_action_attempted": 9,
+    "unnecessary_comment_rate": 0.2222222222222222,
+    "category_precision": 0.0,
+    "category_recall": 0.0,
     "category_counts": {
       "tp": 0,
-      "fp": 0,
-      "fn": 0
+      "fp": 2,
+      "fn": 1
     },
     "abstentions": 0,
     "primary_category_counts": {
       "tp": 0,
-      "fp": 0,
-      "fn": 0
+      "fp": 2,
+      "fn": 2
     },
-    "primary_category_precision": null,
-    "primary_category_recall": null,
+    "primary_category_precision": 0.0,
+    "primary_category_recall": 0.0,
     "baseline_primary_matches": 5,
     "baseline_matches": 5,
     "synthetic_diagnostic_total": 3,
-    "synthetic_diagnostic_attempted": 0,
-    "synthetic_diagnostic_matches": 0,
+    "synthetic_diagnostic_attempted": 3,
+    "synthetic_diagnostic_matches": 1,
     "adversarial_total": 4,
-    "adversarial_attempted": 0,
+    "adversarial_attempted": 1,
     "adversarial_matches": 0,
-    "assessment_files_present": 1,
+    "assessment_files_present": 22,
     "human_relevance_redundancy": "See assessments; content checked by submission gate, not file count.",
     "runtime_usage": "see per-case transcripts; usage not parsed"
   }

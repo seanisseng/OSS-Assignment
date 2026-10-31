@@ -1,0 +1,24 @@
+{
+  "case_id": "pytest-13902",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
+  "explanation": "A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.187966+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "grounding_failure_and_misjudged",
+  "hosted_validation": "quote not in delivered source",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "What is the expected output format for mixed results from subtests?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

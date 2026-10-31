@@ -1,0 +1,16 @@
+{
+  "case_id": "pytest-14775",
+  "input_hash": "9b17bef737ca9e0d76583fac9740bab3053f6a83dd1072f6e62e3708542d9725",
+  "decision": "needs_information",
+  "missing": [
+    "reproducer"
+  ],
+  "evidence": [
+    "issue"
+  ],
+  "reasoning": "The report describes an internal error related to the setup of tests with class-scoped fixtures defined as instance methods, indicating a deprecation warning and an assertion error. However, it lacks a minimal reproducible test case, which is essential to begin the investigation.",
+  "questions": [
+    "Can you provide a minimal reproducible test case?"
+  ],
+  "comment": "Can you provide a minimal reproducible test case?"
+}

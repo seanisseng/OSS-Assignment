@@ -17,7 +17,7 @@ The clarification coding is an AI-assisted draft, not an established demand esti
 ## Final architecture
 
 Trusted Python selects a complete report, untrusted supplemental evidence and up to
-four traceback-linked excerpts, within 32 KiB. Expectations, later comments and Git
+four complete frozen source files, within 320 KiB. Expectations, later comments and Git
 history are excluded before inference. Evidence is never executed or browsed.
 A custom Node harness makes one tool-free Copilot gateway request using native Auto.
 No critic, repair call or agent loop runs. Output allowance is 4,096 tokens; existing
@@ -53,8 +53,11 @@ The earlier configuration completed seven workflows: real decision agreement 1/5
 diagnostic agreement 2/2. Preserve [that batch](evals/evidence/development-batch-20261030/)
 and [smoke failures](docs/HOSTED-ACTION-ISSUES.md) separately.
 
-The final 22-call study awaits approval of the tested diff, configuration hash and
-scope. There are no final measurements or improvement claims yet. The
+The approved study archived 19/22 hosted attempts: eight valid outputs, eight
+contract failures and three HTTP 429 failures; three attacks were not dispatched.
+Held-out real decision agreement is 0/10. Separate six-case Codex recovery has
+six valid outputs and 5/6 decision agreement; it does not replace hosted failures.
+[Phase 1 and batch findings](docs/V3-PHASE1-RESULT.md) explain these limitations. The
 [per-case review](docs/reviews/FINAL-22-CASE-REVIEW.md) records expected/actual decisions,
 workflow and validation status, questions, explanations and original evidence links.
 [Reproduction instructions](evals/golden/README.md) distinguish evidence completeness,
@@ -65,7 +68,7 @@ matches 5/10 held-out. Report development, held-out, diagnostic and attack resul
 separately, with reliability, unnecessary clarification, category precision/recall
 and abstentions. Only one real primary requires clarification: accuracy alone can
 conceal this imbalance. Frozen conditional regex scores are lexical proxies.
-Small sample size, AI-assisted expectations, limited excerpts and unpinned Auto
+Small sample size, AI-assisted expectations, frozen context and unpinned Auto
 limit generalization. A proxy estimate is not a GitHub billing deduction.
 
 Rejected: using template completeness as the sole judge and automatic issue-triggered
@@ -80,7 +83,7 @@ upstream changes, destination selection and commands chosen by model output.
 | Least privilege | Analysis contents/actions read, tools disabled, empty network allowlist; generated lock inspected. Hosted isolation claims require evidence. |
 | Safe outputs | Artifact-only envelope, bounded I/O, fixed trusted noop; exact responses retained. Structural tests do not prove semantic safety. |
 | Human approval | Exact diff/hash/22-call approval precedes push and inference. Case assessments remain drafts until actual review. Publication is disabled. |
-| Budgets | One request per case; 22 planned, five proxy credits each, 110 ceiling sum. Daily frontmatter is bypassed for manual runs. Paid overages stay disabled. |
+| Budgets | One request per case; 22 planned, five proxy credits each, 110 ceiling sum. Manual runs bypass daily frontmatter. Paid-overage settings are unverified. |
 | Audit trail | Native request/skill/packet/response and run/commit checks; no invented Codex events. Previous attempts preserved. Account usage recorded where available. |
 | Kill switch | Launch variable checked before preparation; collector clears it in finally. Independently verify after interruption; hard kills can prevent cleanup. |
 | Drift | Future use would require golden reruns weekly/after changes and semantic review by seanisseng. Final study instructions stay frozen throughout. |
@@ -124,8 +127,8 @@ recovery and stopping procedures; no unattended deployment is claimed.
 
 ## Unresolved gaps and AI use
 
-Final inference, case review, account-usage evidence and submission checks remain
-pending. No final score, final commit URL or improvement is claimed prematurely.
+Case review, billing confirmation and three hosted attack cases remain incomplete.
+The strict single-response submission gate fails; separate recovery is not a waiver.
 Authenticity still depends on trusted GitHub/operator records; hashes alone cannot
 authenticate fabricated logs. Model semantics, sample coverage and billing remain
 limited. See the linked detailed reviews and logs rather than assuming perfection.

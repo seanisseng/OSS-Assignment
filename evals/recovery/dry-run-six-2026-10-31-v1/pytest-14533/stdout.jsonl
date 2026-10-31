@@ -1,0 +1,11 @@
+{"type":"thread.started","thread_id":"01a18f89-f5c6-7083-80fc-cfa971d0000e"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\docs-researcher.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_1","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\explorer.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_2","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\reviewer.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_3","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\docs-researcher.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_4","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\explorer.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_5","type":"error","message":"Ignoring malformed agent role definition: agent role file at C:\\Users\\Sean Seng\\.codex\\agents\\reviewer.toml must define a non-empty `name`"}}
+{"type":"item.completed","item":{"id":"item_6","type":"error","message":"Model metadata for `gpt-5.5` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."}}
+{"type":"turn.started"}
+{"type":"error","message":"The 'gpt-5.5' model is not supported when using Codex with a ChatGPT account."}
+{"type":"turn.failed","error":{"message":"The 'gpt-5.5' model is not supported when using Codex with a ChatGPT account."}}

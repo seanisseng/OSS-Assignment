@@ -1,0 +1,26 @@
+{
+  "case_id": "pytest-14329",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The fifth quote is 677 characters, exceeding 240. The report supplies expected marker data=1 versus observed 0. Asking expected output repeats supplied facts; execution/configuration requests are not established as essential blockers.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The fifth quote is 677 characters, exceeding 240. The report supplies expected marker data=1 versus observed 0. Asking expected output repeats supplied facts; execution/configuration requests are not established as essential blockers.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The fifth quote is 677 characters, exceeding 240. The report supplies expected marker data=1 versus observed 0. Asking expected output repeats supplied facts; execution/configuration requests are not established as essential blockers.",
+  "explanation": "The fifth quote is 677 characters, exceeding 240. The report supplies expected marker data=1 versus observed 0. Asking expected output repeats supplied facts; execution/configuration requests are not established as essential blockers.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.172848+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure_and_misjudged",
+  "hosted_validation": "invalid quote length",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "What is the expected output for the test that is failing?",
+    "How are the tests being executed (what command)?",
+    "What are the pytest configurations in use?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

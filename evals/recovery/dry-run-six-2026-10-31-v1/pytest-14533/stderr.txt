@@ -1,0 +1,41 @@
+2026-10-31T01:19:05.306307Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.308287Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.308697Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:05.325572Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.326178Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.326650Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:05.440619Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.441332Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.441794Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:05.648875Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.649453Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.649991Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:05.663896Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.664856Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.665855Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:05.922715Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:05.923153Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:05.923452Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:06.044642Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.201100Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-10-31T01:19:07.421586Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.437864Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.445807Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.448406Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.493485Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.497583Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.499870Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.502612Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.524511Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.531549Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:07.543319Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:07.543632Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:07.544002Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:07.897481Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:07.898126Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:07.898610Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`
+2026-10-31T01:19:08.053163Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: The 'gpt-5.5' model is not supported when using Codex with a ChatGPT account.
+2026-10-31T01:19:08.259987Z  WARN codex_models_manager::model_info: Unknown model gpt-5.5 is used. This will use fallback model metadata.
+2026-10-31T01:19:08.292765Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\docs-researcher.toml must define a non-empty `name`
+2026-10-31T01:19:08.293251Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\explorer.toml must define a non-empty `name`
+2026-10-31T01:19:08.293743Z  WARN codex_agent_roles::loader: Ignoring malformed agent role definition: agent role file at C:\Users\Sean Seng\.codex\agents\reviewer.toml must define a non-empty `name`

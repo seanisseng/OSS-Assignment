@@ -1,0 +1,2 @@
+{"ts":1793384379579,"event":"TRACK_START","rid":"8e3303fb-8266-422d-b488-cfd4e46a82e2","provider":"copilot","path":"/chat/completions","streaming":false,"ct":"application/json","ce":"(none)","status":200}
+{"ts":1793384379584,"event":"TRACK_END","rid":"8e3303fb-8266-422d-b488-cfd4e46a82e2","result":"ok","streaming":false,"model":"gpt-4o-mini-2024-07-18","input":50763,"output":549,"cache_read":1920}

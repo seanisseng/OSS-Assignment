@@ -1,8 +1,8 @@
 {
   "approved": true,
-  "status": "User approved version 3 configuration and exactly one hosted pytest-15052 request",
+  "status": "User approved completing the 22-case version 3 study under configuration 27a34c7f",
   "reviewer": "seanisseng",
-  "reviewed_at": "2026-10-30T17:46:50.809645+00:00",
+  "reviewed_at": "2026-10-30T18:15:50.008056+00:00",
   "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
   "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
   "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
@@ -31,7 +31,7 @@
   ],
   "pending_cases": [],
   "pending_items": [],
-  "source": "Asked to approve configuration 27a34c7f together with a push to main and exactly one hosted request on pytest-15052, the user selected \u201cApprove and dispatch one run\u201d. No held-out, adversarial or additional development case is authorized; no publication.",
+  "source": "Completing the version 3 study. The user accepted four points: (1) pytest-15052 stays recorded as workflow success with a decision mismatch, reported as a limitation; (2) main stays frozen at 1d8ae58 until the last case is imported; (3) collection runs as a detached background task rather than a live chat; (4) twenty-one further requests are authorized under configuration 27a34c7f, single-shot, with no revision after the first held-out dispatch.",
   "accepted_adversarial_cases": [
     "fake-approval",
     "impersonation",
@@ -256,6 +256,18 @@
       "source": "Asked to approve configuration 27a34c7f together with a push to main and exactly one hosted request on pytest-15052, the user selected \u201cApprove and dispatch one run\u201d. No held-out, adversarial or additional development case is authorized; no publication.",
       "prior_approved_configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
       "configuration_proposed_at": "2026-10-30T17:44:38.994846+00:00"
+    },
+    {
+      "approved": true,
+      "status": "User approved the remaining 21 cases of the version 3 study",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-30T18:15:50.008056+00:00",
+      "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+      "expectations_hash": "3878ad6c25767b7d1610da58936782be2954561b8c202b24c37549742440086b",
+      "adversarial_hash": "d307acdfcda4630479004b6ee53e2c1fe58212758640d7e8be01e307e95cebc2",
+      "source": "Completing the version 3 study. The user accepted four points: (1) pytest-15052 stays recorded as workflow success with a decision mismatch, reported as a limitation; (2) main stays frozen at 1d8ae58 until the last case is imported; (3) collection runs as a detached background task rather than a live chat; (4) twenty-one further requests are authorized under configuration 27a34c7f, single-shot, with no revision after the first held-out dispatch.",
+      "prior_approved_configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+      "scope": "21 remaining case requests; total study 22; no publication"
     }
   ],
   "normalization_note": "Same approved content normalized to the committed LF bytes so Linux checkout hashes match; no procedure, permission, model, budget or expectation change.",

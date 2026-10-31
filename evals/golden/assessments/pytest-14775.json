@@ -1,0 +1,64 @@
+{
+  "case_id": "pytest-14775",
+  "status": "draft",
+  "model_assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "causes not just the intended error:"
+      },
+      {
+        "source": "issue",
+        "quote": "results in an internal pytest error when setting up the second test:"
+      },
+      {
+        "source": "issue",
+        "quote": "pytest.PytestRemovedIn10Warning: Class-scoped fixtures defined as instance methods are deprecated."
+      },
+      {
+        "source": "issue",
+        "quote": "AssertionError"
+      },
+      {
+        "source": "issue",
+        "quote": "test_class_fixt.py EE"
+      },
+      {
+        "source": "issue",
+        "quote": "ERROR at setup of TestFixt.test_1"
+      },
+      {
+        "source": "issue",
+        "quote": "ERROR at setup of TestFixt.test_2"
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "reproducer",
+        "missing_fact": "A minimal reproducible test case.",
+        "investigation_blocker": "Without a minimal test case, it's difficult to reproduce and diagnose the issue.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "The report already includes the class-scoped fixture example, -Werror trigger, commit and diagnostic output. Asking for a minimal reproducible test case repeats supplied evidence.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The report already includes the class-scoped fixture example, -Werror trigger, commit and diagnostic output. Asking for a minimal reproducible test case repeats supplied evidence.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The report already includes the class-scoped fixture example, -Werror trigger, commit and diagnostic output. Asking for a minimal reproducible test case repeats supplied evidence.",
+  "explanation": "The report already includes the class-scoped fixture example, -Werror trigger, commit and diagnostic output. Asking for a minimal reproducible test case repeats supplied evidence.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.149222+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "misjudged",
+  "hosted_validation": "valid",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you provide a minimal reproducible test case?"
+  ],
+  "observed_recommendation_validated": true,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

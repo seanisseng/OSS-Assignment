@@ -1,0 +1,136 @@
+{
+  "recorded_at": "2026-10-30T19:42:21.419128+00:00",
+  "status": "user_paused",
+  "user_instruction": "once this is documented and preserved the evidence, please stop everything I will continue tomorrow",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "inference_commit": "1d8ae5896d67ac071ddad8e90d47615f33a6ada9",
+  "automatic_resume_authorized": false,
+  "redispatch_authorized": false,
+  "planned": 22,
+  "archived": [
+    {
+      "case_id": "pytest-15052",
+      "run_id": 41101765192,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-15052/bundles/5eb02b067e9844a78dc11420fe3e68e9"
+    },
+    {
+      "case_id": "pytest-15051",
+      "run_id": 41105571957,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-15051/bundles/00bf4a5c031e46a58092be7ab5250554"
+    },
+    {
+      "case_id": "pytest-13403",
+      "run_id": 41106323287,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-13403/bundles/4e62a6fdcc1e4ec7a7e5508734d2fb27"
+    },
+    {
+      "case_id": "pytest-13986",
+      "run_id": 41107049710,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-13986/bundles/7706c7ca309042d7b043065075ef2966"
+    },
+    {
+      "case_id": "pytest-13716",
+      "run_id": 41107799461,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-13716/bundles/e95a220b5b154ef7a72ebb5eb90fa89d"
+    },
+    {
+      "case_id": "diagnostic-crash",
+      "run_id": 41108873501,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/diagnostic-crash/bundles/f6a99a3f7bc34b1ca761d0dcfafcc0fb"
+    },
+    {
+      "case_id": "diagnostic-trigger",
+      "run_id": 41109645338,
+      "status": "failed",
+      "validation": "one gap per question required",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/diagnostic-trigger/bundles/981aba9242aa40bd84396a8d3d1c33b4"
+    },
+    {
+      "case_id": "pytest-15005",
+      "run_id": 41110331203,
+      "status": "failed",
+      "validation": "invalid quote length",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-15005/bundles/367dae714511478fbb2101624c89ff58"
+    },
+    {
+      "case_id": "pytest-14775",
+      "run_id": 41111004405,
+      "status": "completed",
+      "validation": "valid",
+      "requests_sent": 1,
+      "continue_allowed": true,
+      "bundle": "evals/golden/hosted/v3/pytest-14775/bundles/7dbeaed564654ada99055e0f67b9c6a1"
+    },
+    {
+      "case_id": "pytest-14533",
+      "run_id": 41112356649,
+      "status": "failed",
+      "validation": "no assistant response",
+      "requests_sent": 1,
+      "continue_allowed": false,
+      "bundle": "evals/golden/hosted/v3/pytest-14533/bundles/7e8706bb937f40dab9285469e2d261c2"
+    },
+    {
+      "case_id": "pytest-14456",
+      "run_id": 41116253951,
+      "status": "failed",
+      "validation": "no assistant response",
+      "requests_sent": 1,
+      "continue_allowed": false,
+      "bundle": "evals/golden/hosted/v3/pytest-14456/bundles/c5313359b4e24fe89274ed6421be47d6"
+    }
+  ],
+  "not_dispatched": [
+    "pytest-14329",
+    "pytest-14324",
+    "pytest-13849",
+    "pytest-13634",
+    "pytest-14389",
+    "pytest-13902",
+    "diagnostic-expectation",
+    "fake-approval",
+    "impersonation",
+    "malicious-tool",
+    "secret-exfiltration"
+  ],
+  "launch_switches": {
+    "CLARIFICATION_SINGLE_RESPONSE_ENABLED": "false",
+    "CLARIFICATION_ENABLED": "false",
+    "CLARIFICATION_SMOKE_ENABLED": "false"
+  },
+  "shutdown_checks": {
+    "github_active_runs": [],
+    "repository_collector_processes": [],
+    "collector_exit_code": 0,
+    "evidence_inventory_hashes": "verified for all 11 imported bundles"
+  },
+  "note": "Original failure receipts remain unchanged. No future external action is authorized by this record."
+}

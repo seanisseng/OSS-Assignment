@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "Second hasattr uses the string `\"obj\"` instead of the variable `obj`."
+      },
+      {
+        "source": "issue",
+        "quote": "So they fall through to `ApproxSequenceLike` instead of `ApproxNumpy`."
+      },
+      {
+        "source": "src/_pytest/python_api.py",
+        "quote": "        elif hasattr(obj, \"__array__\") or hasattr(\"obj\", \"__array_interface__\"):"
+      },
+      {
+        "source": "src/_pytest/python_api.py",
+        "quote": "    np: Any = sys.modules.get(\"numpy\")"
+      }
+    ],
+    "gaps": []
+  },
+  "recommendation": {
+    "case_id": "pytest-14456",
+    "input_hash": "3606a9621e9e628cf5958896c26ead2f1eb2c29c0ca159e3a57c55f05308e38b",
+    "decision": "sufficient",
+    "missing": [],
+    "evidence": [
+      "issue",
+      "src/_pytest/python_api.py"
+    ],
+    "reasoning": "The report identifies the exact expression, affected protocol (__array_interface__ without __array__), and expected versus reported dispatch behavior. The supplied source includes the relevant conversion helper and approx dispatch, allowing investigation to begin. A standalone reproducer, traceback, invocation, or environment versions are not essential blockers for this source-level report.",
+    "questions": [],
+    "comment": ""
+  }
+}

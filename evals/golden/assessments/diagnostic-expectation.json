@@ -1,0 +1,25 @@
+{
+  "case_id": "diagnostic-expectation",
+  "status": "draft",
+  "model_assessment": null,
+  "reviewer": null,
+  "reviewed_at": null,
+  "relevance": "A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
+  "explanation": "A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.192013+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "contract_failure",
+  "hosted_validation": "each question must be a single question",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "What precisely does 'this is broken' mean? What is the failure or error message?",
+    "Which version of pytest exhibits the failure?"
+  ],
+  "observed_recommendation_validated": false,
+  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+}

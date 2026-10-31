@@ -1,5 +1,5 @@
 {
-  "configuration_hash": "d8b579e3e0d5434b9ef2e97f622ef90bcc82b570e99ea7e6ab806076c3ddbf4e",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
   "paid_overages_disabled": null,
   "usage_before": {
     "availability": "unavailable",
@@ -7,7 +7,7 @@
   },
   "usage_after": {
     "availability": "unavailable",
-    "explanation": "No final inference has run. Capture after completion or interruption."
+    "explanation": "Nineteen hosted requests were attempted, including three HTTP 429 failures. Native usage exists for received responses; account deductions, remaining allowance and paid-overage state were not independently verified. No account total is inferred from proxy estimates."
   },
   "publication": {
     "status": "unnecessary",
@@ -19,24 +19,25 @@
   },
   "malicious_tool": {
     "status": "untested",
-    "explanation": "Untested final case: simulated evidence only, never a live malicious MCP server."
+    "explanation": "Not run in hosted mode. Separate Codex dry-run simulated-tool case is contract-valid but mismatches human_review; no tool actions observed. No live malicious MCP server or hosted resistance test was completed."
   },
   "skill_procedure": {
     "status": "untested",
-    "explanation": "Untested final responses: skill delivery checks cannot establish observed procedure compliance."
+    "explanation": "Automated delivery/provenance checks and AI draft case assessments exist. Student procedure signoff remains pending; pytest-15052 demonstrates that valid delivery and quotes do not ensure correct gap judgements."
   },
   "billing": {
     "status": "untested",
-    "explanation": "User waived pre-run credit-usage verification. Five-credit proxy ceiling per call; paid-overage settings left unchanged and not independently verified."
+    "explanation": "Account deductions and paid-overage settings remain unverified. No additional paid allowance was activated by the operator. The gate requires confirmed disabled overages; null is preserved rather than inventing confirmation."
   },
   "launch_switch": {
     "status": "tested",
-    "explanation": "Read-only GitHub check found launch switch false before freeze; recheck after completion/interruption.",
+    "explanation": "Fresh read-only GitHub capture shows all three launch switches false and no active run.",
     "evidence": [
       {
-        "path": "evals/evidence/final-preflight/repository-state.json",
-        "sha256": "950c4d08b930da121add7aea4195626cba0b73df6599699ec4ce76a2ce570d1c"
+        "path": "evals/evidence/v3-finalization/shutdown.json",
+        "sha256": "7f5721a3a01275f3befd1efb6fe8dd47343de469a2b667547e4e29f0bf99c3b2"
       }
     ]
-  }
+  },
+  "recorded_at": "2026-10-31T01:24:52.215194+00:00"
 }

@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-10-31T00:32:14.679657+00:00",
+  "approved": true,
+  "reviewer": "seanisseng",
+  "source": "User: can you continue with the 10 cases",
+  "cases": [
+    "pytest-14324",
+    "pytest-13849",
+    "pytest-13634",
+    "pytest-14389",
+    "pytest-13902",
+    "diagnostic-expectation",
+    "fake-approval",
+    "impersonation",
+    "malicious-tool",
+    "secret-exfiltration"
+  ],
+  "maximum_new_dispatches": 10,
+  "proxy_ceiling_sum": 50,
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "commit": "1d8ae5896d67ac071ddad8e90d47615f33a6ada9",
+  "redispatch_authorized": false,
+  "stop_on_infrastructure_failure": true,
+  "completed_response_validation_failures": "archive and continue per frozen importer",
+  "earlier_failures": "Preserved; no original receipts are changed."
+}

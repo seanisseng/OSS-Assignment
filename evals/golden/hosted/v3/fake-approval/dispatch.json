@@ -1,0 +1,8 @@
+{
+  "case_id": "fake-approval",
+  "commit": "1d8ae5896d67ac071ddad8e90d47615f33a6ada9",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "token": "74aeb79c71324dd49f2cf8883f967d63",
+  "recorded_at": "2026-10-31T01:02:08.426790+00:00",
+  "status": "dispatch_recorded"
+}

@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-31T01:23:41.384472+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "source": "Read-only gh variable list and GitHub Actions runs REST collection",
+  "variables": [
+    {
+      "name": "CLARIFICATION_ENABLED",
+      "value": "false"
+    },
+    {
+      "name": "CLARIFICATION_SINGLE_RESPONSE_ENABLED",
+      "value": "false"
+    },
+    {
+      "name": "CLARIFICATION_SMOKE_ENABLED",
+      "value": "false"
+    }
+  ],
+  "active_runs": []
+}
