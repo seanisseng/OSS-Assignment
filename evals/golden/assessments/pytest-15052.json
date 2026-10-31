@@ -1,6 +1,6 @@
 {
   "case_id": "pytest-15052",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": {
     "supplied_facts": [
       {
@@ -22,13 +22,13 @@
       }
     ]
   },
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:51:57.328594+00:00",
   "relevance": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
-  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "redundancy": "The question repeats the expected line-number correction already supplied: the report says 357 should be 356.",
   "procedure": "Request, packet and skill hashes corroborate delivery. The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
   "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
-  "blocker_reasonableness": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
+  "blocker_reasonableness": "Unreasonable: the report supplies the expected correction, so no expected-behavior clarification is needed to begin investigation.",
   "explanation": "The quoted report says \"the 357 should be 356\". Asking for expected output format/behavior repeats supplied expected behavior. The model quoted the answer but still declared an expected_actual gap.",
   "draft_author": "Codex (AI draft; not human signoff)",
   "drafted_at": "2026-10-31T01:24:52.109089+00:00",
@@ -40,5 +40,5 @@
     "What is the expected output format or behavior for the `--fixtures-per-test` command?"
   ],
   "observed_recommendation_validated": true,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve this assessment; record my signoff as seanisseng."
 }

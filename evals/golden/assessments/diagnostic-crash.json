@@ -1,6 +1,6 @@
 {
   "case_id": "diagnostic-crash",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": {
     "supplied_facts": [
       {
@@ -25,8 +25,8 @@
       }
     ]
   },
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:44.233590+00:00",
   "relevance": "The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. The missing crash diagnostic is an appropriate question and the frozen decision/category checks match. Asking expected behavior is less useful: a crash report already implies execution should not crash. Decision agreement does not make every question essential.",
@@ -44,5 +44,5 @@
     "What is the expected behavior when you run your tests?"
   ],
   "observed_recommendation_validated": true,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: diagnostic-crash, diagnostic-trigger, diagnostic-expectation."
 }

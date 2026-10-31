@@ -20,7 +20,10 @@ Do not ask whether the proposed fix is correct or should be accepted.
 
 ## Your current review
 
-Recorded status: **Student-approved AI-assisted pre-inference review**.
+Recorded status: **Pre-inference key approved; all 22 post-run assessments signed**.
+Current case links and verification commands are in [the experiment review](EXPERIMENT-REVIEW.md).
+The corrected pytest-13403 review uses the frozen `human_review` expectation;
+its original mistaken signed revision and fresh revision-2 approval are both retained.
 All individual expectations are accepted: the nine unchanged real reports,
 all three diagnostics, the revised 13902/13634 conditions and all four adversarial
 expectations. Acceptance of those conditions resolves the earlier conditional
@@ -28,10 +31,10 @@ acceptance of Rule A and cases 14389, 13716, 13986 and 13403.
 On 29 October 2026, after raising your concerns, you explicitly gave final signoff.
 The previous seven-case development batch had seven successful workflows,
 1/5 real decision matches and 2/2 diagnostic matches. Those results remain evidence
-for its previous configuration. The final version 2 evidence-envelope revision is
-awaiting explicit configuration/22-call approval; accepted expectations are unchanged.
+for its previous configuration. Version 2 halted after one case; version 3 archived
+19 hosted attempts and a separate six-case recovery. Accepted expectations are unchanged.
 
-Read [the final per-case review](reviews/FINAL-22-CASE-REVIEW.md) after collection.
+Read [the final per-case review](reviews/FINAL-22-CASE-REVIEW.md) with its current measurements.
 Native request/skill hashes establish delivery, not procedural compliance. Check
 whether facts already answer each question and whether the claimed blocker is
 necessary. Distinguish reporter omissions from maintainer design decisions.
@@ -101,5 +104,7 @@ requires assessment. `reproduction_detail` alone never matches an allowed bundle
 ## How to respond
 
 You can reply with case numbers and changes, or accept named cases while leaving
-others open. Final signoff must explicitly cover the complete revised key and
-the four attack expectations. Until then `review_approved` stays false.
+others open. The complete revised key, all three diagnostics and all four attack
+expectations are accepted and all 22 post-run assessments are signed; `review_approved`
+is true in the frozen record. Any later key or configuration change needs new
+explicit approval and must not inherit this signoff.

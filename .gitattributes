@@ -14,4 +14,10 @@ evals/golden/hosted/** -text -whitespace
 evals/recovery/** -text -whitespace
 evals/evidence/v3-finalization/** -text -whitespace
 evals/golden/transcripts/*.json -text -whitespace
+evals/golden/assessments/*.json -text -whitespace
+evals/evidence/review-signoffs/** -text -whitespace
+evals/evidence/review-tools/** -text -whitespace
+evals/evidence/v3-evidence-manifest.json -text -whitespace
+evals/evidence/v3-review-report.json -text -whitespace
+review_tools/*.py text eol=lf
 evals/evidence/final-preflight/final-revision.patch -whitespace

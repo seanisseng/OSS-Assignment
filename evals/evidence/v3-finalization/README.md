@@ -1,7 +1,8 @@
 # Version 3 evidence finalization
 
-This package records an evidence-and-review draft, not a completed submission.
-The frozen configuration remains
+This package is a historical draft snapshot at its capture time, not the current
+submission state; the subsequent student-signoff section below records the later
+approvals. The frozen configuration remains
 `27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece`.
 
 ## Checks
@@ -21,7 +22,7 @@ The frozen configuration remains
   See the exact output in `submission.txt` and status in `checks.json`. Failure
   is retained rather than bypassing the gate or fabricating missing evidence.
 
-All 22 assessments are AI drafts, with null human reviewer and review time.
+At this original finalization, all 22 assessments were unsigned AI drafts.
 Nineteen hosted attempts have evidence; three hosted attack transcripts do not
 exist. Separate six-case recovery records are not substituted into hosted paths.
 Paid-overage settings remain unknown until the student supplies an actual
@@ -62,3 +63,7 @@ outputs and file inventories remain the authoritative execution evidence.
 
 AI-use statement: Codex drafted this package and case assessments, performed the
 automated checks, and preserved failures. Human semantic review is pending.
+
+## Subsequent student signoff
+
+All 22 case assessments, including six separate recovery interpretations, now have explicit seanisseng approvals. Current additional paid usage is user-confirmed disabled or hard-capped at $0; deductions and historical settings remain unverified. Original logs above describe the earlier draft state. See [approval receipts](../review-signoffs/) and the post-signoff verification records for the remaining hosted-only limitations.

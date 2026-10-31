@@ -1,0 +1,14 @@
+{
+  "case_id": "pytest-13403",
+  "revision": 2,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T02:22:58.855750+00:00",
+  "source": "User explicitly selected: Approve corrected revision 2; record my fresh signoff as seanisseng.",
+  "scope": "Fresh approval of corrected expected human_review assessment only; original result, frozen key, scores, prior receipt and billing scope unchanged.",
+  "assessment_before_sha256": "875b5531c0ae58c237ae9dc25979b1a8246bbc831b06852f49fb247873d5c44a",
+  "assessment_after_sha256": "e3e88704855e7598e2cf939e11fa1622184596234f6ad5d46031778e96fe4b79",
+  "input_sha256": "7cdce5f25ff65170bafa23bf91e04b1761201a22579b14f99d692fe4c9a5101a",
+  "transcript_sha256": "d74b682e3fb14b8bd49677bcd9ddc879a7c676d78084f9f02fe645383b2bdd11",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "supersedes": "evals/evidence/review-signoffs/pytest-13403.json"
+}

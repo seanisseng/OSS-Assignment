@@ -1,5 +1,7 @@
 # Single-response audit and HTTP 400 correction
 
+Historical audit of earlier configuration attempts; it is not current submission
+status. See [the experiment review](EXPERIMENT-REVIEW.md) for final evidence.
 Status: documentation/source audit and local regression tests. Configuration
 `3e538ec9...` was pushed as `c5cd1cd` and tested once in
 [run 40900450929](https://github.com/seanisseng/OSS-Assignment/actions/runs/40900450929).

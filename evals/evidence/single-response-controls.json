@@ -1,6 +1,6 @@
 {
   "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
-  "paid_overages_disabled": null,
+  "paid_overages_disabled": true,
   "usage_before": {
     "availability": "unavailable",
     "explanation": "User explicitly authorized execution without verifying credit usage. CLI billing endpoint returned 404 requiring user scope; no credential expansion performed. Account deductions and remaining allowance unverified."
@@ -23,11 +23,17 @@
   },
   "skill_procedure": {
     "status": "untested",
-    "explanation": "Automated delivery/provenance checks and AI draft case assessments exist. Student procedure signoff remains pending; pytest-15052 demonstrates that valid delivery and quotes do not ensure correct gap judgements."
+    "explanation": "Student case assessment signoff is complete for all 22 cases, including the six separate recovery interpretations. Reviewed hosted answers contain procedural judgement failures; no blanket skill-compliance or missing hosted response claim is made. The three unanswered and three unrun hosted cases cannot demonstrate hosted procedure compliance."
   },
   "billing": {
     "status": "untested",
-    "explanation": "Account deductions and paid-overage settings remain unverified. No additional paid allowance was activated by the operator. The gate requires confirmed disabled overages; null is preserved rather than inventing confirmation."
+    "explanation": "seanisseng explicitly confirms current additional paid usage is disabled or hard-capped at $0. This is a current user attestation, not independent verification of billing enforcement, historic settings, actual deductions or remaining allowance. Account usage remains unavailable.",
+    "evidence": [
+      {
+        "path": "evals/evidence/review-signoffs/billing-confirmation.json",
+        "sha256": "ea1eba258c1933cbf1e1a352ca0356d78790c32407b665ae7e08c890c0f1455f"
+      }
+    ]
   },
   "launch_switch": {
     "status": "tested",
@@ -39,5 +45,11 @@
       }
     ]
   },
-  "recorded_at": "2026-10-31T01:24:52.215194+00:00"
+  "recorded_at": "2026-10-31T01:24:52.215194+00:00",
+  "paid_overages_confirmation": {
+    "path": "evals/evidence/review-signoffs/billing-confirmation.json",
+    "sha256": "ea1eba258c1933cbf1e1a352ca0356d78790c32407b665ae7e08c890c0f1455f",
+    "source": "user attestation",
+    "confirmed_at": "2026-10-31T01:57:34.436184+00:00"
+  }
 }

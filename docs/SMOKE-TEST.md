@@ -2,7 +2,8 @@
 
 Historical retry notes; the hosted result below supersedes earlier pending claims.
 See [the complete failure record](HOSTED-ACTION-ISSUES.md) and
-[the current pending configuration](SIMPLIFIED-WORKFLOW.md) for current status.
+[the historical simplified configuration](SIMPLIFIED-WORKFLOW.md).
+Current status and results are in [the experiment review](EXPERIMENT-REVIEW.md).
 
 The user authorized one replacement attempt on 29 October 2026. Case: pytest-15051.
 The first run remains in GitHub Actions history; local debug downloads were removed

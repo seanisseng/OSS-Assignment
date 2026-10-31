@@ -1,0 +1,77 @@
+python : test_approval_checks_scope_time_hash_commit_and_ceiling 
+(test_review_tools.ReviewToolsTests.test_approval_checks_scope_time_hash_commit_and_ceiling) ... ok
+At line:2 char:1
++ python -m unittest discover -s tests -p test_review_tools.py -v *> .l ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_approval_c...ceiling) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+test_billing_attestation_is_not_independent_enforcement_test 
+(test_review_tools.ReviewToolsTests.test_billing_attestation_is_not_independent_enforcement_test) ... ok
+test_cli_replay_requires_prepare_only_and_never_exposes_execute 
+(test_review_tools.ReviewToolsTests.test_cli_replay_requires_prepare_only_and_never_exposes_execute) ... ok
+test_cli_verify_and_report_have_explicit_exit_codes 
+(test_review_tools.ReviewToolsTests.test_cli_verify_and_report_have_explicit_exit_codes) ... ok
+test_current_package_is_verified_without_network_or_inference 
+(test_review_tools.ReviewToolsTests.test_current_package_is_verified_without_network_or_inference) ... ok
+test_manifest_duplicate_fields_fail_closed 
+(test_review_tools.ReviewToolsTests.test_manifest_duplicate_fields_fail_closed) ... FAIL
+test_manifest_rejects_missing_scope_without_accessing_network 
+(test_review_tools.ReviewToolsTests.test_manifest_rejects_missing_scope_without_accessing_network) ... ok
+test_measurements_keep_denominators_and_modes_separate 
+(test_review_tools.ReviewToolsTests.test_measurements_keep_denominators_and_modes_separate) ... ok
+test_recovery_refuses_changed_runtime_before_executing_node 
+(test_review_tools.ReviewToolsTests.test_recovery_refuses_changed_runtime_before_executing_node) ... FAIL
+test_recovery_rejects_tamper_and_completed_hosted_substitution 
+(test_review_tools.ReviewToolsTests.test_recovery_rejects_tamper_and_completed_hosted_substitution) ... ok
+test_replay_only_prepares_and_refuses_overwrite 
+(test_review_tools.ReviewToolsTests.test_replay_only_prepares_and_refuses_overwrite) ... ok
+test_report_writes_case_links_without_inventing_missing_transcripts 
+(test_review_tools.ReviewToolsTests.test_report_writes_case_links_without_inventing_missing_transcripts) ... ok
+test_review_input_json_serialization_eols_are_portable_not_editable 
+(test_review_tools.ReviewToolsTests.test_review_input_json_serialization_eols_are_portable_not_editable) ... ok
+test_review_requires_current_hash_and_correct_expected_decision 
+(test_review_tools.ReviewToolsTests.test_review_requires_current_hash_and_correct_expected_decision) ... ok
+test_safe_paths_reject_escape_and_missing 
+(test_review_tools.ReviewToolsTests.test_safe_paths_reject_escape_and_missing) ... ok
+test_scoped_approval_uses_latest_applicable_event_without_backdating 
+(test_review_tools.ReviewToolsTests.test_scoped_approval_uses_latest_applicable_event_without_backdating) ... ok
+test_trace_preserves_loader_errors_without_calling_them_tools 
+(test_review_tools.ReviewToolsTests.test_trace_preserves_loader_errors_without_calling_them_tools) ... ok
+test_trace_requires_one_fresh_completed_thread_without_actions 
+(test_review_tools.ReviewToolsTests.test_trace_requires_one_fresh_completed_thread_without_actions) ... ok
+
+======================================================================
+FAIL: test_manifest_duplicate_fields_fail_closed 
+(test_review_tools.ReviewToolsTests.test_manifest_duplicate_fields_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_review_tools.py", line 237, in test_manifest_duplicate_fields_fail_closed
+    self.assertTrue(any('duplicate JSON key' in e for e in verify(root)['errors']))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_recovery_refuses_changed_runtime_before_executing_node 
+(test_review_tools.ReviewToolsTests.test_recovery_refuses_changed_runtime_before_executing_node)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\GitHub\OSS-Assignment\tests\test_review_tools.py", line 231, in 
+test_recovery_refuses_changed_runtime_before_executing_node
+    check_recovery(ROOT,entry,manifest,'no assistant response')
+  File "C:\GitHub\OSS-Assignment\review_tools\checks.py", line 164, in check_recovery
+    proc = subprocess.run(['node', '-e',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\unittest\mock.py", line 1137, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\unittest\mock.py", line 1141, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\unittest\mock.py", line 1196, in _execute_mock_call
+    raise effect
+AssertionError: must not execute changed runtime
+
+----------------------------------------------------------------------
+Ran 18 tests in 8.080s
+
+FAILED (failures=2)

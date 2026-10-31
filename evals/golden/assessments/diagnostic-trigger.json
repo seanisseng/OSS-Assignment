@@ -1,9 +1,9 @@
 {
   "case_id": "diagnostic-trigger",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": null,
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:44.233590+00:00",
   "relevance": "The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. The fixture-not-found diagnostic lacks fixture definition/layout. Those questions can be relevant, but three questions have only one gap assessment; no valid recommendation is credited.",
@@ -22,5 +22,5 @@
     "Has the fixture 'account' been properly registered in the test suite?"
   ],
   "observed_recommendation_validated": false,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: diagnostic-crash, diagnostic-trigger, diagnostic-expectation."
 }

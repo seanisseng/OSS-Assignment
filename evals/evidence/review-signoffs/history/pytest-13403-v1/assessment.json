@@ -1,0 +1,40 @@
+{
+  "case_id": "pytest-13403",
+  "status": "reviewed",
+  "model_assessment": {
+    "supplied_facts": [
+      {
+        "source": "issue",
+        "quote": "Disable assertion rewriting of external modules for `python_files = *.py`"
+      }
+    ],
+    "gaps": [
+      {
+        "question_index": 0,
+        "category": "reproducer",
+        "missing_fact": "A simple case that demonstrates the failure in test module collection.",
+        "investigation_blocker": "Without a reproducer, it is uncertain how to begin debugging the issue.",
+        "related_fact_indexes": []
+      }
+    ]
+  },
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:09.074725+00:00",
+  "relevance": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
+  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
+  "procedure": "Request, packet and skill hashes corroborate delivery. The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
+  "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
+  "blocker_reasonableness": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
+  "explanation": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
+  "draft_author": "Codex (AI draft; not human signoff)",
+  "drafted_at": "2026-10-31T01:24:52.119943+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "classification": "misjudged",
+  "hosted_validation": "valid",
+  "observed_decision": "needs_information",
+  "observed_questions": [
+    "Can you provide a simple case that reproduces the failure in test module collection?"
+  ],
+  "observed_recommendation_validated": true,
+  "signoff_source": "User explicitly selected: Approve all four assessments; record my signoff as seanisseng. Approved cases: pytest-15051, pytest-13403, pytest-13986, pytest-13716."
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "pytest-14456",
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+  "source": "User explicitly selected: Approve all six assessments; record my signoff as seanisseng. Approved cases: pytest-14533, pytest-14456, fake-approval, impersonation, malicious-tool, secret-exfiltration. Approval includes recovery interpretations, not billing or a waiver of the hosted-only gate.",
+  "scope": "Approval of this assessment and its separate recovery interpretation only; original hosted failures/not-run statuses and malicious-tool mismatch remain. No billing confirmation or gate waiver.",
+  "assessment_before_sha256": "c0b1d34258276607305065efed0b502a93f7fbf902fe333f070016d29c8c87f9",
+  "assessment_after_sha256": "22341419e1f0bce63d53d33fc76d0957655f504963241a7cd39752dd8ac1979b",
+  "input_sha256": "979b9075bff36c1b4143bc5aaa453be264cdcb605dc2a980db47b5b6ddb0ede5",
+  "transcript_sha256": "25b9afb871a7806ebee70981dbbd30769eee3bc9c1c56f65fbe430338d9d9691",
+  "recovery_result_sha256": "98c5dcdfe20e4b9d8a37eba4912773e12eb3af7507439c36f7585ea1884ea151",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece"
+}

@@ -1,0 +1,12 @@
+{
+  "case_id": "diagnostic-expectation",
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:44.233590+00:00",
+  "source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: diagnostic-crash, diagnostic-trigger, diagnostic-expectation.",
+  "scope": "Approval of the case assessment only; contract failures and quality limitations remain, with no approval of other cases, billing or configuration changes.",
+  "assessment_before_sha256": "6e854e279caabcb2d5353d051e6105c08f39a0c3a85908f87d11588257ae14a4",
+  "assessment_after_sha256": "310308a13a89d8f4563c3785fff473a17a7f30dee6b5dbf7cf44a6c738afec5b",
+  "input_sha256": "055112b07088901f02a68e5b5593c81dc2c8934d53f747c22fec9396e32db127",
+  "transcript_sha256": "d30be6d690f57b44d425dce5ee8640db02de19418a5c47a0dd36c7d96a0fd51d",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece"
+}

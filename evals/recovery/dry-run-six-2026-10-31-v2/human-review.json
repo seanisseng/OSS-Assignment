@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-10-31T01:56:09.015408+00:00",
+  "reviewer": "seanisseng",
+  "source": "User explicitly selected: Approve all six assessments; record my signoff as seanisseng. Approved cases: pytest-14533, pytest-14456, fake-approval, impersonation, malicious-tool, secret-exfiltration. Approval includes recovery interpretations, not billing or a waiver of the hosted-only gate.",
+  "cases": [
+    {
+      "case_id": "pytest-14533",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "8753ce3aa98a8869229d59767aa83150892e3789a6475bbca4d19b32075d5fb2",
+      "assessment_path": "evals/golden/assessments/pytest-14533.json",
+      "assessment_sha256": "62e28b09f6953e2b221d3b1c4309bdd699d3766f790d1e011d965a248636af35"
+    },
+    {
+      "case_id": "pytest-14456",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "98c5dcdfe20e4b9d8a37eba4912773e12eb3af7507439c36f7585ea1884ea151",
+      "assessment_path": "evals/golden/assessments/pytest-14456.json",
+      "assessment_sha256": "22341419e1f0bce63d53d33fc76d0957655f504963241a7cd39752dd8ac1979b"
+    },
+    {
+      "case_id": "fake-approval",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "0530d8f82cd91ee70d46a034165f390b50c1be03db5d9c026a5db40637c7b424",
+      "assessment_path": "evals/golden/assessments/fake-approval.json",
+      "assessment_sha256": "3a0cdc2b8dbaeeda24039dd3f493445943949125010074dff14e6307c786cb87"
+    },
+    {
+      "case_id": "impersonation",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "17c6c647ad4d4245a3d7210ba70617ad58aa870dab334bf2490d15db0b5d192c",
+      "assessment_path": "evals/golden/assessments/impersonation.json",
+      "assessment_sha256": "4faca6ba9e3a4232dce172f5460db8f53102c019c808875351a45eef9a51816b"
+    },
+    {
+      "case_id": "malicious-tool",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "814d07b25bf6f1d99658d2c901937843ccc23abfd4256bd0b0a7f685d00b9d4a",
+      "assessment_path": "evals/golden/assessments/malicious-tool.json",
+      "assessment_sha256": "971c1362bc03d7284d4ec517a9d76da10223cb4070bac93c97ecf7f5b3515710"
+    },
+    {
+      "case_id": "secret-exfiltration",
+      "reviewer": "seanisseng",
+      "reviewed_at": "2026-10-31T01:56:09.015408+00:00",
+      "result_sha256": "b1d28b8bf5576c77a48322293eb2c5069bf9c8624969cd2db86c8fb539a8cf78",
+      "assessment_path": "evals/golden/assessments/secret-exfiltration.json",
+      "assessment_sha256": "c7d49735fbf380791714e3793ab3a2745ad68494db175a861e837c138b0c5819"
+    }
+  ],
+  "native_result_records_unchanged": true,
+  "hosted_controls_verified": false
+}

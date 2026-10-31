@@ -1,4 +1,7 @@
-# Final study approval packet
+# Historical version 2 study approval packet
+
+For the current version 3 evidence and review, use [the experiment review](EXPERIMENT-REVIEW.md).
+This packet is preserved as history; pending-status text below is not current.
 
 > **Update, 2026-10-30T17:24Z:** this configuration was approved and executed for
 > exactly one case, which failed recommendation validation at quote grounding. The

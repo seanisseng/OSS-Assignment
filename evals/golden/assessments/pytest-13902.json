@@ -1,9 +1,9 @@
 {
   "case_id": "pytest-13902",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": null,
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:55:21.310841+00:00",
   "relevance": "A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. A quote is not a verbatim substring of delivered text. Independently, the report states mixed pass/fail colours versus all-green documentation and separately suggests symbol differentiation. Asking expected format overlooks supplied facts and conflates documentation correction with a design choice.",
@@ -20,5 +20,5 @@
     "What is the expected output format for mixed results from subtests?"
   ],
   "observed_recommendation_validated": false,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: pytest-13634, pytest-14389, pytest-13902."
 }

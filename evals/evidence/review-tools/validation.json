@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-10-31T03:04:12.052343+00:00",
+  "frozen_configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "tests_passed": 111,
+  "new_tests": 22,
+  "coverage_percent": 98,
+  "local_links_valid": true,
+  "current_docs_relative_links": 256,
+  "design_lines": 150,
+  "long_non_table_design_prose": false,
+  "new_tool_secret_scan": "passed",
+  "inference_requests_launched": 0,
+  "push_authorized": false,
+  "remaining_limitations": [
+    "Historical hosted-only gates still fail; current mixed evidence audit is separate.",
+    "Recovery does not verify hosted controls or isolate a causal model effect.",
+    "Billing is a current user attestation."
+  ]
+}

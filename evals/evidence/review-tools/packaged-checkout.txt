@@ -1,0 +1,49 @@
+{
+  "errors": [],
+  "reviews_complete": 22,
+  "hosted_controls_verified_by_recovery": false,
+  "billing": {
+    "verification": "user_attestation",
+    "historical_deductions_verified": false,
+    "rate_limit_reset_verified": false
+  },
+  "docs": {
+    "entry_point": "docs/EXPERIMENT-REVIEW.md",
+    "documents": 9,
+    "relative_links": 256
+  },
+  "review_tool_files": {
+    "__init__.py": "9cc25d307dfb350b95e12d442ed51e3debfd7ca74d91220863c107819f5d3db6",
+    "__main__.py": "cc33d66a2400d6abb48fb8965b28c02aeb8a7ac905eff22dafacc53766d885bf",
+    "checks.py": "1813f9a7fc1fe0a870ef648a42177c5ee73e77c6267ad4e42077b660a919743a",
+    "replay.py": "fbeefbb0d4c66e7d1e61586694677dee27e65322ac6472e527cf53b59f7ca057",
+    "reporting.py": "5acec3c45bda6d346b04dcd37aa61e4b57490b14ef54deeccc2bc85288cc000c"
+  },
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "inference_commit": "1d8ae5896d67ac071ddad8e90d47615f33a6ada9",
+  "hosted_requests": 19,
+  "measurements": {
+    "hosted": {
+      "total": 22,
+      "attempted": 19,
+      "responses": 16,
+      "valid": 8,
+      "contract_failures": 8,
+      "transport_failures": 3,
+      "not_dispatched": 3,
+      "rejected_responses_with_questions": 8
+    },
+    "held_out": {
+      "total": 10,
+      "attempted": 10,
+      "valid": 2,
+      "end_to_end_decision_matches": 0,
+      "decision_matches_among_valid": 0
+    },
+    "recovery": {
+      "responses": 6,
+      "valid": 6,
+      "decision_matches": 5
+    }
+  }
+}

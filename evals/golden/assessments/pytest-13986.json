@@ -1,6 +1,6 @@
 {
   "case_id": "pytest-13986",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": {
     "supplied_facts": [
       {
@@ -33,8 +33,8 @@
       }
     ]
   },
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:09.074725+00:00",
   "relevance": "The report supplies a concrete one-test/three-subtest scenario and both current and desired summary counts. Asking expected versus actual summary output is redundant. A reproducer request is not justified as essential to begin investigating the reporting change.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. The report supplies a concrete one-test/three-subtest scenario and both current and desired summary counts. Asking expected versus actual summary output is redundant. A reproducer request is not justified as essential to begin investigating the reporting change.",
@@ -52,5 +52,5 @@
     "What is the expected output for the summary compared to the actual output you are seeing?"
   ],
   "observed_recommendation_validated": true,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all four assessments; record my signoff as seanisseng. Approved cases: pytest-15051, pytest-13403, pytest-13986, pytest-13716."
 }

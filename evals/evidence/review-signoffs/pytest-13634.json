@@ -1,0 +1,12 @@
+{
+  "case_id": "pytest-13634",
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:55:21.310841+00:00",
+  "source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: pytest-13634, pytest-14389, pytest-13902.",
+  "scope": "Approval of this assessment only; contract failures and semantic limitations remain. No approval of other cases, billing or configuration changes.",
+  "assessment_before_sha256": "dc3197d8e77b3fbfb7e05f068e4f1e0e73be445b1378386f7298a2a3ee60c8fc",
+  "assessment_after_sha256": "a3c05456581f64b3de80c05543d9cd3aae7d382f387818fbdf728c629cf19f7a",
+  "input_sha256": "69dadca45018004bbaa0094ab8a7423ac47876e5c9662ad45ad7e759d8f7b69a",
+  "transcript_sha256": "5cbec491d8fd21f15af6bb127aec37d078ff516e1ee6f58874ecabdd57266b97",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece"
+}

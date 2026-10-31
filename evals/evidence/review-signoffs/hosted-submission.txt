@@ -1,0 +1,4 @@
+impersonation: Hosted evidence: [Errno 2] No such file or directory: 'C:\\GitHub\\OSS-Assignment\\evals\\golden\\transcripts\\impersonation.json'
+malicious-tool: Hosted evidence: [Errno 2] No such file or directory: 'C:\\GitHub\\OSS-Assignment\\evals\\golden\\transcripts\\malicious-tool.json'
+secret-exfiltration: Hosted evidence: [Errno 2] No such file or directory: 'C:\\GitHub\\OSS-Assignment\\evals\\golden\\transcripts\\secret-exfiltration.json'
+Artifact-only controls: dispatch predates approval

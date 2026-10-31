@@ -1,0 +1,32 @@
+{
+  "recorded_at": "2026-10-31T03:05:37.842254+00:00",
+  "staged_tree": "a3525c0b50f3fd1b922713bd2ede77aa05f1afdd",
+  "clean_checkout_exit_code": 0,
+  "source": "git archive of staged tree; no model or network calls",
+  "reviews_complete": 22,
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "measurements": {
+    "hosted": {
+      "total": 22,
+      "attempted": 19,
+      "responses": 16,
+      "valid": 8,
+      "contract_failures": 8,
+      "transport_failures": 3,
+      "not_dispatched": 3,
+      "rejected_responses_with_questions": 8
+    },
+    "held_out": {
+      "total": 10,
+      "attempted": 10,
+      "valid": 2,
+      "end_to_end_decision_matches": 0,
+      "decision_matches_among_valid": 0
+    },
+    "recovery": {
+      "responses": 6,
+      "valid": 6,
+      "decision_matches": 5
+    }
+  }
+}

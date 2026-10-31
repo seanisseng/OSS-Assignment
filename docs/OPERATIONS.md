@@ -1,18 +1,23 @@
 # Activation and evidence runbook
 
-The final artifact-only revision is awaiting approval. Its exact scope is 22
-one-shot requests on one inference commit and configuration hash. Publication
-remains disabled. GitHub read-only checks on 31 October 2026 found the repository
-public and `CLARIFICATION_SINGLE_RESPONSE_ENABLED=false`.
+The version 3 capture is finished: 19 hosted attempts, three hosted cases unrun,
+and six separately authorised dry-run assessments. All 22 assessments are signed,
+including a corrected second revision for pytest-13403. Publication remains disabled.
+Start with [the experiment review](EXPERIMENT-REVIEW.md) and run
+`python -m review_tools verify` then `python -m review_tools report`.
+These commands make no network or model calls. [Prepare-only reproduction](DRY-RUN.md)
+does not authorise new execution. The procedures below are retained as history.
 
 The previous seven-case development batch completed all seven workflows, with
 1/5 real decision matches and 2/2 diagnostic matches. Preserve it under
 `evals/evidence/development-batch-20261030/`; it is a different configuration.
 Earlier smoke failures remain in [the hosted history](HOSTED-ACTION-ISSUES.md).
 
-## Final study procedure
+## Historical study capture procedure
 
-See [the freeze packet](FINAL-STUDY.md) and [per-case review](reviews/FINAL-22-CASE-REVIEW.md).
+The [freeze packet](FINAL-STUDY.md) describes version 2; version 3 has its own
+[pre-registration](V3-PRE-REGISTRATION.md). The commands below describe the old
+final-ledger capture, not instructions to redispatch the completed study.
 Complete runtime, collector and evidence changes and run all pre-freeze checks.
 Present the tested diff, hash and 22-call scope for explicit approval. Do not push,
 enable the switch or dispatch before that approval. Record the actual approval;

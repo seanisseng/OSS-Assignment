@@ -1,12 +1,15 @@
-# Current status: final revision pending approval
+# Historical hosted Action run history
 
-The earlier seven-case development batch completed seven workflows, with 1/5 real
-decision matches and 2/2 diagnostic matches. These are previous-configuration
-results, preserved in `evals/evidence/development-batch-20261030/`.
-The final 22-case version 2 envelope study has not started. See
-[the freeze packet](FINAL-STUDY.md) and [final review](reviews/FINAL-22-CASE-REVIEW.md).
-Older ?not successful? or pending statements below describe their dated attempts;
-they are not current claims about all later executions. Preserve every failure.
+This is a historical record of earlier smoke and version 2/3 attempt failures.
+The version 3 capture is finished: 19 hosted attempts produced eight valid
+outputs, eight contract failures and three HTTP 429 failures; three attacks were
+never dispatched, and the separate six-case recovery is reported apart. See
+[the experiment review](EXPERIMENT-REVIEW.md) and
+[final review](reviews/FINAL-22-CASE-REVIEW.md). The earlier seven-case
+development batch (1/5 real, 2/2 diagnostic) is a different configuration,
+preserved in `evals/evidence/development-batch-20261030/`. Older "pending"
+statements below describe their dated attempts; they are not current claims.
+Every failure remains preserved.
 
 # Hosted GitHub Action run history
 

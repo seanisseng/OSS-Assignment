@@ -2,7 +2,8 @@
 
 Historical compatibility proposal; the hosted result below supersedes its initial status.
 For all three failures see [HOSTED-ACTION-ISSUES.md](HOSTED-ACTION-ISSUES.md).
-Current pending configuration and limits: [SIMPLIFIED-WORKFLOW.md](SIMPLIFIED-WORKFLOW.md).
+Historical configuration at that attempt: [SIMPLIFIED-WORKFLOW.md](SIMPLIFIED-WORKFLOW.md).
+Current status and results are in [the experiment review](EXPERIMENT-REVIEW.md).
 
 ## What changes
 

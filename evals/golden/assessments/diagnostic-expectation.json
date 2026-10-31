@@ -1,9 +1,9 @@
 {
   "case_id": "diagnostic-expectation",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": null,
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:53:44.233590+00:00",
   "relevance": "A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. A question contains multiple question marks, violating the single-question contract. Clarifying why a passing 1+1==2 test is called broken is appropriate, but asking a pytest version repeats 8.3.4 already supplied. Raw intent is not credited as a valid envelope.",
@@ -21,5 +21,5 @@
     "Which version of pytest exhibits the failure?"
   ],
   "observed_recommendation_validated": false,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all three assessments; record my signoff as seanisseng. Approved cases: diagnostic-crash, diagnostic-trigger, diagnostic-expectation."
 }

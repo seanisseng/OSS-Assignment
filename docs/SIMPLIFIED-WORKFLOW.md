@@ -1,10 +1,11 @@
-# Simplified clarification workflow: hosted smoke failed
+# Historical simplified clarification workflow: hosted smoke failed
 
-The [replacement revision](SINGLE-RESPONSE-REVISION.md) replaces investigation
-with one bounded packet and one request without model tools. It is implemented
-locally, awaiting approval; this page records the fourth run's configuration.
-
-The third hosted smoke run reached native Auto and read the canonical skill,
+This page is a historical record of the fourth-run configuration; it does not
+describe current status. See [the experiment review](EXPERIMENT-REVIEW.md) for
+the completed study and current verification commands.
+The [replacement revision](SINGLE-RESPONSE-REVISION.md) was the proposed
+replacement at that date and was later implemented and tested. The third hosted
+smoke run reached native Auto and read the canonical skill,
 but repeatedly read a large compact JSON input and delegated before GitHub
 returned HTTP 429. It produced no recommendation. The proxy reported 10.36284
 credits across analysis and detection; final billing remains unconfirmed.

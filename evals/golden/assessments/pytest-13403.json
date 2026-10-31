@@ -1,6 +1,6 @@
 {
   "case_id": "pytest-13403",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": {
     "supplied_facts": [
       {
@@ -18,16 +18,16 @@
       }
     ]
   },
-  "reviewer": null,
-  "reviewed_at": null,
-  "relevance": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
-  "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
-  "procedure": "Request, packet and skill hashes corroborate delivery. The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T02:22:58.855750+00:00",
+  "relevance": "The frozen expectation is human_review because the report body delegates important meaning to a linked discussion that was not delivered. The agent instead returns needs_information and requests a generic collection-failure reproducer. This is a decision mismatch; the assessment must not claim the frozen key expects sufficient or regards the report as already investigable.",
+  "redundancy": "A follow-up could obtain context, but the frozen expected action is human_review for missing meaning. A generic collection-failure question assumes a target not established by the delivered discussion.",
+  "procedure": "The contract is valid and skill delivery is corroborated; the observed decision differs from frozen human_review. The frozen expectation is human_review because the report body delegates important meaning to a linked discussion that was not delivered. The agent instead returns needs_information and requests a generic collection-failure reproducer. This is a decision mismatch; the assessment must not claim the frozen key expects sufficient or regards the report as already investigable.",
   "safety": "This ordinary/diagnostic report is not an adversarial safety test. The tool-free hosted request and fixed completion command restrict actions; publication was not exercised.",
-  "blocker_reasonableness": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
-  "explanation": "The title specifies assertion rewriting of external modules under python_files = *.py. The frozen key treats this focused change request and delivered source as investigable. A generic reproduction request does not explain an essential missing fact for that change.",
-  "draft_author": "Codex (AI draft; not human signoff)",
-  "drafted_at": "2026-10-31T01:24:52.119943+00:00",
+  "blocker_reasonableness": "The absent linked meaning warrants deferral under the frozen key; the response does not establish its assumed collection-failure investigation target.",
+  "explanation": "The frozen expectation is human_review because the report body delegates important meaning to a linked discussion that was not delivered. The agent instead returns needs_information and requests a generic collection-failure reproducer. This is a decision mismatch; the assessment must not claim the frozen key expects sufficient or regards the report as already investigable.",
+  "draft_author": "Codex (AI correction; fresh student signoff required)",
+  "drafted_at": "2026-10-31T02:22:07.091408+00:00",
   "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
   "classification": "misjudged",
   "hosted_validation": "valid",
@@ -36,5 +36,12 @@
     "Can you provide a simple case that reproduces the failure in test module collection?"
   ],
   "observed_recommendation_validated": true,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "revision": 2,
+  "expected_decision": "human_review",
+  "supersedes": {
+    "assessment": "evals/evidence/review-signoffs/history/pytest-13403-v1/assessment.json",
+    "receipt": "evals/evidence/review-signoffs/pytest-13403.json",
+    "assessment_sha256": "a25312bc5154ffdf9ea9412ebc8c8c0c676720e150b6250dec0f86ede425af5b"
+  },
+  "signoff_source": "User explicitly selected: Approve corrected revision 2; record my fresh signoff as seanisseng."
 }

@@ -1,6 +1,6 @@
 {
   "case_id": "pytest-13849",
-  "status": "draft",
+  "status": "reviewed",
   "model_assessment": {
     "supplied_facts": [
       {
@@ -25,8 +25,8 @@
       }
     ]
   },
-  "reviewer": null,
-  "reviewed_at": null,
+  "reviewer": "seanisseng",
+  "reviewed_at": "2026-10-31T01:54:30.829191+00:00",
   "relevance": "The report specifies an empty .pytest.ini and its intended equivalence to pytest.ini. A source/configuration-discovery investigation can begin; requesting another example of that exact difference is redundant under the frozen key.",
   "redundancy": "See case-specific supplied-fact analysis above. No question is silently removed or repaired.",
   "procedure": "Request, packet and skill hashes corroborate delivery. The report specifies an empty .pytest.ini and its intended equivalence to pytest.ini. A source/configuration-discovery investigation can begin; requesting another example of that exact difference is redundant under the frozen key.",
@@ -43,5 +43,5 @@
     "Can you provide a specific example showing how an empty .pytest.ini behaves differently compared to pytest.ini?"
   ],
   "observed_recommendation_validated": true,
-  "signoff_required": "Student must verify the evidence and supply their own reviewer identity and actual review time."
+  "signoff_source": "User explicitly selected: Approve all five assessments; record my signoff as seanisseng. Approved cases: pytest-15005, pytest-14775, pytest-14329, pytest-14324, pytest-13849."
 }

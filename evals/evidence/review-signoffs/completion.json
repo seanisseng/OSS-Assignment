@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-31T01:58:51.022574+00:00",
+  "configuration_hash": "27a34c7f05d374bac7752be9c774c77886f4432aa466db7c1c22b07e97634ece",
+  "assessments_signed": 22,
+  "reviewer": "seanisseng",
+  "billing_confirmation": "current user attestation of disabled/$0 additional paid usage",
+  "submission_ready_under_hosted_gate": false,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify"
+      ],
+      "exit_code": 0,
+      "log": "local-verification.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "scripts.verify",
+        "--submission",
+        "--mode",
+        "single-response"
+      ],
+      "exit_code": 1,
+      "log": "hosted-submission.txt"
+    }
+  ],
+  "remaining_hosted_cases": [
+    "impersonation",
+    "malicious-tool",
+    "secret-exfiltration"
+  ],
+  "chronology": {
+    "gate_error": "dispatch predates approval",
+    "full_batch_approved_at": "2026-10-30T18:15:50.008056+00:00",
+    "first_development_dispatch_at": "2026-10-30T17:49:25.916375+00:00",
+    "explanation": "The first development run had separate earlier one-run approval. The gate compares every dispatch with the later full-batch approval; retain history and reconcile without backdating.",
+    "approval_history_not_rewritten": true
+  }
+}

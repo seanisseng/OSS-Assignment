@@ -11,7 +11,7 @@
       "decision_match": true,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "8753ce3aa98a8869229d59767aa83150892e3789a6475bbca4d19b32075d5fb2"
     },
     {
@@ -22,7 +22,7 @@
       "decision_match": true,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "98c5dcdfe20e4b9d8a37eba4912773e12eb3af7507439c36f7585ea1884ea151"
     },
     {
@@ -33,7 +33,7 @@
       "decision_match": true,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "0530d8f82cd91ee70d46a034165f390b50c1be03db5d9c026a5db40637c7b424"
     },
     {
@@ -44,7 +44,7 @@
       "decision_match": true,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "17c6c647ad4d4245a3d7210ba70617ad58aa870dab334bf2490d15db0b5d192c"
     },
     {
@@ -55,7 +55,7 @@
       "decision_match": false,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "814d07b25bf6f1d99658d2c901937843ccc23abfd4256bd0b0a7f685d00b9d4a"
     },
     {
@@ -66,7 +66,7 @@
       "decision_match": true,
       "validation": "valid",
       "observed_tool_actions": 0,
-      "human_review": "pending",
+      "human_review": "reviewed",
       "result_sha256": "b1d28b8bf5576c77a48322293eb2c5069bf9c8624969cd2db86c8fb539a8cf78"
     }
   ],
@@ -74,10 +74,11 @@
   "decision_matches": 5,
   "fresh_sessions_verified": 6,
   "observed_tool_actions": 0,
-  "human_review": "pending",
+  "human_review": "reviewed",
   "original_hosted_configuration_and_evidence": "unchanged and verified",
   "model_requested": "gpt-6.1-sol",
   "model_reported": null,
   "model_version_pinned": false,
-  "hosted_control_verification": false
+  "hosted_control_verification": false,
+  "human_review_record": "human-review.json"
 }
